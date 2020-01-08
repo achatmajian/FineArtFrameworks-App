@@ -67,11 +67,12 @@
 
 <div class="client-form form-container">
   <h1>Client Information</h1>
+  <h2>Starred Fields are Required</h2>
   <br>
 
     <!-- Client Name -->
   <div class="field">
-    <label class="label">Client Name</label>
+    <label class="label">Client Name*</label>
     <div class="control">
       <input class="input" type="text" placeholder="John Smith" required>
     </div>
@@ -79,7 +80,7 @@
   
   <!-- Email -->
   <div class="field">
-    <label class="label">Email</label>
+    <label class="label">Email*</label>
     <div class="control has-icons-left has-icons-right">
       <input class="input is-danger" type="email" placeholder="john@fineartframeworks.com" required>
       <span class="icon is-small is-left">
@@ -94,7 +95,7 @@
   
   <!-- Physical Address -->
   <div class="field">
-    <label class="label">Physical Address</label>
+    <label class="label">Physical Address*</label>
     <div class="control">
       <input class="input column" type="text" placeholder="123 Fake St, Long Island City, NY 11101" required>
     </div>
@@ -102,7 +103,7 @@
   
     <!-- Phone Number -->
   <div class="field">
-    <label class="label">Phone Number</label>
+    <label class="label">Phone Number*</label>
     <div class="control">
       <input class="input column" type="text" placeholder="718-392-7766" required>
     </div>
@@ -110,7 +111,7 @@
   
 <!-- Client Type -->
   <div class="field">
-    <label class="label">Client Type</label>
+    <label class="label">Client Type*</label>
     <div class="control">
       <div class="select" required>
         <select>
@@ -137,15 +138,18 @@
 
 
 
+
+
  <!-- Order Info Form -->
 
 <div class="order-form form-container">
   <h1>Order Information</h1>
+  <h2>Starred Fields are Required</h2>
   <br>
 
     <!-- Order ID Number -->
     <div class="field">
-      <label class="label">Order ID Number</label>
+      <label class="label">Order ID Number*</label>
       <div class="control">
         <input class="input" type="number" placeholder="0000" required>
       </div>
@@ -153,7 +157,7 @@
   
     <!-- Date Received -->
     <div class="field">
-      <label class="label">Date Received</label>
+      <label class="label">Date Received*</label>
       <div class="control">
         <input class="input" type="date" required>
       </div>
@@ -161,7 +165,7 @@
   
     <!-- Date Due -->
     <div class="field">
-      <label class="label">Date Due</label>
+      <label class="label">Date Due*</label>
       <div class="control">
         <input class="input" type="date" required>
       </div>
@@ -182,7 +186,7 @@
 
     <!-- Storage Location -->
     <div class="field">
-      <label class="label">Storage Location</label>
+      <label class="label">Storage Location*</label>
       <div class="control">
         <input class="input column" type="text" placeholder="A-1" required>
       </div>
@@ -190,7 +194,7 @@
 
     <!--Items in Order -->
     <div class="field">
-      <label class="label">Items in Order</label>
+      <label class="label">Items in Order*</label>
       <div class="control">
         <input class="input" type="number" placeholder="1" required>
       </div>
@@ -208,6 +212,183 @@
   </div>
 
  </div> <!-- Order Info Form Container Close -->
+
+
+
+
+
+
+ <!-- Item Info Form -->
+
+ <div class="item-form form-container">
+  <h1>Item Information</h1>
+  <h2>Starred Fields are Required</h2>
+  <br>
+
+
+  <!-- Sizing -->
+  <h1>Sizing</h1><br>
+  <!-- Item Dimensions -->
+  <div class="field">
+    <label class="label">Item Dimensions (Inches)</label>
+    <div class="control">
+      <p>Height*</p>
+      <input class="input" type="number" placeholder="0000" required>
+      <p>Width*</p>
+      <input class="input" type="number" placeholder="0000" required>
+      <p>Depth</p>
+      <input class="input" type="number" placeholder="0000">
+    </div>
+  </div>
+  
+  <!-- Oversize? -->
+    <div class="field">
+      <label class="label">Oversize?</label>
+      <div class="control">
+        <div class="select">
+          <select>
+            <option>15ft-20ft</option>
+            <option>20ft-25ft</option>
+            <option>25ft+</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <hr>   
+  <!-- Sizing End -->
+
+
+  <!-- Manufacturing -->
+  <h1>Manufacturing</h1><br>
+  <!-- Wood -->
+  <div class="field">
+    <label class="label">Wood</label>
+    <div class="control">
+      <div class="select">
+        <select>
+          <option>Maple</option>
+          <option>Walnut</option>
+          <option>Ash</option>
+          <option>Cherry</option>
+          <option>White Oak</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- Metal -->
+  <div class="field">
+    <label class="label">Metal</label>
+    <div class="control">
+      <div class="select">
+        <select>
+          <option>Aluminum Cut & Join</option>
+          <option>Aluminum Welded</option>
+          <option>Steel Welded</option>
+        </select>
+      </div>
+    </div>
+  </div>  
+    
+  <!-- Finish -->
+  <div class="field">
+    <label class="label">Finish</label>
+    <div class="control">
+      <div class="select">
+        <select>
+          <option>Painted</option>
+          <option>Stained</option>
+          <option>Natural</option>
+          <option>Wax</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <!-- Manufacturing End -->
+
+
+  <!-- Fitting -->
+  <h1>Fitting</h1><br>
+  <!-- Mat -->
+  <div class="field">
+    <label class="label">Mat</label>
+    <div class="control">
+      <div class="select">
+        <select>
+          <option>4 Ply</option>
+          <option>8 Ply</option>
+          <option>12 Ply</option>
+          <option>Fabric</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- Float -->
+  <div class="field">
+    <label class="label">Float</label>
+    <div class="control">
+      <div class="select">
+        <select>
+          <option>On Rag</option>
+          <option>On Linen</option>
+          <option>On Silk</option>
+        </select>
+      </div>
+    </div>
+  </div>  
+    
+  <!-- Flush -->
+  <div class="field">
+    <label class="label">Float</label>
+    <div class="control">
+      <div class="select">
+        <select>
+          <option>Yes</option>
+          <option>No</option>
+        </select>
+      </div>
+    </div>
+  </div>  
+  <hr>
+  <!-- Manufacturing End -->
+
+
+
+
+
+
+  <!-- Storage Location -->
+  <div class="field">
+    <label class="label">Storage Location*</label>
+    <div class="control">
+      <input class="input column" type="text" placeholder="A-1" required>
+    </div>
+  </div>
+
+  <!--Items in Order -->
+  <div class="field">
+    <label class="label">Items in Order*</label>
+    <div class="control">
+      <input class="input" type="number" placeholder="1" required>
+    </div>
+  </div>
+    
+
+  <!-- Buttons -->
+    <div class="field is-grouped">
+      <div class="control">
+        <button class="button is-link">Next</button>
+      </div>
+      <div class="control">
+        <button class="button is-link is-light">Cancel</button>
+      </div>
+    </div>
+
+ </div> <!-- Order Info Form Container Close -->
+
+
 
   </body>
 </html>
