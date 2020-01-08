@@ -18,24 +18,62 @@
   </section>
 
   <!-- Breadcrumb -->
-  <nav class="breadcrumb has-arrow-separator" aria-label="breadcrumbs">
+  <!-- <nav class="breadcrumb has-arrow-separator" aria-label="breadcrumbs">
     <ul>
       <li><a href="#">Client Info</a></li>
       <li><a href="#">Documentation</a></li>
       <li><a href="#">Components</a></li>
       <li class="is-active"><a href="#" aria-current="page">Breadcrumb</a></li>
     </ul>
-  </nav>
+  </nav> -->
 
- <!-- Form -->
+  <!-- Sidebar -->
+  <!-- <aside class="menu">
+    <p class="menu-label">
+      General
+    </p>
+    <ul class="menu-list">
+      <li><a>Dashboard</a></li>
+      <li><a>Customers</a></li>
+    </ul>
+    <p class="menu-label">
+      Administration
+    </p>
+    <ul class="menu-list">
+      <li><a>Team Settings</a></li>
+      <li>
+        <a class="is-active">Manage Your Team</a>
+        <ul>
+          <li><a>Members</a></li>
+          <li><a>Plugins</a></li>
+          <li><a>Add a member</a></li>
+        </ul>
+      </li>
+      <li><a>Invitations</a></li>
+      <li><a>Cloud Storage Environment Settings</a></li>
+      <li><a>Authentication</a></li>
+    </ul>
+    <p class="menu-label">
+      Transactions
+    </p>
+    <ul class="menu-list">
+      <li><a>Payments</a></li>
+      <li><a>Transfers</a></li>
+      <li><a>Balance</a></li>
+    </ul>
+  </aside> -->
 
-<div class="form-container">
+ <!-- Client Info Form -->
+
+<div class="client-form form-container">
+  <h1>Client Information</h1>
+  <br>
 
     <!-- Client Name -->
   <div class="field">
     <label class="label">Client Name</label>
     <div class="control">
-      <input class="input" type="text" placeholder="John Smith">
+      <input class="input" type="text" placeholder="John Smith" required>
     </div>
   </div>
   
@@ -43,7 +81,7 @@
   <div class="field">
     <label class="label">Email</label>
     <div class="control has-icons-left has-icons-right">
-      <input class="input is-danger" type="email" placeholder="john@fineartframeworks.com">
+      <input class="input is-danger" type="email" placeholder="john@fineartframeworks.com" required>
       <span class="icon is-small is-left">
         <i class="fas fa-envelope"></i>
       </span>
@@ -58,7 +96,7 @@
   <div class="field">
     <label class="label">Physical Address</label>
     <div class="control">
-      <input class="input column" type="text" placeholder="123 Fake St, Long Island City, NY 11101">
+      <input class="input column" type="text" placeholder="123 Fake St, Long Island City, NY 11101" required>
     </div>
   </div>
   
@@ -66,7 +104,7 @@
   <div class="field">
     <label class="label">Phone Number</label>
     <div class="control">
-      <input class="input column" type="text" placeholder="718-392-7766">
+      <input class="input column" type="text" placeholder="718-392-7766" required>
     </div>
   </div>
   
@@ -74,7 +112,7 @@
   <div class="field">
     <label class="label">Client Type</label>
     <div class="control">
-      <div class="select">
+      <div class="select" required>
         <select>
           <option>Wholesale</option>
           <option>Retail</option>
@@ -82,6 +120,7 @@
       </div>
     </div>
   </div>
+  <br>
 
 <!-- Buttons -->
   <div class="field is-grouped">
@@ -93,7 +132,82 @@
     </div>
   </div>
 
- </div> <!-- Form Container Close -->
+ </div> <!-- Client Info Form Container Close -->
+
+
+
+
+ <!-- Order Info Form -->
+
+<div class="order-form form-container">
+  <h1>Order Information</h1>
+  <br>
+
+    <!-- Order ID Number -->
+    <div class="field">
+      <label class="label">Order ID Number</label>
+      <div class="control">
+        <input class="input" type="number" placeholder="0000" required>
+      </div>
+    </div>
+  
+    <!-- Date Received -->
+    <div class="field">
+      <label class="label">Date Received</label>
+      <div class="control">
+        <input class="input" type="date" required>
+      </div>
+    </div>
+  
+    <!-- Date Due -->
+    <div class="field">
+      <label class="label">Date Due</label>
+      <div class="control">
+        <input class="input" type="date" required>
+      </div>
+    </div>
+  
+    <!-- Rush Job? -->
+      <div class="field">
+        <label class="label">Rush Job?</label>
+        <div class="control">
+          <div class="select">
+            <select>
+              <option>1 Week</option>
+              <option>2 Weeks</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+    <!-- Storage Location -->
+    <div class="field">
+      <label class="label">Storage Location</label>
+      <div class="control">
+        <input class="input column" type="text" placeholder="A-1" required>
+      </div>
+    </div>
+
+    <!--Items in Order -->
+    <div class="field">
+      <label class="label">Items in Order</label>
+      <div class="control">
+        <input class="input" type="number" placeholder="1" required>
+      </div>
+    </div>
+    
+
+<!-- Buttons -->
+  <div class="field is-grouped">
+    <div class="control">
+      <button class="button is-link">Next</button>
+    </div>
+    <div class="control">
+      <button class="button is-link is-light">Cancel</button>
+    </div>
+  </div>
+
+ </div> <!-- Order Info Form Container Close -->
 
   </body>
 </html>
