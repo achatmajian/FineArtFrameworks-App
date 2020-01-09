@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>FAFW Calculator</title>
+    <title>FAFW Estimate Calculator</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
     <link rel="stylesheet" href="/index.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
@@ -13,7 +13,7 @@
     <!-- Header -->
   <section class="section">
     <div class="title-container container">
-      <h1 class="title">Fine Art Frameworks Calculator</h1>
+      <h1 class="title">Fine Art Frameworks Estimate Calculator</h1>
     </div>
   </section>
 
@@ -176,13 +176,14 @@
 
 <div class="bottom">
 
- <!-- Item Info Form -->
+ <!-- Frame Info Form -->
 
  <div class="frame-form form-container">
-  <h1>Item Information</h1>
+  <h1>Frame Information</h1>
   <h2>Starred Fields are Required</h2>
   <br>
 
+  <div class="sizing">
   <!-- Sizing -->
   <h1>Sizing</h1><br>
   <!-- Item Dimensions -->
@@ -212,9 +213,9 @@
       </div>
     </div>
     <hr>   
-  <!-- Sizing End -->
+  </div><!-- Sizing Div Close -->
 
-
+  <div class="manufacturing">
   <!-- Manufacturing -->
   <h1>Manufacturing</h1><br>
   <!-- Wood -->
@@ -262,9 +263,9 @@
     </div>
   </div>
   <hr>
-  <!-- Manufacturing End -->
+</div><!-- Manufacturing Div Close -->
 
-
+  <div class="fitting">
   <!-- Fitting -->
   <h1>Fitting</h1><br>
   <!-- Mat -->
@@ -373,13 +374,16 @@
       </div>
     </div>
   </div>   
-  <!-- Fitting End -->
+</div><!-- Fitting Div Close -->
   <hr>
 
   <!-- Buttons -->
     <div class="field is-grouped">
       <div class="control">
         <button class="button is-link">Submit Order</button>
+      </div>
+      <div class="control">
+        <button class="button is-link is-light">Add Another Frame</button>
       </div>
       <div class="control">
         <button class="button is-link is-light">Clear</button>

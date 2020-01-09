@@ -12,9 +12,6 @@ h2 {
 
 
 
-
-
-
 /* Title */
 
 .title-container{
@@ -75,4 +72,17 @@ h2 {
     background-color: lavender;
     padding: 30px;
     margin: 30px;
+}
+
+/* Frame Build Sections*/
+.sizing {
+    /* border: solid red; */
+}
+
+.manufacturing {
+    /* border: solid red; */
+}
+
+.fitting {
+    /* border: solid red; */
 }
