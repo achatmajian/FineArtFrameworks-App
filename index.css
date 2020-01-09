@@ -10,31 +10,69 @@ h2 {
     /* font-weight: bold; */
 }
 
-.breadcrumb{
-    padding: 20px;
-    margin: 50px;
-    background-color: lavender;
+
+
+
+
+
+/* Title */
+
+.title-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
-.form-container{
+
+.title-container > div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+/* Forms */
+
+/* .form-container{
     padding: 50px;
-    margin: 40px;
+    margin: 60px;
     background-color: lavender;
+} */
+
+/* Client & Order */
+
+.top-2{
+    display: flex;
+    justify-content: center;
 }
 
-.all-forms{
-    /* margin-top: 5px;  */
-}
 
-.left-menu{
-    padding: 50px;
-    margin-top: 30px;
-    margin-left: 30px;
+.client-form{
+    width: 600px;
     background-color: lavender;
-    height: 100%;
+    padding: 30px;
+    margin: 20px;
 }
 
-/* Client Info */
+.order-form{
+    width: 600px;
+    background-color: lavender;
+    padding: 30px;
+    margin: 20px;
+}
 
+/* Frame Build */
 
+.bottom {
+    display: flex;
+    justify-content: center;
+}
 
+.frame-form{
+    width: 1240px;
+    background-color: lavender;
+    padding: 30px;
+    margin: 30px;
+}
