@@ -18,15 +18,20 @@ h2 {
 
 .form-container{
     padding: 50px;
-    margin: 50px;
+    margin: 40px;
     background-color: lavender;
 }
 
+.all-forms{
+    /* margin-top: 5px;  */
+}
 
 .left-menu{
     padding: 50px;
-    margin: 50px;
+    margin-top: 30px;
+    margin-left: 30px;
     background-color: lavender;
+    height: 100%;
 }
 
 /* Client Info */
