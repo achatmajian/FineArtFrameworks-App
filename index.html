@@ -3,17 +3,21 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>FAFW Estimate Calculator</title>
+    <title>Fine Art Frameworks App</title>
+    <!-- CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
     <link rel="stylesheet" href="/index.css">
+    <!-- JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="/index.js"></script>
   </head>
   <body>
 
     <!-- Header -->
   <section class="section">
     <div class="title-container container">
-      <h1 class="title">Fine Art Frameworks Estimate Calculator</h1>
+      <h1 class="title">Fine Art Frameworks App</h1>
     </div>
   </section>
 
@@ -27,7 +31,7 @@
 
  <!-- Client Info Form -->
 
-<div class="client-form form-container">
+<div class="client-form form-container box">
   <h1>Client Information</h1>
   <h2>Starred Fields are Required</h2>
   <br>
@@ -40,14 +44,6 @@
     </div>
   </div>
   
-  <!-- Email -->
-  <div class="field">
-    <label class="label">Email*</label>
-    <div class="control">
-      <input class="input" type="email" placeholder="ed@fineartframeworks.com" required>
-    </div>
-  </div>
-  
   <!-- Physical Address -->
   <div class="field">
     <label class="label">Address*</label>
@@ -56,6 +52,15 @@
     </div>
   </div>
   
+  <div class="email-phone"> <!-- Email Phone Parent Div -->
+  <!-- Email -->
+  <div class="field">
+    <label class="label">Email*</label>
+    <div class="control">
+      <input class="input" type="email" placeholder="ed@fineartframeworks.com" required>
+    </div>
+  </div>
+
     <!-- Phone Number -->
   <div class="field">
     <label class="label">Phone Number*</label>
@@ -63,6 +68,7 @@
       <input class="input column" type="text" placeholder="718-392-7766" required>
     </div>
   </div>
+</div> <!-- Email Phone Parent Div Close-->
   
 <!-- Client Type -->
   <div class="field">
@@ -76,17 +82,16 @@
       </div>
     </div>
   </div>
-  <hr>
 
 <!-- Buttons -->
-  <div class="field is-grouped">
+  <!-- <div class="field is-grouped">
     <div class="control">
       <button class="button is-link">Save</button>
     </div>
     <div class="control">
       <button class="button is-link is-light">Clear</button>
     </div>
-  </div>
+  </div> -->
 
  </div> <!-- Client Info Form Container Close -->
 
@@ -97,7 +102,7 @@
 
  <!-- Order Info Form -->
 
-<div class="order-form form-container">
+<div class="order-form form-container box">
   <h1>Order Information</h1>
   <h2>Starred Fields are Required</h2>
   <br>
@@ -156,22 +161,21 @@
 
     <!--Frames in Order -->
     <div class="field">
-      <label class="label">Frames in Order*</label>
+      <label class="label">Frame Quantity*</label>
       <div class="control">
         <input class="input" type="number" placeholder="1" required>
       </div>
     </div>
-    <hr>
 
 <!-- Buttons -->
-  <div class="field is-grouped">
+  <!-- <div class="field is-grouped">
     <div class="control">
       <button class="button is-link">Save</button>
     </div>
     <div class="control">
       <button class="button is-link is-light">Clear</button>
     </div>
-  </div>
+  </div> -->
 
  </div> <!-- Order Info Form Container Close -->
 
@@ -185,7 +189,7 @@
 
  <!-- Frame Form -->
 
- <div class="frame-form form-container grid-wrapper"> <!-- Frame Form Wrapper-->
+ <div class="frame-form form-container box"> <!-- Frame Form Wrapper-->
   <h1>Build Frame</h1>
   <h2>Starred Fields are Required</h2>
   <br>
@@ -251,6 +255,7 @@
       </div>
     </div>
   </div>
+  
 
   <!-- Metal -->
   <div class="field">
@@ -417,12 +422,12 @@
       <div class="control">
         <button class="button is-link is-light">Add Another Frame</button>
       </div>
-      <div class="control">
+      <!-- <div class="control">
         <button class="button is-link is-light">Clear</button>
-      </div>
+      </div> -->
     </div>
 
- <//div> <!-- Frame Form Container Close -->
+ </div> <!-- Frame Form Container Close -->
 
 </div> <!-- Bottom Close -->
 

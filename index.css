@@ -48,14 +48,20 @@ h2 {
 
 .client-form{
     width: 600px;
-    background-color: lavender;
+    /* background-color: lavender; */
     padding: 30px;
     margin: 20px;
 }
 
+.email-phone{
+    display: flex;
+    justify-content: space-between;
+    
+}
+
 .order-form{
     width: 600px;
-    background-color: lavender;
+    /* background-color: lavender; */
     padding: 30px;
     margin: 20px;
 }
@@ -66,12 +72,6 @@ h2 {
     display: flex;
     justify-content: center;
 }
-
-/* .grid-wrapper {
-    display: grid;
-    grid-template-columns: 50%;
-    grid-template-rows: 100%;
-} */
 
 .size-manu {
     display: flex;
@@ -86,7 +86,7 @@ h2 {
 
 .frame-form{
     width: 1240px;
-    background-color: lavender;
+    /* background-color: lavender; */
     padding: 30px;
     margin: 30px;
 }
