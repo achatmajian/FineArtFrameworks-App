@@ -129,24 +129,31 @@ h2 {
 }
 
 /* Frame Build Sections */
+
 .sizing {
     width: 500px;
+    height: 450px;
     /* background-color: lavender; */
     padding: 30px;
     margin: 20px;
     /* border: solid red; */
 }
+
+/* Manufacturing */
 
 .manufacturing {
     width: 500px;
+    height: 450px;
     /* background-color: lavender; */
     padding: 30px;
     margin: 20px;
     /* border: solid red; */
 }
 
+
 .fitting {
     width: 500px;
+    height: 750px;
     /* background-color: lavender; */
     padding: 30px;
     margin: 20px;
@@ -155,6 +162,7 @@ h2 {
 
 .notes-upload {
     width: 500px;
+    height: 750px;
     /* background-color: lavender; */
     padding: 30px;
     margin: 20px;

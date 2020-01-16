@@ -217,6 +217,14 @@
         <input class="input" type="date" required>
       </div>
     </div> -->
+
+    <!--Frame Quantity -->
+    <div class="field">
+      <label class="label">Frame Quantity*</label>
+      <div class="control">
+        <input class="input" type="number" placeholder="1" required>
+      </div>
+    </div>
   
     <!-- Date Due -->
     <div class="field">
@@ -263,13 +271,6 @@
       </div>
     </div>
 
-    <!--Frames in Order -->
-    <div class="field">
-      <label class="label">Frame Quantity*</label>
-      <div class="control">
-        <input class="input" type="number" placeholder="1" required>
-      </div>
-    </div>
 
 <!-- Buttons -->
   <!-- <div class="field is-grouped">
@@ -289,11 +290,11 @@
 <!-- =============================================================== -->
 
 
-<div class="bottom">
+<div class="bottom" id="bottom">
 
- <!-- Frame Form -->
+ <!-- Build Frame Form -->
 
- <div class="frame-form form-container box"> <!-- Frame Form Wrapper-->
+ <div class="frame-form form-container box" id="build-frame"> <!-- Frame Form Wrapper-->
   <h1>Build Frame</h1>
   <h2>Starred Fields are Required</h2>
   <br>
@@ -302,6 +303,7 @@
   <div class="sizing box"> <!-- Sizing Child Div-->
   <!-- Sizing -->
   <h1>Sizing</h1>
+  <br>
   <!-- Item Dimensions -->
   <div class="field">
     <label class="label">Item Dimensions (Inches)</label>
@@ -344,8 +346,9 @@
   <div class="manufacturing box"> <!-- Manufacturing Child Div-->
   <!-- Manufacturing -->
   <h1>Manufacturing</h1>
+  <br>
   <!-- Wood -->
-  <div class="field">
+  <!-- <div class="field">
     <label class="label">Wood</label>
     <div class="control">
       <div class="select">
@@ -358,11 +361,39 @@
         </select>
       </div>
     </div>
-  </div>
-  
+  </div> -->
+
+    <!-- Wood 2 -->
+    <div class="field">
+      <label class="label">Wood</label>
+      <div class="control">
+        <label class="radio">
+          <input type="radio" name="material-answer" checked>
+          Maple
+        </label>
+        <label class="radio">
+          <input type="radio" name="material-answer">
+          Walnut
+        </label>
+        <label class="radio">
+          <input type="radio" name="material-answer">
+          Ash
+        </label>
+        <label class="radio">
+          <input type="radio" name="material-answer">
+          Cherry
+        </label>
+        <label class="radio">
+          <input type="radio" name="material-answer">
+          White Oak
+        </label>
+      </div>
+    </div>
+
+
 
   <!-- Metal -->
-  <div class="field">
+  <!-- <div class="field">
     <label class="label">Metal</label>
     <div class="control">
       <div class="select">
@@ -373,10 +404,29 @@
         </select>
       </div>
     </div>
-  </div>  
+  </div>   -->
+
+  <!-- Metal 2 -->
+  <div class="field">
+    <label class="label">Metal</label>
+    <div class="control">
+      <label class="radio">
+        <input type="radio" name="material-answer">
+        Aluminum Cut/Join
+      </label>
+      <label class="radio">
+        <input type="radio" name="material-answer">
+        Aluminum Weld
+      </label>
+      <label class="radio">
+        <input type="radio" name="material-answer">
+        Steel Weld
+      </label>
+    </div>
+  </div>
     
   <!-- Finish -->
-  <div class="field">
+  <!-- <div class="field">
     <label class="label">Finish</label>
     <div class="control">
       <div class="select">
@@ -388,7 +438,31 @@
         </select>
       </div>
     </div>
+  </div> -->
+
+  <!-- Finish 2 -->
+  <div class="field">
+    <label class="label">Finish</label>
+    <div class="control">
+      <label class="radio">
+        <input type="radio" name="finish-answer" checked>
+        Painted
+      </label>
+      <label class="radio">
+        <input type="radio" name="finish-answer">
+        Stained
+      </label>
+      <label class="radio">
+        <input type="radio" name="finish-answer">
+        Natural
+      </label>
+      <label class="radio">
+        <input type="radio" name="finish-answer">
+        Wax
+      </label>
+    </div>
   </div>
+
 </div><!-- Manufacturing Child Div Close -->
 </div> <!-- Size and Manu Parent Div Close-->
 
@@ -398,6 +472,7 @@
   <div class="fitting box"> <!-- Fitting Child Div-->
   <!-- Fitting -->
   <h1>Fitting</h1>
+  <br>
   <!-- Mat -->
   <div class="field">
     <label class="label">Mat</label>
@@ -546,14 +621,16 @@
         <button class="button is-link">Submit Order</button>
       </div>
       <div class="control">
-        <button class="button is-link is-light">Add Another Frame</button>
+        <button class="button is-link is-light" id="add-frame-button">Add Another Frame</button>
       </div>
       <!-- <div class="control">
         <button class="button is-link is-light">Clear</button>
       </div> -->
     </div>
 
- </div> <!-- Frame Form Container Close -->
+ </div> <!-- Build Frame Form Container Close -->
+
+
 
 </div> <!-- Bottom Close -->
 
