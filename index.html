@@ -130,14 +130,21 @@
       <div class="field">
         <label class="label">Rush Job?</label>
         <div class="control">
-          <div class="select">
-            <select>
-              <option>1 Week</option>
-              <option>2 Weeks</option>
-            </select>
-          </div>
+          <label class="radio">
+            <input type="radio" name="rush-answer" checked>
+            No
+          </label>
+          <label class="radio">
+            <input type="radio" name="rush-answer">
+            1 week
+          </label>
+          <label class="radio">
+            <input type="radio" name="rush-answer">
+            2 Week
+          </label>
         </div>
       </div>
+
 
     <!-- Storage Location -->
     <div class="field">
@@ -179,7 +186,7 @@
  <!-- Frame Form -->
 
  <div class="frame-form form-container grid-wrapper"> <!-- Frame Form Wrapper-->
-  <h1>Frame Information</h1>
+  <h1>Build Frame</h1>
   <h2>Starred Fields are Required</h2>
   <br>
 
@@ -204,14 +211,22 @@
     <div class="field">
       <label class="label">Oversize?</label>
       <div class="control">
-        <div class="select">
-          <select>
-            <option>N/A</option>
-            <option>15ft-20ft</option>
-            <option>20ft-25ft</option>
-            <option>25ft+</option>
-          </select>
-        </div>
+        <label class="radio">
+          <input type="radio" name="oversize-answer" checked>
+          No
+        </label>
+        <label class="radio">
+          <input type="radio" name="oversize-answer">
+          15ft-20ft
+        </label>
+        <label class="radio">
+          <input type="radio" name="oversize-answer">
+          20ft-25ft
+        </label>
+        <label class="radio">
+          <input type="radio" name="oversize-answer">
+          25ft+
+        </label>
       </div>
     </div>
   </div><!-- Sizing Child Div Close -->
@@ -391,6 +406,7 @@
 </div>
 
 </div><!-- Fitting and Notes Parent Div Close-->
+<hr>
 
 
   <!-- Buttons -->
