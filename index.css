@@ -1,5 +1,9 @@
 /* Global */
 
+body {
+    background-color: #9cc0e7;
+}
+
 h1 {
     font-size: 24px;
     font-weight: bold;
@@ -45,6 +49,7 @@ h2 {
     justify-content: center;
 }
 
+/* Client Info */
 
 .client-form{
     width: 600px;
@@ -58,6 +63,17 @@ h2 {
     justify-content: space-between;
     
 }
+
+.address{
+    display: flex;
+    justify-content: space-between;
+}
+
+#address-input {
+    /* width: 140px; */
+}
+
+/* Order Info */
 
 .order-form{
     width: 600px;
