@@ -42,6 +42,8 @@ h2 {
     background-color: lavender;
 } */
 
+
+
 /* Client & Order */
 
 .top-2{
@@ -69,9 +71,14 @@ h2 {
     justify-content: space-between;
 }
 
-#address-input {
-    /* width: 140px; */
+/* #address-input {
+    width: 140px;
+} */
+
+#email-phone-size{
+    width: 250px;
 }
+
 
 /* Order Info */
 
@@ -82,7 +89,15 @@ h2 {
     margin: 20px;
 }
 
-/* Frame Build */
+.storage{
+    display: flex;
+    justify-content: space-between;
+}
+
+#storage-input{
+    width: 45%;
+}
+/* Frame Build Containers*/
 
 .bottom {
     display: flex;
@@ -100,6 +115,12 @@ h2 {
     justify-content: center;
 }
 
+.upload {
+    display: flex;
+    justify-content: center;
+    /* padding: 10px; */
+}
+
 .frame-form{
     width: 1240px;
     /* background-color: lavender; */
@@ -107,7 +128,7 @@ h2 {
     margin: 30px;
 }
 
-/* Frame Build Sections*/
+/* Frame Build Sections */
 .sizing {
     width: 500px;
     /* background-color: lavender; */
@@ -132,7 +153,7 @@ h2 {
     /* border: solid red; */
 }
 
-.notes {
+.notes-upload {
     width: 500px;
     /* background-color: lavender; */
     padding: 30px;
