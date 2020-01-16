@@ -176,256 +176,237 @@
 
 <div class="bottom">
 
-  <div class="frame-form form-container"> <!-- Frame Form Container -->
-    <div class="title tile is-parent">
-      <div>    
-        <h1>Frame Information</h1>
-        <h2>Starred Fields are Required</h2>
-      </div>
+ <!-- Frame Form -->
 
+ <div class="frame-form form-container grid-wrapper"> <!-- Frame Form Wrapper-->
+  <h1>Frame Information</h1>
+  <h2>Starred Fields are Required</h2>
+  <br>
+
+  <div class="size-manu"> <!-- Size and Manu Parent Div-->
+  <div class="sizing box"> <!-- Sizing Child Div-->
+  <!-- Sizing -->
+  <h1>Sizing</h1>
+  <!-- Item Dimensions -->
+  <div class="field">
+    <label class="label">Item Dimensions (Inches)</label>
+    <div class="control">
+      <p>Height*</p>
+      <input class="input" type="number" placeholder="0000" required>
+      <p>Width*</p>
+      <input class="input" type="number" placeholder="0000" required>
+      <p>Depth</p>
+      <input class="input" type="number" placeholder="0000">
     </div>
-    
-    <div class="tile is-parent"> <!-- Sizing & Manu Parent Container -->
-      
-      <div class="sizing tile is-child is-4 box"> <!-- Sizing Child Content Container -->
-        <p class="title">Sizing</p>
-
-          <!-- Item Dimensions -->
-          <div class="field">
-            <label class="label">Item Dimensions (Inches)</label>
-            <div class="control">
-              <p>Height*</p>
-              <input class="input" type="number" placeholder="0000" required>
-              <p>Width*</p>
-              <input class="input" type="number" placeholder="0000" required>
-              <p>Depth</p>
-              <input class="input" type="number" placeholder="0000">
-            </div>
-          </div>
-
-          <!-- Oversize? -->
-          <div class="field">
-            <label class="label">Oversize?</label>
-            <div class="control">
-              <div class="select">
-                <select>
-                  <option>No</option>
-                  <option>15ft-20ft</option>
-                  <option>20ft-25ft</option>
-                  <option>25ft+</option>
-                </select>
-              </div>
-            </div>
-          </div>
-
-      </div> <!-- Sizing Content Child Container Close -->
-
-      <div class="manufacturing tile is-child is-4 box"> <!-- Manufacturing Content Child Container -->
-        <p class="title">Manufacturing</p>
-        
-          <!-- Wood -->
-          <div class="field">
-            <label class="label">Wood</label>
-            <div class="control">
-              <div class="select">
-                <select>
-                  <option>Maple</option>
-                  <option>Walnut</option>
-                  <option>Ash</option>
-                  <option>Cherry</option>
-                  <option>White Oak</option>
-                </select>
-              </div>
-            </div>
-          </div>
-
-          <!-- Metal -->
-          <div class="field">
-            <label class="label">Metal</label>
-            <div class="control">
-              <div class="select">
-                <select>
-                  <option>Aluminum Cut & Join</option>
-                  <option>Aluminum Welded</option>
-                  <option>Steel Welded</option>
-                </select>
-              </div>
-            </div>
-          </div>  
-            
-          <!-- Finish -->
-          <div class="field">
-            <label class="label">Finish</label>
-            <div class="control">
-              <div class="select">
-                <select>
-                  <option>Painted</option>
-                  <option>Stained</option>
-                  <option>Natural</option>
-                  <option>Wax</option>
-                </select>
-              </div>
-            </div>
-          </div>
-
-      </div> <!-- Manufacturing Content Child Container Close -->
-    </div> <!-- Sizing & Manu Parent Container Close -->
-
-
-    <div class="tile is-parent"> <!-- Fitting Container -->
-      <div class="fitting tile is-child box"> <!-- Fitting Content Container -->
-        <p class="title">Fitting</p>
-
-        <!-- Mat -->
-        <div class="field">
-          <label class="label">Mat</label>
-          <div class="control">
-            <div class="select">
-              <select>
-                <option>4 Ply</option>
-                <option>8 Ply</option>
-                <option>12 Ply</option>
-                <option>Fabric</option>
-              </select>
-            </div>
-          </div>
-        </div>
-
-        <!-- Float -->
-        <div class="field">
-          <label class="label">Float</label>
-          <div class="control">
-            <div class="select">
-              <select>
-                <option>On Rag</option>
-                <option>On Linen</option>
-                <option>On Silk</option>
-              </select>
-            </div>
-          </div>
-        </div>  
-    
-        <!-- Flush -->
-        <div class="field">
-          <label class="label">Flush</label>
-          <div class="control">
-            <div class="select">
-              <select>
-                <option>Yes</option>
-                <option>No</option>
-              </select>
-            </div>
-          </div>
-        </div>  
-
-        <!-- Spacers -->
-        <div class="field">
-          <label class="label">Spacers</label>
-          <div class="control">
-            <div class="select">
-              <select>
-                <option>Rag</option>
-                <option>Wood</option>
-                <option>Silk</option>
-              </select>
-            </div>
-          </div>
-        </div>  
-
-        <!-- Drymount -->
-        <div class="field">
-          <label class="label">Drymount</label>
-          <div class="control">
-            <div class="select">
-              <select>
-                <option>Regular Foam</option>
-                <option>Acid Free Foam</option>
-                <option>Mount on Rag</option>
-              </select>
-            </div>
-          </div>
-        </div>  
-
-        <!-- Glazing -->
-        <div class="field">
-          <label class="label">Glazing</label>
-          <div class="control">
-            <div class="select">
-              <select>
-                <option>Glass</option>
-                <option>Regular Plexiglass</option>
-                <option>OP-3 Plexiglass</option>
-                <option>Tru Vue Ultra Vue</option>
-                <option>Tru Vue Museum Glass (Art Glass)</option>
-                <option>Optium Museum Plexiglass (up to 40in x 60in)</option>
-                <option>Optium Museum Plexiglass (up to 48in x 96in)</option>
-                <option>Optium Museum Plexiglass (up to 72in x 96in)</option>
-                <option>Optium Museum Plexiglass (up to 72in x 120in)</option>
-              </select>
-            </div>
-          </div>
-        </div>  
-
-        <!-- Extras -->
-        <div class="field">
-          <label class="label">Extras</label>
-          <div class="control">
-            <div class="select">
-              <select>
-                <option>Strainer</option>
-                <option>Painted Strainer</option>
-                <option>Strech Canvas</option>
-                <option>Raise Mount</option>
-                <option>De-fit/Re-fit</option>
-                <option>Re-Finish Frame (De-fit/Re-fit)</option>
-              </select>
-            </div>
-          </div>
-        </div>   
-
-      </div> <!-- Fitting Content Container Close -->
-
-    </div> <!-- Fitting Container Close -->
-
-    <!-- PUT NOTES BOX BELOW THIS COMMENT -->
-
-    <div class="tile is-parent is-veritcal"> <!-- Notes Container -->
-      <div class="notes tile is-child box"> <!-- Notes Content Container -->
-        <p class="title">Notes</p>
-          <textarea class="textarea" placeholder="Enter special notes or instructions"></textarea>
-      </div> <!-- Notes Content Container Close -->
-
-    </div> <!-- Notes Container Close -->
-
-    <!-- PUT NOTES BOX ABOVE THIS COMMENT -->
-
-    <!-- PUT BUTTONS BELOW THIS COMMENT -->
-
-    <div class="tile is-parent is-vertical"> <!-- Buttons Container -->
-      <div class="buttons tile is-child box"> <!-- Buttons Content Container -->
-
-        <div class="field is-grouped">
-          <div class="control">
-            <button class="button is-link">Submit Order</button>
-          </div>
-          <div class="control">
-            <button class="button is-link is-light">Add Another Frame</button>
-          </div>
-          <div class="control">
-            <button class="button is-link is-light">Clear</button>
-          </div>
-        </div>
-
-      </div> <!-- Buttons Content Container Close -->
-
-    </div> <!-- Buttons Container Close -->
-
-    <!-- PUT BUTTONS ABOVE THIS COMMENT -->
-
-  </div> <!-- Frame Form Container -->
+  </div>
   
+  <!-- Oversize? -->
+    <div class="field">
+      <label class="label">Oversize?</label>
+      <div class="control">
+        <div class="select">
+          <select>
+            <option>N/A</option>
+            <option>15ft-20ft</option>
+            <option>20ft-25ft</option>
+            <option>25ft+</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div><!-- Sizing Child Div Close -->
 
- </div> <!-- Frame Info Form Container Close -->
+  <!-- --------------------------------------------------------------- -->
+
+  <div class="manufacturing box"> <!-- Manufacturing Child Div-->
+  <!-- Manufacturing -->
+  <h1>Manufacturing</h1>
+  <!-- Wood -->
+  <div class="field">
+    <label class="label">Wood</label>
+    <div class="control">
+      <div class="select">
+        <select>
+          <option>Maple</option>
+          <option>Walnut</option>
+          <option>Ash</option>
+          <option>Cherry</option>
+          <option>White Oak</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- Metal -->
+  <div class="field">
+    <label class="label">Metal</label>
+    <div class="control">
+      <div class="select">
+        <select>
+          <option>Aluminum Cut & Join</option>
+          <option>Aluminum Welded</option>
+          <option>Steel Welded</option>
+        </select>
+      </div>
+    </div>
+  </div>  
+    
+  <!-- Finish -->
+  <div class="field">
+    <label class="label">Finish</label>
+    <div class="control">
+      <div class="select">
+        <select>
+          <option>Painted</option>
+          <option>Stained</option>
+          <option>Natural</option>
+          <option>Wax</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div><!-- Manufacturing Child Div Close -->
+</div> <!-- Size and Manu Parent Div Close-->
+
+<!-- --------------------------------------------------------------- -->
+
+<div class="fit-notes"> <!-- Fitting and Notes Parent Div -->
+  <div class="fitting box"> <!-- Fitting Child Div-->
+  <!-- Fitting -->
+  <h1>Fitting</h1>
+  <!-- Mat -->
+  <div class="field">
+    <label class="label">Mat</label>
+    <div class="control">
+      <div class="select">
+        <select>
+          <option>4 Ply</option>
+          <option>8 Ply</option>
+          <option>12 Ply</option>
+          <option>Fabric</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- Float -->
+  <div class="field">
+    <label class="label">Float</label>
+    <div class="control">
+      <div class="select">
+        <select>
+          <option>On Rag</option>
+          <option>On Linen</option>
+          <option>On Silk</option>
+        </select>
+      </div>
+    </div>
+  </div>  
+    
+  <!-- Flush -->
+  <div class="field">
+    <label class="label">Flush</label>
+    <div class="control">
+      <div class="select">
+        <select>
+          <option>Yes</option>
+          <option>No</option>
+        </select>
+      </div>
+    </div>
+  </div>  
+
+  <!-- Spacers -->
+  <div class="field">
+    <label class="label">Spacers</label>
+    <div class="control">
+      <div class="select">
+        <select>
+          <option>Rag</option>
+          <option>Wood</option>
+          <option>Silk</option>
+        </select>
+      </div>
+    </div>
+  </div>  
+
+  <!-- Drymount -->
+  <div class="field">
+    <label class="label">Drymount</label>
+    <div class="control">
+      <div class="select">
+        <select>
+          <option>Regular Foam</option>
+          <option>Acid Free Foam</option>
+          <option>Mount on Rag</option>
+        </select>
+      </div>
+    </div>
+  </div>  
+
+  <!-- Glazing -->
+  <div class="field">
+    <label class="label">Glazing</label>
+    <div class="control">
+      <div class="select">
+        <select>
+          <option>Glass</option>
+          <option>Regular Plexiglass</option>
+          <option>OP-3 Plexiglass</option>
+          <option>Tru Vue Ultra Vue</option>
+          <option>Tru Vue Museum Glass (Art Glass)</option>
+          <option>Optium Museum Plexiglass (up to 40in x 60in)</option>
+          <option>Optium Museum Plexiglass (up to 48in x 96in)</option>
+          <option>Optium Museum Plexiglass (up to 72in x 96in)</option>
+          <option>Optium Museum Plexiglass (up to 72in x 120in)</option>
+        </select>
+      </div>
+    </div>
+  </div>  
+
+  <!-- Extras -->
+  <div class="field">
+    <label class="label">Extras</label>
+    <div class="control">
+      <div class="select">
+        <select>
+          <option>Strainer</option>
+          <option>Painted Strainer</option>
+          <option>Strech Canvas</option>
+          <option>Raise Mount</option>
+          <option>De-fit/Re-fit</option>
+          <option>Re-Finish Frame (De-fit/Re-fit)</option>
+        </select>
+      </div>
+    </div>
+  </div>   
+</div><!-- Fitting Child Div Close -->
+
+<!-- --------------------------------------------------------------- -->
+
+  <!-- Notes -->
+<div class="notes box">
+  <h1>Notes</h1>
+  <textarea class="textarea" rows="22" placeholder="Enter special notes or instructions"></textarea>
+</div>
+
+</div><!-- Fitting and Notes Parent Div Close-->
+
+
+  <!-- Buttons -->
+    <div class="field is-grouped">
+      <div class="control">
+        <button class="button is-link">Submit Order</button>
+      </div>
+      <div class="control">
+        <button class="button is-link is-light">Add Another Frame</button>
+      </div>
+      <div class="control">
+        <button class="button is-link is-light">Clear</button>
+      </div>
+    </div>
+
+ <//div> <!-- Frame Form Container Close -->
 
 </div> <!-- Bottom Close -->
 
