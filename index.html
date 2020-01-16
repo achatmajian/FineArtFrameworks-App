@@ -104,7 +104,7 @@
           <option value="NH">NH</option>
           <option value="NJ">NJ</option>
           <option value="NM">NM</option>
-          <option value="NY">NY</option>
+          <option value="NY" selected>NY</option>
           <option value="NC">NC</option>
           <option value="ND">ND</option>
           <option value="OH">OH</option>
@@ -136,7 +136,7 @@
   <div class="field">
     <label class="label">Email*</label>
     <div class="control">
-      <input class="input" type="email" placeholder="ed@fineartframeworks.com" required>
+      <input class="input" type="email" placeholder="ed@fineartframeworks.com" id="email-phone-size" required>
     </div>
   </div>
 
@@ -144,13 +144,13 @@
   <div class="field">
     <label class="label">Phone Number*</label>
     <div class="control">
-      <input class="input column" type="text" placeholder="718-392-7766" required>
+      <input class="input" type="text" placeholder="718-392-7766" id="email-phone-size" required>
     </div>
   </div>
 </div> <!-- Email Phone Parent Div Close-->
   
 <!-- Client Type -->
-  <div class="field">
+  <!-- <div class="field">
     <label class="label">Client Type*</label>
     <div class="control">
       <div class="select" required>
@@ -160,7 +160,23 @@
         </select>
       </div>
     </div>
+  </div> -->
+
+<!-- Client Type 2 -->
+<div class="field">
+  <label class="label">Client Type*</label>
+  <div class="control">
+    <label class="radio">
+      <input type="radio" name="client-type-answer" checked>
+      Wholesale
+    </label>
+    <label class="radio">
+      <input type="radio" name="client-type-answer">
+      Retail
+    </label>
   </div>
+</div>
+
 
 <!-- Buttons -->
   <!-- <div class="field is-grouped">
@@ -220,21 +236,30 @@
           </label>
           <label class="radio">
             <input type="radio" name="rush-answer">
-            1 week
+            1 Week
           </label>
           <label class="radio">
             <input type="radio" name="rush-answer">
-            2 Week
+            2 Weeks
           </label>
         </div>
       </div>
 
 
     <!-- Storage Location -->
-    <div class="field">
-      <label class="label">Storage Location*</label>
+    <!-- <div class="field">
+      <label class="label">Art Storage Location*</label>
       <div class="control">
         <input class="input column" type="text" placeholder="A-1" required>
+      </div>
+    </div> -->
+
+    <!-- Storage Location 2 -->
+    <div class="field">
+      <label class="label">Art Storage Location*</label>
+      <div class="control storage">
+        <input class="input" type="text" placeholder="A" id="storage-input" required>
+        <input class="input" type="number" placeholder="1" id="storage-input" required>
       </div>
     </div>
 
@@ -281,11 +306,11 @@
   <div class="field">
     <label class="label">Item Dimensions (Inches)</label>
     <div class="control">
-      <p>Height*</p>
+      <p>Art Height*</p>
       <input class="input" type="number" placeholder="0000" required>
-      <p>Width*</p>
+      <p>Art Width*</p>
       <input class="input" type="number" placeholder="0000" required>
-      <p>Depth</p>
+      <p>Art Depth</p>
       <input class="input" type="number" placeholder="0000">
     </div>
   </div>
@@ -484,10 +509,32 @@
 <!-- --------------------------------------------------------------- -->
 
   <!-- Notes -->
-<div class="notes box">
+<div class="notes-upload box">
   <h1>Notes</h1>
-  <textarea class="textarea" rows="22" placeholder="Enter special notes or instructions"></textarea>
-</div>
+  <br>
+    <textarea class="textarea" rows="11" placeholder="Enter special notes or instructions"></textarea>
+  <br>
+  <h1>Image Upload</h1>
+  <br>
+    <div class="field upload">
+      <div class="file is-boxed is-medium has-name">
+        <label class="file-label">
+          <input class="file-input" type="file" name="resume">
+          <span class="file-cta">
+            <span class="file-icon">
+              <i class="fas fa-upload"></i>
+            </span>
+            <span class="file-label">
+              Art Image
+            </span>
+          </span>
+          <span class="file-name">
+            Screen Shot 2020-01-16 at 15.54.25.png
+          </span>
+        </label>
+      </div>
+    </div>
+</div>   <!-- Notes-Upload Div Close-->
 
 </div><!-- Fitting and Notes Parent Div Close-->
 <hr>
