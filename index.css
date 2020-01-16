@@ -67,6 +67,23 @@ h2 {
     justify-content: center;
 }
 
+/* .grid-wrapper {
+    display: grid;
+    grid-template-columns: 50%;
+    grid-template-rows: 100%;
+} */
+
+.size-manu {
+    display: flex;
+    justify-content: center;
+
+}
+
+.fit-notes {
+    display: flex;
+    justify-content: center;
+}
+
 .frame-form{
     width: 1240px;
     background-color: lavender;
@@ -76,13 +93,32 @@ h2 {
 
 /* Frame Build Sections*/
 .sizing {
+    width: 500px;
+    /* background-color: lavender; */
+    padding: 30px;
+    margin: 20px;
     /* border: solid red; */
 }
 
 .manufacturing {
+    width: 500px;
+    /* background-color: lavender; */
+    padding: 30px;
+    margin: 20px;
     /* border: solid red; */
 }
 
 .fitting {
+    width: 500px;
+    /* background-color: lavender; */
+    padding: 30px;
+    margin: 20px;
     /* border: solid red; */
+}
+
+.notes {
+    width: 500px;
+    /* background-color: lavender; */
+    padding: 30px;
+    margin: 20px;
 }

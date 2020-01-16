@@ -176,14 +176,15 @@
 
 <div class="bottom">
 
- <!-- Frame Info Form -->
+ <!-- Frame Form -->
 
- <div class="frame-form form-container">
+ <div class="frame-form form-container grid-wrapper"> <!-- Frame Form Wrapper-->
   <h1>Frame Information</h1>
   <h2>Starred Fields are Required</h2>
   <br>
 
-  <div class="sizing">
+  <div class="size-manu"> <!-- Size and Manu Parent Div-->
+  <div class="sizing box"> <!-- Sizing Child Div-->
   <!-- Sizing -->
   <h1>Sizing</h1>
   <!-- Item Dimensions -->
@@ -205,6 +206,7 @@
       <div class="control">
         <div class="select">
           <select>
+            <option>N/A</option>
             <option>15ft-20ft</option>
             <option>20ft-25ft</option>
             <option>25ft+</option>
@@ -212,12 +214,11 @@
         </div>
       </div>
     </div>
-    <hr>   
-  </div><!-- Sizing Div Close -->
+  </div><!-- Sizing Child Div Close -->
 
   <!-- --------------------------------------------------------------- -->
 
-  <div class="manufacturing">
+  <div class="manufacturing box"> <!-- Manufacturing Child Div-->
   <!-- Manufacturing -->
   <h1>Manufacturing</h1>
   <!-- Wood -->
@@ -264,12 +265,13 @@
       </div>
     </div>
   </div>
-  <hr>
-</div><!-- Manufacturing Div Close -->
+</div><!-- Manufacturing Child Div Close -->
+</div> <!-- Size and Manu Parent Div Close-->
 
 <!-- --------------------------------------------------------------- -->
 
-  <div class="fitting">
+<div class="fit-notes"> <!-- Fitting and Notes Parent Div -->
+  <div class="fitting box"> <!-- Fitting Child Div-->
   <!-- Fitting -->
   <h1>Fitting</h1>
   <!-- Mat -->
@@ -378,17 +380,17 @@
       </div>
     </div>
   </div>   
-</div><!-- Fitting Div Close -->
+</div><!-- Fitting Child Div Close -->
 
 <!-- --------------------------------------------------------------- -->
 
   <!-- Notes -->
-<hr>
-<div class="notes">
+<div class="notes box">
   <h1>Notes</h1>
-  <textarea class="textarea" placeholder="Enter special notes or instructions"></textarea>
+  <textarea class="textarea" rows="22" placeholder="Enter special notes or instructions"></textarea>
 </div>
-  <hr>
+
+</div><!-- Fitting and Notes Parent Div Close-->
 
 
   <!-- Buttons -->
@@ -404,7 +406,7 @@
       </div>
     </div>
 
- </div> <!-- Item Info Form Container Close -->
+ <//div> <!-- Frame Form Container Close -->
 
 </div> <!-- Bottom Close -->
 
