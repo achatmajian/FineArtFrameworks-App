@@ -469,19 +469,19 @@
     <div class="control">
       <label class="radio">
         <input type="radio" name="strainer-answer" checked>
-        3/8in
+        3/8"
       </label>
       <label class="radio">
         <input type="radio" name="strainer-answer">
-        1/2in
+        1/2"
       </label>
       <label class="radio">
         <input type="radio" name="strainer-answer">
-        5/8in
+        5/8"
       </label>
       <label class="radio">
         <input type="radio" name="strainer-answer">
-        3/4in
+        3/4"
       </label>
       <label class="radio">
         <input type="radio" name="strainer-answer">
@@ -515,17 +515,12 @@
     </div>
   </div> -->
 
- 
-
   <!-- Mat 2 -->
-
-  <label class="checkbox">
-    <input type="checkbox" id="mat-checkbox" onChange="matActive">
-      <strong>Mat</strong>
-  </label>
-
-  <div class="field">
-    <label class="label"><!--Mat--></label>
+  <!-- <div class="field">
+    <label class="checkbox">
+      <input type="checkbox" id="mat-checkbox" onChange="matActive">
+        <strong>Mat</strong> (No Spacers)
+    </label>
     <div class="control">
       <label class="radio">
         <input type="radio" name="mat-answer" id="4ply" checked>
@@ -544,6 +539,91 @@
         Fabric
       </label>
     </div>
+
+    <div class="field">
+      <label class="label">Mat Color</label>
+      <div class="control">
+        <label class="radio">
+          <input type="radio" name="mat-color-answer" checked>
+          Polar White
+        </label>
+        <label class="radio">
+          <input type="radio" name="mat-color-answer" checked>
+          White
+        </label>
+        <label class="radio">
+          <input type="radio" name="mat-color-answer" checked>
+          Warm White
+        </label>
+        <label class="radio">
+          <input type="radio" name="mat-color-answer" checked>
+          Antique
+        </label>
+        <label class="radio">
+          <input type="radio" name="mat-color-answer" checked>
+          Cream
+        </label>
+        <label class="radio">
+          <input type="radio" name="mat-color-answer" checked>
+          Natural
+        </label>
+        <label class="radio">
+          <input type="radio" name="mat-color-answer" checked>
+          Black
+        </label>
+        <label class="radio">
+          <input type="radio" name="mat-color-answer" checked>
+          Other
+        </label>
+      </div>
+    </div>
+
+  </div> -->
+
+  <!-- Mat 3 -->
+
+  <div class="field">
+    <label class="checkbox">
+      <input type="checkbox" id="mat-checkbox" onChange="matActive">
+        <strong>Mat</strong> (No Spacers)
+    </label>
+    <div class="control">
+      <label class="radio">
+        <input type="radio" name="mat-answer" id="4ply" checked>
+        4 Ply
+      </label>
+      <label class="radio">
+        <input type="radio" name="mat-answer" id="8ply">
+        8 Ply
+      </label>
+      <label class="radio">
+        <input type="radio" name="mat-answer" id="12ply">
+        12 Ply
+      </label>
+      <label class="radio">
+        <input type="radio" name="mat-answer" id="fabric">
+        Fabric
+      </label>
+    </div>
+
+    <div class="field">
+        <label class="label"></label>
+        <div class="control">
+          <div class="select">
+            <select>
+              <option id="mat-color-answer">Polar White</option>
+              <option id="mat-color-answer">White</option>
+              <option id="mat-color-answer">Warm White</option>
+              <option id="mat-color-answer">Antique</option>
+              <option id="mat-color-answer">Cream</option>
+              <option id="mat-color-answer">Natural</option>
+              <option id="mat-color-answer">Black</option>
+              <option id="mat-color-answer">Other</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
   </div>
 
   <!-- Float -->
@@ -561,7 +641,7 @@
   </div>   -->
 
   <!-- Float 2 -->
-  <div class="field">
+  <!-- <div class="field">
     <label class="label">Float</label>
     <div class="control">
       <label class="radio">
@@ -577,7 +657,31 @@
         Silk
       </label>
     </div>
+  </div> -->
+
+  <!-- Float 3 -->
+
+  <div class="field">
+    <label class="checkbox">
+      <input type="checkbox" id="float-checkbox" onChange="">
+        <strong>Float</strong> (No Dry Mount)
+    </label>
+    <div class="control">
+      <label class="radio">
+        <input type="radio" name="float-answer" checked>
+        Rag
+      </label>
+      <label class="radio">
+        <input type="radio" name="float-answer">
+        Linen
+      </label>
+      <label class="radio">
+        <input type="radio" name="float-answer">
+        Silk
+      </label>
+    </div>
   </div>
+
     
   <!-- Flush -->
   <!-- <div class="field">
@@ -593,7 +697,7 @@
   </div>   -->
 
   <!-- Flush 2 -->
-  <div class="field">
+  <!-- <div class="field">
     <label class="label">Flush</label>
     <div class="control">
       <label class="radio">
@@ -601,10 +705,26 @@
         Yes
       </label>
     </div>
+  </div> -->
+
+  <!-- Flush 3 -->
+  <div class="field">
+    <label class="checkbox">
+      <input type="checkbox" id="flush-checkbox" onChange="">
+        <strong>Flush</strong>
+    </label>
+    <!-- <div class="control">
+      <label class="radio">
+        <input type="radio" name="flush-answer" id="4ply" checked>
+        Yes
+      </label>
+    </div> -->
   </div>
 
+  <hr>
+
   <!-- Spacers -->
-  <div class="field">
+  <!-- <div class="field">
     <label class="label">Spacers</label>
     <div class="control">
       <div class="select">
@@ -615,10 +735,28 @@
         </select>
       </div>
     </div>
+  </div>   -->
+
+  <!-- Spacers 2 -->
+  <div class="field">
+    <label class="checkbox">
+      <input type="checkbox" id="spacers-checkbox" onChange="">
+        <strong>Spacers</strong>
+    </label>
+    <div class="control">
+      <div class="select">
+        <select>
+          <option id="spacers-answer" default>Rag</option>
+          <option id="spacers-answer">Wood</option>
+          <option id="spacers-answer">Silk</option>
+          <option id="spacers-answer">Plastic</option>
+        </select>
+      </div>
+    </div>
   </div>  
 
   <!-- Drymount -->
-  <div class="field">
+  <!-- <div class="field">
     <label class="label">Drymount</label>
     <div class="control">
       <div class="select">
@@ -629,10 +767,29 @@
         </select>
       </div>
     </div>
+  </div>   -->
+
+  <!-- Drymount 2 -->
+  <div class="field">
+    <label class="checkbox">
+      <input type="checkbox" id="drymount-checkbox" onChange="">
+        <strong>Dry Mount</strong>
+    </label>
+    <div class="control">
+      <div class="select">
+        <select>
+          <option id="drymount-answer" default>Regular Foam</option>
+          <option id="drymount-answer">Acid Free Foam</option>
+          <option id="drymount-answer">Rag</option>
+          <option id="drymount-answer">Cintra</option>
+          <option id="drymount-answer">D-Bond</option>
+        </select>
+      </div>
+    </div>
   </div>  
 
   <!-- Glazing -->
-  <div class="field">
+  <!-- <div class="field">
     <label class="label">Glazing</label>
     <div class="control">
       <div class="select">
@@ -649,24 +806,75 @@
         </select>
       </div>
     </div>
+  </div>   -->
+
+  <!-- Glazing 2 -->
+  <div class="field">
+    <label class="checkbox">
+      <input type="checkbox" id="glazing-checkbox" onChange="">
+        <strong>Glazing</strong>
+    </label>
+
+    <div class="control">
+      <p>Glass</p>
+      <div class="select">
+        <select>
+          <option id="glazing-answer" default>Regular Glass (Max 40" x 60")</option>
+          <option id="glazing-answer">Museum/Art Glass (Max 48" x 64")</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="control">
+      <p>Plexiglass</p>
+      <div class="select">
+        <select>
+          <option id="glazing-answer" default>Regular Plexiglass</option>
+          <option id="glazing-answer">UV Plexiglass </option>
+          <option id="glazing-answer">Museum Plexiglass (Up To 40" x 60")</option>
+          <option id="glazing-answer">Museum Plexiglass (Up To 48" x 96")</option>
+          <option id="glazing-answer">Museum Plexiglass (Up To 72" x 96")</option>
+          <option id="glazing-answer">Museum Plexiglass (Up To 72" x 120")</option>
+        </select>
+      </div>
+    </div>
+
+
   </div>  
 
   <!-- Extras -->
-  <div class="field">
+  <!-- <div class="field">
     <label class="label">Extras</label>
     <div class="control">
       <div class="select">
         <select>
-          <option>Strainer</option>
-          <option>Painted Strainer</option>
           <option>Strech Canvas</option>
           <option>Raise Mount</option>
           <option>De-fit/Re-fit</option>
-          <option>Re-Finish Frame (De-fit/Re-fit)</option>
+          <option>Re-Finish Frame</option>
         </select>
       </div>
     </div>
-  </div>   
+  </div>    -->
+
+  <!-- Extras 2 -->
+  <div class="field">
+    <label class="checkbox">
+      <input type="checkbox" id="extras-checkbox" onChange="">
+        <strong>Extras</strong>
+    </label>
+    <div class="control">
+      <div class="select">
+        <select>
+          <option id="extras-answer" default>Stretch Canvas</option>
+          <option id="extras-answer">Raise Mount</option>
+          <option id="extras-answer">De-fit/Re-fit</option>
+          <option id="extras-answer">Re-finish Frame</option>
+        </select>
+      </div>
+    </div>
+  </div>  
+
 </div><!-- Fitting Child Div Close -->
 
 <!-- --------------------------------------------------------------- -->
@@ -675,10 +883,11 @@
 <div class="notes-upload box">
   <h1>Notes</h1>
   <br>
-    <textarea class="textarea has-fixed-size" rows="6" placeholder="Enter fitter notes"></textarea>
+    <textarea class="textarea has-fixed-size" rows="6" placeholder="Enter woodworker notes"></textarea>
   <br>
-  <textarea class="textarea has-fixed-size" rows="6" placeholder="Enter woodworker notes"></textarea>
+  <textarea class="textarea has-fixed-size" rows="6" placeholder="Enter fitter notes"></textarea>
   <br>
+  <!-- Image Upload -->
   <h1>Image Upload</h1>
   <br>
     <div class="field upload">
@@ -694,14 +903,14 @@
             </span>
           </span>
           <span class="file-name">
-            Screen Shot 2020-01-16 at 15.54.25.png
+            <!-- Screen Shot 2020-01-16 at 15.54.25.png -->
           </span>
         </label>
       </div>
-    </div>
-</div>   <!-- Notes-Upload Div Close-->
+    </div> <!-- Image Upload Close -->
+</div>   <!-- Notes-Upload Close-->
 
-</div><!-- Fitting and Notes Parent Div Close-->
+</div><!-- Fitting and Notes Parent Close-->
 <hr>
 
 
@@ -713,14 +922,15 @@
       <div class="control">
         <button class="button is-link is-light" id="add-frame-button">Add Another Frame</button>
       </div>
+      <div class="control">
+        <button class="button is-link is-light" id="duplicate-frame-button">Duplicate Frame</button>
+      </div>
       <!-- <div class="control">
         <button class="button is-link is-light">Clear</button>
       </div> -->
     </div>
 
  </div> <!-- Build Frame Form Container Close -->
-
-
 
 </div> <!-- Bottom Close -->
 
