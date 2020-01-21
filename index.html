@@ -456,11 +456,73 @@
         <input type="radio" name="finish-answer">
         Natural
       </label>
-      <label class="radio">
-        <input type="radio" name="finish-answer">
-        Wax
-      </label>
     </div>
+
+    <div class="field">
+      <label class="label"></label>
+      <div class="control finish-options">
+        <div class="select">
+          <select>
+            <option id="finish-paint-answer" disabled>Paints</option>
+            <option id="finish-paint-answer">Bright White</option>
+            <option id="finish-paint-answer">Matting White</option>
+            <option id="finish-paint-answer">Antique</option>
+            <option id="finish-paint-answer">Other</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label"></label>
+      <div class="control finish-options">
+        <div class="select">
+          <select>
+            <option id="finish-stain-answer" disabled>Stains</option>
+            
+            <option id="finish-stain-answer">Roe White Wash</option>
+            <option id="finish-stain-answer">Matting Wash</option>
+            <option id="finish-stain-answer">New White Wash</option>
+            <option id="finish-stain-answer">Andrea White Laq</option>
+
+            <option id="finish-stain-answer">Black Stain Flat</option>
+            <option id="finish-stain-answer">Black Stain Gloss</option>
+
+            <option id="finish-stain-answer">Dark Walnut</option>
+            <option id="finish-stain-answer">Roe Walnut</option>
+            <option id="finish-stain-answer">Walnut #2</option>
+            <option id="finish-stain-answer">Black Cherry</option>
+
+            <option id="finish-stain-answer">Marks Brown</option>
+            <option id="finish-stain-answer">Chelsea Brown</option>
+
+            <option id="finish-stain-answer">Graphite</option>
+            <option id="finish-stain-answer">ZLB</option>
+
+            <option id="finish-stain-answer">Other</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label"></label>
+      <div class="control finish-options">
+        <div class="select">
+          <select>
+            <option id="finish-natural-answer" disabled>Natural</option>
+            
+            <option id="finish-natural-answer">Natural Flat</option>
+            <option id="finish-natural-answer">Natural Gloss</option>
+            <option id="finish-natural-answer">Bleached</option>
+            <option id="finish-natural-answer">Oil</option>
+            <option id="finish-natural-answer">Wax</option>
+            <option id="finish-natural-answer">Other</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
   </div>
 
   <!-- Strainer -->
@@ -486,6 +548,20 @@
       <label class="radio">
         <input type="radio" name="strainer-answer">
         No Strainer
+      </label>
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label">Paint Strainer?</label>
+    <div class="control">
+      <label class="radio">
+        <input type="radio" name="strainer-paint-answer" checked>
+        No 
+      </label>
+      <label class="radio">
+        <input type="radio" name="strainer-paint-answer">
+        Yes
       </label>
     </div>
   </div>
@@ -820,7 +896,7 @@
       <div class="select">
         <select>
           <option id="glazing-answer" default>Regular Glass (Max 40" x 60")</option>
-          <option id="glazing-answer">Museum/Art Glass (Max 48" x 64")</option>
+          <option id="glazing-answer">Museum Glass (Max 48" x 64")</option>
         </select>
       </div>
     </div>
@@ -858,7 +934,7 @@
   </div>    -->
 
   <!-- Extras 2 -->
-  <div class="field">
+  <!-- <div class="field">
     <label class="checkbox">
       <input type="checkbox" id="extras-checkbox" onChange="">
         <strong>Extras</strong>
@@ -873,7 +949,22 @@
         </select>
       </div>
     </div>
-  </div>  
+  </div>   -->
+
+    <!-- Extras 3 -->
+    <div class="field">
+      <label class="checkbox">
+        <input type="checkbox" id="extras-checkbox" onChange="">
+          <strong>Extras</strong><br>
+          <input type="checkbox" id="extras-answer">Strech Canvas</input>
+          <input type="checkbox" id="extras-answer">Raise Mount</input>
+          <input type="checkbox" id="extras-answer">De-fit/Re-fit</input>
+          <input type="checkbox" id="extras-answer">Re-finish</input>
+      </label>
+     
+
+  
+    </div>  
 
 </div><!-- Fitting Child Div Close -->
 
@@ -914,7 +1005,7 @@
 <hr>
 
 
-  <!-- Buttons -->
+    <!-- Buttons -->
     <div class="field is-grouped">
       <div class="control">
         <button class="button is-link">Submit Order</button>
@@ -929,6 +1020,23 @@
         <button class="button is-link is-light">Clear</button>
       </div> -->
     </div>
+
+    <!-- Pagination -->
+    <!-- <nav class="pagination is-small" role="navigation" aria-label="pagination">
+      <a class="pagination-previous" title="This is the first page" disabled>Previous Frame</a>
+      <a class="pagination-next">Next Frame</a>
+      <ul class="pagination-list">
+        <li>
+          <a class="pagination-link is-current" aria-label="Page 1" aria-current="page">1</a>
+        </li>
+        <li>
+          <a class="pagination-link" aria-label="Goto page 2">2</a>
+        </li>
+        <li>
+          <a class="pagination-link" aria-label="Goto page 3">3</a>
+        </li>
+      </ul>
+    </nav> -->
 
  </div> <!-- Build Frame Form Container Close -->
 
