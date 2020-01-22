@@ -481,7 +481,8 @@
         <label class="label"></label>
         <div class="control">
           <div class="select">
-            <select>
+            <select class="mat-colors" disabled>
+              <option id="mat-color-answer" disabled>Mat Colors</option>
               <option id="mat-color-answer">Polar White</option>
               <option id="mat-color-answer">White</option>
               <option id="mat-color-answer">Warm White</option>
@@ -501,20 +502,20 @@
 
   <div class="field">
     <label class="checkbox">
-      <input type="checkbox" id="float-checkbox" onChange="">
+      <input type="checkbox" id="float-checkbox">
         <strong>Float</strong> (No Dry Mount)
     </label>
     <div class="control">
       <label class="radio">
-        <input type="radio" name="float-answer" checked>
+        <input type="radio" name="float-answer" class="float-answer" disabled>
         Rag
       </label>
       <label class="radio">
-        <input type="radio" name="float-answer">
+        <input type="radio" name="float-answer" class="float-answer" disabled>
         Linen
       </label>
       <label class="radio">
-        <input type="radio" name="float-answer">
+        <input type="radio" name="float-answer" class="float-answer" disabled>
         Silk
       </label>
     </div>
@@ -523,7 +524,7 @@
   <!-- Flush -->
   <div class="field">
     <label class="checkbox">
-      <input type="checkbox" id="flush-checkbox" onChange="">
+      <input type="checkbox" id="flush-checkbox">
         <strong>Flush</strong>
     </label>
     <!-- <div class="control">
@@ -539,12 +540,12 @@
   <!-- Spacers -->
   <div class="field">
     <label class="checkbox">
-      <input type="checkbox" id="spacers-checkbox" onChange="">
+      <input type="checkbox" id="spacers-checkbox">
         <strong>Spacers</strong>
     </label>
     <div class="control">
       <div class="select">
-        <select>
+        <select class="spacer-answers">
           <option id="spacers-answer" default>Rag</option>
           <option id="spacers-answer">Wood</option>
           <option id="spacers-answer">Silk</option>
@@ -554,15 +555,15 @@
     </div>
   </div>  
 
-  <!-- Drymount -->
+  <!-- Dry Mount -->
   <div class="field">
     <label class="checkbox">
-      <input type="checkbox" id="drymount-checkbox" onChange="">
+      <input type="checkbox" id="drymount-checkbox">
         <strong>Dry Mount</strong>
     </label>
     <div class="control">
       <div class="select">
-        <select>
+        <select class="drymount-answers">
           <option id="drymount-answer" default>Regular Foam</option>
           <option id="drymount-answer">Acid Free Foam</option>
           <option id="drymount-answer">Rag</option>
