@@ -1,12 +1,15 @@
 // Append new "Build Frame" form box below the previous one
 
-// $(document).ready(function(){
-//     $("#add-frame-button").click(function(){
-//         // $("#bottom").append("#build-frame"); 
-//         $("#build-frame").clone().insertAfter("div.frame-form:last");
-//     });
-// });
+$(document).ready(function(){
+    $("#add-frame-button").click(function(){
+        // $("#bottom").append("#build-frame"); 
+        $("#build-frame").clone().insertAfter(".bottom");
+    });
+});
 
+// =================================================
+
+// Fitting Checkboxes
 
 // Mat checkbox activation
 $(document).ready(function() {
@@ -70,11 +73,53 @@ $(document).ready(function() {
       $(".mat-colors").prop("disabled", true);
 
     } else {
-        $("#float-checkbox").prop("disabled", false);
-        $(".float-answer").prop("disabled", false);
-        $("#mat-checkbox").prop("disabled", false);
-        $(".mat-answer").prop("disabled", false);
-        $(".mat-colors").prop("disabled", false);
+          $("#float-checkbox").prop("disabled", false);
+          $(".float-answer").prop("disabled", false);
+          $("#mat-checkbox").prop("disabled", false);
+          $(".mat-answer").prop("disabled", false);
+          $(".mat-colors").prop("disabled", false);
     }
   });
 });
+
+// =================================================
+
+// Finish Dropdown
+
+// Paint Options
+$(document).ready(function() {
+  $("#finish-painted").click(function(){
+    if ($(this).is(':checked')) 
+    {
+      $(".finish-paint-answer").show();
+      $(".finish-stain-answer").hide();
+      $(".finish-natural-answer").hide();
+    }
+  });
+});
+
+
+// Stain Options
+$(document).ready(function() {
+  $("#finish-stained").click(function(){
+    if ($(this).is(':checked')) 
+    {
+      $(".finish-paint-answer").hide();
+      $(".finish-stain-answer").show();
+      $(".finish-natural-answer").hide();
+    }
+  });
+});
+
+// Natural Options
+$(document).ready(function() {
+  $("#finish-natural").click(function(){
+    if ($(this).is(':checked')) 
+    {
+      $(".finish-paint-answer").hide();
+      $(".finish-stain-answer").hide();
+      $(".finish-natural-answer").show();
+    }
+  });
+});
+
