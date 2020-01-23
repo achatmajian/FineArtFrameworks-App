@@ -73,6 +73,7 @@ $(document).ready(function() {
       $(".mat-colors").prop("disabled", true);
 
     } else {
+
           $("#float-checkbox").prop("disabled", false);
           $(".float-answer").prop("disabled", false);
           $("#mat-checkbox").prop("disabled", false);
@@ -122,4 +123,3 @@ $(document).ready(function() {
     }
   });
 });
-
