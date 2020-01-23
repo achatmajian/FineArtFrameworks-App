@@ -7,7 +7,6 @@
 //     });
 // });
 
-
 // Mat checkbox activation
 $(document).ready(function() {
   $("#mat-checkbox").click(function(){
@@ -75,6 +74,7 @@ $(document).ready(function() {
         $("#mat-checkbox").prop("disabled", false);
         $(".mat-answer").prop("disabled", false);
         $(".mat-colors").prop("disabled", false);
+
     }
   });
 });
