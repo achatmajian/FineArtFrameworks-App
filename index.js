@@ -32,7 +32,6 @@ $(document).ready(function() {
   });
 });
 
-
 // Float checkbox activation
 $(document).ready(function() {
   $("#float-checkbox").click(function(){
