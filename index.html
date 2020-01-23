@@ -13,11 +13,44 @@
     <script src="/index.js"></script>
   </head>
   <body>
+    <!-- Navigation -->
+
+    <nav class="navbar navbar-height: 70px;" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="/index.html">
+          <h1>Fine Art Frameworks</h1>
+        </a>
+
+        <!-- <a class="navbar-item" href="/index.html">
+          <img src="/Assets/FAFW_logo-black_500w.png" height="80px">
+        </a> -->
+    
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+    
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="buttons">
+              <a class="button">
+                <strong>Create Order</strong>
+              </a>
+              <a class="button">
+                View Orders
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
 
     <!-- Header -->
   <section class="section">
     <div class="title-container container">
-      <h1 class="title">Fine Art Frameworks App</h1>
+      <h1 class="title">Create Order</h1>
     </div>
   </section>
 
@@ -135,7 +168,7 @@
   <label class="label">Client Type*</label>
   <div class="control">
     <label class="radio">
-      <input type="radio" name="client-type-answer" checked>
+      <input type="radio" name="client-type-answer" required>
       Wholesale
     </label>
     <label class="radio">
@@ -177,10 +210,10 @@
   
     <!-- Rush Job? -->
       <div class="field">
-        <label class="label">Rush Job?</label>
+        <label class="label">Rush Job?*</label>
         <div class="control">
           <label class="radio">
-            <input type="radio" name="rush-answer" checked>
+            <input type="radio" name="rush-answer" required>
             No
           </label>
           <label class="radio">
@@ -240,10 +273,10 @@
   
   <!-- Oversize? -->
     <div class="field">
-      <label class="label">Oversize?</label>
+      <label class="label">Oversize?*</label>
       <div class="control">
         <label class="radio">
-          <input type="radio" name="oversize-answer" checked>
+          <input type="radio" name="oversize-answer" required>
           No
         </label>
         <label class="radio">
@@ -271,10 +304,10 @@
 
     <!-- Wood -->
     <div class="field">
-      <label class="label">Wood</label>
+      <label class="label">Material*</label>
       <div class="control">
         <label class="radio">
-          <input type="radio" name="material-answer" checked>
+          <input type="radio" name="material-answer" required>
           Maple
         </label>
         <label class="radio">
@@ -298,7 +331,7 @@
 
   <!-- Metal -->
   <div class="field">
-    <label class="label">Metal</label>
+    <label class="label"></label>
     <div class="control">
       <label class="radio">
         <input type="radio" name="material-answer">
@@ -317,82 +350,57 @@
 
   <!-- Finish -->
   <div class="field">
-    <label class="label">Finish</label>
+    <label class="label">Finish*</label>
     <div class="control">
       <label class="radio">
-        <input type="radio" name="finish-answer" checked>
+        <input type="radio" name="finish-answer" id="finish-painted" required>
         Painted
       </label>
       <label class="radio">
-        <input type="radio" name="finish-answer">
+        <input type="radio" name="finish-answer" id="finish-stained">
         Stained
       </label>
       <label class="radio">
-        <input type="radio" name="finish-answer">
+        <input type="radio" name="finish-answer" id="finish-natural">
         Natural
       </label>
     </div>
 
-    <div class="field">
+    <div class="field finish-paint-options">
       <label class="label"></label>
-      <div class="control finish-options">
+      <div class="control finish-dropdown">
         <div class="select">
-          <select>
-            <option id="finish-paint-answer" disabled>Paints</option>
-            <option id="finish-paint-answer">Bright White</option>
-            <option id="finish-paint-answer">Matting White</option>
-            <option id="finish-paint-answer">Antique</option>
-            <option id="finish-paint-answer">Other</option>
-          </select>
-        </div>
-      </div>
-    </div>
+          <select required>
+            <option selected="true" disabled="disabled">Choose Finish</option>    
+            <option class="finish-paint-answer" disabled>Paint Options</option>
+            <option class="finish-paint-answer">Bright White</option>
+            <option class="finish-paint-answer">Matting White</option>
+            <option class="finish-paint-answer">Antique</option>
+            <option class="finish-paint-answer">Other Paint</option>
+            <option class="finish-stain-answer" disabled>Stain Options</option>
+            <option class="finish-stain-answer">Roe White Wash</option>
+            <option class="finish-stain-answer">Matting Wash</option>
+            <option class="finish-stain-answer">New White Wash</option>
+            <option class="finish-stain-answer">Andrea White Laq</option>
+            <option class="finish-stain-answer">Black Stain Flat</option>
+            <option class="finish-stain-answer">Black Stain Gloss</option>
+            <option class="finish-stain-answer">Dark Walnut</option>
+            <option class="finish-stain-answer">Roe Walnut</option>
+            <option class="finish-stain-answer">Walnut #2</option>
+            <option class="finish-stain-answer">Black Cherry</option>
+            <option class="finish-stain-answer">Marks Brown</option>
+            <option class="finish-stain-answer">Chelsea Brown</option>
+            <option class="finish-stain-answer">Graphite</option>
+            <option class="finish-stain-answer">ZLB</option>
+            <option class="finish-stain-answer">Other Stain</option>
+            <option class="finish-natural-answer" disabled>Natural Options</option>
+            <option class="finish-natural-answer">Natural Flat</option>
+            <option class="finish-natural-answer">Natural Gloss</option>
+            <option class="finish-natural-answer">Bleached</option>
+            <option class="finish-natural-answer">Oil</option>
+            <option class="finish-natural-answer">Wax</option>
+            <option class="finish-natural-answer">Other Natural</option>
 
-    <div class="field">
-      <label class="label"></label>
-      <div class="control finish-options">
-        <div class="select">
-          <select>
-            <option id="finish-stain-answer" disabled>Stains</option>
-            
-            <option id="finish-stain-answer">Roe White Wash</option>
-            <option id="finish-stain-answer">Matting Wash</option>
-            <option id="finish-stain-answer">New White Wash</option>
-            <option id="finish-stain-answer">Andrea White Laq</option>
-
-            <option id="finish-stain-answer">Black Stain Flat</option>
-            <option id="finish-stain-answer">Black Stain Gloss</option>
-
-            <option id="finish-stain-answer">Dark Walnut</option>
-            <option id="finish-stain-answer">Roe Walnut</option>
-            <option id="finish-stain-answer">Walnut #2</option>
-            <option id="finish-stain-answer">Black Cherry</option>
-
-            <option id="finish-stain-answer">Marks Brown</option>
-            <option id="finish-stain-answer">Chelsea Brown</option>
-
-            <option id="finish-stain-answer">Graphite</option>
-            <option id="finish-stain-answer">ZLB</option>
-
-            <option id="finish-stain-answer">Other</option>
-          </select>
-        </div>
-      </div>
-    </div>
-
-    <div class="field">
-      <label class="label"></label>
-      <div class="control finish-options">
-        <div class="select">
-          <select>
-            <option id="finish-natural-answer" disabled>Natural</option>
-            
-            <option id="finish-natural-answer">Natural Flat</option>
-            <option id="finish-natural-answer">Natural Gloss</option>
-            <option id="finish-natural-answer">Bleached</option>
-            <option id="finish-natural-answer">Oil</option>
-            <option id="finish-natural-answer">Wax</option>
-            <option id="finish-natural-answer">Other</option>
           </select>
         </div>
       </div>
@@ -402,10 +410,10 @@
 
   <!-- Strainer -->
   <div class="field">
-    <label class="label">Strainer</label>
+    <label class="label">Strainer*</label>
     <div class="control">
       <label class="radio">
-        <input type="radio" name="strainer-answer" checked>
+        <input type="radio" name="strainer-answer" required>
         3/8"
       </label>
       <label class="radio">
@@ -428,10 +436,12 @@
   </div>
 
   <div class="field">
-    <label class="label">Paint Strainer?</label>
+
+    <label class="label">Paint Strainer?*</label>
     <div class="control">
       <label class="radio">
-        <input type="radio" name="strainer-paint-answer" checked>
+        <input type="radio" name="strainer-paint-answer" required>
+
         No 
       </label>
       <label class="radio">
@@ -450,6 +460,7 @@
   <div class="fitting box"> <!-- Fitting Child Div-->
   <!-- Fitting -->
   <h1>Fitting</h1>
+  <h2>Must choose either Mat, Float, or Flush</h2>
   <br>
   <!-- Mat -->
 
