@@ -6,18 +6,51 @@
     <title>Fine Art Frameworks App</title>
     <!-- CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
-    <link rel="stylesheet" href="/index.css">
+    <link rel="stylesheet" href="/Public/CSS/create-order.css">
     <!-- JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="/index.js"></script>
+    <script src="/Public/JS/create-order.js"></script>
   </head>
   <body>
+    <!-- Navigation -->
+
+    <nav class="navbar navbar-height: 70px;" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="/Public/HTML/create-order.html">
+          <h1>Fine Art Frameworks</h1>
+        </a>
+
+        <!-- <a class="navbar-item" href="/index.html">
+          <img src="/Assets/FAFW_logo-black_500w.png" height="80px">
+        </a> -->
+    
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+    
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="buttons">
+              <a class="button">
+                <strong>Create Order</strong>
+              </a>
+              <a class="button">
+                View Orders
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
 
     <!-- Header -->
   <section class="section">
     <div class="title-container container">
-      <h1 class="title">Fine Art Frameworks App</h1>
+      <h1 class="title">Create Order</h1>
     </div>
   </section>
 
@@ -43,27 +76,8 @@
       <input class="input" type="text" placeholder="Edward Messikian" required>
     </div>
   </div>
-  
+
   <!-- Address -->
-  <!-- <div class="field">
-    <label class="label">Address*</label>
-    <div class="control">
-      <input class="input column" type="text" placeholder="10-47 48th Ave, Long Island City, NY 11101" required>
-    </div>
-  </div> -->
-
-  <!-- Address 2 -->
-  <!-- <div class="field">
-    <label class="label">Address*</label>
-    <div class="control address">
-      <input class="input" type="text" placeholder="10-47 48th Ave" id="address-input" required>
-      <input class="input" type="text" placeholder="Long Island City" id="address-input" required>
-      <input class="input" type="text" placeholder="New York" id="address-input" required>
-      <input class="input" type="text" placeholder="11101" id="address-input" required>
-    </div>
-  </div> -->
-
-  <!-- Address 3 -->
   <div class="field">
     <label class="label">Address*</label>
     <div class="control address">
@@ -148,26 +162,13 @@
     </div>
   </div>
 </div> <!-- Email Phone Parent Div Close-->
-  
-<!-- Client Type -->
-  <!-- <div class="field">
-    <label class="label">Client Type*</label>
-    <div class="control">
-      <div class="select" required>
-        <select>
-          <option>Wholesale</option>
-          <option>Retail</option>
-        </select>
-      </div>
-    </div>
-  </div> -->
 
-<!-- Client Type 2 -->
+<!-- Client Type -->
 <div class="field">
   <label class="label">Client Type*</label>
   <div class="control">
     <label class="radio">
-      <input type="radio" name="client-type-answer" checked>
+      <input type="radio" name="client-type-answer" required>
       Wholesale
     </label>
     <label class="radio">
@@ -176,17 +177,6 @@
     </label>
   </div>
 </div>
-
-
-<!-- Buttons -->
-  <!-- <div class="field is-grouped">
-    <div class="control">
-      <button class="button is-link">Save</button>
-    </div>
-    <div class="control">
-      <button class="button is-link is-light">Clear</button>
-    </div>
-  </div> -->
 
  </div> <!-- Client Info Form Container Close -->
 
@@ -201,22 +191,6 @@
   <h1>Order Information</h1>
   <h2>Starred Fields are Required</h2>
   <br>
-
-    <!-- Order ID Number -->
-    <!-- <div class="field">
-      <label class="label">Order ID Number*</label>
-      <div class="control">
-        <input class="input" type="number" placeholder="0000" required>
-      </div>
-    </div> -->
-  
-    <!-- Date Received -->
-    <!-- <div class="field">
-      <label class="label">Date Received*</label>
-      <div class="control">
-        <input class="input" type="date" required>
-      </div>
-    </div> -->
 
     <!--Frame Quantity -->
     <div class="field">
@@ -236,10 +210,10 @@
   
     <!-- Rush Job? -->
       <div class="field">
-        <label class="label">Rush Job?</label>
+        <label class="label">Rush Job?*</label>
         <div class="control">
           <label class="radio">
-            <input type="radio" name="rush-answer" checked>
+            <input type="radio" name="rush-answer" required>
             No
           </label>
           <label class="radio">
@@ -253,16 +227,7 @@
         </div>
       </div>
 
-
     <!-- Storage Location -->
-    <!-- <div class="field">
-      <label class="label">Art Storage Location*</label>
-      <div class="control">
-        <input class="input column" type="text" placeholder="A-1" required>
-      </div>
-    </div> -->
-
-    <!-- Storage Location 2 -->
     <div class="field">
       <label class="label">Art Storage Location*</label>
       <div class="control storage">
@@ -270,17 +235,6 @@
         <input class="input" type="number" placeholder="1" id="storage-input" required>
       </div>
     </div>
-
-
-<!-- Buttons -->
-  <!-- <div class="field is-grouped">
-    <div class="control">
-      <button class="button is-link">Save</button>
-    </div>
-    <div class="control">
-      <button class="button is-link is-light">Clear</button>
-    </div>
-  </div> -->
 
  </div> <!-- Order Info Form Container Close -->
 
@@ -319,10 +273,10 @@
   
   <!-- Oversize? -->
     <div class="field">
-      <label class="label">Oversize?</label>
+      <label class="label">Oversize?*</label>
       <div class="control">
         <label class="radio">
-          <input type="radio" name="oversize-answer" checked>
+          <input type="radio" name="oversize-answer" required>
           No
         </label>
         <label class="radio">
@@ -347,28 +301,13 @@
   <!-- Manufacturing -->
   <h1>Manufacturing</h1>
   <br>
-  <!-- Wood -->
-  <!-- <div class="field">
-    <label class="label">Wood</label>
-    <div class="control">
-      <div class="select">
-        <select>
-          <option>Maple</option>
-          <option>Walnut</option>
-          <option>Ash</option>
-          <option>Cherry</option>
-          <option>White Oak</option>
-        </select>
-      </div>
-    </div>
-  </div> -->
 
-    <!-- Wood 2 -->
+    <!-- Wood -->
     <div class="field">
-      <label class="label">Wood</label>
+      <label class="label">Material*</label>
       <div class="control">
         <label class="radio">
-          <input type="radio" name="material-answer" checked>
+          <input type="radio" name="material-answer" required>
           Maple
         </label>
         <label class="radio">
@@ -390,25 +329,9 @@
       </div>
     </div>
 
-
-
   <!-- Metal -->
-  <!-- <div class="field">
-    <label class="label">Metal</label>
-    <div class="control">
-      <div class="select">
-        <select>
-          <option>Aluminum Cut & Join</option>
-          <option>Aluminum Welded</option>
-          <option>Steel Welded</option>
-        </select>
-      </div>
-    </div>
-  </div>   -->
-
-  <!-- Metal 2 -->
   <div class="field">
-    <label class="label">Metal</label>
+    <label class="label"></label>
     <div class="control">
       <label class="radio">
         <input type="radio" name="material-answer">
@@ -424,68 +347,103 @@
       </label>
     </div>
   </div>
-    
-  <!-- Finish -->
-  <!-- <div class="field">
-    <label class="label">Finish</label>
-    <div class="control">
-      <div class="select">
-        <select>
-          <option>Painted</option>
-          <option>Stained</option>
-          <option>Natural</option>
-          <option>Wax</option>
-        </select>
-      </div>
-    </div>
-  </div> -->
 
-  <!-- Finish 2 -->
+  <!-- Finish -->
   <div class="field">
-    <label class="label">Finish</label>
+    <label class="label">Finish*</label>
     <div class="control">
       <label class="radio">
-        <input type="radio" name="finish-answer" checked>
+        <input type="radio" name="finish-answer" id="finish-painted" required>
         Painted
       </label>
       <label class="radio">
-        <input type="radio" name="finish-answer">
+        <input type="radio" name="finish-answer" id="finish-stained">
         Stained
       </label>
       <label class="radio">
-        <input type="radio" name="finish-answer">
+        <input type="radio" name="finish-answer" id="finish-natural">
         Natural
       </label>
-      <label class="radio">
-        <input type="radio" name="finish-answer">
-        Wax
-      </label>
     </div>
+
+    <div class="field finish-paint-options">
+      <label class="label"></label>
+      <div class="control finish-dropdown">
+        <div class="select">
+          <select required>
+            <option selected="true" disabled="disabled">Choose Finish</option>    
+            <option class="finish-paint-answer" disabled>Paint Options</option>
+            <option class="finish-paint-answer">Bright White</option>
+            <option class="finish-paint-answer">Matting White</option>
+            <option class="finish-paint-answer">Antique</option>
+            <option class="finish-paint-answer">Other Paint</option>
+            <option class="finish-stain-answer" disabled>Stain Options</option>
+            <option class="finish-stain-answer">Roe White Wash</option>
+            <option class="finish-stain-answer">Matting Wash</option>
+            <option class="finish-stain-answer">New White Wash</option>
+            <option class="finish-stain-answer">Andrea White Laq</option>
+            <option class="finish-stain-answer">Black Stain Flat</option>
+            <option class="finish-stain-answer">Black Stain Gloss</option>
+            <option class="finish-stain-answer">Dark Walnut</option>
+            <option class="finish-stain-answer">Roe Walnut</option>
+            <option class="finish-stain-answer">Walnut #2</option>
+            <option class="finish-stain-answer">Black Cherry</option>
+            <option class="finish-stain-answer">Marks Brown</option>
+            <option class="finish-stain-answer">Chelsea Brown</option>
+            <option class="finish-stain-answer">Graphite</option>
+            <option class="finish-stain-answer">ZLB</option>
+            <option class="finish-stain-answer">Other Stain</option>
+            <option class="finish-natural-answer" disabled>Natural Options</option>
+            <option class="finish-natural-answer">Natural Flat</option>
+            <option class="finish-natural-answer">Natural Gloss</option>
+            <option class="finish-natural-answer">Bleached</option>
+            <option class="finish-natural-answer">Oil</option>
+            <option class="finish-natural-answer">Wax</option>
+            <option class="finish-natural-answer">Other Natural</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
   </div>
 
   <!-- Strainer -->
   <div class="field">
-    <label class="label">Strainer</label>
+    <label class="label">Strainer*</label>
     <div class="control">
       <label class="radio">
-        <input type="radio" name="strainer-answer" checked>
-        3/8in
+        <input type="radio" name="strainer-answer" required>
+        3/8"
       </label>
       <label class="radio">
         <input type="radio" name="strainer-answer">
-        1/2in
+        1/2"
       </label>
       <label class="radio">
         <input type="radio" name="strainer-answer">
-        5/8in
+        5/8"
       </label>
       <label class="radio">
         <input type="radio" name="strainer-answer">
-        3/4in
+        3/4"
       </label>
       <label class="radio">
         <input type="radio" name="strainer-answer">
         No Strainer
+      </label>
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label">Paint Strainer?*</label>
+    <div class="control">
+      <label class="radio">
+        <input type="radio" name="strainer-paint-answer" required>
+        No 
+      </label>
+      <label class="radio">
+        <input type="radio" name="strainer-paint-answer">
+        Yes
       </label>
     </div>
   </div>
@@ -499,133 +457,126 @@
   <div class="fitting box"> <!-- Fitting Child Div-->
   <!-- Fitting -->
   <h1>Fitting</h1>
+  <h2>Must choose either Mat, Float, or Flush</h2>
   <br>
   <!-- Mat -->
-  <!-- <div class="field">
-    <label class="label">Mat</label>
-    <div class="control">
-      <div class="select">
-        <select>
-          <option>4 Ply</option>
-          <option>8 Ply</option>
-          <option>12 Ply</option>
-          <option>Fabric</option>
-        </select>
-      </div>
-    </div>
-  </div> -->
-
- 
-
-  <!-- Mat 2 -->
-
-  <label class="checkbox">
-    <input type="checkbox" id="mat-checkbox" onChange="matActive">
-      <strong>Mat</strong>
-  </label>
 
   <div class="field">
-    <label class="label"><!--Mat--></label>
+    <label class="checkbox">
+      <input type="checkbox" id="mat-checkbox">
+        <strong>Mat</strong> (No Spacers)
+    </label>
     <div class="control">
       <label class="radio">
-        <input type="radio" name="mat-answer" id="4ply" checked>
+        <input type="radio" name="mat-answer" class="mat-answer" id="4ply" disabled>
         4 Ply
       </label>
       <label class="radio">
-        <input type="radio" name="mat-answer" id="8ply">
+        <input type="radio" name="mat-answer" class="mat-answer" id="8ply" disabled>
         8 Ply
       </label>
       <label class="radio">
-        <input type="radio" name="mat-answer" id="12ply">
+        <input type="radio" name="mat-answer" class="mat-answer" id="12ply" disabled>
         12 Ply
       </label>
       <label class="radio">
-        <input type="radio" name="mat-answer" id="fabric">
+        <input type="radio" name="mat-answer" class="mat-answer" id="fabric" disabled>
         Fabric
       </label>
     </div>
+
+    <div class="field">
+        <label class="label"></label>
+        <div class="control">
+          <div class="select">
+            <select class="mat-colors" disabled>
+              <option id="mat-color-answer" disabled>Mat Colors</option>
+              <option id="mat-color-answer">Polar White</option>
+              <option id="mat-color-answer">White</option>
+              <option id="mat-color-answer">Warm White</option>
+              <option id="mat-color-answer">Antique</option>
+              <option id="mat-color-answer">Cream</option>
+              <option id="mat-color-answer">Natural</option>
+              <option id="mat-color-answer">Black</option>
+              <option id="mat-color-answer">Other</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
   </div>
 
   <!-- Float -->
-  <!-- <div class="field">
-    <label class="label">Float</label>
-    <div class="control">
-      <div class="select">
-        <select>
-          <option>On Rag</option>
-          <option>On Linen</option>
-          <option>On Silk</option>
-        </select>
-      </div>
-    </div>
-  </div>   -->
 
-  <!-- Float 2 -->
   <div class="field">
-    <label class="label">Float</label>
+    <label class="checkbox">
+      <input type="checkbox" id="float-checkbox">
+        <strong>Float</strong> (No Dry Mount)
+    </label>
     <div class="control">
       <label class="radio">
-        <input type="radio" name="float-answer" checked>
+        <input type="radio" name="float-answer" class="float-answer" disabled>
         Rag
       </label>
       <label class="radio">
-        <input type="radio" name="float-answer">
+        <input type="radio" name="float-answer" class="float-answer" disabled>
         Linen
       </label>
       <label class="radio">
-        <input type="radio" name="float-answer">
+        <input type="radio" name="float-answer" class="float-answer" disabled>
         Silk
       </label>
     </div>
   </div>
-    
-  <!-- Flush -->
-  <!-- <div class="field">
-    <label class="label">Flush</label>
-    <div class="control">
-      <div class="select">
-        <select>
-          <option>Yes</option>
-          <option>No</option>
-        </select>
-      </div>
-    </div>
-  </div>   -->
 
-  <!-- Flush 2 -->
+  <!-- Flush -->
   <div class="field">
-    <label class="label">Flush</label>
-    <div class="control">
+    <label class="checkbox">
+      <input type="checkbox" id="flush-checkbox">
+        <strong>Flush</strong>
+    </label>
+    <!-- <div class="control">
       <label class="radio">
-        <input type="radio" name="flush-answer" checked>
+        <input type="radio" name="flush-answer" id="4ply" checked>
         Yes
       </label>
-    </div>
+    </div> -->
   </div>
+
+  <hr>
 
   <!-- Spacers -->
   <div class="field">
-    <label class="label">Spacers</label>
+    <label class="checkbox">
+      <input type="checkbox" id="spacers-checkbox">
+        <strong>Spacers</strong>
+    </label>
     <div class="control">
       <div class="select">
-        <select>
-          <option>Rag</option>
-          <option>Wood</option>
-          <option>Silk</option>
+        <select class="spacer-answers">
+          <option id="spacers-answer" default>Rag</option>
+          <option id="spacers-answer">Wood</option>
+          <option id="spacers-answer">Silk</option>
+          <option id="spacers-answer">Plastic</option>
         </select>
       </div>
     </div>
   </div>  
 
-  <!-- Drymount -->
+  <!-- Dry Mount -->
   <div class="field">
-    <label class="label">Drymount</label>
+    <label class="checkbox">
+      <input type="checkbox" id="drymount-checkbox">
+        <strong>Dry Mount</strong>
+    </label>
     <div class="control">
       <div class="select">
-        <select>
-          <option>Regular Foam</option>
-          <option>Acid Free Foam</option>
-          <option>Mount on Rag</option>
+        <select class="drymount-answers">
+          <option id="drymount-answer" default>Regular Foam</option>
+          <option id="drymount-answer">Acid Free Foam</option>
+          <option id="drymount-answer">Rag</option>
+          <option id="drymount-answer">Cintra</option>
+          <option id="drymount-answer">D-Bond</option>
         </select>
       </div>
     </div>
@@ -633,40 +584,53 @@
 
   <!-- Glazing -->
   <div class="field">
-    <label class="label">Glazing</label>
+    <label class="checkbox">
+      <input type="checkbox" id="glazing-checkbox" onChange="">
+        <strong>Glazing</strong>
+    </label>
+
     <div class="control">
+      <p>Glass</p>
       <div class="select">
         <select>
-          <option>Glass</option>
-          <option>Regular Plexiglass</option>
-          <option>OP-3 Plexiglass</option>
-          <option>Tru Vue Ultra Vue</option>
-          <option>Tru Vue Museum Glass (Art Glass)</option>
-          <option>Optium Museum Plexiglass (up to 40in x 60in)</option>
-          <option>Optium Museum Plexiglass (up to 48in x 96in)</option>
-          <option>Optium Museum Plexiglass (up to 72in x 96in)</option>
-          <option>Optium Museum Plexiglass (up to 72in x 120in)</option>
+          <option id="glazing-answer" default>Regular Glass (Max 40" x 60")</option>
+          <option id="glazing-answer">Museum Glass (Max 48" x 64")</option>
         </select>
       </div>
     </div>
+
+    <div class="control">
+      <p>Plexiglass</p>
+      <div class="select">
+        <select>
+          <option id="glazing-answer" default>Regular Plexiglass</option>
+          <option id="glazing-answer">UV Plexiglass </option>
+          <option id="glazing-answer">Museum Plexiglass (Up To 40" x 60")</option>
+          <option id="glazing-answer">Museum Plexiglass (Up To 48" x 96")</option>
+          <option id="glazing-answer">Museum Plexiglass (Up To 72" x 96")</option>
+          <option id="glazing-answer">Museum Plexiglass (Up To 72" x 120")</option>
+        </select>
+      </div>
+    </div>
+
+
   </div>  
 
   <!-- Extras -->
   <div class="field">
-    <label class="label">Extras</label>
-    <div class="control">
-      <div class="select">
-        <select>
-          <option>Strainer</option>
-          <option>Painted Strainer</option>
-          <option>Strech Canvas</option>
-          <option>Raise Mount</option>
-          <option>De-fit/Re-fit</option>
-          <option>Re-Finish Frame (De-fit/Re-fit)</option>
-        </select>
-      </div>
-    </div>
-  </div>   
+    <label class="checkbox">
+      <input type="checkbox" id="extras-checkbox" onChange="">
+        <strong>Extras</strong><br>
+        <input type="checkbox" id="extras-answer">Strech Canvas</input>
+        <input type="checkbox" id="extras-answer">Raise Mount</input>
+        <input type="checkbox" id="extras-answer">De-fit/Re-fit</input>
+        <input type="checkbox" id="extras-answer">Re-finish</input>
+    </label>
+     
+
+  
+    </div>  
+
 </div><!-- Fitting Child Div Close -->
 
 <!-- --------------------------------------------------------------- -->
@@ -675,10 +639,12 @@
 <div class="notes-upload box">
   <h1>Notes</h1>
   <br>
-    <textarea class="textarea has-fixed-size" rows="6" placeholder="Enter fitter notes"></textarea>
+    <textarea class="textarea has-fixed-size" rows="6" placeholder="Enter woodworker notes"></textarea>
   <br>
-  <textarea class="textarea has-fixed-size" rows="6" placeholder="Enter woodworker notes"></textarea>
+  <textarea class="textarea has-fixed-size" rows="6" placeholder="Enter fitter notes"></textarea>
   <br>
+
+  <!-- Image Upload -->
   <h1>Image Upload</h1>
   <br>
     <div class="field upload">
@@ -694,18 +660,17 @@
             </span>
           </span>
           <span class="file-name">
-            Screen Shot 2020-01-16 at 15.54.25.png
+            <!-- Screen Shot 2020-01-16 at 15.54.25.png -->
           </span>
         </label>
       </div>
-    </div>
-</div>   <!-- Notes-Upload Div Close-->
+    </div> <!-- Image Upload Close -->
+</div>   <!-- Notes-Upload Close-->
 
-</div><!-- Fitting and Notes Parent Div Close-->
+</div><!-- Fitting and Notes Parent Close-->
 <hr>
 
-
-  <!-- Buttons -->
+    <!-- Buttons -->
     <div class="field is-grouped">
       <div class="control">
         <button class="button is-link">Submit Order</button>
@@ -713,14 +678,32 @@
       <div class="control">
         <button class="button is-link is-light" id="add-frame-button">Add Another Frame</button>
       </div>
+      <div class="control">
+        <button class="button is-link is-light" id="duplicate-frame-button">Duplicate Frame</button>
+      </div>
       <!-- <div class="control">
         <button class="button is-link is-light">Clear</button>
       </div> -->
     </div>
 
+    <!-- Pagination -->
+    <!-- <nav class="pagination is-small" role="navigation" aria-label="pagination">
+      <a class="pagination-previous" title="This is the first page" disabled>Previous Frame</a>
+      <a class="pagination-next">Next Frame</a>
+      <ul class="pagination-list">
+        <li>
+          <a class="pagination-link is-current" aria-label="Page 1" aria-current="page">1</a>
+        </li>
+        <li>
+          <a class="pagination-link" aria-label="Goto page 2">2</a>
+        </li>
+        <li>
+          <a class="pagination-link" aria-label="Goto page 3">3</a>
+        </li>
+      </ul>
+    </nav> -->
+
  </div> <!-- Build Frame Form Container Close -->
-
-
 
 </div> <!-- Bottom Close -->
 

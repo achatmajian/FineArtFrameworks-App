@@ -14,6 +14,9 @@ h2 {
     /* font-weight: bold; */
 }
 
+.navbar {
+    padding: 15px;
+}
 
 
 /* Title */
@@ -49,6 +52,7 @@ h2 {
 .top-2{
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 /* Client Info */
@@ -107,12 +111,14 @@ h2 {
 .size-manu {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 
 }
 
 .fit-notes {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .upload {
@@ -150,6 +156,10 @@ h2 {
     /* border: solid red; */
 }
 
+.finish-options{
+    display: flex;
+    justify-content: space-between;
+}
 
 .fitting {
     width: 500px;
