@@ -268,11 +268,30 @@
       <p>Art Width*</p>
       <input class="input" type="number" placeholder="0000" required>
       <span class="br"></span> 
-      <p>Art Depth</p>
-      <input class="input" type="number" placeholder="0000">
+      <!-- <p>Art Depth</p>
+      <input class="input" type="number" placeholder="0000"> -->
     </div>
   </div>
   
+  <!-- Profile Width -->
+  <div class="field">
+    <label class="label">Profile Width*</label>
+    <div class="control">
+      <div class="select">
+        <select class="profile-width-answers">
+          <option id="profile-width-answer" required>1/2"</option>
+          <option id="profile-width-answer">3/4"</option>
+          <option id="profile-width-answer">1"</option>
+          <option id="profile-width-answer">1 1/2"</option>
+          <option id="profile-width-answer">2"</option>
+          <option id="profile-width-answer">2 1/2"</option>
+          <option id="profile-width-answer">3"</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+
   <!-- Oversize? -->
     <div class="field">
       <label class="label">Oversize?*</label>
@@ -587,7 +606,7 @@
   <!-- Glazing -->
   <div class="field">
     <label class="checkbox">
-      <input type="checkbox" id="glazing-checkbox" onChange="">
+      <input type="checkbox" id="glazing-checkbox">
         <strong>Glazing</strong>
     </label>
 
