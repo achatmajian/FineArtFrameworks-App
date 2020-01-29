@@ -49,18 +49,6 @@ h2 {
     justify-content: center;
 }
 
-
-
-/* Forms */
-
-/* .form-container{
-    padding: 50px;
-    margin: 60px;
-    background-color: lavender;
-} */
-
-
-
 /* Client & Order */
 
 .top-2{
@@ -73,6 +61,7 @@ h2 {
 
 .client-form{
     width: 600px;
+    height: 450px;
     /* background-color: lavender; */
     padding: 30px;
     margin: 20px;
@@ -102,6 +91,7 @@ h2 {
 
 .order-form{
     width: 600px;
+    height: 450px;
     /* background-color: lavender; */
     padding: 30px;
     margin: 20px;
