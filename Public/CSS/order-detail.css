@@ -58,16 +58,22 @@ h2 {
 }
 
 
-/* Frame Build Containers*/
+/* Order Sheet */
 
-.table-wrapper {
+
+.order-sheet-wrapper {
     display: flex;
     justify-content: center;
 }
 
-.table-container{
+
+.order-sheet-container{
     width: 1240px;
     /* background-color: lavender; */
     padding: 30px;
     margin: 30px;
 }
+
+/* .sizing-table{
+    width: 400px;
+} */
