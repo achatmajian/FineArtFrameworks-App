@@ -36,7 +36,7 @@ function managerInit() {
 };
 
 function frameList() {
-    connection.query("SELECT * FROM frames",
+    connection.query("SELECT * FROM frame",
         function (err, results) {
             if (err) throw err;
             console.log("\n");
