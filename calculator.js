@@ -18,6 +18,29 @@ connection.connect(function (err) {
 });
 
 function managerInit() {
-    console.log(colors.blue("\nYou did it.\n"));
-    connection.end();
-}
+    inquirer
+        .prompt({
+            name: "managerInit",
+            type: "list",
+            message: "What would you like to do today?",
+            choices: ["View Frame Options", "Exit"]
+        })
+        .then(function (answer) {
+            if (answer.managerInit === "View Frame Options") {
+                frameList();
+            } else {
+                console.log(colors.yellow("\nLogging out of Manager session.\n"));
+                connection.end();
+            };
+        });
+};
+
+function frameList() {
+    connection.query("SELECT * FROM frames",
+        function (err, results) {
+            if (err) throw err;
+            console.log("\n");
+            console.table(results);
+            managerInit();
+        });
+};
