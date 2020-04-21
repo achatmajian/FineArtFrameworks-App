@@ -35,6 +35,8 @@ function managerInit() {
         });
 };
 
+//to get all the frame options
+
 function frameList() {
     connection.query("SELECT * FROM frame",
         function (err, results) {
