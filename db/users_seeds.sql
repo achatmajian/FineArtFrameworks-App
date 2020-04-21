@@ -18,6 +18,6 @@ VALUES
 ("Ed", "Messikian", "ed@fineartframeworks.com", "123456"),
 ("Andy", "Roz", "andy@fineartframeworks.com", "123456"),
 ("Arek", "Chatmajian", "arek@fineartframeworks.com", "123456"),
-("Katie", "Lord", "katielord27.com", "123456");
+("Katie", "Lord", "katielord27@gmail.com", "123456");
 
 SELECT * FROM users
