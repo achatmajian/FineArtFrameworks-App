@@ -8,16 +8,18 @@ CREATE TABLE orders(
   client_first_name VARCHAR(20) NOT NULL,
   client_last_name VARCHAR(20) NOT NULL,
   frame_quantity INT(50) NOT NULL,
-  date_received DATETIME(10) NOT NULL,
-  date_due DATETIME(10) NOT NULL,
+  date_received DATE(10) NOT NULL,
+  date_due DATE(10) NOT NULL,
   PRIMARY KEY (id)
   UNIQUE KEY (id)
 );
 
 INSERT INTO orders (client_first_name, client_last_name, frame_quantity, date_received, date_due)
 VALUES 
-("Edward", "Messikian", 3)
-
+("Edward", "Messikian", 3, "2020-04-05", "2020-05-21"),
+("Robert", "DeNiro", 6, "2020-04-06", "2020-05-18"),
+("Al", "Pacino", 4, "2020-04-07", "2020-05-27"),
+("Joe", "Pesci", 5, "2020-04-08", "2020-05-25");
 
 
 SELECT * FROM orders
