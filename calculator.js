@@ -23,12 +23,18 @@ function managerInit() {
             name: "managerInit",
             type: "list",
             message: "What would you like to do today?",
-            choices: ["View Frame Options", "Exit"]
+            choices: ["View Frame Options","View Users","View Clients", "Exit"]
         })
         .then(function (answer) {
             if (answer.managerInit === "View Frame Options") {
                 frameList();
-            } else {
+            } else if (answer.managerInit === "View Users") {
+                usersList();
+                
+            } else if (answer.managerInit === "View Clients") {
+                clientsList();
+            }
+            else {
                 console.log(colors.yellow("\nLogging out of Manager session.\n"));
                 connection.end();
             };
@@ -45,4 +51,24 @@ function frameList() {
             console.table(results);
             managerInit();
         });
+};
+
+function usersList() {
+    connection.query("SELECT * FROM users",
+    function (err, results) {
+        if (err) throw err;
+        console.log("\n");
+        console.table(results);
+        managerInit();
+    });
+};
+
+function clientsList() {
+    connection.query("SELECT * FROM clients",
+    function (err, results) {
+        if (err) throw err;
+        console.log("\n");
+        console.table(results);
+        managerInit();
+    });
 };
