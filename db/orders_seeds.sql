@@ -10,7 +10,7 @@ CREATE TABLE orders(
   frame_quantity INT(50) NOT NULL,
   date_received DATE(10) NOT NULL,
   date_due DATE(10) NOT NULL,
-  PRIMARY KEY (id)
+  PRIMARY KEY (id),
   UNIQUE KEY (id)
 );
 
