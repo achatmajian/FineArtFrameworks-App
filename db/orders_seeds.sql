@@ -8,8 +8,8 @@ CREATE TABLE orders(
   client_first_name VARCHAR(20) NOT NULL,
   client_last_name VARCHAR(20) NOT NULL,
   frame_quantity INT(50) NOT NULL,
-  date_received DATE(10) NOT NULL,
-  date_due DATE(10) NOT NULL,
+  date_received TIMESTAMP NOT NULL,
+  date_due DATE NOT NULL,
   PRIMARY KEY (id),
   UNIQUE KEY (id)
 );
