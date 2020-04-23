@@ -14,6 +14,6 @@ INSERT INTO spacer_options (spacer_material, cost_per_foot)
 VALUES 
 ("Rag", 6.00),
 ("Wood", 8.50),
-("Silk", 10.00),
+("Silk", 10.00);
 
 SELECT * FROM spacer_options
