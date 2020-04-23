@@ -14,6 +14,6 @@ INSERT INTO float_options (float_material, cost_per_foot)
 VALUES 
 ("Rag", 8.00),
 ("Linen", 15.50),
-("Silk", 18.00),
+("Silk", 18.00);
 
 SELECT * FROM float_options
