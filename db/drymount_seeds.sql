@@ -14,6 +14,6 @@ INSERT INTO drymount_options (drymount_material, cost_per_foot)
 VALUES 
 ("Regular Foam", 5.50),
 ("Acid Free Foam", 8.00),
-("Rag", 90.00),
+("Rag", 9.00),
 
 SELECT * FROM drymount_options
