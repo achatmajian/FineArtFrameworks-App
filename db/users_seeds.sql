@@ -9,7 +9,7 @@ CREATE TABLE users(
   last_name VARCHAR(20) NOT NULL,
   user_email VARCHAR(50) NOT NULL,
   user_password VARCHAR(50) NOT NULL,
-  PRIMARY KEY (id)
+  PRIMARY KEY (id),
   UNIQUE KEY (user_email)
 );
 
