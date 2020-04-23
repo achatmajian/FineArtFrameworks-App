@@ -19,5 +19,4 @@ VALUES
 ("De-fit/Re-fit", 8.00),
 ("Re-finish", 8.00);
 
-
 SELECT * FROM extra_options
