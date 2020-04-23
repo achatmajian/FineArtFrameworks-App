@@ -14,9 +14,12 @@ CREATE TABLE glazing(
 INSERT INTO glazing (glazing_type, glazing_option, cost_per_foot)
 VALUES 
 ("glass", "Regular Glass", 8.00),
+("glass", "Tru Vue Ultra Vue", 21.00),
+("glass", "Museum Glass", 35.00),
 ("glass", "Museum Glass", 35.00),
 ("plexiglass", "Regular Plexiglass", 12.00),
---Not complete, need clarification from Andy for "per frame" stuff
+("plexiglass", "UV Plexiglass", 19.00),
+--Haven't included Museum Plexiglass, as is it priced per frame instead of per foot. Need to figure out how to apply certain things that require a flat fee.
 
 
 
