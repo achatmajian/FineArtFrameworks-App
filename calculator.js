@@ -103,6 +103,7 @@ frameSize = imageHeight + imageWidth + (2 * faceWidth);
 unitedInch = Math.ceil(frameSize / 6);
 
 orderCost = (unitedInch * (materialFinishCost + glazeCost + matCost + floatCost + flushCost + spacerCost + dryMountCost + strainerCost + extraCost));
+extraAmt = 0;
 overSize15_20 = orderCost * 1.20;
 oversize20_25 = orderCost * 1.30;
 oversize25 = orderCost * 1.40;
@@ -143,19 +144,19 @@ function createOrder() {
                 name: "face_width",
                 type: "list",
                 message: "\nSelect a face width: \n",
-                choices: ['1/2"', '3/4"', '1"', '1 1/2"', '2"', '2 1/2"', '3"', '3 1/2"', '4"']
+                choices: ["0.50", "0.625", "0.75", "1", "1.25"]
             },
             {
                 name: "frame_depth",
                 type: "list",
                 message: "\nSelect a frame depth: \n",
-                choices: ['1/2"', '3/4"', '1"', '1 1/2"', '2"', '2 1/2"', '3"']
+                choices: ["1.50", "2", "2.25", "canvas floater"]
             },
             {
                 name: "material",
                 type: "list",
                 message: "\nSelect a frame material: \n",
-                choices: ["Walnut", "Cherry", "Maple", "Ash", "Oak", "Aluminum Weld", "Aluminum Cut/Join"]
+                choices: ["walnut", "cherry", "maple", "ash", "oak"]
             },
             {
                 name: "finish",
@@ -239,41 +240,27 @@ function createOrder() {
             };
 
             // Face Width
-            if (answer.face_width === '1/2"') {
-                faceWidth = 0.5;
-            } else if (answer.face_width === '3/4"') {
-                faceWidth = 0.75;
-            } else if (answer.face_width === '1"') {
-                faceWidth = 1;
-            } else if (answer.face_width === '1 1/2"') {
-                faceWidth = 1.50;
-            } else if (answer.face_width === '2"') {
-                faceWidth = 2;
-            } else if (answer.face_width === '2 1/2"') {
-                faceWidth = 2.5;
-            } else if (answer.face_width === '3"') {
-                faceWidth = 3;
-            } else if (answer.face_width === '3 1/2"') {
-                faceWidth = 3.5;
-            } else if (answer.face_width === '4"') {
-                faceWidth = 4;
+            if (answer.face_width === '0.50') {
+                faceWidth = '0.50';
+            } else if (answer.face_width === '0.625') {
+                faceWidth = '0.625';
+            } else if (answer.face_width === '0.75') {
+                faceWidth = '0.75';
+            } else if (answer.face_width === '1') {
+                faceWidth = '1';
+            } else if (answer.face_width === '1.25') {
+                faceWidth = '1.25';
             };
 
             // Frame Depth
-            if (answer.frame_depth === '1/2"') {
-                frameDepth = 0.5;
-            } else if (answer.frame_depth === '3/4"') {
-                frameDepth = 0.75;
-            } else if (answer.frame_depth === '1"') {
-                frameDepth = 1;
-            } else if (answer.frame_depth === '1 1/2"') {
-                frameDepth = 1.50;
-            } else if (answer.frame_depth === '2"') {
-                frameDepth = 2;
-            } else if (answer.frame_depth === '2 1/2"') {
-                frameDepth = 2.5;
-            } else if (answer.frame_depth === '3"') {
-                frameDepth = 3;
+            if (answer.frame_depth === '1.50') {
+                frameDepth = '1.50';
+            } else if (answer.frame_depth === '2') {
+                frameDepth = '2';
+            } else if (answer.frame_depth === '2.25') {
+                frameDepth = '2.25';
+            } else if (answer.frame_depth === 'canvas floater') {
+                frameDepth = 'canvas floater';
             };
 
             // Frame Sizing Calculations
@@ -285,28 +272,10 @@ function createOrder() {
 
             unitedInch = Math.ceil(parseInt(frameSize * 12) / 6);
 
-            // Frame Material 
+            // Frame Material
             material = answer.material;
             finish = answer.finish;
             finishDesc = answer.finish_desc;
-
-            // Material Cost
-            connection.query("SELECT id, cost_per_foot FROM frame WHERE ?",
-                [{
-                    material: material
-                },
-                {
-                    finish: finish
-                }, {
-                    detail: finishDesc
-                }], function (err, results) {
-                    if (err) throw err;
-                    console.log("\n");
-                    console.table(results);
-
-                    materialCost = results.cost_per_foot;
-                    console.log("material cost is " + materialCost);
-                });
 
             // Fitment - Mat
             if (answer.fitment_mat === "4 Ply Rag") {
@@ -435,40 +404,61 @@ function createOrder() {
                 extraCost = 0;
             }
 
-            // Calculation Testing:
-            subtotal = ((materialCost + matCost + floatCost + spacerCost + dryMountCost + glazeCost + strainerCost + extraCost) * unitedInch) + extraAmt;
+            // Material Cost
+
+            /*
+            SELECT id, cost_per_foot FROM frame WHERE material = ? AND finish = ? AND detail = ?",
+                [material, finish, finishDesc],
+ 
+            */
+            connection.query("SELECT * FROM frame WHERE face_width = ? AND frame_depth = ? AND material = ? AND finish = ? AND detail = ?",
+                [faceWidth, frameDepth, material, finish, finishDesc
+                ]
+                , function (err, results) {
+                    if (err) throw err;
+                    //console.log("\n");
+                    console.table(results);
+
+                    //materialFinishCost = results[0].cost_per_foot;
+                    //console.dir(results);
+
+                    // Calculation Testing:
+                    subtotal = ((materialFinishCost + matCost + floatCost + spacerCost + dryMountCost + glazeCost + strainerCost + extraCost) * unitedInch) + extraAmt;
 
 
-            console.log(
-                "\n\nframe size is: " + frameSize + "'\n\n" +
-                "face width is: " + faceWidth + "\n\n" +
-                "united inch is: " + unitedInch + "\n\n" +
-                "frame material is: " + finishDesc + " " + finish + " " + material + "\n\n" +
-                "material cost: " + material + "- " + materialCost + "\n\n" +
-                "mat cost: " + mat + "- " + matCost + "\n\n" +
-                "float cost: " + float + "- " + floatCost + "\n\n" +
-                "spacer cost: " + spacer + "- " + spacerCost + "\n\n" +
-                "dry mount cost: " + dryMount + "- " + dryMountCost + "\n\n" +
-                "glaze cost: " + glaze + "- " + glazeCost + "\n\n" +
-                "strainer cost: " + strainer + "- " + strainerCost + "\n\n" +
-                "extra cost: " + extra + "- " + extraCost + "\n\n" + 
-                "any other extras per frame:" + extraAmt + "\n\n" + 
-                "subtotal: " + subtotal
+                    //materialFinishCost = 25;
 
-                
-            );
+                    console.log(
+                        "\n\nframe size is: " + frameSize + "'\n\n" +
+                        "face width is: " + faceWidth + "\n\n" +
+                        "frame depth is: " + frameDepth + "\n\n" +
+                        "united inch is: " + unitedInch + "\n\n" +
+                        "frame material is: " + finishDesc + " " + finish + " " + material + "\n\n" +
+                        "material cost: " + material + "- " + materialFinishCost + "\n\n" +
+                        "mat cost: " + mat + "- " + matCost + "\n\n" +
+                        "float cost: " + float + "- " + floatCost + "\n\n" +
+                        "spacer cost: " + spacer + "- " + spacerCost + "\n\n" +
+                        "dry mount cost: " + dryMount + "- " + dryMountCost + "\n\n" +
+                        "glaze cost: " + glaze + "- " + glazeCost + "\n\n" +
+                        "strainer cost: " + strainer + "- " + strainerCost + "\n\n" +
+                        "extra cost: " + extra + "- " + extraCost + "\n\n" +
+                        "any other extras per frame:" + extraAmt + "\n\n" +
+                        "subtotal: " + subtotal + "\n\n" +
+                        "orderCost: " + orderCost + "\n\n"
 
-            managerInit();
-
-
-
+                    );
 
 
 
 
+                });
 
-        })
-}
+
+
+
+
+        });
+};
 
 
 
