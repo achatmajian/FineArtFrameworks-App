@@ -9,7 +9,7 @@ var connection = mysql.createConnection({
     host: "127.0.0.1",
     port: 3306,
     user: "root",
-    password: "root420",
+    password: "password",
     database: "fafw_test_DB"
 });
 
@@ -429,21 +429,24 @@ function createOrder() {
                     //materialFinishCost = 25;
 
                     console.log(
-                        "\n\nframe size is: " + frameSize + "'\n\n" +
-                        "face width is: " + faceWidth + "\n\n" +
-                        "frame depth is: " + frameDepth + "\n\n" +
-                        "united inch is: " + unitedInch + "\n\n" +
-                        "frame material is: " + finishDesc + " " + finish + " " + material + "\n\n" +
-                        "material cost: " + material + "- " + materialFinishCost + "\n\n" +
-                        "mat cost: " + mat + "- " + matCost + "\n\n" +
-                        "float cost: " + float + "- " + floatCost + "\n\n" +
-                        "spacer cost: " + spacer + "- " + spacerCost + "\n\n" +
-                        "dry mount cost: " + dryMount + "- " + dryMountCost + "\n\n" +
-                        "glaze cost: " + glaze + "- " + glazeCost + "\n\n" +
-                        "strainer cost: " + strainer + "- " + strainerCost + "\n\n" +
-                        "extra cost: " + extra + "- " + extraCost + "\n\n" +
-                        "any other extras per frame:" + extraAmt + "\n\n" +
-                        "subtotal: " + subtotal + "\n\n"
+                        "\n\n==========================================================" +
+                        "\n\nFrame Size (feet): " + frameSize + "'\n\n" +
+                        "Face Width (inches): " + faceWidth + "\n\n" +
+                        "Frame Depth (inches): " + frameDepth + "\n\n" +
+                        "United Inch Number: " + unitedInch + "\n\n" +
+                        "Frame Build: " + "Material: " + material + ", Finish: " + finish + ", Finish Option: " + finishDesc + "\n\n" +
+                        "Material Cost: " + material + " at $" + materialFinishCost + " per foot " + "\n\n" +
+                        "Mat Cost: " + mat + " at $" + matCost + " per foot" + "\n\n" +
+                        "Float Cost: " + float + " at $" + floatCost + " per foot" + "\n\n" +
+                        "Spacer Cost: " + spacer + " at $" + spacerCost + " per foot" + "\n\n" +
+                        "Dry Mount Cost: " + dryMount + " at $" + dryMountCost + " per foot" + "\n\n" +
+                        "Glazing Cost: " + glaze + " at $" + glazeCost + " per foot" + "\n\n" +
+                        "Strainer Cost: " + strainer + " at $" + strainerCost + " per foot" + "\n\n" +
+                        "Extras Cost: " + extra + " at $" + extraCost + "\n\n" +
+                        "Other Extras Per Frame: $" + extraAmt + "\n\n" +
+                        "-------------------------------" + "\n\n" +
+                        "Frame Subtotal: " + "$" + subtotal + "\n\n" +
+                        "==========================================================" + "\n\n"
                         //"orderCost: " + orderCost + "\n\n"
 
                     );
