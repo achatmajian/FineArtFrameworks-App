@@ -417,9 +417,9 @@ function createOrder() {
                 , function (err, results) {
                     if (err) throw err;
                     //console.log("\n");
-                    console.table(results);
+                    //console.table(results);
 
-                    //materialFinishCost = results[0].cost_per_foot;
+                    materialFinishCost = results[0].cost_per_foot;
                     //console.dir(results);
 
                     // Calculation Testing:
@@ -443,10 +443,12 @@ function createOrder() {
                         "strainer cost: " + strainer + "- " + strainerCost + "\n\n" +
                         "extra cost: " + extra + "- " + extraCost + "\n\n" +
                         "any other extras per frame:" + extraAmt + "\n\n" +
-                        "subtotal: " + subtotal + "\n\n" +
-                        "orderCost: " + orderCost + "\n\n"
+                        "subtotal: " + subtotal + "\n\n"
+                        //"orderCost: " + orderCost + "\n\n"
 
                     );
+
+                    managerInit();
 
 
 
