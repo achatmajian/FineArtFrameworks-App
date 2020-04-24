@@ -234,9 +234,9 @@ frameHeight = windowHeight + faceWidth;
 frameWidth = windowWidth + faceWidth;
 frameSize = imageHeight + imageWidth + (2 * faceWidth);
 unitedInch = Math.ceil(frameSize / 6);
-oversized = false;
-rushJob = false;
-minimum = false;
+//oversized = false;
+//rushJob = false;
+//minimum = false;
 
 //orderCost = (unitedInch * (materialFinishCost + glazeCost + matCost + floatCost + flushCost + spacerCost + dryMountCost + strainerCost + extraCost));
 extraAmt = 0;
@@ -428,35 +428,35 @@ function createOrder() {
 
             // 5' Minimum 
             if (frameSize < 5) {
-                minimum = true;
+                //minimum = true;
                 frameSize = 5;
-                ovesized = false;
+                //ovesized = false;
                 // Oversize 15-20'
-            } else if (5 < frameSize < 15) {
-                oversized = false;
+            //} else if (5 < frameSize < 15) {
+                //oversized = false;
             } else if (15 <= frameSize <= 20) {
                 overSize15_20 = 1.20;
-                oversized = true;
+                //oversized = true;
                 // Oversize 20-25'
             } else if (20 < frameSize <= 25) {
                 overSize20_25 = 1.30;
-                oversized = true;
+                //oversized = true;
                 // Oversize 25'+
             } else if (frameSize > 25) {
                 overSize25 = 1.40;
-                oversized = true;
+                //oversized = true;
             };
 
             // Rush Job
             if (answer.rush === "No") {
                 rush0 = 1;
-                rushJob = false;
+                //rushJob = false;
             } else if (answer.rush === "Yes: 2 Weeks" ) {
                 rush1 = 1.20;
-                rushJob = true;
+                //rushJob = true;
             } else if (answer.rush === "Yes: 1 Week") {
                 rush2 = 1.30;
-                rushJob = true;
+                //rushJob = true;
             }
  
                 
@@ -643,8 +643,8 @@ function createOrder() {
                         "strainer cost: " + strainer + "- " + strainerCost + "\n\n" +
                         "extra cost: " + extra + "- " + extraCost + "\n\n" +
                         "any other extras per frame:" + extraAmt + "\n\n" +
-                        "Oversize: " + oversized + "\n\n" +
-                        "Rush Job: " + rushJob + "\n\n" +
+                        //"Oversize: " + oversized + "\n\n" +
+                        //"Rush Job: " + rushJob + "\n\n" +
                         "subtotal: " + subtotal + "\n\n" + 
                         "discount: " + discount + "\n\n" +
                         "orderCost: " + orderCost + "\n\n"
