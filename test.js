@@ -3,6 +3,7 @@ var mysql = require("mysql");
 var inquirer = require("inquirer");
 var colors = require("colors");
 var cTable = require("console.table");
+var figlet = require("figlet");
 
 // MYSQL DB CONNECTION CONFIG
 var connection = mysql.createConnection({
@@ -15,6 +16,8 @@ var connection = mysql.createConnection({
 
 connection.connect(function (err) {
     if (err) throw err;
+
+    storeName();
     console.log(colors.yellow("\nLogged in as FAFW Manager.\n"));
     managerInit();
 });
@@ -23,6 +26,14 @@ connection.connect(function (err) {
 -------------------------------------------------------------------------------------------
 */
 
+// SHOW COMPANY NAME AT THE START OF DEMO
+function storeName() {
+    console.log(colors.rainbow(figlet.textSync('F A F W', {
+        horizontalLayout: 'default',
+        verticalLayout: 'default'
+    })));
+};
+
 // INQUIRER FUNCTIONS FOR DEMO VIA NODE IN TERMINAL
 function managerInit() {
     inquirer
@@ -30,14 +41,31 @@ function managerInit() {
             name: "managerInit",
             type: "list",
             message: "What would you like to do today?",
-            choices: ["View Frame Options", "View Users", "View Clients", "Create Order", "Exit"]
+            choices: ["View Users", "Create New User", "View Clients", "Create New Client", "View Orders", "Create Order", "View Dry Mount Options", "View Extras Options", "View Float Options", "View Frame Options", "View Glazing Options", "View Mat Options", "View Spacer Options", "Exit"]
         })
         .then(function (answer) {
             if (answer.managerInit === "View Frame Options") {
                 frameList();
+            } else if (answer.managerInit === "View Orders") {
+                orderList();
+            } else if (answer.managerInit === "View Dry Mount Options") {
+                dryMountList();
+            } else if (answer.managerInit === "View Float Options") {
+                floatList();
+            } else if (answer.managerInit === "View Extras Options") {
+                extrasList();
+            }else if (answer.managerInit === "View Glazing Options") {
+                glazeList();
+            } else if (answer.managerInit === "View Mat Options") {
+                matsList();
+            } else if (answer.managerInit === "View Spacer Options") {
+                spacerList();
+            } else if (answer.managerInit === "Create New Client") {
+                createClient();
+            } else if (answer.managerInit === "Create New User") {
+                createUser();
             } else if (answer.managerInit === "View Users") {
                 usersList();
-
             } else if (answer.managerInit === "View Clients") {
                 clientsList();
             } else if (answer.managerInit === "Create Order") {
@@ -82,6 +110,111 @@ function clientsList() {
         });
 };
 
+// TO VIEW DRYMOUNT
+
+function dryMountList() {
+    connection.query("SELECT * FROM drymount_options",
+        function (err, results) {
+            if (err) throw err;
+            console.log("\n");
+            console.table(results);
+            managerInit();
+        });
+
+};
+
+// TO VIEW EXTRAS 
+
+function extrasList() {
+    connection.query("SELECT * FROM extra_options",
+    function (err, results) {
+        if (err) throw err;
+        console.log("\n");
+        console.table(results);
+        managerInit();
+    });
+
+};
+
+// TO VIEW FLOAT
+
+function floatList() {
+    connection.query("SELECT * FROM float_options",
+    function (err, results) {
+        if (err) throw err;
+        console.log("\n");
+        console.table(results);
+        managerInit();
+    });
+
+};
+
+// TO VIEW GLAZING
+
+function glazeList() {
+    connection.query("SELECT * FROM glazing",
+    function (err, results) {
+        if (err) throw err;
+        console.log("\n");
+        console.table(results);
+        managerInit();
+    });
+
+};
+
+// TO VIEW MATS
+
+function matsList() {
+    connection.query("SELECT * FROM mat_options",
+    function (err, results) {
+        if (err) throw err;
+        console.log("\n");
+        console.table(results);
+        managerInit();
+    });
+
+};
+
+// TO VIEW ORDERS
+
+function orderList() {
+    connection.query("SELECT * FROM orders",
+    function (err, results) {
+        if (err) throw err;
+        console.log("\n");
+        console.table(results);
+        managerInit();
+    });
+
+};
+
+// TO VIEW SPACERS
+
+function spacerList() {
+    connection.query("SELECT * FROM spacer_options",
+    function (err, results) {
+        if (err) throw err;
+        console.log("\n");
+        console.table(results);
+        managerInit();
+    });
+
+};
+
+function createClient() {
+    console.log(colors.blue("\n\nThis function is coming soon...\n\n"));
+
+    managerInit();
+
+};
+
+function createUser() {
+    console.log(colors.blue("\n\nThis function is coming soon...\n\n"));
+
+    managerInit();
+
+};
+
 /*
 -------------------------------------------------------------------------------------------
 */
@@ -89,8 +222,8 @@ function clientsList() {
 // CALCULATOR FUN STUFF
 
 var paperHeight, paperWidth, paperSize, imageHeight, imageWidth, imageSize, matSize, windowHeight, windowWidth, windowSize, frameHeight, frameWidth, frameSize, faceWidth, frameDepth, subtotal;
-var unitedInch, material, finish, finishDesc, materialFinishCost, glaze, glazeCost, fitment, mat, matCost, float, floatCost, flush, flushCost, spacer, spacerCost, dryMount, dryMountCost, strainer, strainerCost, extra, extraCost, orderCost;
-var overSize15_20, overSize20_25, overSize25, rush0, rush1, rush2, discount, discountAmt, extraAmt;
+var unitedInch, material, finish, finishDesc, materialFinishCost, glaze, glazeCost, mat, matCost, float, floatCost, flush, flushCost, spacer, spacerCost, dryMount, dryMountCost, strainer, strainerCost, extra, extraCost, orderCost;
+var minimum, oversized, rushJob, overSize15_20, overSize20_25, overSize25, rush0, rush1, rush2, discount, discountAmt, extraAmt;
 
 paperSize = paperHeight * paperWidth;
 imageSize = imageHeight * imageWidth;
@@ -101,13 +234,18 @@ frameHeight = windowHeight + faceWidth;
 frameWidth = windowWidth + faceWidth;
 frameSize = imageHeight + imageWidth + (2 * faceWidth);
 unitedInch = Math.ceil(frameSize / 6);
+//oversized = false;
+//rushJob = false;
+//minimum = false;
 
-orderCost = (unitedInch * (materialFinishCost + glazeCost + matCost + floatCost + flushCost + spacerCost + dryMountCost + strainerCost + extraCost));
+//orderCost = (unitedInch * (materialFinishCost + glazeCost + matCost + floatCost + flushCost + spacerCost + dryMountCost + strainerCost + extraCost));
 extraAmt = 0;
-overSize15_20 = orderCost * 1.20;
-oversize20_25 = orderCost * 1.30;
-oversize25 = orderCost * 1.40;
-discount = orderCost - (orderCost * discountAmt);
+overSize15_20 = 1;
+oversize20_25 = 1;
+oversize25 = 1;
+rush0 = 1;
+rush1 = 1;
+rush2 = 1;
 
 function createOrder() {
     inquirer
@@ -211,6 +349,24 @@ function createOrder() {
                 type: "list",
                 message: "Any extras? \n",
                 choices: ["none", "stretch canvas", "raise mount", "de-fit/re-fit", "re-finish + de-fit/re-fit"]
+            },
+            {
+                name: "discount",
+                type: "input",
+                message: "Are there any discounts? If there are no discounts, please enter '0'. Otherwise, enter the discount amount.",
+                validate: function (value) {
+                    if (isNaN(value) === false) {
+                        return true;
+                    }
+                    return false;
+                }
+
+            },
+            {
+                name: "rush",
+                type: "list",
+                message: "Is this a rush job?",
+                choices: ["No", "Yes: 2 Weeks", "Yes: 1 Week"]
             }
         ])
         .then(function (answer) {
@@ -270,7 +426,50 @@ function createOrder() {
 
             frameSize = roundHalf((parseInt(imageHeight) + parseInt(imageWidth) + (2 * parseInt(faceWidth))) / 12);
 
+            // 5' Minimum 
+            if (frameSize < 5) {
+                //minimum = true;
+                frameSize = 5;
+                //ovesized = false;
+                // Oversize 15-20'
+            //} else if (5 < frameSize < 15) {
+                //oversized = false;
+            } else if (15 <= frameSize <= 20) {
+                overSize15_20 = 1.20;
+                //oversized = true;
+                // Oversize 20-25'
+            } else if (20 < frameSize <= 25) {
+                overSize20_25 = 1.30;
+                //oversized = true;
+                // Oversize 25'+
+            } else if (frameSize > 25) {
+                overSize25 = 1.40;
+                //oversized = true;
+            };
+
+            // Rush Job
+            if (answer.rush === "No") {
+                rush0 = 1;
+                //rushJob = false;
+            } else if (answer.rush === "Yes: 2 Weeks" ) {
+                rush1 = 1.20;
+                //rushJob = true;
+            } else if (answer.rush === "Yes: 1 Week") {
+                rush2 = 1.30;
+                //rushJob = true;
+            }
+ 
+                
+            // Discount
+            if ( answer.discount === 0) {
+                discount = 0;
+            } else {
+                discount = (parseInt(answer.discount) * 0.01);
+            } 
+
+            // United Inch Math Logic
             unitedInch = Math.ceil(parseInt(frameSize * 12) / 6);
+            
 
             // Frame Material
             material = answer.material;
@@ -425,6 +624,7 @@ function createOrder() {
                     // Calculation Testing:
                     subtotal = ((materialFinishCost + matCost + floatCost + spacerCost + dryMountCost + glazeCost + strainerCost + extraCost) * unitedInch) + extraAmt;
 
+                    orderCost = (subtotal * overSize15_20 * oversize20_25 * oversize25) * (1 - discount);
 
                     //materialFinishCost = 25;
 
@@ -443,8 +643,11 @@ function createOrder() {
                         "strainer cost: " + strainer + "- " + strainerCost + "\n\n" +
                         "extra cost: " + extra + "- " + extraCost + "\n\n" +
                         "any other extras per frame:" + extraAmt + "\n\n" +
-                        "subtotal: " + subtotal + "\n\n"
-                        //"orderCost: " + orderCost + "\n\n"
+                        //"Oversize: " + oversized + "\n\n" +
+                        //"Rush Job: " + rushJob + "\n\n" +
+                        "subtotal: " + subtotal + "\n\n" + 
+                        "discount: " + discount + "\n\n" +
+                        "orderCost: " + orderCost + "\n\n"
 
                     );
 
