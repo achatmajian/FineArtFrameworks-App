@@ -329,31 +329,31 @@ function createOrder() {
             {
                 name: "spacer_type",
                 type: "list",
-                message: "Select the type of spacers: \n",
+                message: "\nSelect the type of spacers: \n",
                 choices: ["rag", "wood", "silk", "none"]
             },
             {
                 name: "dry_mount",
                 type: "list",
-                message: "Select the type of dry mount: \n",
+                message: "\nSelect the type of dry mount: \n",
                 choices: ["regular foam", "acid free foam", "rag", "none"]
             },
             {
                 name: "glazing",
                 type: "list",
-                message: "Select the type of glazing: \n",
+                message: "\nSelect the type of glazing: \n",
                 choices: ["Glass", "Regular Plexi", "OP-3 plexi", "True Vue Ultra Vue", "True Vue Museum Glass/Art Glass", "Optimum Museum Plexi up to 40 x 60", "Optimum Museum Plexi up to 48 x 96", "Optimum Museum Plexi up to 72 x 96", "Optimum Museum Plexi up to 72 x 120", "None"]
             },
             {
                 name: "extras",
                 type: "list",
-                message: "Any extras? \n",
+                message: "\nAny extras? \n",
                 choices: ["none", "stretch canvas", "raise mount", "de-fit/re-fit", "re-finish + de-fit/re-fit"]
             },
             {
                 name: "discount",
                 type: "input",
-                message: "Are there any discounts? If there are no discounts, please enter '0'. Otherwise, enter the discount amount.",
+                message: "\nAre there any discounts? If there are no discounts, please enter '0'. Otherwise, enter the discount amount.\n",
                 validate: function (value) {
                     if (isNaN(value) === false) {
                         return true;
@@ -365,7 +365,7 @@ function createOrder() {
             {
                 name: "rush",
                 type: "list",
-                message: "Is this a rush job?",
+                message: "\nIs this a rush job?\n",
                 choices: ["No", "Yes: 2 Weeks", "Yes: 1 Week"]
             }
         ])
@@ -629,27 +629,27 @@ function createOrder() {
                     //materialFinishCost = 25;
 
                     console.log(
-                        "\n\nframe size is: " + frameSize + "'\n\n" +
-                        "face width is: " + faceWidth + "\n\n" +
-                        "frame depth is: " + frameDepth + "\n\n" +
-                        "united inch is: " + unitedInch + "\n\n" +
-                        "frame material is: " + finishDesc + " " + finish + " " + material + "\n\n" +
-                        "material cost: " + material + "- " + materialFinishCost + "\n\n" +
-                        "mat cost: " + mat + "- " + matCost + "\n\n" +
-                        "float cost: " + float + "- " + floatCost + "\n\n" +
-                        "spacer cost: " + spacer + "- " + spacerCost + "\n\n" +
-                        "dry mount cost: " + dryMount + "- " + dryMountCost + "\n\n" +
-                        "glaze cost: " + glaze + "- " + glazeCost + "\n\n" +
-                        "strainer cost: " + strainer + "- " + strainerCost + "\n\n" +
-                        "extra cost: " + extra + "- " + extraCost + "\n\n" +
-                        "any other extras per frame:" + extraAmt + "\n\n" +
-                        //"Oversize: " + oversized + "\n\n" +
-                        //"Rush Job: " + rushJob + "\n\n" +
-                        "subtotal: " + subtotal + "\n\n" + 
-                        "discount: " + discount + "\n\n" +
-                        "orderCost: " + orderCost + "\n\n"
-
-                    );
+                        "\n\n==========================================================" +
+                        "\n\nFrame Size (feet): " + frameSize + "'\n\n" +
+                        "Face Width (inches): " + faceWidth + "\n\n" +
+                        "Frame Depth (inches): " + frameDepth + "\n\n" +
+                        "United Inch Number: " + unitedInch + "\n\n" +
+                        "Frame Build: " + "Material: " + material + ", Finish: " + finish + ", Finish Option: " + finishDesc + "\n\n" +
+                        "Material Cost: " + material + " at $" + materialFinishCost + " per foot " + "\n\n" +
+                        "Mat Cost: " + mat + " at $" + matCost + " per foot" + "\n\n" +
+                        "Float Cost: " + float + " at $" + floatCost + " per foot" + "\n\n" +
+                        "Spacer Cost: " + spacer + " at $" + spacerCost + " per foot" + "\n\n" +
+                        "Dry Mount Cost: " + dryMount + " at $" + dryMountCost + " per foot" + "\n\n" +
+                        "Glazing Cost: " + glaze + " at $" + glazeCost + " per foot" + "\n\n" +
+                        "Strainer Cost: " + strainer + " at $" + strainerCost + " per foot" + "\n\n" +
+                        "Extras Cost: " + extra + " at $" + extraCost + "\n\n" +
+                        "Other Extras Per Frame: $" + extraAmt + "\n\n" +
+                        "-------------------------------" + "\n\n" +
+                        "Frame Subtotal: " + "$" + subtotal + "\n\n" +
+                        "Frame Discount: " + (discount * 100) + "%" + "\n\n" +
+                        "==========================================================" + "\n\n" +
+                        "Total Order Cost: " + "$" + orderCost + "\n\n"
+                    )
 
                     managerInit();
 
