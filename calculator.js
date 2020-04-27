@@ -624,7 +624,7 @@ function createOrder() {
                     // Calculation Testing:
                     subtotal = ((materialFinishCost + matCost + floatCost + spacerCost + dryMountCost + glazeCost + strainerCost + extraCost) * unitedInch) + extraAmt;
 
-                    orderCost = (subtotal * overSize15_20 * oversize20_25 * oversize25) * (1 - discount);
+                    orderCost = (subtotal * overSize15_20 * oversize20_25 * oversize25 * rush0 * rush1 * rush2) * (1 - discount);
 
                     //materialFinishCost = 25;
 

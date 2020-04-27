@@ -34,7 +34,11 @@ function storeName() {
     })));
 };
 
-// INQUIRER FUNCTIONS FOR DEMO VIA NODE IN TERMINAL
+/*
+-------------------------------------------------------------------------------------------
+*/
+
+// INQUIRER PROMPTS
 function managerInit() {
     inquirer
         .prompt({
@@ -54,7 +58,7 @@ function managerInit() {
                 floatList();
             } else if (answer.managerInit === "View Extras Options") {
                 extrasList();
-            }else if (answer.managerInit === "View Glazing Options") {
+            } else if (answer.managerInit === "View Glazing Options") {
                 glazeList();
             } else if (answer.managerInit === "View Mat Options") {
                 matsList();
@@ -127,12 +131,12 @@ function dryMountList() {
 
 function extrasList() {
     connection.query("SELECT * FROM extra_options",
-    function (err, results) {
-        if (err) throw err;
-        console.log("\n");
-        console.table(results);
-        managerInit();
-    });
+        function (err, results) {
+            if (err) throw err;
+            console.log("\n");
+            console.table(results);
+            managerInit();
+        });
 
 };
 
@@ -140,12 +144,12 @@ function extrasList() {
 
 function floatList() {
     connection.query("SELECT * FROM float_options",
-    function (err, results) {
-        if (err) throw err;
-        console.log("\n");
-        console.table(results);
-        managerInit();
-    });
+        function (err, results) {
+            if (err) throw err;
+            console.log("\n");
+            console.table(results);
+            managerInit();
+        });
 
 };
 
@@ -153,12 +157,12 @@ function floatList() {
 
 function glazeList() {
     connection.query("SELECT * FROM glazing",
-    function (err, results) {
-        if (err) throw err;
-        console.log("\n");
-        console.table(results);
-        managerInit();
-    });
+        function (err, results) {
+            if (err) throw err;
+            console.log("\n");
+            console.table(results);
+            managerInit();
+        });
 
 };
 
@@ -166,12 +170,12 @@ function glazeList() {
 
 function matsList() {
     connection.query("SELECT * FROM mat_options",
-    function (err, results) {
-        if (err) throw err;
-        console.log("\n");
-        console.table(results);
-        managerInit();
-    });
+        function (err, results) {
+            if (err) throw err;
+            console.log("\n");
+            console.table(results);
+            managerInit();
+        });
 
 };
 
@@ -179,12 +183,12 @@ function matsList() {
 
 function orderList() {
     connection.query("SELECT * FROM orders",
-    function (err, results) {
-        if (err) throw err;
-        console.log("\n");
-        console.table(results);
-        managerInit();
-    });
+        function (err, results) {
+            if (err) throw err;
+            console.log("\n");
+            console.table(results);
+            managerInit();
+        });
 
 };
 
@@ -192,12 +196,12 @@ function orderList() {
 
 function spacerList() {
     connection.query("SELECT * FROM spacer_options",
-    function (err, results) {
-        if (err) throw err;
-        console.log("\n");
-        console.table(results);
-        managerInit();
-    });
+        function (err, results) {
+            if (err) throw err;
+            console.log("\n");
+            console.table(results);
+            managerInit();
+        });
 
 };
 
@@ -221,32 +225,26 @@ function createUser() {
 
 // CALCULATOR FUN STUFF
 
-var paperHeight, paperWidth, paperSize, imageHeight, imageWidth, imageSize, matSize, windowHeight, windowWidth, windowSize, frameHeight, frameWidth, frameSize, faceWidth, frameDepth, subtotal;
-var unitedInch, material, finish, finishDesc, materialFinishCost, glaze, glazeCost, mat, matCost, float, floatCost, flush, flushCost, spacer, spacerCost, dryMount, dryMountCost, strainer, strainerCost, extra, extraCost, orderCost;
-var minimum, oversized, rushJob, overSize15_20, overSize20_25, overSize25, rush0, rush1, rush2, discount, discountAmt, extraAmt;
 
-paperSize = paperHeight * paperWidth;
-imageSize = imageHeight * imageWidth;
-windowHeight = imageHeight + matSize;
-windowWidth = imageWidth + matSize;
-windowSize = windowHeight * windowWidth;
-frameHeight = windowHeight + faceWidth;
-frameWidth = windowWidth + faceWidth;
-frameSize = imageHeight + imageWidth + (2 * faceWidth);
-unitedInch = Math.ceil(frameSize / 6);
-//oversized = false;
-//rushJob = false;
-//minimum = false;
+// Variables
+var paperHeight, paperWidth, paperSize, imageHeight, imageWidth, imageSize, matSize, windowHeight, windowWidth, windowSize, frameHeight, frameWidth, frameSize, faceWidth, faceWidthNum, frameDepth, subtotal,
+    unitedInch, material, finish, finishDesc, materialFinishCost, glaze, glazeCost, mat, matCost, float, floatCost, flush, flushCost, spacer, spacerCost, dryMount, dryMountCost, strainer, strainerCost, extra, extraCost, orderCost,
+    overSize, overSizeAmt, rush, rushAmt, isMinimum, isOverSize, isRush, discount, discountAmt, extraAmt, frameSizeInches, frameSizeActual, taxRate, finalTaxRate, taxAmt, finalCost, frameSizeTest;
 
-//orderCost = (unitedInch * (materialFinishCost + glazeCost + matCost + floatCost + flushCost + spacerCost + dryMountCost + strainerCost + extraCost));
+
+// Default Values for Extras, Discounts, Oversize Rates, Rush Rates, and Taxes
 extraAmt = 0;
-overSize15_20 = 1;
-oversize20_25 = 1;
-oversize25 = 1;
-rush0 = 1;
-rush1 = 1;
-rush2 = 1;
+discountAmt = 0;
+overSize = 1;
+rush = 1;
+taxRate = 1;
+taxAmt = 0;
+isMinimum = false;
+isOverSize = false;
+isRush = false;
 
+
+// Inquirer Promts to get Order Cost Calculations!!!
 function createOrder() {
     inquirer
         .prompt([
@@ -323,8 +321,8 @@ function createOrder() {
             {
                 name: "strainer_type",
                 type: "list",
-                message: "\nSelect a strainer type: \n",
-                choices: ["Strainer", "Painted Strainer"]
+                message: "\nWill you need an additional strainer? \n",
+                choices: ["none", "Strainer", "Painted Strainer"]
             },
             {
                 name: "spacer_type",
@@ -360,22 +358,27 @@ function createOrder() {
                     }
                     return false;
                 }
-
             },
             {
                 name: "rush",
                 type: "list",
                 message: "\nIs this a rush job?\n",
                 choices: ["No", "Yes: 2 Weeks", "Yes: 1 Week"]
-            }
+            },
+            {
+                name: "tax",
+                type: "list",
+                message: "\nWhere is this frame being shipped?\n",
+                choices: ["NY", "NJ", "CT"]
+            },
         ])
         .then(function (answer) {
 
             // Image Height
-            imageHeight = answer.image_height;
+            imageHeight = parseInt(answer.image_height);
 
             // Image Width
-            imageWidth = answer.image_width;
+            imageWidth = parseInt(answer.image_width);
 
             // Mat Size
             if (answer.mat_size === '1"') {
@@ -398,14 +401,19 @@ function createOrder() {
             // Face Width
             if (answer.face_width === '0.50') {
                 faceWidth = '0.50';
+                faceWidthNum = 0.50;
             } else if (answer.face_width === '0.625') {
                 faceWidth = '0.625';
+                faceWidthNum = 0.625;
             } else if (answer.face_width === '0.75') {
                 faceWidth = '0.75';
+                faceWidthNum = 0.75;
             } else if (answer.face_width === '1') {
                 faceWidth = '1';
+                faceWidthNum = 1;
             } else if (answer.face_width === '1.25') {
                 faceWidth = '1.25';
+                faceWidthNum = 1.25;
             };
 
             // Frame Depth
@@ -419,64 +427,12 @@ function createOrder() {
                 frameDepth = 'canvas floater';
             };
 
-            // Frame Sizing Calculations
-            function roundHalf(num) {
-                return (Math.round(num * 2) / 2).toFixed(1);
-            };
-
-            frameSize = roundHalf((parseInt(imageHeight) + parseInt(imageWidth) + (2 * parseInt(faceWidth))) / 12);
-
-            // 5' Minimum 
-            if (frameSize < 5) {
-                //minimum = true;
-                frameSize = 5;
-                //ovesized = false;
-                // Oversize 15-20'
-            //} else if (5 < frameSize < 15) {
-                //oversized = false;
-            } else if (15 <= frameSize <= 20) {
-                overSize15_20 = 1.20;
-                //oversized = true;
-                // Oversize 20-25'
-            } else if (20 < frameSize <= 25) {
-                overSize20_25 = 1.30;
-                //oversized = true;
-                // Oversize 25'+
-            } else if (frameSize > 25) {
-                overSize25 = 1.40;
-                //oversized = true;
-            };
-
-            // Rush Job
-            if (answer.rush === "No") {
-                rush0 = 1;
-                //rushJob = false;
-            } else if (answer.rush === "Yes: 2 Weeks" ) {
-                rush1 = 1.20;
-                //rushJob = true;
-            } else if (answer.rush === "Yes: 1 Week") {
-                rush2 = 1.30;
-                //rushJob = true;
-            }
- 
-                
-            // Discount
-            if ( answer.discount === 0) {
-                discount = 0;
-            } else {
-                discount = (parseInt(answer.discount) * 0.01);
-            } 
-
-            // United Inch Math Logic
-            unitedInch = Math.ceil(parseInt(frameSize * 12) / 6);
-            
-
-            // Frame Material
+            // Frame Material Cost
             material = answer.material;
             finish = answer.finish;
             finishDesc = answer.finish_desc;
 
-            // Fitment - Mat
+            // Fitment - Mat Cost Per Foot
             if (answer.fitment_mat === "4 Ply Rag") {
                 mat = answer.fitment_mat;
                 matCost = 5.50;
@@ -488,10 +444,10 @@ function createOrder() {
                 matCost = 21;
             } else {
                 mat = "n/a";
-                matCost = "0";
+                matCost = 0;
             };
 
-            // Fitment - Float
+            // Fitment - Float Cost Per Foot
             if (answer.fitment_float === "Float on Rag") {
                 float = answer.fitment_float;
                 floatCost = 8;
@@ -503,10 +459,10 @@ function createOrder() {
                 floatCost = 18;
             } else {
                 float = "n/a";
-                floatCost = "0";
+                floatCost = 0;
             };
 
-            // Fitment - Spacer
+            // Fitment - Spacer Cost Per Foot
             if (answer.spacer_type === "rag") {
                 spacer = answer.spacer_type;
                 spacerCost = 6;
@@ -521,7 +477,7 @@ function createOrder() {
                 spacerCost = 0;
             };
 
-            // Fitment - Dry Mount
+            // Fitment - Dry Mount Cost per Foot
             if (answer.dry_mount === "regular foam") {
                 dryMount = answer.dry_mount;
                 dryMountCost = 5.5;
@@ -536,7 +492,7 @@ function createOrder() {
                 dryMountCost = 0;
             };
 
-            // Glaze Cost
+            // Glaze Cost Per Foot
             if (answer.glazing === "Glass") {
                 glaze = answer.glazing;
                 glazeCost = 8;
@@ -573,19 +529,19 @@ function createOrder() {
                 glazeCost = 0;
             };
 
-            // Strainer Cost
+            // Strainers Cost Per Foot
             if (answer.strainer_type === "Strainer") {
                 strainer = answer.strainer_type;
                 strainerCost = 7;
             } else if (answer.strainer_type === "Painted Strainer") {
                 strainer = answer.strainer_type;
                 strainerCost = 11;
-            } else {
+            } else if (answer.strainer_type === "none") {
                 strainer = "n/a";
                 strainerCost = 0;
             };
 
-            // Extra Cost "none", "raise mount", "de-fit/re-fit", ""
+            // Extras Cost Per Foot
             if (answer.extras === "stretch canvas") {
                 extra = answer.extras;
                 extraCost = 10;
@@ -601,55 +557,148 @@ function createOrder() {
             } else {
                 extra = "n/a";
                 extraCost = 0;
+            };
+
+            // Minimum and Oversize Costs
+            if (frameSizeInches < 60) {
+                frameSize = 5;
+                overSize = 1;
+                isMinimum = true;
+            } else if (frameSizeInches >= 180 && frameSizeInches <= 239) {
+                overSize = 1.20;
+                isOverSize = true;
+            } else if (frameSizeInches >=240 && frameSizeInches <=299) {
+                overSize = 1.30;
+                isOverSize = true;
+            } else if (300 <= frameSizeInches) {
+                overSize = 1.40;
+                isOverSize = true;
+            } else {
+                overSize = 1;
+                isMinimum = false;
             }
 
-            // Material Cost
+            // Discount Costs
+            if (answer.discount === 0) {
+                discount = 0;
+                discountAmt = 0;
+            } else {
+                discount = parseInt(answer.discount) * 0.01;
+            };
 
-            /*
-            SELECT id, cost_per_foot FROM frame WHERE material = ? AND finish = ? AND detail = ?",
-                [material, finish, finishDesc],
- 
-            */
+            // Rush Costs
+            if (answer.rush === "No") {
+                rush = 1;
+            } else if (answer.rush === "Yes: 2 Weeks") {
+                rush = 1.20;
+            } else if (answer.rush === "Yes: 1 Week") {
+                rush = 1.30;
+            };
+
+            // Booleans for rush
+            if (rush != 1) {
+                isRush = true;
+            } else {
+                isRush = false;
+            };
+
+            //Booleans for oversize
+            if (overSize != 1) {
+                isOverSize = true;
+            } else {
+                isOverSize = false;
+            }
+
+            // Tax Costs
+            if (answer.tax === "NY") {
+                taxRate = 1.08725;
+            } else if (answer.tax === "NJ") {
+                taxRate = 1;
+            } else if (answer.tax === "CT") {
+                taxRate = 1.0635;
+            };
+
+            // Dimension Variables & Dimension Calculations
+            function roundHalf(num) { return (Math.round(num * 2) / 2).toFixed(1) };
+            function roundHalfUp(num) { return (Math.ceil(num * 2) / 2).toFixed(1) };
+            paperSize = paperHeight + paperWidth;
+            imageSize = imageHeight + imageWidth;
+            windowHeight = imageHeight + (matSize * 2);
+            windowWidth = imageWidth + (matSize * 2);
+            windowSize = windowHeight + windowWidth;
+            frameHeight = windowHeight + (faceWidthNum * 2);
+            frameWidth = windowWidth + (faceWidthNum * 2);
+            frameSize = roundHalf(windowHeight + windowWidth + (2 * faceWidthNum)) / 12;
+            frameSizeTest = roundHalfUp(windowHeight + windowWidth + (2 * faceWidthNum)) / 12;
+            frameSizeActual = roundHalf(windowHeight + windowWidth + (2 * faceWidthNum)) / 12;
+            frameSizeInches = roundHalf(windowHeight + windowWidth + (2 * faceWidthNum));
+            unitedInch = Math.ceil(frameSizeInches / 6);
+            unitdInchTest = roundHalf(unitedInch);
+
+            // MySQL query to get the actual cost of the selected materials defined above
             connection.query("SELECT * FROM frame WHERE face_width = ? AND frame_depth = ? AND material = ? AND finish = ? AND detail = ?",
                 [faceWidth, frameDepth, material, finish, finishDesc
                 ]
                 , function (err, results) {
                     if (err) throw err;
-                    //console.log("\n");
-                    //console.table(results);
 
                     materialFinishCost = results[0].cost_per_foot;
-                    //console.dir(results);
 
-                    // Calculation Testing:
                     subtotal = ((materialFinishCost + matCost + floatCost + spacerCost + dryMountCost + glazeCost + strainerCost + extraCost) * unitedInch) + extraAmt;
 
-                    orderCost = (subtotal * overSize15_20 * oversize20_25 * oversize25) * (1 - discount);
+                    discountAmt = subtotal * discount;
 
-                    //materialFinishCost = 25;
+                    overSizeAmt = subtotal * (overSize - 1);
+
+                    rushAmt = subtotal * (rush -1);
+
+                    finalTaxRate = (taxRate - 1) * 100;
+
+                    orderCost = (subtotal * overSize * rush) - discountAmt;
+
+                    taxAmt = (finalTaxRate / 100) * orderCost;
+
+                    finalCost = orderCost + taxAmt;
 
                     console.log(
-                        "\n\n==========================================================" +
-                        "\n\nFrame Size (feet): " + frameSize + "'\n\n" +
-                        "Face Width (inches): " + faceWidth + "\n\n" +
-                        "Frame Depth (inches): " + frameDepth + "\n\n" +
-                        "United Inch Number: " + unitedInch + "\n\n" +
-                        "Frame Build: " + "Material: " + material + ", Finish: " + finish + ", Finish Option: " + finishDesc + "\n\n" +
-                        "Material Cost: " + material + " at $" + materialFinishCost + " per foot " + "\n\n" +
-                        "Mat Cost: " + mat + " at $" + matCost + " per foot" + "\n\n" +
-                        "Float Cost: " + float + " at $" + floatCost + " per foot" + "\n\n" +
-                        "Spacer Cost: " + spacer + " at $" + spacerCost + " per foot" + "\n\n" +
-                        "Dry Mount Cost: " + dryMount + " at $" + dryMountCost + " per foot" + "\n\n" +
-                        "Glazing Cost: " + glaze + " at $" + glazeCost + " per foot" + "\n\n" +
-                        "Strainer Cost: " + strainer + " at $" + strainerCost + " per foot" + "\n\n" +
-                        "Extras Cost: " + extra + " at $" + extraCost + "\n\n" +
-                        "Other Extras Per Frame: $" + extraAmt + "\n\n" +
-                        "-------------------------------" + "\n\n" +
-                        "Frame Subtotal: " + "$" + subtotal + "\n\n" +
-                        "Frame Discount: " + (discount * 100) + "%" + "\n\n" +
-                        "==========================================================" + "\n\n" +
-                        "Total Order Cost: " + "$" + orderCost + "\n\n"
-                    )
+                        "\n\n====================================================================================================================" +
+                        colors.yellow("\n\nImage Size (inches): ") + imageHeight + '" x '+ imageWidth + '"' + "\n\n" +
+                        colors.yellow("Mat Size (inches): ") + matSize +  '"' + "\n\n" +
+                        colors.yellow("Window Size (inches): ") + windowHeight + '" x '+ windowWidth + '"' + "\n\n" +
+                        colors.yellow("Face Width (inches): ") + faceWidth + '"' + "\n\n" +
+                        colors.yellow("Frame Depth (inches): ") + frameDepth + '"' + "\n\n" +
+                        colors.yellow("Frame Size (inches): ") + frameSizeInches + '"' + "\n\n" +
+                        colors.yellow("Actual Frame Size (feet): ") + frameSizeActual + "'\n\n" +
+                        colors.yellow("Frame Size (feet):") + frameSize + "' (To account for '5 Minimums in calculations)\n\n" +
+                        colors.yellow("Frame Size (feet) TEST TEST TEST:") + frameSizeTest + "' (Trying to round UP to nearest 0.5)\n\n" +
+                        colors.yellow("United Inch Number: ") + unitedInch + "\n\n" +
+                        "--------------------------------------------------------------------------------------------------------------------" + "\n\n" +
+                        colors.yellow("Frame Build: ") + colors.cyan("Material: ") + material + ", " + colors.cyan("Finish: ") + finish + ", " + colors.cyan("Finish Option: ") + finishDesc + "\n\n" +
+                        colors.yellow("Material Cost: ") + material + " at " + colors.green("$" + materialFinishCost) + " per foot " + "\n\n" +
+                        colors.yellow("Mat Cost: ") + mat + " at " + colors.green("$" + matCost) + " per foot" + "\n\n" +
+                        colors.yellow("Float Cost: ") + float + " at " +  colors.green("$" + floatCost) + " per foot" + "\n\n" +
+                        colors.yellow("Spacer Cost: ") + spacer + " at " + colors.green("$" + spacerCost) + " per foot" + "\n\n" +
+                        colors.yellow("Dry Mount Cost: ") + dryMount + " at " + colors.green("$" + dryMountCost) + " per foot" + "\n\n" +
+                        colors.yellow("Glazing Cost: ") + glaze + " at " + colors.green("$" + glazeCost) + " per foot" + "\n\n" +
+                        colors.yellow("Strainer Cost: ") + strainer + " at " + colors.green("$" + strainerCost) + " per foot" + "\n\n" +
+                        colors.yellow("Extras Cost: ") + extra + " at " + colors.green("$" + extraCost) + " per foot" + "\n\n" +
+                        colors.yellow("Other Extras Per Frame:") + colors.green("$" + extraAmt) + "\n\n" +
+                        "--------------------------------------------------------------------------------------------------------------------" + "\n\n" +
+                        colors.yellow("Minimum: ") + colors.cyan(isMinimum) + "\n\n" +
+                        colors.yellow("Oversize: ") + colors.cyan(isOverSize) + "\n\n" +
+                        colors.yellow("Rush: ") + colors.cyan(isRush) + "\n\n" +
+                        "--------------------------------------------------------------------------------------------------------------------" + "\n\n" +
+                        colors.yellow("Frame Subtotal: ") + colors.green("$" + subtotal.toFixed(2)) + "\n\n" +
+                        colors.yellow("Frame Discount Percentage: ") + colors.magenta((discount * 100) + "%") + "\n\n" +
+                        colors.yellow("Frame Discount Amount: ") +  colors.magenta("-$" + discountAmt.toFixed(2)) + "\n\n" +
+                        colors.yellow("Oversize Amount: ") + colors.green("$" + overSizeAmt.toFixed(2)) + "\n\n" + 
+                        colors.yellow("Rush Amount: ") + colors.green("$" + rushAmt.toFixed(2)) + "\n\n" +
+                        colors.yellow("Tax Rate Percentage: ") + finalTaxRate.toFixed(3) + "%" + "\n\n" +
+                        colors.yellow("Tax Amount: ") + colors.green("$" + taxAmt.toFixed(2)) + "\n\n" +
+                        "====================================================================================================================" + "\n\n" +
+                        colors.yellow("Total Order Cost: ") + colors.green("$" + finalCost.toFixed(2)) + "\n\n" 
+                        
+                    );
 
                     managerInit();
 
