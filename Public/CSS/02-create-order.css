@@ -43,7 +43,6 @@ h2 {
     text-align: center;
 }
 
-
 .progress{
     width: 500px;
     margin-left: 680px;
@@ -55,32 +54,25 @@ h2 {
     justify-content: center;
 }
 
+/* Wrapper */
 
-.top-2{
+.wrapper{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
 
-/* Log In Container */
+/* Order Details Form */
 
-.log-in-container{
-    display: flex;
-    justify-content: center;
-    /* flex-wrap: wrap; */
-}
-
-/* Log In Form */
-
-.log-in-form{
-    width: 400px;
+.order-details-form{
+    width: 605px;
     height: auto;
     /* background-color: lavender; */
     padding: 30px;
     margin: 10px;
 }
 
-.log-in-button{
+#submit-order-details-button{
     width: 200px;
 
 }

@@ -43,7 +43,6 @@ h2 {
     text-align: center;
 }
 
-
 .progress{
     width: 500px;
     margin-left: 680px;
@@ -56,31 +55,30 @@ h2 {
 }
 
 
-.top-2{
+/* Wrapper */
+
+.wrapper{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
 
-/* Log In Container */
-
-.log-in-container{
-    display: flex;
-    justify-content: center;
-    /* flex-wrap: wrap; */
-}
-
 /* Log In Form */
 
-.log-in-form{
-    width: 400px;
+.new-client-form{
+    width: 605px;
     height: auto;
     /* background-color: lavender; */
     padding: 30px;
     margin: 10px;
 }
 
-.log-in-button{
+#new-client-button{
     width: 200px;
-
 }
+
+#existing-client-button{
+    width: 200px;
+}
+
+
