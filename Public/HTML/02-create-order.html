@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fine Art Frameworks App</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <link rel="stylesheet" href="/Public/CSS/02-create-order.css">
+    <!-- JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="/Public/JS/create-order.js"></script>
+  </head>
+  <body>
+    <!-- Navigation -->
+
+    <nav class="navbar navbar-height: 70px;" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="/Public/HTML/create-order.html">
+          <h1>Fine Art Frameworks</h1>
+        </a>
+
+        <!-- <a class="navbar-item" href="/index.html">
+          <img src="/Assets/FAFW_logo-black_500w.png" height="80px">
+        </a> -->
+    
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+    
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="buttons">
+              <a class="button">
+                <strong>Create Order</strong>
+              </a>
+              <a class="button">
+                View Orders
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header -->
+  <section class="section">
+    <div class="title-container">
+      <h1 class="title">Create Order</h1>
+    </div>
+    <br>
+    <div class="title-container">
+        <h1>2. Order Information</h1>
+    </div>
+    <br>
+    <div class="progress-container">
+        <progress class="progress is-success box" value="50" max="100"></progress>
+    </div>
+
+  </section>
+
+
+<!-- =============================================================== -->
+
+
+  <!-- Top 2 Info Boxes Container -->
+  <div class="top-2">
+
+    <!-- Client Info Form -->
+   <div class="client-form form-container box">
+     <h1>Add Order Details</h1>
+     <h2>Starred Fields are Required</h2>
+     <br>
+   
+    <!--Frame Quantity -->
+    <div class="field">
+        <label class="label">Frame Quantity*</label>
+        <div class="control">
+          <input class="input" type="number" placeholder="1" required style="width: 400px;">
+        </div>
+      </div>
+
+    <!-- Date Due -->
+    <div class="field">
+        <label class="label">Date Due*</label>
+        <div class="control">
+          <input class="input" type="date" required>
+        </div>
+      </div>
+            
+    <!-- Rush Job? -->
+    <div class="field">
+        <label class="label">Rush Job?*</label>
+        <div class="control">
+          <label class="radio">
+            <input type="radio" name="rush-answer" required>
+            No
+          </label>
+          <label class="radio">
+            <input type="radio" name="rush-answer">
+            1 Week
+          </label>
+          <label class="radio">
+            <input type="radio" name="rush-answer">
+            2 Weeks
+          </label>
+        </div>
+      </div>
+   
+    <!-- Art Storage Location -->
+    <div class="field">
+    <label class="label">Art Storage Location*</label>
+    <div class="control">
+        <input class="input" type="text" placeholder="A-1" required>
+    </div>
+    </div>
+
+
+    <!-- Divider -->
+    <hr>
+
+   <!-- Buttons -->
+   <div class="field is-grouped">
+    <div class="control">
+      <button class="button is-link">Submit Order Details</button>
+    </div>
+    <!-- <div class="control">
+      <button class="button is-link is-light" id="duplicate-frame-button">Use Existing Client</button>
+    </div> -->
+  </div>
+   
+    </div> <!-- Client Info Form Container Close -->
+   
+   
+   </div> <!-- Top 2 Container Close -->
+
+  </body>
+</html>
