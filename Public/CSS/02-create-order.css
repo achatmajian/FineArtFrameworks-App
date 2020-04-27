@@ -45,9 +45,9 @@ h2 {
 
 .progress{
     width: 500px;
-    margin-left: 680px;
-    
+    margin-left: 680px;   
 }
+
 .title-container > div{
     display: flex;
     align-items: center;

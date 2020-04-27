@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fine Art Frameworks App</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <link rel="stylesheet" href="/Public/CSS/old-create-order.css">
+    <!-- JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="/Public/JS/create-order.js"></script>
+  </head>
+  <body>
+    <!-- Navigation -->
+
+    <nav class="navbar navbar-height: 70px;" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="/Public/HTML/create-order.html">
+          <h1>Fine Art Frameworks</h1>
+        </a>
+
+        <!-- <a class="navbar-item" href="/index.html">
+          <img src="/Assets/FAFW_logo-black_500w.png" height="80px">
+        </a> -->
+    
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+    
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="buttons">
+              <a class="button">
+                <strong>Create Order</strong>
+              </a>
+              <a class="button">
+                View Orders
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="section">
+        <div class="title-container">
+          <h1 class="title">Create Order</h1>
+        </div>
+        <br>
+        <div class="title-container">
+            <h1>3. Build Frame</h1>
+        </div>
+        <br>
+        <div class="progress-container">
+            <progress class="progress is-success box" value="50" max="100"></progress>
+        </div>
+    
+      </section>
+<!-- =============================================================== -->
+
+<div class="bottom" id="bottom">
+
+ <!-- Build Frame Form -->
+
+ <div class="frame-form form-container box" id="build-frame"> <!-- Frame Form Wrapper-->
+  <h1>Build Frame</h1>
+  <h2>Starred Fields are Required</h2>
+  <br>
+
+  <div class="size-manu"> <!-- Size and Manu Parent Div-->
+  <div class="sizing box"> <!-- Sizing Child Div-->
+  <!-- Sizing -->
+  <h1>Sizing</h1>
+  <br>
+  <!-- Item Dimensions -->
+  <div class="field">
+    <label class="label">Item Dimensions (Inches)</label>
+    <div class="control">
+      <p>Art Height*</p>
+      <input class="input" type="number" placeholder="0000" required>
+      <span class="br"></span> 
+      <p>Art Width*</p>
+      <input class="input" type="number" placeholder="0000" required>
+      <span class="br"></span> 
+      <!-- <p>Art Depth</p>
+      <input class="input" type="number" placeholder="0000"> -->
+    </div>
+  </div>
+  
+  <!-- Profile Width -->
+  <!-- <div class="field">
+    <label class="label">Profile Width*</label>
+    <div class="control">
+      <div class="select">
+        <select class="profile-width-answers">
+          <option id="profile-width-answer" required>1/2"</option>
+          <option id="profile-width-answer">3/4"</option>
+          <option id="profile-width-answer">1"</option>
+          <option id="profile-width-answer">1 1/2"</option>
+          <option id="profile-width-answer">2"</option>
+          <option id="profile-width-answer">2 1/2"</option>
+          <option id="profile-width-answer">3"</option>
+        </select>
+      </div>
+    </div>
+  </div> -->
+
+
+  <!-- Profile Width 2 -->
+  <div class="field">
+    <label class="label">Face Width*</label>
+    <div class="control">
+      <label class="radio">
+        <input type="radio" name="profile-width-answer" required>
+        1/2"
+      </label>
+      <label class="radio">
+        <input type="radio" name="profile-width-answer">
+        3/4"
+      </label>
+      <label class="radio">
+        <input type="radio" name="profile-width-answer">
+        1"
+      </label>
+      <label class="radio">
+        <input type="radio" name="profile-width-answer">
+        1 1/2"
+      </label>
+      <label class="radio">
+        <input type="radio" name="profile-width-answer">
+        2"
+      </label>
+      <label class="radio">
+        <input type="radio" name="profile-width-answer">
+        2 1/2"
+      </label>
+      <label class="radio">
+        <input type="radio" name="profile-width-answer">
+        3"
+      </label>
+    </div>
+  </div>
+
+  <!-- Frame Depth -->
+  <div class="field">
+    <label class="label">Frame Depth*</label>
+    <div class="control">
+      <label class="radio">
+        <input type="radio" name="frame-depth-answer" required>
+        1/2"
+      </label>
+      <label class="radio">
+        <input type="radio" name="frame-depth-answer">
+        3/4"
+      </label>
+      <label class="radio">
+        <input type="radio" name="frame-depth-answer">
+        1"
+      </label>
+      <label class="radio">
+        <input type="radio" name="frame-depth-answer">
+        1 1/2"
+      </label>
+      <label class="radio">
+        <input type="radio" name="frame-depth-answer">
+        2"
+      </label>
+      <label class="radio">
+        <input type="radio" name="frame-depth-answer">
+        2 1/2"
+      </label>
+      <label class="radio">
+        <input type="radio" name="frame-depth-answer">
+        3"
+      </label>
+    </div>
+  </div>
+
+  <!-- Oversize? -->
+    <!-- <div class="field">
+      <label class="label">Oversize?*</label>
+      <div class="control">
+        <label class="radio">
+          <input type="radio" name="oversize-answer" required>
+          No
+        </label>
+        <label class="radio">
+          <input type="radio" name="oversize-answer">
+          15ft-20ft
+        </label>
+        <label class="radio">
+          <input type="radio" name="oversize-answer">
+          20ft-25ft
+        </label>
+        <label class="radio">
+          <input type="radio" name="oversize-answer">
+          25ft+
+        </label>
+      </div>
+    </div> -->
+  </div><!-- Sizing Child Div Close -->
+
+  <!-- --------------------------------------------------------------- -->
+
+  <div class="manufacturing box"> <!-- Manufacturing Child Div-->
+  <!-- Manufacturing -->
+  <h1>Manufacturing</h1>
+  <br>
+
+    <!-- Wood -->
+    <div class="field">
+      <label class="label">Material*</label>
+      <div class="control">
+        <label class="radio">
+          <input type="radio" name="material-answer" required>
+          Maple
+        </label>
+        <label class="radio">
+          <input type="radio" name="material-answer">
+          Walnut
+        </label>
+        <label class="radio">
+          <input type="radio" name="material-answer">
+          Ash
+        </label>
+        <label class="radio">
+          <input type="radio" name="material-answer">
+          Cherry
+        </label>
+        <label class="radio">
+          <input type="radio" name="material-answer">
+          White Oak
+        </label>
+      </div>
+    </div>
+
+  <!-- Metal -->
+  <div class="field">
+    <label class="label"></label>
+    <div class="control">
+      <label class="radio">
+        <input type="radio" name="material-answer">
+        Aluminum Cut/Join
+      </label>
+      <label class="radio">
+        <input type="radio" name="material-answer">
+        Aluminum Weld
+      </label>
+      <label class="radio">
+        <input type="radio" name="material-answer">
+        Steel Weld
+      </label>
+    </div>
+  </div>
+
+  <!-- Finish -->
+  <div class="field">
+    <label class="label">Finish*</label>
+    <div class="control">
+      <label class="radio">
+        <input type="radio" name="finish-answer" id="finish-painted" required>
+        Painted
+      </label>
+      <label class="radio">
+        <input type="radio" name="finish-answer" id="finish-stained">
+        Stained
+      </label>
+      <label class="radio">
+        <input type="radio" name="finish-answer" id="finish-natural">
+        Natural
+      </label>
+    </div>
+
+    <div class="field finish-paint-options">
+      <label class="label"></label>
+      <div class="control finish-dropdown">
+        <div class="select">
+          <select required>
+            <option selected="true" disabled="disabled">Choose Finish</option>
+            <option class="finish-paint-answer" disabled>Paint Options</option>
+            <option class="finish-paint-answer">Bright White</option>
+            <option class="finish-paint-answer">Matting White</option>
+            <option class="finish-paint-answer">Antique</option>
+            <option class="finish-paint-answer">Other Paint</option>
+            <option class="finish-stain-answer" disabled>Stain Options</option>
+            <option class="finish-stain-answer">Roe White Wash</option>
+            <option class="finish-stain-answer">Matting Wash</option>
+            <option class="finish-stain-answer">New White Wash</option>
+            <option class="finish-stain-answer">Andrea White Laq</option>
+            <option class="finish-stain-answer">Black Stain Flat</option>
+            <option class="finish-stain-answer">Black Stain Gloss</option>
+            <option class="finish-stain-answer">Dark Walnut</option>
+            <option class="finish-stain-answer">Roe Walnut</option>
+            <option class="finish-stain-answer">Walnut #2</option>
+            <option class="finish-stain-answer">Black Cherry</option>
+            <option class="finish-stain-answer">Marks Brown</option>
+            <option class="finish-stain-answer">Chelsea Brown</option>
+            <option class="finish-stain-answer">Graphite</option>
+            <option class="finish-stain-answer">ZLB</option>
+            <option class="finish-stain-answer">Other Stain</option>
+            <option class="finish-natural-answer" disabled>Natural Options</option>
+            <option class="finish-natural-answer">Natural Flat</option>
+            <option class="finish-natural-answer">Natural Gloss</option>
+            <option class="finish-natural-answer">Bleached</option>
+            <option class="finish-natural-answer">Oil</option>
+            <option class="finish-natural-answer">Wax</option>
+            <option class="finish-natural-answer">Other Natural</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Strainer -->
+  <div class="field">
+    <label class="label">Strainer*</label>
+    <div class="control">
+      <label class="radio">
+        <input type="radio" name="strainer-answer" required>
+        3/8"
+      </label>
+      <label class="radio">
+        <input type="radio" name="strainer-answer">
+        1/2"
+      </label>
+      <label class="radio">
+        <input type="radio" name="strainer-answer">
+        5/8"
+      </label>
+      <label class="radio">
+        <input type="radio" name="strainer-answer">
+        3/4"
+      </label>
+      <label class="radio">
+        <input type="radio" name="strainer-answer">
+        No Strainer
+      </label>
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label">Paint Strainer?*</label>
+    <div class="control">
+      <label class="radio">
+        <input type="radio" name="strainer-paint-answer" required>
+        No 
+      </label>
+      <label class="radio">
+        <input type="radio" name="strainer-paint-answer">
+        Yes
+      </label>
+    </div>
+  </div>
+
+</div><!-- Manufacturing Child Div Close -->
+</div> <!-- Size and Manu Parent Div Close-->
+
+<!-- --------------------------------------------------------------- -->
+
+<div class="fit-notes"> <!-- Fitting and Notes Parent Div -->
+  <div class="fitting box"> <!-- Fitting Child Div-->
+  <!-- Fitting -->
+  <h1>Fitting</h1>
+  <h2>Must choose either Mat, Float, or Flush</h2>
+  <br>
+  <!-- Mat -->
+
+  <div class="field">
+    <label class="checkbox">
+      <input type="checkbox" id="mat-checkbox">
+        <strong>Mat</strong> (No Spacers)
+    </label>
+    <div class="control">
+      <label class="radio">
+        <input type="radio" name="mat-answer" class="mat-answer" id="4ply" disabled>
+        4 Ply
+      </label>
+      <label class="radio">
+        <input type="radio" name="mat-answer" class="mat-answer" id="8ply" disabled>
+        8 Ply
+      </label>
+      <label class="radio">
+        <input type="radio" name="mat-answer" class="mat-answer" id="12ply" disabled>
+        12 Ply
+      </label>
+      <label class="radio">
+        <input type="radio" name="mat-answer" class="mat-answer" id="fabric" disabled>
+        Fabric
+      </label>
+    </div>
+
+    <div class="field">
+        <label class="label"></label>
+        <div class="control">
+          <div class="select">
+            <select class="mat-colors" disabled>
+              <option id="mat-color-answer" disabled>Mat Colors</option>
+              <option id="mat-color-answer">Polar White</option>
+              <option id="mat-color-answer">White</option>
+              <option id="mat-color-answer">Warm White</option>
+              <option id="mat-color-answer">Antique</option>
+              <option id="mat-color-answer">Cream</option>
+              <option id="mat-color-answer">Natural</option>
+              <option id="mat-color-answer">Black</option>
+              <option id="mat-color-answer">Other</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+  </div>
+
+  <!-- Float -->
+
+  <div class="field">
+    <label class="checkbox">
+      <input type="checkbox" id="float-checkbox">
+        <strong>Float</strong> (No Dry Mount)
+    </label>
+    <div class="control">
+      <label class="radio">
+        <input type="radio" name="float-answer" class="float-answer" disabled>
+        Rag
+      </label>
+      <label class="radio">
+        <input type="radio" name="float-answer" class="float-answer" disabled>
+        Linen
+      </label>
+      <label class="radio">
+        <input type="radio" name="float-answer" class="float-answer" disabled>
+        Silk
+      </label>
+    </div>
+  </div>
+
+  <!-- Flush -->
+  <div class="field">
+    <label class="checkbox">
+      <input type="checkbox" id="flush-checkbox">
+        <strong>Flush</strong>
+    </label>
+    <!-- <div class="control">
+      <label class="radio">
+        <input type="radio" name="flush-answer" id="4ply" checked>
+        Yes
+      </label>
+    </div> -->
+  </div>
+
+  <hr>
+
+  <!-- Spacers -->
+  <div class="field">
+    <label class="checkbox">
+      <input type="checkbox" id="spacers-checkbox">
+        <strong>Spacers</strong>
+    </label>
+    <div class="control">
+      <div class="select">
+        <select class="spacer-answers">
+          <option id="spacers-answer" default>Rag</option>
+          <option id="spacers-answer">Wood</option>
+          <option id="spacers-answer">Silk</option>
+          <option id="spacers-answer">Plastic</option>
+        </select>
+      </div>
+    </div>
+  </div>  
+
+  <!-- Dry Mount -->
+  <div class="field">
+    <label class="checkbox">
+      <input type="checkbox" id="drymount-checkbox">
+        <strong>Dry Mount</strong>
+    </label>
+    <div class="control">
+      <div class="select">
+        <select class="drymount-answers">
+          <option id="drymount-answer" default>Regular Foam</option>
+          <option id="drymount-answer">Acid Free Foam</option>
+          <option id="drymount-answer">Rag</option>
+          <option id="drymount-answer">Cintra</option>
+          <option id="drymount-answer">D-Bond</option>
+        </select>
+      </div>
+    </div>
+  </div>  
+
+  <!-- Glazing -->
+  <div class="field">
+    <label class="checkbox">
+      <input type="checkbox" id="glazing-checkbox">
+        <strong>Glazing</strong>
+    </label>
+
+    <div class="control">
+      <p>Glass</p>
+      <div class="select">
+        <select>
+          <option id="glazing-answer" default>Regular Glass (Max 40" x 60")</option>
+          <option id="glazing-answer">Museum Glass (Max 48" x 64")</option>
+        </select>
+      </div>
+    </div>
+    
+    <span class="br"></span> 
+
+    <div class="control">
+      <p>Plexiglass</p>
+      <div class="select">
+        <select>
+          <option id="glazing-answer" default>Regular Plexiglass</option>
+          <option id="glazing-answer">UV Plexiglass </option>
+          <option id="glazing-answer">Museum Plexiglass (Up To 40" x 60")</option>
+          <option id="glazing-answer">Museum Plexiglass (Up To 48" x 96")</option>
+          <option id="glazing-answer">Museum Plexiglass (Up To 72" x 96")</option>
+          <option id="glazing-answer">Museum Plexiglass (Up To 72" x 120")</option>
+        </select>
+      </div>
+    </div>
+
+
+  </div>  
+
+  <!-- Extras -->
+  <div class="field">
+    <label class="checkbox">
+      <input type="checkbox" id="extras-checkbox"><strong>Extras</strong><span class="br"></span> 
+        <input type="checkbox" id="extras-answer">Strech Canvas</input>
+        <input type="checkbox" id="extras-answer">Raise Mount</input>
+        <input type="checkbox" id="extras-answer">De-fit/Re-fit</input>
+        <input type="checkbox" id="extras-answer">Re-finish</input>
+    </label>
+     
+
+  
+    </div>  
+
+</div><!-- Fitting Child Div Close -->
+
+<!-- --------------------------------------------------------------- -->
+
+  <!-- Notes -->
+<div class="notes-upload box">
+  <h1>Notes</h1>
+  <br>
+    <textarea class="textarea has-fixed-size" rows="6" placeholder="Enter woodworker notes"></textarea>
+  <br>
+  <textarea class="textarea has-fixed-size" rows="6" placeholder="Enter fitter notes"></textarea>
+  <br>
+
+  <!-- Image Upload -->
+  <h1>Image Upload</h1>
+  <br>
+    <div class="field upload">
+      <div class="file is-boxed is-medium has-name">
+        <label class="file-label">
+          <input class="file-input" type="file" name="resume">
+          <span class="file-cta">
+            <span class="file-icon">
+              <i class="fas fa-upload"></i>
+            </span>
+            <span class="file-label">
+              Art Image
+            </span>
+          </span>
+          <span class="file-name">
+            <!-- Screen Shot 2020-01-16 at 15.54.25.png -->
+          </span>
+        </label>
+      </div>
+    </div> <!-- Image Upload Close -->
+</div>   <!-- Notes-Upload Close-->
+
+</div><!-- Fitting and Notes Parent Close-->
+<hr>
+
+    <!-- Buttons -->
+    <div class="field is-grouped">
+      <div class="control">
+        <button class="button is-link">Submit Order</button>
+      </div>
+      <div class="control">
+        <button class="button is-link is-light" id="add-frame-button">Add Another Frame</button>
+      </div>
+      <div class="control">
+        <button class="button is-link is-light" id="duplicate-frame-button">Duplicate Frame</button>
+      </div>
+      <!-- <div class="control">
+        <button class="button is-link is-light">Clear</button>
+      </div> -->
+    </div>
+
+    <!-- Pagination -->
+    <nav class="pagination is-small" role="navigation" aria-label="pagination">
+      <a class="pagination-previous" title="This is the first page" disabled>Previous Frame</a>
+      <a class="pagination-next">Next Frame</a>
+      <ul class="pagination-list">
+        <li>
+          <a class="pagination-link is-current" aria-label="Page 1" aria-current="page">1</a>
+        </li>
+        <li>
+          <a class="pagination-link" aria-label="Goto page 2">2</a>
+        </li>
+        <li>
+          <a class="pagination-link" aria-label="Goto page 3">3</a>
+        </li>
+      </ul>
+    </nav>
+
+ </div> <!-- Build Frame Form Container Close -->
+
+</div> <!-- Bottom Close -->
+
+</div> <!-- All Forms Container Close -->
+
+  </body>
+</html>
