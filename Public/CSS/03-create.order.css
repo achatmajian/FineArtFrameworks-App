@@ -1,0 +1,132 @@
+/* Global */
+
+body {
+    background-color: #9cc0e7;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 14px;
+    /* font-weight: bold; */
+}
+
+.navbar {
+    padding: 15px;
+}
+
+.br { 
+    display: block; 
+    margin-bottom: 0.5em; 
+} 
+  
+.brmedium { 
+    display: block; 
+    margin-bottom: 1em; 
+} 
+  
+.brlarge { 
+    display: block; 
+    margin-bottom: 2em; 
+} 
+
+/* Title */
+
+.title-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.progress{
+    width: 500px;
+    margin-left: 680px;   
+}
+
+.title-container > div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Frame Build Containers*/
+
+.bottom {
+    display: flex;
+    justify-content: center;
+}
+
+.size-manu {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+
+.fit-notes {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.upload {
+    display: flex;
+    justify-content: center;
+    /* padding: 10px; */
+}
+
+.frame-form{
+    width: 1240px;
+    /* background-color: lavender; */
+    padding: 30px;
+    margin: 30px;
+}
+
+/* Frame Build Sections */
+
+.sizing {
+    width: 500px;
+    height: 450px;
+    /* background-color: lavender; */
+    padding: 30px;
+    margin: 20px;
+    /* border: solid red; */
+}
+
+/* Manufacturing */
+
+.manufacturing {
+    width: 500px;
+    height: 450px;
+    /* background-color: lavender; */
+    padding: 30px;
+    margin: 20px;
+    /* border: solid red; */
+}
+
+.finish-options{
+    display: flex;
+    justify-content: space-between;
+}
+
+.fitting {
+    width: 500px;
+    height: 750px;
+    /* background-color: lavender; */
+    padding: 30px;
+    margin: 20px;
+    /* border: solid red; */
+}
+
+.notes-upload {
+    width: 500px;
+    height: 750px;
+    /* background-color: lavender; */
+    padding: 30px;
+    margin: 20px;
+}
