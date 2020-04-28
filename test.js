@@ -559,25 +559,6 @@ function createOrder() {
                 extraCost = 0;
             };
 
-            // Minimum and Oversize Costs
-            if (frameSizeInches < 60) {
-                frameSize = 5;
-                overSize = 1;
-                isMinimum = true;
-            } else if (frameSizeInches >= 180 && frameSizeInches <= 239) {
-                overSize = 1.20;
-                isOverSize = true;
-            } else if (frameSizeInches >=240 && frameSizeInches <=299) {
-                overSize = 1.30;
-                isOverSize = true;
-            } else if (300 <= frameSizeInches) {
-                overSize = 1.40;
-                isOverSize = true;
-            } else {
-                overSize = 1;
-                isMinimum = false;
-            }
-
             // Discount Costs
             if (answer.discount === 0) {
                 discount = 0;
@@ -619,8 +600,7 @@ function createOrder() {
             };
 
             // Dimension Variables & Dimension Calculations
-            function roundHalf(num) { return (Math.round(num * 2) / 2).toFixed(1) };
-            function roundHalfUp(num) { return (Math.ceil(num * 2) / 2).toFixed(1) };
+            function roundHalf(num) { return (Math.round(num * 2) / 2) };
             paperSize = paperHeight + paperWidth;
             imageSize = imageHeight + imageWidth;
             windowHeight = imageHeight + (matSize * 2);
@@ -628,12 +608,31 @@ function createOrder() {
             windowSize = windowHeight + windowWidth;
             frameHeight = windowHeight + (faceWidthNum * 2);
             frameWidth = windowWidth + (faceWidthNum * 2);
-            frameSize = roundHalf(windowHeight + windowWidth + (2 * faceWidthNum)) / 12;
-            frameSizeTest = roundHalfUp(windowHeight + windowWidth + (2 * faceWidthNum)) / 12;
-            frameSizeActual = roundHalf(windowHeight + windowWidth + (2 * faceWidthNum)) / 12;
+            frameSize = roundHalf((windowHeight + windowWidth + (2 * faceWidthNum)) / 12 );
+            frameSizeActual = roundHalf((windowHeight + windowWidth + (2 * faceWidthNum)) / 12);
             frameSizeInches = roundHalf(windowHeight + windowWidth + (2 * faceWidthNum));
-            unitedInch = Math.ceil(frameSizeInches / 6);
-            unitdInchTest = roundHalf(unitedInch);
+            
+             // Minimum and Oversize Costs
+             if (frameSizeInches < 60) {
+                frameSize = 5;
+                overSize = 1;
+                isMinimum = true;
+            } else if (frameSizeInches >= 180 && frameSizeInches <= 239) {
+                overSize = 1.20;
+                isOverSize = true;
+            } else if (frameSizeInches >=240 && frameSizeInches <=299) {
+                overSize = 1.30;
+                isOverSize = true;
+            } else if (300 <= frameSizeInches) {
+                overSize = 1.40;
+                isOverSize = true;
+            } else {
+                overSize = 1;
+                isMinimum = false;
+            };
+
+            // United Inch Calc (comes after the Minimum if/else checks to account for isMinimum = true)
+            unitedInch = roundHalf((frameSize * 12) / 6);
 
             // MySQL query to get the actual cost of the selected materials defined above
             connection.query("SELECT * FROM frame WHERE face_width = ? AND frame_depth = ? AND material = ? AND finish = ? AND detail = ?",
@@ -669,8 +668,7 @@ function createOrder() {
                         colors.yellow("Frame Depth (inches): ") + frameDepth + '"' + "\n\n" +
                         colors.yellow("Frame Size (inches): ") + frameSizeInches + '"' + "\n\n" +
                         colors.yellow("Actual Frame Size (feet): ") + frameSizeActual + "'\n\n" +
-                        colors.yellow("Frame Size (feet):") + frameSize + "' (To account for '5 Minimums in calculations)\n\n" +
-                        colors.yellow("Frame Size (feet) TEST TEST TEST:") + frameSizeTest + "' (Trying to round UP to nearest 0.5)\n\n" +
+                        colors.yellow("Frame Size (feet): ") + frameSize + "' (To account for any '5 Minimums in calculations)\n\n" +
                         colors.yellow("United Inch Number: ") + unitedInch + "\n\n" +
                         "--------------------------------------------------------------------------------------------------------------------" + "\n\n" +
                         colors.yellow("Frame Build: ") + colors.cyan("Material: ") + material + ", " + colors.cyan("Finish: ") + finish + ", " + colors.cyan("Finish Option: ") + finishDesc + "\n\n" +
@@ -682,19 +680,17 @@ function createOrder() {
                         colors.yellow("Glazing Cost: ") + glaze + " at " + colors.green("$" + glazeCost) + " per foot" + "\n\n" +
                         colors.yellow("Strainer Cost: ") + strainer + " at " + colors.green("$" + strainerCost) + " per foot" + "\n\n" +
                         colors.yellow("Extras Cost: ") + extra + " at " + colors.green("$" + extraCost) + " per foot" + "\n\n" +
-                        colors.yellow("Other Extras Per Frame:") + colors.green("$" + extraAmt) + "\n\n" +
+                        colors.yellow("Other Extras Per Frame: ") + colors.green("$" + extraAmt) + "\n\n" +
                         "--------------------------------------------------------------------------------------------------------------------" + "\n\n" +
-                        colors.yellow("Minimum: ") + colors.cyan(isMinimum) + "\n\n" +
-                        colors.yellow("Oversize: ") + colors.cyan(isOverSize) + "\n\n" +
-                        colors.yellow("Rush: ") + colors.cyan(isRush) + "\n\n" +
+                        colors.yellow("Minimum: ") + colors.cyan(isMinimum) + " | " + colors.yellow("Oversize: ") + colors.cyan(isOverSize) + " | "+ colors.yellow("Rush: ") + colors.cyan(isRush) + "\n\n" +
                         "--------------------------------------------------------------------------------------------------------------------" + "\n\n" +
                         colors.yellow("Frame Subtotal: ") + colors.green("$" + subtotal.toFixed(2)) + "\n\n" +
                         colors.yellow("Frame Discount Percentage: ") + colors.magenta((discount * 100) + "%") + "\n\n" +
                         colors.yellow("Frame Discount Amount: ") +  colors.magenta("-$" + discountAmt.toFixed(2)) + "\n\n" +
                         colors.yellow("Oversize Amount: ") + colors.green("$" + overSizeAmt.toFixed(2)) + "\n\n" + 
                         colors.yellow("Rush Amount: ") + colors.green("$" + rushAmt.toFixed(2)) + "\n\n" +
-                        colors.yellow("Tax Rate Percentage: ") + finalTaxRate.toFixed(3) + "%" + "\n\n" +
-                        colors.yellow("Tax Amount: ") + colors.green("$" + taxAmt.toFixed(2)) + "\n\n" +
+                        colors.yellow("Tax Rate Percentage: ") + colors.cyan(finalTaxRate.toFixed(3) + "%") + "\n\n" +
+                        colors.yellow("Tax Amount: ") + colors.cyan("$" + taxAmt.toFixed(2)) + "\n\n" +
                         "====================================================================================================================" + "\n\n" +
                         colors.yellow("Total Order Cost: ") + colors.green("$" + finalCost.toFixed(2)) + "\n\n" 
                         
