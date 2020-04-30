@@ -33,16 +33,30 @@
       </div>
     
         <div class="navbar-end">
-          <div class="navbar-item">
-            <div class="buttons">
-              <a class="button">
-                <strong>Create Order</strong>
-              </a>
-              <a class="button">
-                View Orders
-              </a>
+          <a class="navbar-item"><strong>Create Order</strong></a>
+          
+          <nav class="navbar" role="navigation" aria-label="dropdown navigation">
+            <div class="navbar-item has-dropdown">
+              <a class="navbar-link">View</a>          
+              <div class="navbar-dropdown">
+                <a class="navbar-item">Orders</a>
+                <a class="navbar-item">Clients</a>
+                <a class="navbar-item">Users</a>
+              </div>
             </div>
-          </div>
+          </nav>
+
+          <nav class="navbar" role="navigation" aria-label="dropdown navigation">
+            <div class="navbar-item has-dropdown">
+              <a class="navbar-link">Materials</a>          
+              <div class="navbar-dropdown">
+                <a class="navbar-item">Orders</a>
+                <a class="navbar-item">Clients</a>
+                <a class="navbar-item">Users</a>
+              </div>
+            </div>
+          </nav>
+
         </div>
       </div>
     </nav>
