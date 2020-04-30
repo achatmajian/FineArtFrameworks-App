@@ -10,7 +10,7 @@ var connection = mysql.createConnection({
     host: "127.0.0.1",
     port: 3306,
     user: "root",
-    password: "password",
+    password: "root420",
     database: "fafw_test_DB"
 });
 
@@ -617,13 +617,13 @@ function createOrder() {
                 frameSize = 5;
                 overSize = 1;
                 isMinimum = true;
-            } else if (frameSizeInches >= 180 && frameSizeInches <= 239) {
+            } else if (unitedInch >= 15 && unitedInch <= 19.5) {
                 overSize = 1.20;
                 isOverSize = true;
-            } else if (frameSizeInches >= 240 && frameSizeInches <= 299) {
+            } else if (unitedInch >= 20 && unitedInch <= 24.5) {
                 overSize = 1.30;
                 isOverSize = true;
-            } else if (300 <= frameSizeInches) {
+            } else if (25 <= unitedInch) {
                 overSize = 1.40;
                 isOverSize = true;
             } else {
