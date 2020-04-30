@@ -25,10 +25,11 @@ module.exports = function(sequelize, DataTypes) {
     }); 
   
     Material.associate = function(models) {
-  
-      // associations to go here :)
-      Material.belongsTo(models.Frame, { as: 'Frame', foreignKey: 'material_id' });
       
+      // associations to go here :)
+      /*
+      Material.belongsTo(models.Frame, { as: 'Frame', foreignKey: 'material_id' });
+      */
   
     };
   

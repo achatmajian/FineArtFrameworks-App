@@ -20,13 +20,15 @@ module.exports = function(sequelize, DataTypes) {
         underscored: true
     }); 
   
+    
     Float.associate = function(models) {
-  
+      /*
       // associations to go here :)
       Float.belongsTo(models.Frame, { as: 'Frame', foreignKey: 'float_id' });
-      
+      */
   
     };
+    
   
     return Float;
   };

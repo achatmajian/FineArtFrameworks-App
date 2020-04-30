@@ -84,11 +84,11 @@ module.exports = function(sequelize, DataTypes) {
         underscored: true
     });
   
-  
-  
+    
     Frame.associate = function(models) {
   
       // associations to go here :)
+      /*
       Frame.belongsTo(models.Order, { as: 'Order', foreignKey: 'frame_id' });
       Frame.hasOne(models.Drymount, { foreignKey: 'drymount_id' });
       Frame.hasMany(models.Extras,{ foreignKey: 'extras_id' });
@@ -99,9 +99,10 @@ module.exports = function(sequelize, DataTypes) {
       Frame.hasOne(models.Material,{ foreignKey: 'material_id' });
       Frame.hasOne(models.Spacer,{ foreignKey: 'spacer_id' });
       Frame.hasOne(models.Strainer,{ foreignKey: 'strainer_id' });
-      
+      */
   
     };
+
   
     return Frame;
   };

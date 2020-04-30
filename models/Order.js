@@ -53,10 +53,11 @@ module.exports = function(sequelize, DataTypes) {
     Order.associate = function(models) {
   
       // associations to go here :)
+      /*
       Order.belongsTo(models.Client, { as: 'Client', foreignKey: 'order_id' });
 
       Order.hasMany(models.Frame, { foreignKey: 'frame_id' });
-    
+      */
   
     };
   

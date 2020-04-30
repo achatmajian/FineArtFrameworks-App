@@ -33,16 +33,17 @@ module.exports = function(sequelize, DataTypes) {
     });
   
   
-  
+    
     Client.associate = function(models) {
   
       // associations to go here :)
-      
+      /*
       Client.belongsTo(models.User, { as: 'User', foreignKey: 'client_id' });
       
       Client.hasMany(models.Order, { foreignKey: 'order_id' });
-  
+      */
     };
+    
   
     return Client;
   };

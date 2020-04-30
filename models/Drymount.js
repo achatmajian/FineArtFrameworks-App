@@ -20,14 +20,15 @@ module.exports = function(sequelize, DataTypes) {
     });
   
   
-  
+    
     Drymount.associate = function(models) {
-  
+      /*
       // associations to go here :)
       Drymount.belongsTo(models.Frame, { as: 'Frame', foreignKey: 'drymount_id' });
-      
+      */
   
     };
+    
   
     return Drymount;
   };
