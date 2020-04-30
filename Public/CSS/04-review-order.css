@@ -54,30 +54,23 @@ h2 {
 }
 
 
-/* Frame Build Containers*/
+/* Review Order Container*/
 
-.bottom {
+.wrapper {
     display: flex;
     justify-content: center;
 }
 
-.size-manu {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-
-}
-
-.frame-form{
+.review-container{
     /* width: 1240px; */
     /* background-color: lavender; */
     padding: 30px;
     margin: 30px;
 }
 
-/* Frame Build Sections */
+/* Frame 1 Container */
 
-.sizing {
+.frame {
     width: 500px;
     /* height: 450px; */
     /* background-color: lavender; */
