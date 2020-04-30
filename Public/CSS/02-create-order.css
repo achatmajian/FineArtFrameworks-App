@@ -72,6 +72,11 @@ h2 {
     margin: 10px;
 }
 
+.buttons{
+    display: flex;
+    justify-content: center;
+}
+
 #submit-order-details-button{
     width: 200px;
 
