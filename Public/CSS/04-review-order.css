@@ -68,6 +68,11 @@ h2 {
     margin: 30px;
 }
 
+.review-header{
+    display: flex;
+    justify-content: space-evenly;
+}
+
 /* Frame 1 Container */
 
 .frame {
