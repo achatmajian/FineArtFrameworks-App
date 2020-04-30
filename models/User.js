@@ -38,8 +38,9 @@ module.exports = function(sequelize, DataTypes) {
 
     // associations to go here :)
 
-    
+    /*
     User.hasMany(models.Client, { foreignKey: client_id });
+    */
   
   };
 

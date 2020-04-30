@@ -21,14 +21,16 @@ module.exports = function(sequelize, DataTypes) {
     });
   
   
-  
+    
     Flush.associate = function(models) {
   
       // associations to go here :)
+      /*
       Flush.belongsTo(models.Frame, { as: 'Frame', foreignKey: 'float_id' });
-      
+      */
   
     };
+  
   
     return Flush;
   };
