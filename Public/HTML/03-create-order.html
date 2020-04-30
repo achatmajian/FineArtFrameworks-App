@@ -6,7 +6,7 @@
     <title>Fine Art Frameworks App</title>
     <!-- CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
-    <link rel="stylesheet" href="/Public/CSS/old-create-order.css">
+    <link rel="stylesheet" href="/Public/CSS/03-create-order.css">
     <!-- JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -49,35 +49,42 @@
 
     <!-- Header -->
     <section class="section">
-        <div class="title-container">
-          <h1 class="title">Create Order</h1>
-        </div>
-        <br>
-        <div class="title-container">
-            <h1>3. Build Frame</h1>
-        </div>
-        <br>
-        <div class="progress-container">
-            <progress class="progress is-success box" value="50" max="100"></progress>
-        </div>
-    
-      </section>
+      <div class="title-container">
+        <h1 class="title">Create Order</h1>
+      </div>
+      <br>
+      <div class="title-container">
+          <h1>3. Build Frames</h1>
+      </div>
+      <br>
+      <div class="progress-container">
+          <progress class="progress is-success box" value="3" max="4"></progress>
+      </div>
+    </section>
+
+
 <!-- =============================================================== -->
 
-<div class="bottom">
 
- <!-- Build Frame Form -->
+<div class="wrapper">
 
- <div class="frame-form form-container box"> <!-- Frame Form Wrapper-->
+ <!-- Build Frame Container -->
+ <div class="build-frame-container box">
   <h1>Build Frame</h1>
   <h2>Starred Fields are Required</h2>
   <br>
 
-  <div class="size-manu"> <!-- Size and Manu Parent Div-->
-  <div class="sizing box"> <!-- Sizing Child Div-->
+
+  <!-- Size and Manufacturing Parent Div-->
+  <div class="size-and-manufacturing">
+  
+ <!-- Sizing Child Div-->
+  <div class="sizing box">
+
   <!-- Sizing -->
   <h1>Sizing</h1>
   <br>
+
   <!-- Item Dimensions -->
   <div class="field">
     <label class="label">Item Dimensions (Inches)</label>
@@ -93,26 +100,7 @@
     </div>
   </div>
   
-  <!-- Profile Width -->
-  <!-- <div class="field">
-    <label class="label">Profile Width*</label>
-    <div class="control">
-      <div class="select">
-        <select class="profile-width-answers">
-          <option id="profile-width-answer" required>1/2"</option>
-          <option id="profile-width-answer">3/4"</option>
-          <option id="profile-width-answer">1"</option>
-          <option id="profile-width-answer">1 1/2"</option>
-          <option id="profile-width-answer">2"</option>
-          <option id="profile-width-answer">2 1/2"</option>
-          <option id="profile-width-answer">3"</option>
-        </select>
-      </div>
-    </div>
-  </div> -->
-
-
-  <!-- Profile Width 2 -->
+  <!-- Face Width -->
   <div class="field">
     <label class="label">Face Width*</label>
     <div class="control">
@@ -182,33 +170,13 @@
     </div>
   </div>
 
-  <!-- Oversize? -->
-    <!-- <div class="field">
-      <label class="label">Oversize?*</label>
-      <div class="control">
-        <label class="radio">
-          <input type="radio" name="oversize-answer" required>
-          No
-        </label>
-        <label class="radio">
-          <input type="radio" name="oversize-answer">
-          15ft-20ft
-        </label>
-        <label class="radio">
-          <input type="radio" name="oversize-answer">
-          20ft-25ft
-        </label>
-        <label class="radio">
-          <input type="radio" name="oversize-answer">
-          25ft+
-        </label>
-      </div>
-    </div> -->
   </div><!-- Sizing Child Div Close -->
 
   <!-- --------------------------------------------------------------- -->
 
-  <div class="manufacturing box"> <!-- Manufacturing Child Div-->
+  <!-- Manufacturing Child Div-->
+  <div class="manufacturing box">
+
   <!-- Manufacturing -->
   <h1>Manufacturing</h1>
   <br>
@@ -364,14 +332,17 @@
 
 <!-- --------------------------------------------------------------- -->
 
-<div class="fit-notes"> <!-- Fitting and Notes Parent Div -->
-  <div class="fitting box"> <!-- Fitting Child Div-->
+ <!-- Fitting and Notes Parent Div -->
+<div class="fitting-and-notes">
+
+   <!-- Fitting Child Div-->
+  <div class="fitting box">
   <!-- Fitting -->
   <h1>Fitting</h1>
   <h2>Must choose either Mat, Float, or Flush</h2>
   <br>
+  
   <!-- Mat -->
-
   <div class="field">
     <label class="checkbox">
       <input type="checkbox" id="mat-checkbox">
@@ -418,7 +389,6 @@
   </div>
 
   <!-- Float -->
-
   <div class="field">
     <label class="checkbox">
       <input type="checkbox" id="float-checkbox">
@@ -538,17 +508,14 @@
         <input type="checkbox" id="extras-answer">De-fit/Re-fit</input>
         <input type="checkbox" id="extras-answer">Re-finish</input>
     </label>
-     
-
-  
-    </div>  
+  </div>  
 
 </div><!-- Fitting Child Div Close -->
 
 <!-- --------------------------------------------------------------- -->
 
   <!-- Notes -->
-<div class="notes-upload box">
+<div class="notes-and-upload box">
   <h1>Notes</h1>
   <br>
     <textarea class="textarea has-fixed-size" rows="6" placeholder="Enter woodworker notes"></textarea>
@@ -577,6 +544,7 @@
         </label>
       </div>
     </div> <!-- Image Upload Close -->
+    
 </div>   <!-- Notes-Upload Close-->
 
 </div><!-- Fitting and Notes Parent Close-->
@@ -615,9 +583,10 @@
       </ul>
     </nav>
 
- </div> <!-- Build Frame Form Container Close -->
+ </div> <!-- Build Frame Container Close -->
 
 </div> <!-- Wrapper Close -->
+
 
   </body>
 </html>
