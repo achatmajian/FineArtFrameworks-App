@@ -2,7 +2,7 @@
 
 body {
     background-color: #9cc0e7;
-    height: 960px;
+    height: 980px;
 }
 
 h1 {
@@ -71,6 +71,11 @@ h2 {
     /* background-color: lavender; */
     padding: 30px;
     margin: 10px;
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
 }
 
 #new-client-button{
