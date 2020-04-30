@@ -64,6 +64,11 @@ h2 {
     justify-content: center;
 }
 
+.build-frame-header{
+    display: flex;
+    justify-content: space-evenly;
+}
+
 .build-frame-container{
     width: 1240px;
     /* background-color: lavender; */

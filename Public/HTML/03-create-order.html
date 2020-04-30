@@ -70,10 +70,19 @@
 
  <!-- Build Frame Container -->
  <div class="build-frame-container box">
-  <h1>Build Frame</h1>
-  <h2>Starred Fields are Required</h2>
+   <div class="build-frame-header">
+     <div>
+      <h1>Build Frame</h1>
+      <h2>Starred Fields are Required</h2>
+     </div>
+     <div>
+      <button class="button is-link">Submit Order</button>
+     </div>
+   </div>
   <br>
 
+  <div class="build-individual-frame box">
+    <h1 style="text-align: center;">Frame 1</h1>
 
   <!-- Size and Manufacturing Parent Div-->
   <div class="size-and-manufacturing">
@@ -544,28 +553,12 @@
         </label>
       </div>
     </div> <!-- Image Upload Close -->
-    
+
 </div>   <!-- Notes-Upload Close-->
 
 </div><!-- Fitting and Notes Parent Close-->
+
 <hr>
-
-    <!-- Buttons -->
-    <div class="field is-grouped">
-      <div class="control">
-        <button class="button is-link">Submit Order</button>
-      </div>
-      <div class="control">
-        <button class="button is-link is-light" id="add-frame-button">Add Another Frame</button>
-      </div>
-      <div class="control">
-        <button class="button is-link is-light" id="duplicate-frame-button">Duplicate Frame</button>
-      </div>
-      <!-- <div class="control">
-        <button class="button is-link is-light">Clear</button>
-      </div> -->
-    </div>
-
     <!-- Pagination -->
     <nav class="pagination is-small" role="navigation" aria-label="pagination">
       <a class="pagination-previous" title="This is the first page" disabled>Previous Frame</a>
@@ -583,10 +576,11 @@
       </ul>
     </nav>
 
+</div><!-- Build Individual Frame Close-->
+
  </div> <!-- Build Frame Container Close -->
 
 </div> <!-- Wrapper Close -->
-
 
   </body>
 </html>
