@@ -1433,7 +1433,7 @@ function createOrder() {
 
                     discountAmt = subtotal * discount;
 
-                    var frameTotal = subtotal - discountamt;
+                    var frameTotal = subtotal - discountAmt;
 
                     overSizeAmt = subtotal * (overSize - 1);
 
