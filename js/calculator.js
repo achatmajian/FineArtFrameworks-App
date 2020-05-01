@@ -322,7 +322,20 @@ function createOrder() {
                 name: "strainer_type",
                 type: "list",
                 message: "\nWill you need an additional strainer? \n",
-                choices: ["none", "Strainer", "Painted Strainer"]
+                choices: [
+                    '3/8" regular strainer',
+                    '1/2" regular strainer',
+                    '5/8" regular strainer',
+                    '3/4" regular strainer',
+                    '3/8" painted strainer',
+                    '1/2" painted strainer',
+                    '5/8" painted strainer',
+                    '3/4" painted strainer',
+                    '3/8" additional strainer',
+                    '1/2" additional strainer',
+                    '5/8" additional strainer',
+                    '3/4" additional strainer'
+                ]
             },
             {
                 name: "spacer_type",
@@ -1284,15 +1297,45 @@ function createOrder() {
                 glazeCost = 0;
             };
 
+            /*
+                    '3/8" painted strainer',
+                    '1/2" painted strainer',
+                    '5/8" painted strainer',
+                    '3/4" painted strainer',
+                    '3/8" additional strainer',
+                    '1/2" additional strainer',
+                    '5/8" additional strainer',
+                    '3/4" additional strainer'
+
+            */
+
             // Strainers Cost Per Foot
-            if (answer.strainer_type === "Strainer") {
+            if (answer.strainer_type === '3/8" regular strainer') {
                 strainer = answer.strainer_type;
                 strainerCost = 7;
-            } else if (answer.strainer_type === "Painted Strainer") {
+            } else if (answer.strainer_type === '1/2" regular strainer') {
+                strainer = answer.strainer_type;
+                strainerCost = 7;
+            } else if (answer.strainer_type === '5/8" regular strainer') {
+                strainer = answer.strainer_type;
+                strainerCost = 7;
+            } else if (answer.strainer_type === '3/4" regular strainer') {
+                strainer = answer.strainer_type;
+                strainerCost = 7;
+            } else if (answer.strainer_type === '3/8" painted strainer') {
                 strainer = answer.strainer_type;
                 strainerCost = 11;
-            } else if (answer.strainer_type === "none") {
-                strainer = "n/a";
+            } else if (answer.strainer_type === '1/2" painted strainer') {
+                strainer = answer.strainer_type;
+                strainerCost = 11;
+            } else if (answer.strainer_type === '5/8" painted strainer') {
+                strainer = answer.strainer_type;
+                strainerCost = 11;
+            } else if (answer.strainer_type === '3/4" painted strainer') {
+                strainer = answer.strainer_type;
+                strainerCost = 11; 
+            } else {
+                strainer = answer.strainer_type;
                 strainerCost = 0;
             };
 
