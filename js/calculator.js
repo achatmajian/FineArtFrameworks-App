@@ -1247,10 +1247,6 @@ function createOrder() {
                 dryMountCost = 0;
             };
 
-            /*
-
-            */
-
             // Glaze Cost Per Foot
             if (answer.glazing === "Glass") {
                 glaze = answer.glazing;
