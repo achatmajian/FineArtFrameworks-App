@@ -1297,29 +1297,17 @@ function createOrder() {
                 glazeCost = 0;
             };
 
-            /*
-                    '3/8" painted strainer',
-                    '1/2" painted strainer',
-                    '5/8" painted strainer',
-                    '3/4" painted strainer',
-                    '3/8" additional strainer',
-                    '1/2" additional strainer',
-                    '5/8" additional strainer',
-                    '3/4" additional strainer'
-
-            */
-
             // Strainers Cost Per Foot
-            if (answer.strainer_type === '3/8" regular strainer') {
+            if (answer.strainer_type === '3/8" additional strainer') {
                 strainer = answer.strainer_type;
                 strainerCost = 7;
-            } else if (answer.strainer_type === '1/2" regular strainer') {
+            } else if (answer.strainer_type === '1/2" additional strainer') {
                 strainer = answer.strainer_type;
                 strainerCost = 7;
-            } else if (answer.strainer_type === '5/8" regular strainer') {
+            } else if (answer.strainer_type === '5/8" additional strainer') {
                 strainer = answer.strainer_type;
                 strainerCost = 7;
-            } else if (answer.strainer_type === '3/4" regular strainer') {
+            } else if (answer.strainer_type === '3/4" additional strainer') {
                 strainer = answer.strainer_type;
                 strainerCost = 7;
             } else if (answer.strainer_type === '3/8" painted strainer') {
