@@ -1,0 +1,60 @@
+// Dependencies
+// ------------------------------------------------------------------------
+var db = require("../../models");
+
+// Routes for /api/orders 
+// ------------------------------------------------------------------------
+
+module.exports = function (app) {
+    // Get all orders
+    app.get("/api/orders", function (req, res) {
+        db.Order.findAll({}).then(function (dbOrders) {
+            res.json(dbOrders);
+        });
+    });
+
+    // Get Order by order-id
+    app.get("/api/orders/:id", function (req, res) {
+        db.Order.findOne({
+            where: {
+                id: req.params.id
+            }
+        })
+            .then(function (dbOrders) {
+                res.json(dbOrders);
+            })
+    });
+
+    // Create a new order
+    app.post("/api/orders", function (req, res) {
+        db.Order.create(req.body).then(function (dbOrders) {
+            res.json(dbOrders);
+        });
+    });
+
+    // Delete a order by id
+    app.delete("/api/orders/:id", function (req, res) {
+        db.Order.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
+            .then(function (dbOrders) {
+                res.json(dbOrders);
+            });
+    });
+
+    // Update a order by id
+    app.put("/api/orders", function (req, res) {
+        db.Order.update(
+            req.body,
+            {
+                where: {
+                    id: req.body.id
+                }
+            }).then(function (dbOrders) {
+                res.json(dbOrders);
+            });
+    });
+
+};

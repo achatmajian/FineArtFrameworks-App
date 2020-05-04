@@ -1,7 +1,7 @@
 // Dependencies
+// ------------------------------------------------------------------------
 //require("dotenv").config();
 var express = require("express");
-//var exphbs = require("express-handlebars");
 var db = require("./models");
 //var passport = require('passport')
 //var LocalStrategy = require('passport-local').Strategy;
@@ -11,6 +11,7 @@ var app = express();
 var PORT = process.env.PORT || 3000;
 
 // Middleware
+// ------------------------------------------------------------------------
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static("public"));
@@ -20,15 +21,26 @@ app.use(express.static("public"));
 //app.use(passport.session());
 
 // Routes
-/*
-require("./routes/api-routes")(app);
+// ------------------------------------------------------------------------
+require("./routes/api/client-routes")(app);
+require("./routes/api/frame-routes")(app);
+require("./routes/api/order-routes")(app);
+require("./routes/api/user-routes")(app);
+//require("./routes/api/drymount-routes")(app);
+//require("./routes/api/extras-routes")(app);
+//require("./routes/api/float-routes")(app);
+//require("./routes/api/glazing-routes")(app);
+//require("./routes/api/mat-routes")(app);
+//require("./routes/api/material-routes")(app);
+//require("./routes/api/spacer-routes")(app);
+//require("./routes/api/strainer-routes")(app);
 require("./routes/html-routes")(app);
-*/
 
 var syncOptions = { force: false };
 
 /*
 // PassportJS User Authentication
+// ------------------------------------------------------------------------
 passport.use(new LocalStrategy({
   usernameField: 'email',
   passwordField: 'passwd'
@@ -51,12 +63,14 @@ passport.use(new LocalStrategy({
 
 // If running a test, set syncOptions.force to true
 // clearing the `testdb`
+// ------------------------------------------------------------------------
 if (process.env.NODE_ENV === "test") {
   syncOptions.force = true;
 }
 
 
-// Starting server & syncing models ------------------------------------/
+// Starting server & syncing models
+// ------------------------------------------------------------------------
 db.sequelize.sync(syncOptions).then(function () {
   app.listen(PORT, function () {
     console.log(
