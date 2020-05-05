@@ -1,0 +1,89 @@
+/* Global */
+
+body {
+    background-color: #9cc0e7;
+    height: 980px;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 14px;
+    /* font-weight: bold; */
+}
+
+.navbar {
+    padding: 15px;
+}
+
+.br { 
+    display: block; 
+    margin-bottom: 0.5em; 
+} 
+  
+.brmedium { 
+    display: block; 
+    margin-bottom: 1em; 
+} 
+  
+.brlarge { 
+    display: block; 
+    margin-bottom: 2em; 
+} 
+
+/* Title */
+
+.title-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.progress{
+    width: 500px;
+    margin-left: 680px;
+    
+}
+.title-container > div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Wrapper */
+
+.wrapper{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Log In Form */
+
+.new-client-form{
+    width: 800px;
+    height: auto;
+    /* background-color: lavender; */
+    padding: 30px;
+    margin: 10px;
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+}
+
+#new-client-button{
+    width: 200px;
+}
+
+#existing-client-button{
+    width: 200px;
+}
+
+
