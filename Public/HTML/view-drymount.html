@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>View Drymount</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <link rel="stylesheet" href="/Public/CSS/view-drymount.css">
+    <!-- JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="/Public/JS/create-order.js"></script>
+  </head>
+  <body>
+    <!-- Navigation -->
+
+    <nav class="navbar navbar-height: 70px;" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="/Public/HTML/create-order.html">
+          <h1>Fine Art Frameworks</h1>
+        </a>
+
+        <!-- <a class="navbar-item" href="/index.html">
+          <img src="/Assets/FAFW_logo-black_500w.png" height="80px">
+        </a> -->
+    
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+    
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="buttons">
+              <a class="button">
+                <strong>Create Order</strong>
+              </a>
+              <a class="button">
+                View Orders
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header -->
+  <section class="section">
+    <div class="title-container container">
+      <h1 class="title">View Drymount</h1>
+    </div>
+  </section>
+
+
+<!-- =============================================================== -->
+
+<!-- Table Wrapper -->
+
+<div class="table-wrapper">
+
+ <!-- Table Container -->
+
+ <div class="table-container box">
+  <!-- <h1>Order List</h1> -->
+  <!-- <h2>Starred Fields are Required</h2> -->
+
+    <div class="order-search">
+        <p class="control has-icons-left">
+            <input class="input" type="text" placeholder="Search">
+            <span class="icon is-left">
+            <i class="fas fa-search" aria-hidden="true"></i>
+            </span>
+        </p>
+        </div>
+
+    <br>
+  <table class="table is-fullwidth is-striped is-hoverable">
+    <thead>
+      <tr>
+        <th>Material</th>
+        <th>Cost Per Foot</th>
+        <th>Edit Info</th>
+      </tr>
+    </thead>
+    <tfoot>
+    <tr>
+        <th>Material</th>
+        <th>Cost Per Foot</th>
+        <th>Edit Info</th>
+    </tr>
+    </tfoot>
+    <tbody>
+      <tr class="drymount-row">
+        <td id="drymount-material">Regular Foam</td>
+        <td id="cost-per-foot">$5.50</td>
+        <td id="edit-drymount"><a>Edit</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+<!-- Pagination -->
+
+  <nav class="pagination is-centered" role="navigation" aria-label="pagination">
+    <a class="pagination-previous">Previous Page</a>
+    <a class="pagination-next">Next Page</a>
+    <ul class="pagination-list">
+      <li><a class="pagination-link is-current">1</a></li>
+
+      <li><span class="pagination-ellipsis">&hellip;</span></li>
+      <li><a class="pagination-link">2</a></li>
+      <li><a class="pagination-link">3</a></li>
+      <li><a class="pagination-link">4</a></li>
+      <li><span class="pagination-ellipsis">&hellip;</span></li>
+
+      <li><a class="pagination-link" >5</a></li>
+    </ul>
+  </nav>
+
+ </div> <!-- Table Container Close -->
+
+</div> <!-- Table Wrapper Close -->
+
+  </body>
+</html>
