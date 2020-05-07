@@ -67,26 +67,37 @@ h2 {
     justify-content: center;
 }
 
-.review-container{
+.quote-container{
     /* width: 1240px; */
     /* background-color: lavender; */
     padding: 30px;
     margin: 30px;
 }
 
-.review-header{
+.quote-header{
     display: flex;
     justify-content: center;
 }
 
-.review-header-button{
+.quote-header-button{
     display: flex;
     justify-content: center;
 }
 
-/* Frame 1 Container */
+/* Frames Container */
 
 .frame {
+    width: 500px;
+    /* height: 450px; */
+    /* background-color: lavender; */
+    padding: 30px;
+    margin: 20px;
+    /* border: solid red; */
+}
+
+/* Total Cost Container */
+
+.total-cost-container {
     width: 500px;
     /* height: 450px; */
     /* background-color: lavender; */
