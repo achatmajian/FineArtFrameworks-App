@@ -56,6 +56,7 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.INTEGER,
         allowNull: false
       }
+      // need to add timestamp logic for created_at and updated_at here!
     },{
   
       //paranoid: true, 
