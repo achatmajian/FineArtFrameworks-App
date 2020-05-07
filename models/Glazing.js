@@ -9,6 +9,9 @@ module.exports = function(sequelize, DataTypes) {
       name: {
           type: DataTypes.STRING
       },
+      glazing_type: {
+        type: DataTypes.STRING
+      },
       cost_type: {
           type: DataTypes.STRING
 

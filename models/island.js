@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-    var Float = sequelize.define("float", {
+    var Island = sequelize.define("island", {
       id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -21,17 +21,20 @@ module.exports = function(sequelize, DataTypes) {
       }
     },{
         underscored: true
-    }); 
+    });
+  
   
     
-    Float.associate = function(models) {
-      /*
+    Island.associate = function(models) {
+  
       // associations to go here :)
-      Float.belongsTo(models.Frame, { as: 'Frame', foreignKey: 'float_id' });
-      */
+
+      /*
+      Island.belongsTo(models.Frame, { as: 'Frame', foreignKey: 'island_id' });
+     */ 
   
     };
-    
   
-    return Float;
+  
+    return Island;
   };

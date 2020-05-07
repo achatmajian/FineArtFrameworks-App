@@ -1,31 +1,63 @@
 module.exports = function(sequelize, DataTypes) {
     var Client = sequelize.define('client', {
       id: {
-        type: DataTypes.UUID,
+        type: DataTypes.INTEGER,
         primaryKey: true,
-        defaultValue: DataTypes.UUIDV4,
+        autoIncrement: true,
         allowNull: false
       },
       order_id: {
-        type: DataTypes.UUID,
+        type: DataTypes.INTEGER,
+        allowNull: true
       },
-      email: DataTypes.STRING,
-      secondary_email: DataTypes.STRING,
-      phone: DataTypes.STRING,
-      secondary_phone: DataTypes.STRING,
-      first_name: DataTypes.STRING,
-      last_name: DataTypes.STRING,
-      address_one: DataTypes.STRING,
-      address_two: DataTypes.STRING,
-      city: DataTypes.STRING,
-      state: DataTypes.STRING,
-      zip_code: DataTypes.INTEGER,
-      created_at: {
-        type: DataTypes.DATE,
+      email: {
+        type: DataTypes.STRING,
+        uniqueKey: true,
         allowNull: false
       },
-      updated_at: DataTypes.DATE, 
-      deleted_at: DataTypes.DATE},{
+      secondary_email: {
+        type: DataTypes.STRING,
+        allowNull: true
+      },
+      phone: {
+        type: DataTypes.STRING,
+        allowNull: false
+      },
+      secondary_phone: {
+        type: DataTypes.STRING,
+        allowNull: true
+      },
+      first_name: {
+        type: DataTypes.STRING,
+        allowNull: true
+      },
+      last_name: {
+        type: DataTypes.STRING,
+        allowNull: true
+      },
+      address_one: {
+        type: DataTypes.STRING,
+        allowNull: false
+      },
+      address_two: {
+        type: DataTypes.STRING,
+        allowNull: true
+      },
+
+      city: {
+        type: DataTypes.STRING,
+        allowNull: false
+      },
+      state: {
+        type: DataTypes.STRING,
+        allowNull: false
+      },
+      zip_code: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+      }
+      // need to add timestamp logic for created_at and updated_at here!
+    },{
   
       //paranoid: true, 
       //freezeTableName:true,

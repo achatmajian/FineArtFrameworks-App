@@ -54,6 +54,9 @@ module.exports = function(sequelize, DataTypes) {
       glazing_id: {
           type: DataTypes.INTEGER
       },
+      island_id: {
+          type: DataTypes.INTEGER
+      },
       mat_id: {
           type: DataTypes.INTEGER
       },
