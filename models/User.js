@@ -1,9 +1,9 @@
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   var User = sequelize.define("user", {
     id: {
-      type: DataTypes.UUID,
+      type: DataTypes.INTEGER,
       primaryKey: true,
-      defaultValue: DataTypes.UUIDV4,
+      autoIncrement: true,
       allowNull: false
     },
     email: {
@@ -18,14 +18,10 @@ module.exports = function(sequelize, DataTypes) {
     first_name: DataTypes.STRING,
     last_name: DataTypes.STRING,
     client_id: {
-      type: DataTypes.UUID
-    },
-    created_at: {
-      type: DataTypes.DATE,
-      allowNull: false
-    },
-    updated_at: DataTypes.DATE, 
-    deleted_at: DataTypes.DATE},{
+      type: DataTypes.INTEGER,
+      allowNull: true
+    }
+  }, {
 
     //paranoid: true, 
     //freezeTableName:true,
@@ -34,14 +30,14 @@ module.exports = function(sequelize, DataTypes) {
 
 
 
-  User.associate = function(models) {
+  User.associate = function (models) {
 
     // associations to go here :)
 
     /*
     User.hasMany(models.Client, { foreignKey: client_id });
     */
-  
+
   };
 
   return User;

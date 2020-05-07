@@ -910,7 +910,7 @@ function createOrder() {
             } else if (answer.dry_mount === 'sintra 3mm white 40 x 108') {
                 dryMount = answer.dry_mount;
                 dryMountCost = 0;
-                extraAmt = extraAmt + 265;
+                extraAmt = extraAmt + 286;
             } else if (answer.dry_mount === 'sintra 3mm white 40 x 120') {
                 dryMount = answer.dry_mount;
                 dryMountCost = 0;
@@ -1034,7 +1034,7 @@ function createOrder() {
             } else if (answer.dry_mount === 'sintra 6mm 48 x 96') {
                 dryMount = answer.dry_mount;
                 dryMountCost = 0;
-                extraAmt = extraAmt + 315;
+                extraAmt = extraAmt + 350;
             } else if (answer.dry_mount === 'sintra 6mm 48 x 108') {
                 dryMount = answer.dry_mount;
                 dryMountCost = 0;

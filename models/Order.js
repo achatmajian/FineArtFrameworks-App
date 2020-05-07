@@ -1,9 +1,9 @@
 module.exports = function(sequelize, DataTypes) {
     var Order = sequelize.define("order", {
       id: {
-        type: DataTypes.UUID,
+        type: DataTypes.INTEGER,
         primaryKey: true,
-        defaultValue: DataTypes.UUIDV4,
+        autoIncrement: true,
         allowNull: false
       },
       frame_id: {
@@ -35,13 +35,8 @@ module.exports = function(sequelize, DataTypes) {
       date_due: {
           type: DataTypes.DATE,
           allowNull: false
-      },
-      created_at: {
-        type: DataTypes.DATE,
-        allowNull: false
-      },
-      updated_at: DataTypes.DATE, 
-      deleted_at: DataTypes.DATE},{
+      }
+    },{
   
       //paranoid: true, 
       //freezeTableName:true,

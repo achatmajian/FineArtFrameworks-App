@@ -17,7 +17,7 @@ module.exports = function(sequelize, DataTypes) {
       detail: {
           type: DataTypes.STRING
       },
-      cost_per_foot: {
+      cost: {
           type: DataTypes.INTEGER
       }
     },{
