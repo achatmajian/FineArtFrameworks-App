@@ -20,14 +20,14 @@ module.exports = function (app) {
 
     // Get all users
     app.get("/api/users", function (req, res) {
-        db.User.findAll({}).then(function (dbUsers) {
+        db.user.findAll({}).then(function (dbUsers) {
             res.json(dbUsers);
         });
     });
 
     // Get user by user-id
     app.get("/api/users/:id", function (req, res) {
-        db.User.findOne({
+        db.user.findOne({
             where: {
                 id: req.params.id
             }
@@ -39,14 +39,14 @@ module.exports = function (app) {
 
     // Create a new user
     app.post("/api/users", function (req, res) {
-        db.User.create(req.body).then(function (dbUsers) {
+        db.user.create(req.body).then(function (dbUsers) {
             res.json(dbUsers);
         });
     });
 
     // Delete a user by id
     app.delete("/api/users/:id", function (req, res) {
-        db.User.destroy({
+        db.user.destroy({
             where: {
                 id: req.params.id
             }
@@ -58,7 +58,7 @@ module.exports = function (app) {
 
     // Update a user by id
     app.put("/api/users", function (req, res) {
-        db.User.update(
+        db.user.update(
             req.body,
             {
                 where: {

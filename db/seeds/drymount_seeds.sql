@@ -1,6 +1,6 @@
 USE fafw_development;
 
-INSERT INTO drymount (name, cost_type, cost)
+INSERT INTO drymounts (name, cost_type, cost)
 VALUES
 -- none
 ("n/a", "per foot", 0.00),
@@ -162,6 +162,6 @@ VALUES
 
 
 
-SELECT * FROM drymount;
+SELECT * FROM drymounts;
 
 

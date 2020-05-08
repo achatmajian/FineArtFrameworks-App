@@ -8,14 +8,14 @@ var db = require("../../models");
 module.exports = function (app) {
     // Get all frames
     app.get("/api/frames", function (req, res) {
-        db.Frame.findAll({}).then(function (dbFrames) {
+        db.frame.findAll({}).then(function (dbFrames) {
             res.json(dbFrames);
         });
     });
 
     // Get frame by frame-id
     app.get("/api/frames/:id", function (req, res) {
-        db.Frame.findOne({
+        db.frame.findOne({
             where: {
                 id: req.params.id
             }
@@ -27,14 +27,14 @@ module.exports = function (app) {
 
     // Create a new frame
     app.post("/api/frames", function (req, res) {
-        db.Frame.create(req.body).then(function (dbFrames) {
+        db.frame.create(req.body).then(function (dbFrames) {
             res.json(dbFrames);
         });
     });
 
     // Delete a frame by id
     app.delete("/api/frames/:id", function (req, res) {
-        db.Frame.destroy({
+        db.frame.destroy({
             where: {
                 id: req.params.id
             }
@@ -46,7 +46,7 @@ module.exports = function (app) {
 
     // Update a frame by id
     app.put("/api/frames", function (req, res) {
-        db.Frame.update(
+        db.frame.update(
             req.body,
             {
                 where: {

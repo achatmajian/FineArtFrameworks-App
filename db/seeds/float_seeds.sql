@@ -1,9 +1,9 @@
 USE fafw_development;
 
-INSERT INTO float (name, color, cost_type, cost)
+INSERT INTO floats (name, color, cost_type, cost)
 VALUES 
 -- none
-("n/a", "per foot", 0.00),
+("n/a", "n/a", "per foot", 0.00),
 -- rag
 ("rag", "polar white", "per foot", 8.00),
 ("rag", "white", "per foot", 8.00),
@@ -32,4 +32,4 @@ VALUES
 ("silk", "black", "per foot", 18.00),
 ("silk", "other", "per foot", 18.00);
 
-SELECT * FROM float;
+SELECT * FROM floats;
