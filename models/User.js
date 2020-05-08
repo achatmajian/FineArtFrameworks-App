@@ -20,12 +20,23 @@ module.exports = function (sequelize, DataTypes) {
     client_id: {
       type: DataTypes.INTEGER,
       allowNull: true
+    },
+    created_at: {
+      type: DataTypes.DATE,
+      defaultValue: DataTypes.NOW,
+      allowNull: false
+    },
+    updated_at: {
+      type: DataTypes.DATE,
+      defaultValue: DataTypes.NOW,
+      allowNull: false
     }
   }, {
 
     //paranoid: true, 
     //freezeTableName:true,
-    underscored: true
+    underscored: true,
+    timestamps: true
   });
 
 

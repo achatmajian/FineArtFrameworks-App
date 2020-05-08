@@ -16,7 +16,8 @@ module.exports = function(sequelize, DataTypes) {
           type: DataTypes.INTEGER
       }
     },{
-      underscored: true
+      underscored: true,
+      timestamps: true
   });
   
   
