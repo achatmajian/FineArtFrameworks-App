@@ -470,6 +470,48 @@
 
   </div>
 
+  <!-- Island Float -->
+  <div class="field">
+    <label class="checkbox">
+      <input type="checkbox" id="float-checkbox">
+        <strong>Island Float</strong>
+    </label>
+    <div class="control">
+      <label class="radio">
+        <input type="radio" name="float-answer" class="float-answer" disabled>
+        Rag
+      </label>
+      <label class="radio">
+        <input type="radio" name="float-answer" class="float-answer" disabled>
+        Linen
+      </label>
+      <label class="radio">
+        <input type="radio" name="float-answer" class="float-answer" disabled>
+        Silk
+      </label>
+    </div>
+
+    <div class="field">
+      <label class="label"></label>
+      <div class="control">
+        <div class="select">
+          <select class="island-float-colors" disabled>
+            <option id="island-float-color-answer" disabled>Island Float Colors</option>
+            <option id="island-float-color-answer">Polar White</option>
+            <option id="island-float-color-answer">White</option>
+            <option id="island-float-color-answer">Warm White</option>
+            <option id="island-float-color-answer">Antique</option>
+            <option id="island-float-color-answer">Cream</option>
+            <option id="island-float-color-answer">Natural</option>
+            <option id="island-float-color-answer">Black</option>
+            <option id="island-float-color-answer">Other</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
   <!-- Float -->
   <div class="field">
     <label class="checkbox">
@@ -495,16 +537,16 @@
       <label class="label"></label>
       <div class="control">
         <div class="select">
-          <select class="mat-colors" disabled>
-            <option id="mat-color-answer" disabled>Mat Colors</option>
-            <option id="mat-color-answer">Polar White</option>
-            <option id="mat-color-answer">White</option>
-            <option id="mat-color-answer">Warm White</option>
-            <option id="mat-color-answer">Antique</option>
-            <option id="mat-color-answer">Cream</option>
-            <option id="mat-color-answer">Natural</option>
-            <option id="mat-color-answer">Black</option>
-            <option id="mat-color-answer">Other</option>
+          <select class="float-colors" disabled>
+            <option id="float-color-answer" disabled>Float Colors</option>
+            <option id="float-color-answer">Polar White</option>
+            <option id="float-color-answer">White</option>
+            <option id="float-color-answer">Warm White</option>
+            <option id="float-color-answer">Antique</option>
+            <option id="float-color-answer">Cream</option>
+            <option id="float-color-answer">Natural</option>
+            <option id="float-color-answer">Black</option>
+            <option id="float-color-answer">Other</option>
           </select>
         </div>
       </div>
@@ -675,8 +717,11 @@
   <!-- Image Upload -->
   <h1>Image Upload</h1>
   <br>
+  <br>
+  <br>
+  <br>
     <div class="field upload">
-      <div class="file is-boxed is-medium has-name">
+      <div class="file is-boxed is-large has-name">
         <label class="file-label">
           <input class="file-input" type="file" name="resume">
           <span class="file-cta">
