@@ -9,14 +9,14 @@ var db = require("../../models");
 module.exports = function (app) {
     // Get all clients
     app.get("/api/clients", function (req, res) {
-        db.Client.findAll({}).then(function (dbClient) {
+        db.client.findAll({}).then(function (dbClient) {
             res.json(dbClient);
         });
     });
 
     // Get Client by client-id
     app.get("/api/clients/:id", function (req, res) {
-        db.Client.findOne({
+        db.client.findOne({
             where: {
                 id: req.params.id
             }
@@ -28,14 +28,14 @@ module.exports = function (app) {
 
     // Create a new client
     app.post("/api/clients", function (req, res) {
-        db.Client.create(req.body).then(function (dbClient) {
+        db.client.create(req.body).then(function (dbClient) {
             res.json(dbClient);
         });
     });
 
     // Delete a client by id
     app.delete("/api/clients/:id", function (req, res) {
-        db.Client.destroy({
+        db.client.destroy({
             where: {
                 id: req.params.id
             }
@@ -47,7 +47,7 @@ module.exports = function (app) {
 
     // Update a client by id
     app.put("/api/clients", function (req, res) {
-        db.Client.update(
+        db.client.update(
             req.body,
             {
                 where: {

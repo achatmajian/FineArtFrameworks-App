@@ -18,6 +18,18 @@ module.exports = function(sequelize, DataTypes) {
       },
       cost: {
           type: DataTypes.INTEGER
+      },
+      createdAt: {
+        field: 'created_at',
+        type: DataTypes.DATE,
+        allowNull: false,
+        defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
+      },
+      updatedAt: {
+        field: 'updated_at',
+        type: DataTypes.DATE,
+        allowNull: false,
+        defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
       }
     },{
         underscored: true,

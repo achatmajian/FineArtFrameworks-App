@@ -43,7 +43,6 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.STRING,
         allowNull: true
       },
-
       city: {
         type: DataTypes.STRING,
         allowNull: false
@@ -55,6 +54,18 @@ module.exports = function(sequelize, DataTypes) {
       zip_code: {
         type: DataTypes.INTEGER,
         allowNull: false
+      },
+      createdAt: {
+        field: 'created_at',
+        type: DataTypes.DATE,
+        allowNull: false,
+        defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
+      },
+      updatedAt: {
+        field: 'updated_at',
+        type: DataTypes.DATE,
+        allowNull: false,
+        defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
       }
       // need to add timestamp logic for created_at and updated_at here!
     },{

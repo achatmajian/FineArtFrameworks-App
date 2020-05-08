@@ -1,6 +1,6 @@
 USE fafw_development;
 
-INSERT INTO glazing (name, glazing_type, cost_type, cost)
+INSERT INTO glazings (name, glazing_type, cost_type, cost)
 VALUES
 -- none
 ("n/a", "n/a", "per foot", 0.00),
@@ -9,7 +9,7 @@ VALUES
 ("tru vue ultra vue", "glass", "per foot", 21.00),
 ("museum glass", "glass", "per foot", 35.00),
 ("art glass", "glass", "per foot", 35.00),
---plexi
+-- plexi
 ("regular plexiglass", "plexiglass", "per foot", 12.00),
 ("op-3 plexiglass", "plexiglass", "per foot", 19.00),
 -- museum plexi
@@ -18,4 +18,4 @@ VALUES
 ("optimum museum plexi", "plexiglass", "72 x 96", 3200.00),
 ("optimum museum plexi", "plexiglass", "72 x 120", 7400.00);
 
-SELECT * FROM glazing
+SELECT * FROM glazings

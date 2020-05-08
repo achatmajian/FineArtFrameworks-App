@@ -1,9 +1,9 @@
 USE fafw_development;
 
-INSERT INTO mat (name, color, cost_type, cost)
+INSERT INTO mats (name, color, cost_type, cost)
 VALUES 
 -- none
-("n/a", "n/a", "per foot", 0)
+("n/a", "n/a", "per foot", 0),
 -- 4 Ply 
 ("4 ply rag", "polar white", "per foot", 5.50),
 ("4 ply rag", "white", "per foot", 5.50),
@@ -32,4 +32,4 @@ VALUES
 ("12 ply rag", "black", "per foot", 21.00),
 ("12 ply rag", "other", "per foot", 21.00);
 
-SELECT * FROM mat;
+SELECT * FROM mats;
