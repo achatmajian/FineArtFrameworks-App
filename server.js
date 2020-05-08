@@ -29,6 +29,7 @@ require("./routes/api/user-routes")(app);
 require("./routes/api/drymount-routes")(app);
 require("./routes/api/extras-routes")(app);
 require("./routes/api/float-routes")(app);
+require("./routes/api/flush-routes")(app);
 require("./routes/api/glazing-routes")(app);
 require("./routes/api/island-routes")(app);
 require("./routes/api/mat-routes")(app);
