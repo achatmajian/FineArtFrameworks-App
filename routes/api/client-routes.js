@@ -9,8 +9,8 @@ var db = require("../../models");
 module.exports = function (app) {
     // Get all clients
     app.get("/api/clients", function (req, res) {
-        db.Client.findAll({}).then(function (dbClients) {
-            res.json(dbClients);
+        db.Client.findAll({}).then(function (dbClient) {
+            res.json(dbClient);
         });
     });
 
@@ -21,15 +21,15 @@ module.exports = function (app) {
                 id: req.params.id
             }
         })
-            .then(function (dbClients) {
-                res.json(dbClients);
+            .then(function (dbClient) {
+                res.json(dbClient);
             })
     });
 
     // Create a new client
     app.post("/api/clients", function (req, res) {
-        db.Client.create(req.body).then(function (dbClients) {
-            res.json(dbClients);
+        db.Client.create(req.body).then(function (dbClient) {
+            res.json(dbClient);
         });
     });
 
@@ -40,8 +40,8 @@ module.exports = function (app) {
                 id: req.params.id
             }
         })
-            .then(function (dbClients) {
-                res.json(dbClients);
+            .then(function (dbClient) {
+                res.json(dbClient);
             });
     });
 
@@ -53,8 +53,8 @@ module.exports = function (app) {
                 where: {
                     id: req.body.id
                 }
-            }).then(function (dbClients) {
-                res.json(dbClients);
+            }).then(function (dbClient) {
+                res.json(dbClient);
             });
     });
 

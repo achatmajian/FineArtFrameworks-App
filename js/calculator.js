@@ -1449,14 +1449,14 @@ function createOrder() {
 
                     console.log(
                         "\n\n====================================================================================================================\n\n" +
-                        //colors.yellow("\n\nImage Size (inches): ") + imageHeight + '" x ' + imageWidth + '"' + "\n\n" +
-                        //colors.yellow("Mat Size (inches): ") + matSize + '"' + "\n\n" +
-                        //colors.yellow("Window Size (inches): ") + windowHeight + '" x ' + windowWidth + '"' + "\n\n" +
-                        //colors.yellow("Face Width (inches): ") + faceWidth + '"' + "\n\n" +
-                        //colors.yellow("Frame Depth (inches): ") + frameDepth + '"' + "\n\n" +
-                        //colors.yellow("Frame Size (inches): ") + frameSizeInches + '"' + "\n\n" +
-                        //colors.yellow("Actual Frame Size (feet): ") + frameSizeActual + "'\n\n" +
-                        //colors.yellow("Frame Size (feet): ") + frameSize + "' (To account for any '5 Minimums in calculations)\n\n" +
+                        colors.yellow("\n\nImage Size (inches): ") + imageHeight + '" x ' + imageWidth + '"' + "\n\n" +
+                        colors.yellow("Mat Size (inches): ") + matSize + '"' + "\n\n" +
+                        colors.yellow("Window Size (inches): ") + windowHeight + '" x ' + windowWidth + '"' + "\n\n" +
+                        colors.yellow("Face Width (inches): ") + faceWidth + '"' + "\n\n" +
+                        colors.yellow("Frame Depth (inches): ") + frameDepth + '"' + "\n\n" +
+                        colors.yellow("Frame Size (inches): ") + frameSizeInches + '"' + "\n\n" +
+                        colors.yellow("Actual Frame Size (feet): ") + frameSizeActual + "'\n\n" +
+                        colors.yellow("Frame Size (feet): ") + frameSize + "' (To account for any '5 Minimums in calculations)\n\n" +
                         colors.yellow("Frame Dimensions: ") + frameHeight + " x " + frameWidth + "\n\n" +
                         colors.yellow("United Inch Number: ") + unitedInch + "\n\n" +
                         "--------------------------------------------------------------------------------------------------------------------" + "\n\n" +

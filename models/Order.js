@@ -40,7 +40,8 @@ module.exports = function(sequelize, DataTypes) {
   
       //paranoid: true, 
       //freezeTableName:true,
-      underscored: true
+      underscored: true,
+      timestamps: true
     });
   
   
