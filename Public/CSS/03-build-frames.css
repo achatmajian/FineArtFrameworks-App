@@ -113,6 +113,11 @@ h2 {
     /* border: solid red; */
 }
 
+.width-depth-container {
+    display: flex;
+    justify-content: space-between;
+}
+
 /* Manufacturing */
 
 .manufacturing {

@@ -135,7 +135,7 @@
 
   <!-- Item Dimensions -->
   <div class="field">
-    <label class="label">Item Dimensions (Inches)</label>
+    <label class="label">Image Dimensions (Inches)</label>
     <div class="control">
       <p>Image Height*</p>
       <input class="input" type="number" placeholder="0000" required>
@@ -148,6 +148,21 @@
     </div>
   </div>
   
+  <!-- Floater? -->
+  <div class="field">
+    <label class="label">Floater Frame?*</label>
+    <div class="control">
+      <label class="radio">
+        <input type="radio" name="floater-answer" required>
+        No 
+      </label>
+      <label class="radio">
+        <input type="radio" name="floater-answer">
+        Yes
+      </label>
+    </div>
+  </div>
+
   <!-- Face Width -->
   <!-- <div class="field">
     <label class="label">Face Width*</label>
@@ -183,11 +198,14 @@
     </div>
   </div> -->
 
+  <!-- Face Width & Frame Depth Parent Div goes here -->
+  <div class="width-depth-container">
+
   <!-- Face Width 2 -->
     <div class="field">
     <label class="label">Face Width*</label>
     <div class="select">
-      <select class="face-width-answers">
+      <select class="face-width-answers" style="width: 210px;">
         <option id="face-width-answer">3/8"</option>
         <option id="face-width-answer">1/2"</option>
         <option id="face-width-answer">3/4"</option>
@@ -239,7 +257,7 @@
   <div class="field">
     <label class="label">Frame Depth*</label>
     <div class="select">
-      <select class="frame-depth-answers">
+      <select class="frame-depth-answers" style="width: 210px;">
         <option id="frame-depth-answer">3/4"</option>
         <option id="frame-depth-answer">1"</option>
         <option id="frame-depth-answer">1 1/2"</option>
@@ -249,6 +267,8 @@
       </select>
     </div>
   </div>
+
+  </div> <!-- Face Width & Frame Depth Parent Div Close -->
 
   </div><!-- Sizing Child Div Close -->
 
