@@ -632,6 +632,7 @@
     <label class="checkbox">
       <input type="checkbox" id="spacers-checkbox">
         <strong>Spacers</strong>
+        <span class="brmedium"></span>
     </label>
     <div class="control">
       <div class="select">
@@ -678,6 +679,7 @@
       <label class="checkbox">
         <input type="checkbox" id="drymount-checkbox">
           <strong>Mounting</strong>
+          <span class="brmedium"></span>
       </label>
       <div class="control">
         <div class="select">
@@ -704,7 +706,7 @@
         </div>
         <div class="select">
           <select class="mounting-sizes">
-            <option id="mounting-size" selected="true" disabled="disabled">Choose Size</option>
+            <option id="mounting-size" selected="true" disabled="disabled">Other Mounting Size</option>
             <option id="mounting-size">16" x 20"</option>
             <option id="mounting-size">20" x 30"</option>
             <option id="mounting-size">30" x 40"</option>
@@ -725,13 +727,15 @@
     <label class="checkbox">
       <input type="checkbox" id="glazing-checkbox">
         <strong>Glazing</strong>
+        <span class="brmedium"></span>
     </label>
 
     <div class="control">
-      <p>Plexiglass</p>
+      <!-- <p>Plexiglass</p> -->
       <div class="select">
         <select>
-          <option id="glazing-answer" default>Regular Plexiglass</option>
+          <option id="glazing-answer" selected="true" disabled="disabled">Choose Plexiglass</option>
+          <option id="glazing-answer">Regular Plexiglass</option>
           <option id="glazing-answer">UV Plexiglass </option>
           <option id="glazing-answer">Museum Plexiglass (Up To 40" x 60")</option>
           <option id="glazing-answer">Museum Plexiglass (Up To 48" x 96")</option>
@@ -744,9 +748,10 @@
     <span class="br"></span> 
 
     <div class="control">
-      <p>Glass</p>
+      <!-- <p>Glass</p> -->
       <div class="select">
         <select>
+          <option id="glazing-answer" selected="true" disabled="disabled">Choose Glass</option>
           <option id="glazing-answer" default>Regular Glass (Max 40" x 60")</option>
           <option id="glazing-answer">Museum Glass (Max 48" x 64")</option>
         </select>
@@ -759,7 +764,7 @@
   <!-- Extras -->
   <div class="field">
     <label class="checkbox">
-      <input type="checkbox" id="extras-checkbox"><strong>Extras</strong><span class="br"></span> 
+      <input type="checkbox" id="extras-checkbox"><strong> Extras</strong><span class="br"></span> 
         <input type="checkbox" id="extras-answer">Strech Canvas</input>
         <input type="checkbox" id="extras-answer">Raise Mount</input>
         <input type="checkbox" id="extras-answer">De-fit/Re-fit</input>
@@ -779,15 +784,14 @@
   <br>
   <textarea class="textarea has-fixed-size" rows="6" placeholder="Enter fitter notes"></textarea>
   <br>
+  <textarea class="textarea has-fixed-size" rows="6" placeholder="Enter extras notes"></textarea>
+  <br>
 
   <!-- Image Upload -->
   <h1>Image Upload</h1>
   <br>
-  <br>
-  <br>
-  <br>
     <div class="field upload">
-      <div class="file is-boxed is-large has-name">
+      <div class="file is-boxed is-medium has-name">
         <label class="file-label">
           <input class="file-input" type="file" name="resume">
           <span class="file-cta">
