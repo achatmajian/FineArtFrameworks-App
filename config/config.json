@@ -2,7 +2,7 @@
   "development": {
     "username": "admin",
     "password": "root420!",
-    "database": "database-fafw",
+    "database": "fafw_development",
     "host": "database-fafw.crfq51prito1.us-east-2.rds.amazonaws.com",
     "dialect": "mysql",
     "operatorsAliases": false
