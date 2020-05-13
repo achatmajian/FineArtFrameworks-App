@@ -17,6 +17,28 @@ if (config.use_env_variable) {
       max: 5,
       min: 0,
       idle: 1 // Keep this very low or it'll make all Lambda requests take longer
+    },
+    retry  : {
+      match: [
+        /ETIMEDOUT/,
+        /EHOSTUNREACH/,
+        /ECONNRESET/,
+        /ECONNREFUSED/,
+        /ETIMEDOUT/,
+        /ESOCKETTIMEDOUT/,
+        /EHOSTUNREACH/,
+        /EPIPE/,
+        /EAI_AGAIN/,
+        /SequelizeConnectionError/,
+        /SequelizeConnectionRefusedError/,
+        /SequelizeHostNotFoundError/,
+        /SequelizeHostNotReachableError/,
+        /SequelizeInvalidConnectionError/,
+        /SequelizeConnectionTimedOutError/
+      ],
+    },
+    dialectOptions: {
+      connectTimeout: 20000
     }
   });
 }
