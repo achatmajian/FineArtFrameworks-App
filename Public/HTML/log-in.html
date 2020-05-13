@@ -6,12 +6,12 @@
     <title>Log In</title>
     <!-- CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
-    <link rel="stylesheet" href="/Public/CSS/log-in.css">
+    <link rel="stylesheet" href="/CSS/log-in.css">
     <!-- JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="/Public/JS/create-order.js"></script>
-    <script src="/Public/JS/login.js"></script>
+    <script src="/JS/create-order.js"></script>
+    <script src="/JS/login.js"></script>
   </head>
   <body>
 
@@ -37,10 +37,10 @@
             </a>
     
             <div class="navbar-dropdown">
-              <a class="navbar-item">
+              <a class="navbar-item" href="/order">
                 Create Order
               </a>
-              <a class="navbar-item">
+              <a class="navbar-item" href="/view/orders">
                 View Orders
               </a>
             </div>
@@ -52,10 +52,10 @@
             </a>
     
             <div class="navbar-dropdown">
-              <a class="navbar-item">
+              <a class="navbar-item" href="/view/clients">
                 Clients
               </a>
-              <a class="navbar-item">
+              <a class="navbar-item" href="/view/users">
                 Users
               </a>
             </div>
@@ -67,19 +67,19 @@
             </a>
     
             <div class="navbar-dropdown">
-              <a class="navbar-item">
+              <a class="navbar-item" href="/view/lumber">
                 Lumber
               </a>
-              <a class="navbar-item">
+              <a class="navbar-item" href="/view/glazing">
                 Glazing
               </a>
-              <a class="navbar-item">
+              <a class="navbar-item" href="/view/drymount">
                 Drymount
               </a>
-              <a class="navbar-item">
+              <a class="navbar-item" href="/view/spacers">
                 Spacers
               </a>
-              <a class="navbar-item">
+              <a class="navbar-item" href="/view/extras">
                 Extras
               </a>
             </div>
@@ -112,7 +112,7 @@
 <div class="field">
     <label class="label">Email</label>
     <div class="control">
-        <input class="input" id="user-email" type="text" placeholder="user@fineartframeworks.com" required>
+        <input class="input" id="user-email" name="username" type="text" placeholder="user@fineartframeworks.com" required>
     </div>
 </div>
 
@@ -120,7 +120,7 @@
 <div class="field">
     <label class="label">Password</label>
     <div class="control">
-        <input class="input" id="user-password" type="password" placeholder="********" required>
+        <input class="input" id="user-password" name="password" type="password" placeholder="********" required>
     </div>
 </div>
 <hr>

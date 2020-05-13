@@ -1,22 +1,23 @@
 // Dependencies
 // ------------------------------------------------------------------------
 var db = require("../../models");
-//var passport = require("passport");
+var passport = require("passport");
 
 
 // Routes for api/users
 // ------------------------------------------------------------------------
 module.exports = function (app) {
 
-    /*  
+     
     //Route for Log In Authentication
     app.post('/login',
         passport.authenticate('local', {
             successRedirect: '/',
             failureRedirect: '/login',
+            failureFlash: true
         })
     );
-    */
+    
 
     // Get all users
     app.get("/api/users", function (req, res) {
