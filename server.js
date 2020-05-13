@@ -3,10 +3,10 @@
 //require("dotenv").config();
 var express = require("express");
 var db = require("./models");
-//var passport = require('passport')
-//var LocalStrategy = require('passport-local').Strategy;
-//var session = require("express-session")
-//var bodyParser = require("body-parser");
+var passport = require('passport')
+var LocalStrategy = require('passport-local').Strategy;
+var session = require("express-session")
+var bodyParser = require("body-parser");
 var app = express();
 var PORT = process.env.PORT || 3000;
 
@@ -14,11 +14,11 @@ var PORT = process.env.PORT || 3000;
 // ------------------------------------------------------------------------
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-app.use(express.static("public"));
-//app.use(session({ secret: "cats" }));
-//app.use(bodyParser.urlencoded({ extended: false }));
-//app.use(passport.initialize());
-//app.use(passport.session());
+app.use(express.static(__dirname + "/public"));
+app.use(session({ secret: "cats" }));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Routes
 // ------------------------------------------------------------------------
@@ -40,20 +40,20 @@ require("./routes/html-routes")(app);
 
 var syncOptions = { force: false };
 
-/*
+
 // PassportJS User Authentication
 // ------------------------------------------------------------------------
 passport.use(new LocalStrategy({
   usernameField: 'email',
-  passwordField: 'passwd'
+  passwordField: 'password_hash'
 },
-  function (username, password, done) {
-    User.findOne({ username: username }, function (err, user) {
+  function (email, password_hash, done) {
+    db.user.findOne({ where: { email: email } }, function (err, user) {
       if (err) { return done(err); }
       if (!user) {
-        return done(null, false, { message: 'Incorrect username.' });
+        return done(null, false, { message: 'Incorrect email.' });
       }
-      if (!user.validPassword(password)) {
+      if (!user.validPassword(password_hash)) {
         return done(null, false, { message: 'Incorrect password.' });
       }
       return done(null, user);
@@ -61,7 +61,7 @@ passport.use(new LocalStrategy({
   }
 ));
 
-*/
+
 
 // If running a test, set syncOptions.force to true
 // clearing the `testdb`
