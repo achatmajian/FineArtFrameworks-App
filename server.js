@@ -18,7 +18,7 @@ app.use(express.static(__dirname + "/public"));
 app.use(session({ secret: "cats" }));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(passport.initialize());
-app.use(passport.session());
+//app.use(passport.session());
 
 // Routes
 // ------------------------------------------------------------------------
@@ -41,6 +41,7 @@ require("./routes/html-routes")(app);
 var syncOptions = { force: false };
 
 
+/*
 // PassportJS User Authentication
 // ------------------------------------------------------------------------
 passport.use(new LocalStrategy({
@@ -60,6 +61,7 @@ passport.use(new LocalStrategy({
     });
   }
 ));
+*/
 
 
 

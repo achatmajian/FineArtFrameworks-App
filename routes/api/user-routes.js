@@ -8,7 +8,7 @@ var passport = require("passport");
 // ------------------------------------------------------------------------
 module.exports = function (app) {
 
-     
+     /*
     //Route for Log In Authentication
     app.post('/login',
         passport.authenticate('local', {
@@ -17,6 +17,7 @@ module.exports = function (app) {
             failureFlash: true
         })
     );
+    */
     
 
     // Get all users
