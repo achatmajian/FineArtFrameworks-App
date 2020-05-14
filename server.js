@@ -3,9 +3,9 @@
 //require("dotenv").config();
 var express = require("express");
 var db = require("./models");
-var passport = require('passport')
-var LocalStrategy = require('passport-local').Strategy;
-var session = require("express-session")
+//var passport = require('passport')
+//var LocalStrategy = require('passport-local').Strategy;
+//var session = require("express-session")
 var bodyParser = require("body-parser");
 var app = express();
 var PORT = process.env.PORT || 3000;
