@@ -13,81 +13,53 @@
     font-weight: bold;
 }
 
-#frame-title{
+#section-title{
     font-size: 14px;
     font-weight: bold;
 }
 
-#section-title{
-    font-size: 12px;
-    font-weight: bold;
-}
-
-#frame-subtotal{
-    font-size: 12px;
+#order-total{
+    font-size: 14px;
     font-weight: bold;
 }
 
 p{
-    font-size: 10px;
+    font-size: 12px;
 }
-
-/* #section-container{
-    border: 1px solid red;
-} */
-
 
 </style>
 
 <body>
-    <!-- Review Order Wrapper-->
-  <div class="wrapper" id="price-quote">
-
-    <div class="quote-container box"> 
+    <!-- Wrapper-->
+  <div class="wrapper" id="order-total-sheet">
   
-      <div class="quote-header">
         <h1 id="document-title">Fine Art Frameworks - Order 00001<br>_______________________________________________________________________________</h1>
-      </div>
     
-      <!-- Frame Div-->
-      <div class="frame box">
-    
-      <!-- Frame -->
-      <h1 id="frame-title">Order Sheet</h1>
-        <p>__________________________</p>
+      <!-- Order Sheet -->
       <h2 id="section-title">Client Information:</h2>
         <p>Name:</p>
         <p>Email:</p>
         <p>Phone:</p>
         <p>Address:</p>
         <p>__________________________</p>
-      <br>
       <h2 id="section-title">Order Information:</h2>
         <p>Frame Quantity:</p>
         <p>Date Received:</p>
         <p>Date Due:</p>
         <p>Rush:</p>
         <p>Art Storage Location:</p>
-      <br>
       <p>__________________________</p>
-      <br>
       <h2 id="section-title">Price Per Frame:</h2>
         <p>Frame 1: $2000</p>
         <p>Frame 2: $1500</p>
         <p>Frame 3: $2000</p>
-      <br>
       <p>__________________________</p>
-      <br>
       <h2 id="section-title">Total Order Pricing</h2>
         <p>Rush Amount:</p>
         <p>Tax Rate Percentage:</p>
         <p>Tax Amount:</p>
-        <p id="frame-subtotal">Order Total Price:</p>
+        <p id="order-total">Order Total Price:</p>
     <br>
-    
-    </div><!-- Frame Div Close -->
-  
-  </div> <!-- Review Container Div Close-->
   
   </div> <!-- Wrapper Close -->
 </body>
@@ -95,7 +67,7 @@ p{
  <!-- jsPDF -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
 <script>
-var test = document.getElementById("price-quote")
+var test = document.getElementById("order-total-sheet")
 var doc = new jsPDF()
 
 doc.fromHTML(test, 10, 10)
