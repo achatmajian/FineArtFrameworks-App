@@ -3,9 +3,9 @@
 //require("dotenv").config();
 var express = require("express");
 var db = require("./models");
-var passport = require('passport')
-var LocalStrategy = require('passport-local').Strategy;
-var session = require("express-session")
+//var passport = require('passport')
+//var LocalStrategy = require('passport-local').Strategy;
+//var session = require("express-session")
 var bodyParser = require("body-parser");
 var app = express();
 var PORT = process.env.PORT || 3000;
@@ -15,10 +15,10 @@ var PORT = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static(__dirname + "/public"));
-app.use(session({ secret: "cats" }));
+// app.use(session({ secret: "cats" }));
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(passport.initialize());
-app.use(passport.session());
+// app.use(passport.initialize());
+//app.use(passport.session());
 
 // Routes
 // ------------------------------------------------------------------------
@@ -41,6 +41,7 @@ require("./routes/html-routes")(app);
 var syncOptions = { force: false };
 
 
+/*
 // PassportJS User Authentication
 // ------------------------------------------------------------------------
 passport.use(new LocalStrategy({
@@ -60,8 +61,7 @@ passport.use(new LocalStrategy({
     });
   }
 ));
-
-
+*/
 
 // If running a test, set syncOptions.force to true
 // clearing the `testdb`
@@ -70,17 +70,20 @@ if (process.env.NODE_ENV === "test") {
   syncOptions.force = true;
 }
 
-
 // Starting server & syncing models
 // ------------------------------------------------------------------------
 db.sequelize.sync(syncOptions).then(function () {
   app.listen(PORT, function () {
+    
+    /*
     console.log(
       "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser. ",
 
       PORT,
       PORT
     );
+    */
+   
     console.log(
       "==> 🌎  Listening on port %s. Visit http://18.222.181.253:%s/ in your browser. ",
 
