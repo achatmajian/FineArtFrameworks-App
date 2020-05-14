@@ -22,7 +22,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // Routes
 // ------------------------------------------------------------------------
-require("./routes/api/")(app);
+require("./routes/api/client-routes")(app);
 require("./routes/api/frame-routes")(app);
 require("./routes/api/order-routes")(app);
 require("./routes/api/user-routes")(app);
