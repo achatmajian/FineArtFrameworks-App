@@ -41,7 +41,7 @@ if (config.use_env_variable) {
       connectTimeout: 20000
     }
   });
-}
+};
 
 fs
   .readdirSync(__dirname)
