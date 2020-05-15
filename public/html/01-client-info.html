@@ -230,8 +230,11 @@
 
    <!-- Buttons -->
    <div class="buttons">
-      <button class="button is-link" id="new-client-button" href="/order/details">Submit New Client</button>
-      <button class="button is-link is-light" id="existing-client-button" href="/order/client/new-client">Use Existing Client</button>
+      <!-- <button class="button is-link" id="new-client-button" href="/order/details">Submit New Client</button> -->
+      <!-- <button class="button is-link" id="new-client-button" onclick="location.href='/order/details'" value="Go to Add Order Info">Submit New Client</button> -->
+      <button class="button is-link" id="new-client-button" onclick="javascript:location.href='/order/details'" value="Go to Add Order Info">Submit New Client</button>
+      <!-- <button class="button is-link is-light" id="existing-client-button" href="/order/client/new-client">Use Existing Client</button> -->
+      <button class="button is-link is-light" id="existing-client-button" onclick="javascript:location.href='/order/client/new-client'" value="Go to Use Existing Client">Use Existing Client</button>
   </div>
    
     </div> <!-- Client Info Form Container Close -->
