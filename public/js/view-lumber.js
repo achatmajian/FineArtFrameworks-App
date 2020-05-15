@@ -63,13 +63,13 @@ $(document).ready(function () {
     
 
             lumberMaterial.attr("data-order-id", response[i].id);
-            lumberMaterial.text(response[i].material.charAt(0).toUpperCase());
+            lumberMaterial.text(response[i].material.charAt(0).toUpperCase() + response[i].material.slice(1));
 
             lumberFinish.attr("data-order-id", response[i].id);
-            lumberFinish.text(response[i].finish.charAt(0).toUpperCase());
+            lumberFinish.text(response[i].finish.charAt(0).toUpperCase() + response[i].finish.slice(1));
 
             lumberFinishDetail.attr("data-order-id", response[i].id);
-            lumberFinishDetail.text(response[i].detail.charAt(0).toUpperCase());
+            lumberFinishDetail.text(response[i].detail.charAt(0).toUpperCase() + response[i].detail.slice(1));
 
             lumberFaceWidth.attr("data-order-id", response[i].id);
             lumberFaceWidth.text(faceWidthSize);
