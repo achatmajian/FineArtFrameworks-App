@@ -40,11 +40,11 @@ $(document).ready(function () {
             if (response[i].face_width === "0.375") {
                 faceWidthSize = '3/8"';
             } else if (response[i].face_width === "0.50") {
-                size = '1/2"'';
+                size = '1/2"';
             } else if (response[i].face_width === "0.625") {
                 faceWidthSize = '5/8"';
             } else if (response[i].face_width === "0.75") {
-                faceWidthSize = '3/4";
+                faceWidthSize = '3/4"';
             }  else if (response[i].face_width === "1") {
                 faceWidthSize = '1"';
             } else if (response[i].face_width === "1.25") {
