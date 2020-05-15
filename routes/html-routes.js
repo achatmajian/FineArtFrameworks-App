@@ -3,7 +3,7 @@ var path = require("path");
 module.exports = function(app) {
   // home screen brings user to view orders page
   app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/html/view-orders.html"));
+    res.sendFile(path.join(__dirname, "../public/html/01-client-info.html"));
   });
 
   // log in
