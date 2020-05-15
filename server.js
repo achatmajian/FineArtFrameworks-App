@@ -8,7 +8,7 @@ var db = require("./models");
 //var session = require("express-session")
 var bodyParser = require("body-parser");
 var app = express();
-var PORT = process.env.PORT || 3000;
+var PORT = process.env.PORT || 3001;
 
 // Middleware
 // ------------------------------------------------------------------------
@@ -75,21 +75,17 @@ if (process.env.NODE_ENV === "test") {
 db.sequelize.sync(syncOptions).then(function () {
   app.listen(PORT, function () {
     
-    /*
+    
     console.log(
       "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser. ",
 
       PORT,
       PORT
     );
-    */
+    
    
     console.log(
-      "==> 🌎  Listening on port %s. Visit http://18.222.181.253:%s/ in your browser. ",
-
-      PORT,
-      PORT
-    );
+      "==> 🌎  Listening on port 3000. Visit http://18.222.181.253:3000/ in your browser. ");
   });
 });
 
