@@ -40,7 +40,7 @@ $(document).ready(function () {
             if (response[i].face_width === "0.375") {
                 faceWidthSize = '3/8"';
             } else if (response[i].face_width === "0.50") {
-                size = '1/2"';
+                faceWidthSize = '1/2"';
             } else if (response[i].face_width === "0.625") {
                 faceWidthSize = '5/8"';
             } else if (response[i].face_width === "0.75") {
