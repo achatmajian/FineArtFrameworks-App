@@ -7,7 +7,7 @@ $(document).ready(function() {
     }).done(function(response) {
         $(".client-body").empty();
         for (i = 0; i < response.length; i ++) {
-            var tableRow = $("<tr class='client=row'>");
+            var tableRow = $("<tr class='client-row'>");
             var clientFirstName = $("<td class='client-first-name'>");
             var clientLastName = $("<td class='client-last-name'>");
             var clientEmail = $("<td class='client-email'>");
