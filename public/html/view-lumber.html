@@ -12,6 +12,7 @@
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="/js/create-order.js"></script>
+    <script src="/js/view-lumber.js"></script>
   </head>
   <body>
 
@@ -123,6 +124,8 @@
     <thead>
       <tr>
         <th>Material</th>
+        <th>Finish</th>
+        <th>Finish Type</th>
         <th>Face Width</th>
         <th>Frame Depth</th>
         <th>Cost Per Foot</th>
@@ -132,19 +135,21 @@
     <tfoot>
     <tr>
         <th>Material</th>
+        <th>Finish</th>
+        <th>Finish Type</th>
         <th>Face Width</th>
         <th>Frame Depth</th>
         <th>Cost Per Foot</th>
         <th>Edit Info</th>
     </tr>
     </tfoot>
-    <tbody>
-      <tr class="order-row">
+    <tbody class="lumber-body">
+      <tr class="lumber-row">
         <td id="material-name">Maple</td>
         <td id="face-width">1/2"</td>
         <td id="frame-depth"> 1 1/2"</td>
         <td id="cost-per-foot">$21.00</td>
-        <td id="order-details"><a>Edit</a></td>
+        <td id="lumber-edit"><a>Edit</a></td>
       </tr>
     </tbody>
   </table>
