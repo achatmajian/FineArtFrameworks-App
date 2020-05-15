@@ -34,46 +34,48 @@ $(document).ready(function () {
             var frameDepthSize;
             var costPerFoot = $("<td class='cost-per-foot'>");
             var lumberEdit = $("<td class='lumber-edit'>");
-            var edit = $("<a>edit</a>");
+            var edit = $("<a>Edit</a>");
 
-            /*
+    
             if (response[i].face_width === "0.375") {
-                faceWidthSize = "3/8";
+                faceWidthSize = '3/8"';
             } else if (response[i].face_width === "0.50") {
-                size = "1/2";
+                size = '1/2"'';
             } else if (response[i].face_width === "0.625") {
-                faceWidthSize = "5/8";
+                faceWidthSize = '5/8"';
             } else if (response[i].face_width === "0.75") {
-                faceWidthSize = "3/4";
+                faceWidthSize = '3/4";
+            }  else if (response[i].face_width === "1") {
+                faceWidthSize = '1"';
             } else if (response[i].face_width === "1.25") {
                 faceWidthSize = " 1 1/4";
-            } else {
-                faceWidthsize = response[i].face_width;
             };
 
             if (response[i].frame_depth === "1.50") {
-                frameDepthSize = "1 1/2";
+                frameDepthSize = '1 1/2"';
+            } else if (response[i].frame_depth === "2") {
+                frameDepthSize = '2"';
             } else if (response[i].frame_depth === "2.25") {
-                frameDepthSizesize = "2 1/4";
+                frameDepthSizesize = '2 1/4"';
             } else {
                 frameDepthSize = response[i].frame_depth;
             };
-            */
+    
 
             lumberMaterial.attr("data-order-id", response[i].id);
-            lumberMaterial.text(response[i].material);
+            lumberMaterial.text(response[i].material.charAt(0).toUpperCase());
 
             lumberFinish.attr("data-order-id", response[i].id);
-            lumberFinish.text(response[i].finish);
+            lumberFinish.text(response[i].finish.charAt(0).toUpperCase());
 
             lumberFinishDetail.attr("data-order-id", response[i].id);
-            lumberFinishDetail.text(response[i].detail);
+            lumberFinishDetail.text(response[i].detail.charAt(0).toUpperCase());
 
             lumberFaceWidth.attr("data-order-id", response[i].id);
-            lumberFaceWidth.text(response[i].face_width + '"');
+            lumberFaceWidth.text(faceWidthSize);
 
             lumberFrameDepth.attr("data-order-id", response[i].id);
-            lumberFrameDepth.text(response[i].frame_depth + '"');
+            lumberFrameDepth.text(frameDepthSize);
 
             costPerFoot.attr("data-order-id", response[i].id);
             costPerFoot.text("$" + response[i].cost.toFixed(2));
