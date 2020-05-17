@@ -11,26 +11,31 @@ module.exports = function(sequelize, DataTypes) {
       },
       storage_location: {
           type: DataTypes.STRING,
+          allowNull: true
       },
       rush_status: {
         type: DataTypes.ENUM,
         values: ['none', '1 week', '2 weeks']
       },
       order_notes: {
-          type: DataTypes.TEXT
+          type: DataTypes.TEXT,
+          allowNull: true
       },
       order_extra_costs: {
           type: DataTypes.INTEGER,
           default: 0,
       },
       order_subtotal: {
-          type: DataTypes.INTEGER
+          type: DataTypes.INTEGER,
+          default: 0,
       },
       order_tax_percent: {
-          type: DataTypes.INTEGER
+          type: DataTypes.INTEGER,
+          defaultValue: 1,
       },
       order_total: {
-          type: DataTypes.INTEGER
+          type: DataTypes.INTEGER,
+          default: 0,
       },
       date_due: {
           type: DataTypes.DATE,
@@ -64,7 +69,7 @@ module.exports = function(sequelize, DataTypes) {
       
       Order.belongsTo(models.client);
 
-      Order.hasMany(models.frame, {foreignKey: 'order_id', as: 'order'});
+      Order.hasMany(models.frame, {foreignKey: 'order_id'});
       
   
     };

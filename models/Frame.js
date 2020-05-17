@@ -6,10 +6,6 @@ module.exports = function (sequelize, DataTypes) {
             autoIncrement: true,
             allowNull: false
         },
-        order_id: {
-            type: DataTypes.INTEGER,
-            allowNull: true
-        },
         paper_width: {
             type: DataTypes.INTEGER,
             allowNull: true
@@ -20,43 +16,47 @@ module.exports = function (sequelize, DataTypes) {
         },
         image_width: {
             type: DataTypes.INTEGER,
-            allowNull: true
+            allowNull: false
         },
         image_height: {
             type: DataTypes.INTEGER,
-            allowNull: true
+            allowNull: false
         },
         mat_size: {
             type: DataTypes.INTEGER,
-            allowNull: true
+            defaultValue: 0
         },
         float_size: {
             type: DataTypes.INTEGER,
-            allowNull: true
+            defaultValue: 0
         },
         window_width: {
             type: DataTypes.INTEGER,
-            allowNull: true
+            allowNull: false
         },
         window_height: {
             type: DataTypes.INTEGER,
-            allowNull: true
+            allowNull: false
         },
         face_width: {
             type: DataTypes.INTEGER,
-            allowNull: true
+            allowNull: false
         },
         frame_depth: {
             type: DataTypes.INTEGER,
-            allowNull: true
+            allowNull: false
         },
         frame_size: {
             type: DataTypes.INTEGER,
-            allowNull: true
+            allowNull: false
         },
         united_inch: {
             type: DataTypes.INTEGER,
-            allowNull: true
+            allowNull: false
+        },
+        mounting_type: {
+            type: DataTypes.STRING,
+            allowNull: false
         },
         drymount_name: {
             type: DataTypes.STRING,
@@ -115,18 +115,6 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: true
         },
         glazing_cost: {
-            type: DataTypes.INTEGER,
-            allowNull: true
-        },
-        island_name: {
-            type: DataTypes.STRING,
-            allowNull: true
-        },
-        island_detail: {
-            type: DataTypes.STRING,
-            allowNull: true
-        },
-        island_cost: {
             type: DataTypes.INTEGER,
             allowNull: true
         },
@@ -209,12 +197,12 @@ module.exports = function (sequelize, DataTypes) {
         timestamps: true
     });
 
+
     Frame.associate = function (models) {
 
         // associations to go here :)
-
         Frame.belongsTo(models.order);
-        
+
     };
 
     return Frame;

@@ -84,7 +84,7 @@ module.exports = function(sequelize, DataTypes) {
       
       Client.belongsTo(models.user);
       
-      Client.hasMany(models.order, {foreignKey: 'client_id', as: 'client'});
+      Client.hasMany(models.order, {foreignKey: 'client_id'});
       
     };
     
