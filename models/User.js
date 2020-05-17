@@ -54,7 +54,7 @@ module.exports = function (sequelize, DataTypes) {
     // associations to go here :)
 
     
-    User.hasMany(models.client, {foreignKey: 'user_id', as: 'user'});
+    User.hasMany(models.client, {foreignKey: 'user_id'});
     
 
   };
