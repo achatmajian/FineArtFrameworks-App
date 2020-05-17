@@ -1,124 +1,221 @@
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
     var Frame = sequelize.define("frame", {
-      id: {
-        type: DataTypes.INTEGER,
-        primaryKey: true,
-        autoIncrement: true,
-        allowNull: false
-      },
-      paper_width: {
-          type: DataTypes.INTEGER
-      },
-      paper_height: {
-          type: DataTypes.INTEGER
-      },
-      image_width: {
-          type: DataTypes.INTEGER
-      },
-      image_height: {
-          type: DataTypes.INTEGER
-      },
-      mat_size: {
-          type: DataTypes.INTEGER
-      },
-      window_width: {
-          type: DataTypes.INTEGER
-      },
-      window_height: {
-          type: DataTypes.INTEGER
-      },
-      face_width: {
-          type: DataTypes.INTEGER
-      },
-      frame_depth: {
-          type: DataTypes.INTEGER
-      },
-      frame_size: {
-          type: DataTypes.INTEGER
-      },
-      united_inch: {
-          type: DataTypes.INTEGER
-      },
-      drymount_id: {
-          type: DataTypes.INTEGER
-      },
-      extras_id: {
-          type: DataTypes.INTEGER
-      },
-      float_id: {
-          type: DataTypes.INTEGER
-      },
-      flush_id: {
-          type: DataTypes.INTEGER
-      },
-      glazing_id: {
-          type: DataTypes.INTEGER
-      },
-      island_id: {
-          type: DataTypes.INTEGER
-      },
-      mat_id: {
-          type: DataTypes.INTEGER
-      },
-      material_id: {
-        type: DataTypes.INTEGER
-    },
-      spacer_id: {
-          type: DataTypes.INTEGER
-      },
-      strainer_id: {
-          type: DataTypes.INTEGER
-      },
-      frame_extra_cost: {
-          type: DataTypes.INTEGER,
-          default: 0
-      },
-      frame_discount_percent: {
-          type: DataTypes.INTEGER,
-          default: 0
-      },
-      frame_subtotal: {
-          type: DataTypes.INTEGER
-      },
-      frame_total: {
-          type: DataTypes.INTEGER
-      },
-      createdAt: {
-        field: 'created_at',
-        type: DataTypes.DATE,
-        allowNull: false,
-        defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
-      },
-      updatedAt: {
-        field: 'updated_at',
-        type: DataTypes.DATE,
-        allowNull: false,
-        defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
-      }
-    },{
+        id: {
+            type: DataTypes.INTEGER,
+            primaryKey: true,
+            autoIncrement: true,
+            allowNull: false
+        },
+        order_id: {
+            type: DataTypes.INTEGER,
+            allowNull: true
+        },
+        paper_width: {
+            type: DataTypes.INTEGER,
+            allowNull: true
+        },
+        paper_height: {
+            type: DataTypes.INTEGER,
+            allowNull: true
+        },
+        image_width: {
+            type: DataTypes.INTEGER,
+            allowNull: true
+        },
+        image_height: {
+            type: DataTypes.INTEGER,
+            allowNull: true
+        },
+        mat_size: {
+            type: DataTypes.INTEGER,
+            allowNull: true
+        },
+        float_size: {
+            type: DataTypes.INTEGER,
+            allowNull: true
+        },
+        window_width: {
+            type: DataTypes.INTEGER,
+            allowNull: true
+        },
+        window_height: {
+            type: DataTypes.INTEGER,
+            allowNull: true
+        },
+        face_width: {
+            type: DataTypes.INTEGER,
+            allowNull: true
+        },
+        frame_depth: {
+            type: DataTypes.INTEGER,
+            allowNull: true
+        },
+        frame_size: {
+            type: DataTypes.INTEGER,
+            allowNull: true
+        },
+        united_inch: {
+            type: DataTypes.INTEGER,
+            allowNull: true
+        },
+        drymount_name: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        drymount_detail: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        drymount_cost: {
+            type: DataTypes.INTEGER,
+            allowNull: true
+        },
+        extras_name: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        extras_detail: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        extras_cost: {
+            type: DataTypes.INTEGER,
+            allowNull: true
+        },
+        float_name: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        float_detail: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        float_cost: {
+            type: DataTypes.INTEGER,
+            allowNull: true
+        },
+        flush_name: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        flush_detail: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        flush_cost: {
+            type: DataTypes.INTEGER,
+            allowNull: true
+        },
+        glazing_name: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        glazing_detail: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        glazing_cost: {
+            type: DataTypes.INTEGER,
+            allowNull: true
+        },
+        island_name: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        island_detail: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        island_cost: {
+            type: DataTypes.INTEGER,
+            allowNull: true
+        },
+        mat_name: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        mat_detail: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        mat_cost: {
+            type: DataTypes.INTEGER,
+            allowNull: true
+        },
+        material_name: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        material_detail: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        material_cost: {
+            type: DataTypes.INTEGER,
+            allowNull: true
+        },
+        spacer_name: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        spacer_detail: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        spacer_cost: {
+            type: DataTypes.INTEGER,
+            allowNull: true
+        },
+        strainer_name: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        strainer_detail: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        strainer_cost: {
+            type: DataTypes.INTEGER,
+            allowNull: true
+        },
+        frame_extra_cost: {
+            type: DataTypes.INTEGER,
+            default: 0
+        },
+        frame_discount_percent: {
+            type: DataTypes.INTEGER,
+            default: 1
+        },
+        frame_subtotal: {
+            type: DataTypes.INTEGER
+        },
+        frame_total: {
+            type: DataTypes.INTEGER
+        },
+        createdAt: {
+            field: 'created_at',
+            type: DataTypes.DATE,
+            allowNull: false,
+            defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
+        },
+        updatedAt: {
+            field: 'updated_at',
+            type: DataTypes.DATE,
+            allowNull: false,
+            defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
+        }
+    }, {
         underscored: true,
         timestamps: true
     });
-  
-    
-    Frame.associate = function(models) {
-  
-      // associations to go here :)
-      /*
-      Frame.belongsTo(models.Order, { as: 'Order', foreignKey: 'frame_id' });
-      Frame.hasOne(models.Drymount, { foreignKey: 'drymount_id' });
-      Frame.hasMany(models.Extras,{ foreignKey: 'extras_id' });
-      Frame.hasOne(models.Float,{ foreignKey: 'float_id' });
-      Frame.hasOne(models.Flush,{ foreignKey: 'flush_id' });
-      Frame.hasOne(models.Glazing,{ foreignKey: 'glazing_id' });
-      Frame.hasOne(models.Mat,{ foreignKey: 'mat_id' });
-      Frame.hasOne(models.Material,{ foreignKey: 'material_id' });
-      Frame.hasOne(models.Spacer,{ foreignKey: 'spacer_id' });
-      Frame.hasOne(models.Strainer,{ foreignKey: 'strainer_id' });
-      */
-  
+
+    Frame.associate = function (models) {
+
+        // associations to go here :)
+
+        Frame.belongsTo(models.order);
+        
     };
 
-  
     return Frame;
-  };
+};
