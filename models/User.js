@@ -17,10 +17,6 @@ module.exports = function (sequelize, DataTypes) {
     },
     first_name: DataTypes.STRING,
     last_name: DataTypes.STRING,
-    client_id: {
-      type: DataTypes.INTEGER,
-      allowNull: true
-    },
     created_at: {
       type: DataTypes.DATE,
       defaultValue: DataTypes.NOW,
@@ -57,9 +53,9 @@ module.exports = function (sequelize, DataTypes) {
 
     // associations to go here :)
 
-    /*
-    User.hasMany(models.Client, { foreignKey: client_id });
-    */
+    
+    User.hasMany(models.client, {foreignKey: 'user_id', as: 'user'});
+    
 
   };
 

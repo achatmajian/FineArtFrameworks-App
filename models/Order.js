@@ -6,8 +6,8 @@ module.exports = function(sequelize, DataTypes) {
         autoIncrement: true,
         allowNull: false
       },
-      frame_id: {
-          type: DataTypes.UUID
+      client_id: {
+        type: DataTypes.INTEGER
       },
       storage_location: {
           type: DataTypes.STRING,
@@ -61,11 +61,11 @@ module.exports = function(sequelize, DataTypes) {
     Order.associate = function(models) {
   
       // associations to go here :)
-      /*
-      Order.belongsTo(models.Client, { as: 'Client', foreignKey: 'order_id' });
+      
+      Order.belongsTo(models.client);
 
-      Order.hasMany(models.Frame, { foreignKey: 'frame_id' });
-      */
+      Order.hasMany(models.frame, {foreignKey: 'order_id', as: 'order'});
+      
   
     };
   

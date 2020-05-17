@@ -6,7 +6,7 @@ module.exports = function(sequelize, DataTypes) {
         autoIncrement: true,
         allowNull: false
       },
-      order_id: {
+      user_id: {
         type: DataTypes.INTEGER,
         allowNull: true
       },
@@ -81,11 +81,11 @@ module.exports = function(sequelize, DataTypes) {
     Client.associate = function(models) {
   
       // associations to go here :)
-      /*
-      Client.belongsTo(models.User, { as: 'User', foreignKey: 'client_id' });
       
-      Client.hasMany(models.Order, { foreignKey: 'order_id' });
-      */
+      Client.belongsTo(models.user);
+      
+      Client.hasMany(models.order, {foreignKey: 'client_id', as: 'client'});
+      
     };
     
   
