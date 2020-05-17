@@ -12,7 +12,7 @@
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="/js/create-order.js"></script>
-    <script src="/js/view-clients.js"></script>
+    <script src="/js/views/view-clients.js"></script>
   </head>
   <body>
 
@@ -125,10 +125,8 @@
       <tr>
         <th>First Name</th>
         <th>Last Name</th>
-        <th>Primary Email</th>
-        <th>Secondary Email</th>
-        <th>Primary Phone</th>
-        <th>Secondary Phone</th>
+        <th>Email</th>
+        <th>Phone</th>
         <th>Address</th>
         <th>Apartment</th>
         <th>City</th>
@@ -141,10 +139,8 @@
     <tr>
         <th>First Name</th>
         <th>Last Name</th>
-        <th>Primary Email</th>
-        <th>Secondary Email</th>
-        <th>Primary Phone</th>
-        <th>Secondary Phone</th>
+        <th>Email</th>
+        <th>Phone</th>
         <th>Address</th>
         <th>Apartment</th>
         <th>City</th>
@@ -155,16 +151,16 @@
     </tfoot>
     <tbody class="client-body">
       <tr class="client-row">
-        <td id="client-first-name">Pablo</td>
-        <td id="client-last-name">Picasso</td>
-        <td id="client-email">picasso@gmail.com</td>
-        <td id="client-phone">718-555-5555</td>
-        <td id="client-address">123 Fake Street</td>
-        <td id="client-apartment">21A</td>
-        <td id="client-city">Brooklyn</td>
-        <td id="client-state">NY</td>
-        <td id="client-zip">11211</td>
-        <td id="client-edit"><a>Edit</a></td>
+        <td class="client-first-name"></td>
+        <td class="client-last-name"></td>
+        <td class="client-email"></td>
+        <td class="client-phone"></td>
+        <td class="client-address"></td>
+        <td class="client-apartment"></td>
+        <td class="client-city"></td>
+        <td class="client-state"></td>
+        <td class="client-zip"></td>
+        <td class="client-edit"></td>
       </tr>
     </tbody>
   </table>

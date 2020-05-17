@@ -9,16 +9,12 @@ $(document).ready(function() {
 
         for (i = 0; i < response.length; i ++) {
             var tableRow = $("<tr class='user-row'>");
-            var userId = $("<td class='user-id'>");
             var userFirstName = $("<td class='user-first-name'>");
             var userLastName = $("<td class='user-last-name'>");
             var userEmail = $("<td class='user-email'>");
-            var userPassword = $("<td class='user-password'>");
+            var userRole = $("<td class='user-role'>");
             var userEdit = $("<td class='user-edit'>");
-            var edit = $("<a>edit</a>");
-
-            userId.attr("data-user-id", response[i].id);
-            userId.text(response[i].id);
+            var edit = $("<a>Edit</a>");
 
             userFirstName.attr("data-user-id", response[i].id);
             userFirstName.text(response[i].first_name);
@@ -29,17 +25,15 @@ $(document).ready(function() {
             userEmail.attr("data-user-id", response[i].id);
             userEmail.text(response[i].email);
 
-            userPassword.attr("data-user-id", response[i].id);
-            userPassword.text("********");
+            userRole.attr("data-user-id", response[i].id);
+            userRole.text(response[i].role.charAt(0).toUpperCase() + response[i].role.slice(1));
 
             edit.attr("href", "/view/users/" + response[i].id);
             userEdit.append(edit);
-
-            tableRow.append(userId);
             tableRow.append(userFirstName);
             tableRow.append(userLastName);
             tableRow.append(userEmail);
-            tableRow.append(userPassword);
+            tableRow.append(userRole);
             tableRow.append(userEdit);
 
             $(".user-body").append(tableRow);

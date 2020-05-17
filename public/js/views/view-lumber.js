@@ -7,22 +7,6 @@ $(document).ready(function () {
     }).done(function (response) {
         $(".lumber-body").empty();
 
-        /*
-
-        .375
-        0.50
-        0.625
-        0.75
-        1
-        1.25
-        1.50
-        2
-        2.25
-
-        
-
-        */
-
         for (i = 0; i < response.length; i++) {
             var tableRow = $("<tr class='lumber-row'>");
             var lumberMaterial = $("<td class='lumber-material'>");

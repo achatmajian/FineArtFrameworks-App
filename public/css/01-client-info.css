@@ -76,6 +76,10 @@ h2 {
     margin: 10px;
 }
 
+.client-name{
+    width: 49.5%;
+}
+
 .buttons{
     display: flex;
     justify-content: center;

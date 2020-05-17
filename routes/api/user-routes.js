@@ -46,6 +46,7 @@ module.exports = function (app) {
                     {},
                     {
                         user_id: user.id,
+                        role: user.role,
                         email: user.email,
                         first_name: user.first_name,
                         last_name: user.last_name,
@@ -67,6 +68,7 @@ module.exports = function (app) {
                                     client_city: client.city,
                                     client_state: client.state,
                                     client_zip: client.client_zip_code,
+                                    client_type: client.client_type,
                                     userId: client.userId,
                                     orders: client.orders.map(order => {
                                         return Object.assign(
@@ -74,6 +76,7 @@ module.exports = function (app) {
                                             {
                                                 order_id: order.id,
                                                 client_id: order.client_id,
+                                                order_quantity: order.order_quanity,
                                                 order_storage_location: order.order_storage_location,
                                                 order_rush_status: order.order_rush_status,
                                                 order_notes: order.order_notes,

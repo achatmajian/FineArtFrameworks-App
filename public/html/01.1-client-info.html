@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" sizes="16x16" href="/resources/images/fafw_favicon/favicon.ico">
     <title>Create Order - Client Info (1/5)</title>
     <base href="/">
     <!-- CSS -->
@@ -12,6 +13,7 @@
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="/js/create-order.js"></script>
+    <script src="/js/orders/existing-clients.js"></script>
   </head>
   <body>
 
@@ -147,13 +149,13 @@
         <th>Phone</th>
     </tr>
     </tfoot>
-    <tbody>
+    <tbody class="client-body">
       <tr class="client-row">
-        <td id="select-client"><input type="radio"></td>
-        <td id="client-first-name">Pablo</td>
-        <td id="client-last-name">Picasso</td>
-        <td id="client-email">picasso@gmail.com</td>
-        <td id="client-phone">718-555-5555</td>
+        <td class="select-client"><input type="radio"></td>
+        <td class="client-first-name"></td>
+        <td class="client-last-name"></td>
+        <td class="client-email"></td>
+        <td class="client-phone"></td>
       </tr>
     </tbody>
   </table>
@@ -163,8 +165,8 @@
 
    <!-- Buttons -->
    <div class="buttons">
-    <button class="button is-link" id="existing-client-button" href="/order/client">Select Existing Client</button>  
-    <button class="button is-link is-light" id="new-client-button" href="/order/details">Submit New Client</button>
+    <button class="button is-link" id="existing-client-button">Select Existing Client</button>  
+    <button class="button is-link is-light" id="new-client-button">Submit New Client</button>
   </div>
    
     </div> <!-- Client Info Form Container Close -->

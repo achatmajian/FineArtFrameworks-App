@@ -9,6 +9,10 @@ module.exports = function(sequelize, DataTypes) {
       client_id: {
         type: DataTypes.INTEGER
       },
+      order_quantity: {
+        type: DataTypes.INTEGER,
+        allowNull: true
+      },
       storage_location: {
           type: DataTypes.STRING,
           allowNull: true
@@ -39,7 +43,7 @@ module.exports = function(sequelize, DataTypes) {
       },
       date_due: {
           type: DataTypes.DATE,
-          allowNull: false
+          allowNull: true
       },
       createdAt: {
         field: 'created_at',

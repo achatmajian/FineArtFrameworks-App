@@ -6,6 +6,10 @@ module.exports = function (sequelize, DataTypes) {
       autoIncrement: true,
       allowNull: false
     },
+    role: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
     email: {
       type: DataTypes.STRING,
       uniqueKey: true,

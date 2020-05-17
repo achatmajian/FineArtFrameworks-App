@@ -11,16 +11,14 @@ $(document).ready(function() {
             var clientFirstName = $("<td class='client-first-name'>");
             var clientLastName = $("<td class='client-last-name'>");
             var clientEmail = $("<td class='client-email'>");
-            var clientSecondaryEmail = $("<td class='client-secondary-email'>");
             var clientPhone = $("<td class='client-phone'>");
-            var clientSecondaryPhone = $("<td class='client-secondary-phone'>");
             var clientAddressOne = $("<td class='client-address-one'>");
             var clientAddressTwo = $("<td class='client-address-two'>");
             var clientCity = $("<td class='client-city'>");
             var clientState = $("<td class='client-state'>");
             var clientZip = $("<td class='client-zip'>");
             var clientEdit = $("<td class='client-edit'>");
-            var edit = $("<a>edit</a>");
+            var edit = $("<a>Edit</a>");
 
             clientFirstName.attr("data-client-id", response[i].id);
             clientFirstName.text(response[i].first_name);
@@ -31,14 +29,8 @@ $(document).ready(function() {
             clientEmail.attr("data-client-id", response[i].id);
             clientEmail.text(response[i].email);
 
-            clientSecondaryEmail.attr("data-client-id", response[i].id);
-            clientSecondaryEmail.text(response[i].secondary_email);
-
             clientPhone.attr("data-client-id", response[i].id);
             clientPhone.text(response[i].phone);
-
-            clientSecondaryPhone.attr("data-client-id", response[i].id);
-            clientSecondaryPhone.text(response[i].secondary_phone);
 
             clientAddressOne.attr("data-client-id", response[i].id);
             clientAddressOne.text(response[i].address_one);
@@ -61,9 +53,7 @@ $(document).ready(function() {
             tableRow.append(clientFirstName);
             tableRow.append(clientLastName);
             tableRow.append(clientEmail);
-            tableRow.append(clientSecondaryEmail);
             tableRow.append(clientPhone);
-            tableRow.append(clientSecondaryPhone);
             tableRow.append(clientAddressOne);
             tableRow.append(clientAddressTwo);
             tableRow.append(clientCity);
