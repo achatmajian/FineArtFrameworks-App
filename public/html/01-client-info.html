@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" sizes="16x16" href="/resources/images/fafw_favicon/favicon.ico">
     <title>Create Order - Client Info (1/5)</title>
     <base href="/">
     <!-- CSS -->
@@ -10,11 +11,9 @@
     <link rel="stylesheet" type="text/css" href="/css/01-client-info.css">
     <!-- JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <!-- <script type = "text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script> -->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <!-- <script type="text/javascript" src="/resources/scripts/jquery-3.5.1.js"></script> -->
-    <script type="text/javascript" src="/js/create-order.js"></script>
-    <script type="text/javascript" src="/js/client-info.js"></script>
+    <script src="/js/create-order.js"></script>
+    <script src="/js/orders/new-clients.js"></script>
   </head>
   <body>
 
@@ -124,7 +123,8 @@
     <div class="field">
     <label class="label">Client Name*</label>
     <div class="control">
-        <input class="input" type="text" placeholder="Edward Messikian" required>
+        <input id="client-first-name" class="input client-name" type="text" placeholder="First Name" required>
+        <input id="client-last-name" class="input client-name" type="text" placeholder="Last Name" required>
     </div>
     </div>
 
@@ -132,7 +132,7 @@
     <div class="field">
         <label class="label">Email*</label>
         <div class="control">
-        <input class="input" type="email" placeholder="ed@fineartframeworks.com" id="email-phone-size" required>
+        <input id="client-email" class="input" type="email" placeholder="ed@fineartframeworks.com" id="email-phone-size" required>
         </div>
     </div>
             
@@ -140,7 +140,7 @@
     <div class="field">
         <label class="label">Phone Number*</label>
     <div class="control">
-        <input class="input" type="text" placeholder="718-392-7766" id="email-phone-size" required>
+        <input id="client-phone" class="input" type="text" placeholder="718-392-7766" id="email-phone-size" required>
     </div>
     </div>
    
@@ -148,9 +148,9 @@
      <div class="field">
        <label class="label">Address*</label>
        <div class="control address">
-         <input style="width:150px;" class="input" type="text" placeholder="10-47 48th Ave" id="address-input" required>
-         <input style="width:150px;" class="input" type="text" placeholder="Long Island City" id="address-input" required>
-         <input style="width:70px;" class="input" type="text" placeholder="Apt #" id="address-input" required>
+         <input style="width:150px;" class="input address-input" type="text" placeholder="10-47 48th Ave" required>
+         <input style="width:70px;" class="input address-input" type="text" placeholder="Apt #" required>
+         <input style="width:150px;" class="input address-input" type="text" placeholder="Long Island City" required>
          <div class="select" required>
            <select name="state">
              <option value="AL">AL</option>
@@ -215,12 +215,12 @@
      <label class="label">Client Type*</label>
      <div class="control">
        <label class="radio">
-         <input type="radio" name="client-type-answer" required>
+         <input class="client-type" type="radio" name="client-type-answer" value="wholesale" required>
          Wholesale
        </label>
        <label class="radio">
-         <input type="radio" name="client-type-answer">
-         Retail
+         <input class="client-type" type="radio" name="client-type-answer" value="commercial">
+         Commercial
        </label>
      </div>
    </div>

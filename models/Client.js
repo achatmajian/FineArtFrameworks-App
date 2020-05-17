@@ -55,6 +55,10 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.INTEGER,
         allowNull: false
       },
+      client_type: {
+        type: DataTypes.STRING,
+        allowNull: true
+      },
       createdAt: {
         field: 'created_at',
         type: DataTypes.DATE,

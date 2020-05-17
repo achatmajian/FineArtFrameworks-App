@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" sizes="16x16" href="/resources/images/fafw_favicon/favicon.ico">
     <title>View Users</title>
     <base href="/">
     <!-- CSS -->
@@ -12,7 +13,7 @@
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="/js/create-order.js"></script>
-    <script src="/js/view-users.js"></script>
+    <script src="/js/views/view-users.js"></script>
   </head>
   <body>
 
@@ -123,32 +124,29 @@
   <table class="table is-fullwidth is-striped is-hoverable">
     <thead>
       <tr>
-        <th>User ID</th>
         <th>First Name</th>
         <th>Last Name</th>
         <th>Email</th>
-        <th>Password</th>
+        <th>Role</th>
         <th>Edit Info</th>
       </tr>
     </thead>
     <tfoot>
     <tr>
-        <th>User ID</th>
         <th>First Name</th>
         <th>Last Name</th>
         <th>Email</th>
-        <th>Password</th>
+        <th>Role</th>
         <th>Edit Info</th>
     </tr>
     </tfoot>
     <tbody class="user-body">
       <tr class="user-row">
-        <td id="user-id">001</td>
-        <td id="user-first-name">Edward</td>
-        <td id="user-last-name">Messikian</td>
-        <td id="user-email">ed@fineartframeworks.com</td>
-        <td id="user-password">********</td>
-        <td id="user-edit"><a>Edit</a></td>
+        <td class="user-first-name"></td>
+        <td class="user-last-name"></td>
+        <td class="user-email"></td>
+        <td class="user-role"></td>
+        <td class="user-edit"></td>
       </tr>
     </tbody>
   </table>
