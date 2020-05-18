@@ -8,7 +8,7 @@ var db = require("./models");
 //var session = require("express-session")
 var bodyParser = require("body-parser");
 var app = express();
-var PORT = process.env.PORT || 3001;
+var PORT = process.env.PORT || 3000;
 
 // Middleware
 // ------------------------------------------------------------------------
