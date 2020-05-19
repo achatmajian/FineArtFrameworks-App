@@ -8,8 +8,8 @@ $(function () {
             type: "POST",
             dataType: "json",
             data: {
-                email: $("#user-email").val().trim(),
-                password_hash: $("#user-password").val().trim(),
+                username: $("#user-email").val().trim(),
+                password: $("#user-password").val().trim(),
                 url: "/rest/login/?format=json",
                 success: function(data) {
                     window.location.href="/"
