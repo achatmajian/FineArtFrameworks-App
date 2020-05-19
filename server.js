@@ -10,32 +10,18 @@ var bodyParser = require("body-parser");
 var passport = require('passport')
 var LocalStrategy = require('passport-local').Strategy;
 
-// Create the server app
-// ------------------------------------------------------------------------
-var app = express();
-var PORT = process.env.PORT || 3000;
-
-// Middleware Configurations
-// ------------------------------------------------------------------------
-app.use(express.urlencoded({ extended: false }));
-app.use(bodyParser.urlencoded({ extended: false }));
-//app.use(express.json());
-//app.use(express.bodyParser());
-app.use(bodyParser.json());
-
 // PassportJS User Local Authentication
 // ------------------------------------------------------------------------
-passport.use(new LocalStrategy(
+passport.use('local', new LocalStrategy(
   {
     usernameField: 'email',
     passwordField: 'password',
     passReqToCallback: true
   },
   (req, username, password, done) => {
-    db.user.findOne({ where: { username: username } }, function (err, user) {
+    db.user.findOne({ where: { 'email': username } }, function (err, user) {
       console.log("Inside local strategy callback");
-      //console.log(user);
-
+      console.log(user);
 
       if (err) {
         return done(err);
@@ -45,12 +31,10 @@ passport.use(new LocalStrategy(
       } else if (!user.validPassword(password)) {
         console.log("Incorrect password.");
         return done(null, false, { message: 'Incorrect password.' });
-      }
-
-
-      return done(null, user);
-
+      } 
     });
+
+    return done(null, user);
   }
 ));
 
@@ -58,16 +42,29 @@ passport.use(new LocalStrategy(
 // ------------------------------------------------------------------------
 passport.serializeUser((user, done) => {
   console.log("Inside the serializeUser callback. User id is saved to the session file store here");
-  done(null, user.id);
+  done(null, user);
 });
 
-// More Middleware Configurations
+// PassportJS to deserialize the user
 // ------------------------------------------------------------------------
-//app.use(express.urlencoded({ extended: false }));
-//app.use(bodyParser.urlencoded({ extended: false }));
-//app.use(express.json());
-//app.use(express.bodyParser());
-//app.use(bodyParser.json());
+passport.deserializeUser((user, done) => {
+  console.log("Inside the serializeUser callback. User id is saved to the session file store here");
+  done(err, user);
+});
+
+
+
+// Create the server app
+// ------------------------------------------------------------------------
+var app = express();
+var PORT = process.env.PORT || 3001;
+
+// Middleware Configurations
+// ------------------------------------------------------------------------
+app.use(express.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.json());
+app.use(bodyParser.json());
 app.use(express.static(__dirname + "/public"));
 app.use(session({
   genid: (req) => {
@@ -89,20 +86,27 @@ app.use(passport.session());
 
 app.post("/login", (req, res, next) => {
   console.log("Inside the POST /login callback function");
-  passport.authenticate('local', (err, user, info) => {
+  console.log(req.body);
+  passport.authenticate('local', {successRedirect: "/", failureRedirect: "/login", failureFlash: true }, (err, user, info) => {
     console.log("Inside the passport.authenticate() callback");
-    // this will execute in any case, even if a passport strategy will find an error
-    // log everything to console
+   
+    // logs to debug
     console.log("errors: \n\n" + err + "\n\n");
     console.log("user: \n\n" + user) + "\n\n";
+    console.log("passport user: " + req.user);
     console.log("info: \n\n" + info);
 
     if (err) {
+      console.log("There was an error here at line 100!");
       res.status(401).send(err);
     } else if (!user) {
+      console.log("There is no user");
       res.status(401).send(JSON.stringify(info));
     } else {
-      next();
+      req.login(user, function (err) {
+        if (err) { return next(err); }
+        return res.redirect('api/users/' + req.user.id);
+      });
     }
 
     res.status(401).send(info);
