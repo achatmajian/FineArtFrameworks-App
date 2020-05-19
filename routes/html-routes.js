@@ -1,15 +1,45 @@
 var path = require("path");
+var { v4: uuidv4 } = require('uuid');
+var passport = require("passport");
+var session = require("express-session");
 
 module.exports = function(app) {
   // home screen brings user to view orders page
   app.get("/", function(req, res) {
+    //console.log(req);
+    //var uniqueId = uuidv4();
+    console.log("inside the homepage callback function");
+    console.log(req.sessionID);
+    //res.send('Hit home page.\n');
     res.sendFile(path.join(__dirname, "../public/html/01-client-info.html"));
   });
 
   // log in
   app.get("/login", function(req, res) {
+    console.log("Inside the GET /login callback function");
+    console.log(req.sessionID);
+    //res.send("Hit the login page.\n");
     res.sendFile(path.join(__dirname, "../public/html/log-in.html"));
   });
+
+  /*
+  app.post("/login", function(req, res, next) {
+    console.log("Inside the POST /login callback function");
+    passport.authenticate('local', (err, user, info) => {
+      console.log("Inside the passport.authenticate() callback");
+      console.log("req.session.passport: " + JSON.stringify(req.session.passport));
+      console.log("req.user: " + JSON.stringify(req.user));
+      req.login(user, (err) => {
+        console.log("Inside the req.login() callback");
+        console.log("req.session.passport: " + JSON.stringify(req.session.passport));
+        console.log("req.user: " + JSON.stringify(req.user));
+        return res.send("You were authenticated and logged in!");
+      })
+    })(req, res, next);
+    //console.log(req.body);
+    //res.send("You posted to the login page!\n");
+  });
+  */
 
   // order form (default to part 1)
   app.get("/order", function(req, res) {
