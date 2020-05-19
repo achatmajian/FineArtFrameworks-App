@@ -65,9 +65,10 @@ app.use(express.static(__dirname + "/public"));
 app.use(session({
   genid: (req) => {
     console.log('Inside the session middlware genid function');
-    console.log("request object sessionID from client: " + req.sessionID);
+    console.log("request object sessionID from client: " + JSON.stringify(req.sessionID));
     //console.log(req);
-    return uuidv4() // use UUIDs for session IDs
+    return uuidv4(); // use UUIDs for session IDs
+    
   },
   store: new FileStore(),
   secret: "cats",
