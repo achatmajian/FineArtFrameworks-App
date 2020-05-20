@@ -11,20 +11,15 @@ var passport = require('passport')
 var LocalStrategy = require('passport-local').Strategy;
 
 passport.use(new LocalStrategy({
-  usernameField: 'email',
-  passwordField: 'password',
-  session: false
-},
+    usernameField: 'email',
+    passwordField: 'password',
+    session: false
+  },
   async (username, password, done) => {
-    console.log('in local strategy');
-    console.log(username);
-    console.log(password);
     const user = await db.user.findOne({ where: { email: username, password_hash: password } });
-    // console.dir(user);
     return done(null, user);
   }
 ));
-
 
 // PassportJS to serialize the user
 // ------------------------------------------------------------------------
