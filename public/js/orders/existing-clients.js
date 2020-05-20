@@ -64,7 +64,7 @@ $(document).ready(function () {
             console.log("client variable is saved as: " + clientId);
 
             // On Click event to PUT new order in the DB and save the client_id as the selected clientId before going to the next page
-            $("#existing-client-button").click(function() {
+            $("#existing-client-button").click(function () {
                 $.ajax({
                     url: "/api/orders",
                     type: "POST",
@@ -72,21 +72,21 @@ $(document).ready(function () {
                         client_id: clientId
                     },
                     dataType: "json",
-                    beforeSend: function(x) {
+                    beforeSend: function (x) {
                         if (x && x.overrideMimeType) {
-                          x.overrideMimeType("application/j-son;charset=UTF-8");
+                            x.overrideMimeType("application/j-son;charset=UTF-8");
                         }
                     },
-                    success: function(res) {
+                    success: function (res) {
                         console.log(res);
-                        window.location.href="/order/details"
+                        window.location.href = "/order/details"
                     }
                 });
             });
 
             // On Click event to go back to the create new client page if the #new-client-button is selected
-            $("#new-client-button").click(function() {
-                window.history.back(); 
+            $("#new-client-button").click(function () {
+                window.history.back();
             })
               
         });

@@ -10,6 +10,8 @@ var bodyParser = require("body-parser");
 var passport = require('passport')
 var LocalStrategy = require('passport-local').Strategy;
 
+// PassportJS Local Strategy to search DB for user and verify password
+// ------------------------------------------------------------------------
 passport.use(new LocalStrategy({
     usernameField: 'email',
     passwordField: 'password'
@@ -62,7 +64,8 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-// log in passport authentication functions :)
+// Log In Post with PassportJS authentication functions :)
+// ------------------------------------------------------------------------
 app.post('/login',
   passport.authenticate('local', {
     successRedirect: '/',
