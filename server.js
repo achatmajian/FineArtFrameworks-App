@@ -13,11 +13,17 @@ var LocalStrategy = require('passport-local').Strategy;
 // PassportJS Local Strategy to search DB for user and verify password
 // ------------------------------------------------------------------------
 passport.use(new LocalStrategy({
-    usernameField: 'email',
-    passwordField: 'password'
-  },
+  usernameField: 'email',
+  passwordField: 'password',
+  session: false
+},
   async (username, password, done) => {
+    console.log('in local strategy');
+    console.log(username);
+    console.log(password);
     const user = await db.user.findOne({ where: { email: username, password_hash: password } });
+    // console.dir(user);
+    console.log(user.id);
     return done(null, user);
   }
 ));
