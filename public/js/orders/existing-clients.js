@@ -43,6 +43,16 @@ $(document).ready(function () {
         };
 
 
+        // On Keyup event to filter results from existing clients db table using search bar 
+        $("#existing-client-search").keyup(function() {
+          var value = $(this).val().toLowerCase();
+          console.log(value)
+          $("#client-body tr").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+          });
+        });
+
+
         // On Click event to assign cliendId variable to selected client
         $(".select-client").click(function () {
             var radioValue = $("input[name='client-id']:checked").val();
@@ -78,16 +88,7 @@ $(document).ready(function () {
             $("#new-client-button").click(function() {
                 window.history.back(); 
             })
-
-            // On Keyup event to filter results from existing clients db table using search bar 
-            $(document).ready(function(){
-                $("#existing-client-search").on("keyup", function() {
-                  var value = $(this).val().toLowerCase();
-                  $("#myTable tr").filter(function() {
-                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-                  });
-                });
-              });
+              
         });
     });
 });
