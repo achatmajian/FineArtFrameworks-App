@@ -9,7 +9,6 @@ var FileStore = require("session-file-store")(session);
 var bodyParser = require("body-parser");
 var passport = require('passport')
 var LocalStrategy = require('passport-local').Strategy;
-
 // PassportJS Local Strategy to search DB for user and verify password
 // ------------------------------------------------------------------------
 passport.use(new LocalStrategy({
@@ -18,29 +17,26 @@ passport.use(new LocalStrategy({
   },
   async (username, password, done) => {
     const user = await db.user.findOne({ where: { email: username, password_hash: password } });
+    console.log(user.id);
     return done(null, user);
   }
 ));
-
 // PassportJS to serialize the user
 // ------------------------------------------------------------------------
 passport.serializeUser((user, done) => {
   console.log("Inside the serializeUser callback. User id is saved to the session file store here");
   done(null, user);
 });
-
 // PassportJS to deserialize the user
 // ------------------------------------------------------------------------
 passport.deserializeUser((user, done) => {
   console.log("Inside the serializeUser callback. User id is saved to the session file store here");
   done(null, user);
 });
-
 // Create the server app
 // ------------------------------------------------------------------------
 var app = express();
 var PORT = process.env.PORT || 3001;
-
 // Middleware Configurations
 // ------------------------------------------------------------------------
 app.use(express.urlencoded({ extended: false }));
@@ -54,7 +50,6 @@ app.use(session({
     console.log("request object sessionID from client: " + JSON.stringify(req.sessionID));
     //console.log(req);
     return uuidv4(); // use UUIDs for session IDs
-
   },
   store: new FileStore(),
   secret: "cats",
@@ -63,7 +58,6 @@ app.use(session({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
-
 // Log In Post with PassportJS authentication functions :)
 // ------------------------------------------------------------------------
 app.post('/login',
@@ -71,7 +65,6 @@ app.post('/login',
     successRedirect: '/',
     failureRedirect: '/login'
   }));
-
 // Routes
 // ------------------------------------------------------------------------
 require("./routes/api/client-routes")(app);
@@ -89,34 +82,24 @@ require("./routes/api/material-routes")(app);
 require("./routes/api/spacer-routes")(app);
 require("./routes/api/strainer-routes")(app);
 require("./routes/html-routes")(app);
-
-
 var syncOptions = { force: false };
-
 // If running a test, set syncOptions.force to true
 // clearing the `testdb`
 // ------------------------------------------------------------------------
 if (process.env.NODE_ENV === "test") {
   syncOptions.force = true;
 }
-
 // Starting server & syncing models
 // ------------------------------------------------------------------------
 db.sequelize.sync(syncOptions).then(function () {
   app.listen(PORT, function () {
-
-
     console.log(
       "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser. ",
-
       PORT,
       PORT
     );
-
-
     console.log(
       "==> 🌎  Listening on port 3000. Visit http://18.222.181.253:3000/ in your browser. ");
   });
 });
-
 module.exports = app;
