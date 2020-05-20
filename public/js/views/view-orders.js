@@ -1,13 +1,17 @@
-$(document).ready(function() {
+$(document).ready(function () {
     console.log("page is ready!");
+
+    var orderClients = [];
+    var firstName = "";
+    var lastName = "";
 
     $.ajax({
         url: "/api/orders",
         method: "GET"
-    }).done(function(response) {
+    }).done(function (response) {
         $(".order-body").empty();
 
-        for (i = 0; i < response.length; i ++) {
+        for (i = 0; i < response.length; i++) {
             var tableRow = $("<tr class='order-row'>");
             var orderId = $("<td class='order-id'>");
             var orderFirstName = $("<td class='order-first-name'>");
@@ -18,12 +22,16 @@ $(document).ready(function() {
             var orderDetails = $("<td class='order-details'>");
             var details = $("<a>Details</a>");
 
+            orderClients.push(response[i]);
+
             orderId.attr("data-order-id", response[i].id);
             orderId.text(response[i].id);
 
             orderFirstName.attr("data-order-id", response[i].id);
+            orderFirstName.attr("first-client-id-" + response[i].client_id);
 
             orderLastName.attr("data-order-id", response[i].id);
+            orderLastName.attr("id", "last-client-id" + response[i].client_id);
 
             orderFrameQuantity.attr("data-order-id", response[i].id);
             if (response[i].order_quantity != null) {
@@ -31,7 +39,7 @@ $(document).ready(function() {
             } else {
                 orderFrameQuantity.text("0");
             };
-            
+
             orderDateReceived.attr("data-order-id", response[i].id);
             orderDateReceived.text(response[i].createdAt);
 
@@ -45,26 +53,37 @@ $(document).ready(function() {
             details.attr("href", "/view/orders/" + response[i].id);
             orderDetails.append(details);
 
+
             $.ajax({
-                url: "/api/clients/" + response[i].id,
+                url: "/api/clients/" + response[i].client_id,
                 method: "GET"
-            }).done(function(res) {
+            }).done(function (res) {
+                firstName = res.first_name;
+                lastName = res.last_name;
 
-                
-                orderFirstName.attr("data-client-id", res.id);
-                orderFirstName.text(res.first_name);
-
-                orderLastName.attr("data-client-id", res.id);
-                orderLastName.text(res.last_name);
+                console.log(firstName);
+                console.log(lastName);
+                orderFirstName.text(firstName);
+                orderLastName.text(lastName);
+            
             });
 
-            /*
-            orderFirstName.attr("data-order-id", response[i].id);
-            orderFirstName.text("customer first name goes here");
+           
 
-            orderLastName.attr("data-order-id", response[i].id);
-            orderLastName.text("customer second name goes here");
-            */
+
+            // $.ajax({
+            //     url: "/api/clients/" + response[i].client_id,
+            //     method: "GET"
+            // }).done(function (res) {
+            //     console.log(res);
+
+            //     orderFirstName.attr("data-client-id", res.id);
+            //     orderFirstName.text(res.first_name);
+
+            //     orderLastName.attr("data-client-id", res.id);
+            //     orderLastName.text(res.last_name);
+
+            // });
 
             tableRow.append(orderId);
             tableRow.append(orderFirstName);
@@ -79,5 +98,11 @@ $(document).ready(function() {
         };
 
     });
+
+
+    //console.log(orderClients);
+
+
+
 
 });
