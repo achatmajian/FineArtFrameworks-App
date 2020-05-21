@@ -1,9 +1,4 @@
 $(document).ready(function () {
-    console.log("page is ready!");
-
-    var orderClients = [];
-    var firstName = "";
-    var lastName = "";
 
     $.ajax({
         url: "/api/orders",
@@ -11,9 +6,13 @@ $(document).ready(function () {
     }).done(function (response) {
         $(".order-body").empty();
 
+        var firstName;
+        var lastName;
+        var dateCreated;
+        var dateDue;
+
         for (i = 0; i < response.length; i++) {
             var tableRow = $("<tr class='order-row'>");
-            var orderId = $("<td class='order-id'>");
             var orderFirstName = $("<td class='order-first-name'>");
             var orderLastName = $("<td class='order-last-name'>");
             var orderFrameQuantity = $("<td class='order-frame-quantity'>");
@@ -21,11 +20,6 @@ $(document).ready(function () {
             var orderDateDue = $("<td class='order-date-due'>");
             var orderDetails = $("<td class='order-details'>");
             var details = $("<a>Details</a>");
-
-            orderClients.push(response[i]);
-
-            orderId.attr("data-order-id", response[i].id);
-            orderId.text(response[i].id);
 
             orderFirstName.attr("data-order-id", response[i].id);
             orderFirstName.attr("first-client-id-" + response[i].client_id);
@@ -40,52 +34,39 @@ $(document).ready(function () {
                 orderFrameQuantity.text("0");
             };
 
+            dateCreated = moment(response[i].createdAt).format('l');
+
             orderDateReceived.attr("data-order-id", response[i].id);
-            orderDateReceived.text(response[i].createdAt);
+            orderDateReceived.text(dateCreated);
+
+            if (response[i].date_due != null) {
+               dateDue = moment(response[i].date_due).format('l');
+            } else {
+                dateDue = "n/a"
+            };
 
             orderDateDue.attr("data-order-id", response[i].id);
-            if (response[i].date_due != null) {
-                orderDateDue.text(response[i].date_due);
-            } else {
-                orderDateDue.text("n/a");
-            };
+            orderDateDue.text(dateDue);
 
             details.attr("href", "/view/orders/" + response[i].id);
             orderDetails.append(details);
 
+            function getName(response) {
+                $.ajax({
+                    url: "/api/clients/" + response.client_id,
+                    method: "GET",
+                    async: false
+                }).done(function (res) {
+                    firstName = res.first_name;
+                    lastName = res.last_name;
+                });
 
-            $.ajax({
-                url: "/api/clients/" + response[i].client_id,
-                method: "GET"
-            }).done(function (res) {
-                firstName = res.first_name;
-                lastName = res.last_name;
-
-                console.log(firstName);
-                console.log(lastName);
                 orderFirstName.text(firstName);
                 orderLastName.text(lastName);
-            
-            });
+            };
 
-           
+            getName(response[i]);
 
-
-            // $.ajax({
-            //     url: "/api/clients/" + response[i].client_id,
-            //     method: "GET"
-            // }).done(function (res) {
-            //     console.log(res);
-
-            //     orderFirstName.attr("data-client-id", res.id);
-            //     orderFirstName.text(res.first_name);
-
-            //     orderLastName.attr("data-client-id", res.id);
-            //     orderLastName.text(res.last_name);
-
-            // });
-
-            tableRow.append(orderId);
             tableRow.append(orderFirstName);
             tableRow.append(orderLastName);
             tableRow.append(orderFrameQuantity);
@@ -94,15 +75,14 @@ $(document).ready(function () {
             tableRow.append(orderDetails);
 
             $(".order-body").append(tableRow);
-
         };
-
     });
 
-
-    //console.log(orderClients);
-
-
-
-
+    // On Keyup event to filter results from existing clients db table using search bar 
+    $("#view-orders-search").keyup(function () {
+        var value = $(this).val().toLowerCase();
+        $("#order-body tr").filter(function () {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+    });
 });

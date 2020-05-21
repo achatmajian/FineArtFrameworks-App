@@ -12,6 +12,7 @@
     <!-- JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"></script>
     <script type="text/javascript" src="/js/create-order.js"></script>
     <script src="/js/views/view-orders.js"></script>
   </head>
@@ -113,7 +114,7 @@
 
     <div class="order-search">
         <p class="control has-icons-left">
-            <input class="input" type="text" placeholder="Search">
+            <input class="input" type="text" placeholder="Search" id="view-orders-search">
             <span class="icon is-left">
             <i class="fas fa-search" aria-hidden="true"></i>
             </span>
@@ -124,7 +125,6 @@
   <table class="table is-fullwidth is-striped is-hoverable">
     <thead>
       <tr>
-        <th>Order ID</th>
         <th>First Name</th>
         <th>Last Name</th>
         <th>Frame Quantity</th>
@@ -135,7 +135,6 @@
     </thead>
     <tfoot>
     <tr>
-        <th>Order ID</th>
         <th>First Name</th>
         <th>Last Name</th>
         <th>Frame Quantity</th>
@@ -144,15 +143,14 @@
         <th>Order Details</th>
     </tr>
     </tfoot>
-    <tbody class="order-body">
+    <tbody class="order-body" id="order-body">
       <tr class="order-row">
-        <th id="order-id">00001</th>
-        <td id="client-first-name">Edward</td>
-        <td id="client-last-name">Messikian</td>
-        <td id="frame-quantity">3</td>
-        <td id="date-received">2/2/2020</td>
-        <td id="date-due">2/27/2020</td>
-        <td id="order-details"><a>View Details</a></td>
+        <td id="client-first-name"></td>
+        <td id="client-last-name"></td>
+        <td id="frame-quantity"></td>
+        <td id="date-received"></td>
+        <td id="date-due"></td>
+        <td id="order-details"><a></a></td>
       </tr>
     </tbody>
   </table>
