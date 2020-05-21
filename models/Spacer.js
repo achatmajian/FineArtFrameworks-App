@@ -11,7 +11,6 @@ module.exports = function(sequelize, DataTypes) {
       },
       cost_type: {
           type: DataTypes.STRING
-
       },
       cost: {
           type: DataTypes.INTEGER
