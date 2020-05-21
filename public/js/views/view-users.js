@@ -1,13 +1,13 @@
-$(document).ready(function() {
+$(document).ready(function () {
     console.log("page is ready!");
 
     $.ajax({
         url: "/api/users",
         method: "GET"
-    }).done(function(response) {
+    }).done(function (response) {
         $(".user-body").empty();
 
-        for (i = 0; i < response.length; i ++) {
+        for (i = 0; i < response.length; i++) {
             var tableRow = $("<tr class='user-row'>");
             var userFirstName = $("<td class='user-first-name'>");
             var userLastName = $("<td class='user-last-name'>");
@@ -41,14 +41,12 @@ $(document).ready(function() {
         };
 
         // On Keyup event to filter results from existing clients db table using search bar 
-        $("#view-users-search").keyup(function() {
+        $("#view-users-search").keyup(function () {
             var value = $(this).val().toLowerCase();
             console.log(value)
-            $("#user-body tr").filter(function() {
-              $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            $("#user-body tr").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
             });
-          });
-        
+        });
     });
-
 });
