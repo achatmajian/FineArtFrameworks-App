@@ -6,17 +6,19 @@ $(document).ready(function() {
         method: "GET"
     }).done(function(response) {
         $(".spacers-body").empty();
-        for (i = 0; i < response.length; i ++) {
+        console.log(response);
+        for (i = 1; i < response.length; i ++) {
             var tableRow = $("<tr class='spacer-row'>");
             var spacerMaterial = $("<td class='spacer-material'>");
             var costPerFoot = $("<td class='cost-per-foot'>");
+            var spacerEdit = $("<td class='spacers-edit'>");
             var edit = $("<a>Edit</a>");
 
             spacerMaterial.attr("data-spacer-id", response[i].id);
-            spacerMaterial.text(response[i].material);
+            spacerMaterial.text(response[i].name.charAt(0).toUpperCase() + response[i].name.slice(1));
 
             costPerFoot.attr("data-spacer-id", response[i].id);
-            costPerFoot.text(response[i].cost);
+            costPerFoot.text("$" + response[i].cost.toFixed(2));
 
             edit.attr("href", "/view/spacers/" + response[i].id);
             spacerEdit.append(edit);
