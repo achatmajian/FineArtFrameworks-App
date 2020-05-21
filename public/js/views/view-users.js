@@ -40,6 +40,15 @@ $(document).ready(function() {
 
         };
 
+        // On Keyup event to filter results from existing clients db table using search bar 
+        $("#view-users-search").keyup(function() {
+            var value = $(this).val().toLowerCase();
+            console.log(value)
+            $("#user-body tr").filter(function() {
+              $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+          });
+        
     });
 
 });
