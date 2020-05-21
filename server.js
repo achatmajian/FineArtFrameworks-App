@@ -9,7 +9,7 @@ var cookieParser = require("cookie-parser");
 var FileStore = require("session-file-store")(session);
 var bodyParser = require("body-parser");
 var passport = require('passport');
-var User = require("./models/user");
+//var User = require("./models/User");
 var LocalStrategy = require('passport-local').Strategy;
 var axios = require("axios");
 
