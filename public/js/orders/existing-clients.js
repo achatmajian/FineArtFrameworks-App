@@ -44,14 +44,18 @@ $(document).ready(function () {
 
 
         // On Keyup event to filter results from existing clients db table using search bar 
-        $("#existing-client-search").keyup(function() {
-          var value = $(this).val().toLowerCase();
-          console.log(value)
-          $("#client-body tr").filter(function() {
-            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-          });
+        $("#existing-client-search").keyup(function () {
+            var value = $(this).val().toLowerCase();
+            console.log(value)
+            $("#client-body tr").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
         });
 
+        // On Click event to go back to the create new client page if the #new-client-button is selected
+        $("#new-client-button").click(function () {
+            window.history.back();
+        });
 
         // On Click event to assign cliendId variable to selected client
         $(".select-client").click(function () {
@@ -66,7 +70,7 @@ $(document).ready(function () {
             // On Click event to PUT new order in the DB and save the client_id as the selected clientId before going to the next page
             $("#existing-client-button").click(function () {
                 $.ajax({
-                    url: "/api/orders",
+                    url: "/api/temp/orders",
                     type: "POST",
                     data: {
                         client_id: clientId
@@ -79,16 +83,10 @@ $(document).ready(function () {
                     },
                     success: function (res) {
                         console.log(res);
-                        window.location.href = "/order/details"
+                        window.location.href = "/order/" + res.id + "/details"
                     }
                 });
             });
-
-            // On Click event to go back to the create new client page if the #new-client-button is selected
-            $("#new-client-button").click(function () {
-                window.history.back();
-            })
-              
         });
     });
 });
