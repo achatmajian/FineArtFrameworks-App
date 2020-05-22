@@ -13,6 +13,7 @@
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="/js/create-order.js"></script>
+    <script src="/js/views/view-glazing.js"></script>
   </head>
   <body>
 
@@ -112,7 +113,7 @@
 
     <div class="order-search">
         <p class="control has-icons-left">
-            <input class="input" type="text" placeholder="Search">
+            <input id="view-glazing-search" class="input" type="text" placeholder="Search">
             <span class="icon is-left">
             <i class="fas fa-search" aria-hidden="true"></i>
             </span>
@@ -125,7 +126,8 @@
       <tr>
         <th>Glazing Type</th>
         <th>Glazing Option</th>
-        <th>Cost Per Foot</th>
+        <th>Cost</th>
+        <th>Cost Type</th>
         <th>Edit Info</th>
       </tr>
     </thead>
@@ -133,16 +135,18 @@
     <tr>
         <th>Glazing Type</th>
         <th>Glazing Option</th>
-        <th>Cost Per Foot</th>
+        <th>Cost</th>
+        <th>Cost Type</th>
         <th>Edit Info</th>
     </tr>
     </tfoot>
-    <tbody>
+    <tbody class="glazing-body">
       <tr class="glazing-row">
-        <td id="glazing-type">Glass</td>
-        <td id="glazing-option">Regular Glass</td>
-        <td id="cost-per-foot">$8.00</td>
-        <td id="order-details"><a>Edit</a></td>
+        <td class="glazing-type"></td>
+        <td class="glazing-option"></td>
+        <td class="cost"></td>
+        <td class="cost-type"></td>
+        <td class="glazing-edit"><a></a></td>
       </tr>
     </tbody>
   </table>
