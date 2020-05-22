@@ -13,6 +13,7 @@
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="/js/create-order.js"></script>
+    <script src="/js/views/view-extras.js"></script>
   </head>
   <body>
 
@@ -124,22 +125,22 @@
     <thead>
       <tr>
         <th>Extra Option</th>
-        <th>Flat Cost</th>
+        <th>Cost Per Foot</th>
         <th>Edit Info</th>
       </tr>
     </thead>
     <tfoot>
     <tr>
         <th>Extra Option</th>
-        <th>Flat Cost</th>
+        <th>Cost Per Foot</th>
         <th>Edit Info</th>
     </tr>
     </tfoot>
-    <tbody>
+    <tbody class="extras-body">
       <tr class="extras-row">
-        <td id="extra-option">Strainer</td>
-        <td id="flat-cost">$6.00</td>
-        <td id="edit-extra"><a>Edit</a></td>
+        <td class="extras-option"></td>
+        <td class="cost"></td>
+        <td class="extras-edit"><a>Edit</a></td>
       </tr>
     </tbody>
   </table>
