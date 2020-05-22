@@ -1,3 +1,5 @@
+// Temp Orders will be stand in to create object with all of the frame information as we go from page to page until the final submit which will then use this object's values to save to new Order
+
 // Dependencies
 // ------------------------------------------------------------------------
 var db = require("../../models");
