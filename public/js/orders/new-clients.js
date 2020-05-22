@@ -61,7 +61,7 @@ $(document).ready(function () {
                 },
                 success: function (res) {
                     console.log(res);
-                    window.location.href = "/order/" + res.id + "/details"
+                    window.location.href = "/order/details/" + res.id;
                 }
             });
         });

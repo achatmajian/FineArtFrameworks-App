@@ -13,6 +13,7 @@
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="/js/create-order.js"></script>
+    <script src="/js/views/view-drymount.js"></script>
   </head>
   <body>
 
@@ -112,7 +113,7 @@
 
     <div class="order-search">
         <p class="control has-icons-left">
-            <input class="input" type="text" placeholder="Search">
+            <input id="view-drymount-search" class="input" type="text" placeholder="Search">
             <span class="icon is-left">
             <i class="fas fa-search" aria-hidden="true"></i>
             </span>
@@ -124,22 +125,24 @@
     <thead>
       <tr>
         <th>Material</th>
-        <th>Cost Per Foot</th>
+        <th>Cost</th>
+        <th>Cost Type</th>
         <th>Edit Info</th>
       </tr>
     </thead>
     <tfoot>
     <tr>
         <th>Material</th>
-        <th>Cost Per Foot</th>
+        <th>Cost</th>
+        <th>Cost Type</th>
         <th>Edit Info</th>
     </tr>
     </tfoot>
-    <tbody>
+    <tbody class="drymount-body">
       <tr class="drymount-row">
-        <td id="drymount-material">Regular Foam</td>
-        <td id="cost-per-foot">$5.50</td>
-        <td id="edit-drymount"><a>Edit</a></td>
+        <td class="drymount-material"></td>
+        <td class="drymount-cost"></td>
+        <td class="drymount-edit"><a></a></td>
       </tr>
     </tbody>
   </table>
