@@ -25,15 +25,15 @@ module.exports = function(app) {
   // order form (default to part 1)
   app.get("/order", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/html/01-client-info.html"))
-  })
+  });
 
   // order form - part 1: assign client (new client)
   app.get("/order/client", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/html/01-client-info.html"))
-  })
+  });
 
   // order form - part 1: assign client (existing client)
-  app.get("/order/client/existing-clients", function(req, res) {
+  app.get("/order/client/existing", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/html/01.1-client-info.html"));
   });
 
