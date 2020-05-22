@@ -43,7 +43,7 @@ module.exports = function(app) {
   });
 
   // WITH ID IN URL:: order form - part 2: order details
-  app.get("/order/:id/details", function(req, res) {
+  app.get("/order/details/:id", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/html/02-order-info.html"));
   });
 
@@ -53,7 +53,7 @@ module.exports = function(app) {
   });
 
  // WITH ID IN URL:: order form - part 3: frame build
- app.get("/order/:id/build", function(req, res) {
+ app.get("/order/build/:id", function(req, res) {
   res.sendFile(path.join(__dirname, "../public/html/03-build-frames.html"));
 });
 
@@ -63,7 +63,7 @@ module.exports = function(app) {
   });
 
   // WITH ID IN URL:: order form - part 4: review order
-  app.get("/order/:id/review", function(req, res) {
+  app.get("/order/review/:id", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/html/04-review-order.html"));
   });
 
@@ -73,7 +73,7 @@ module.exports = function(app) {
   });
 
    // WITH ID IN URL:: order form - part 5: pricing estimate
-   app.get("/order/:id/estimate", function(req, res) {
+   app.get("/order/estimate/:id", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/html/05-pricing-estimate.html"))
   });
 

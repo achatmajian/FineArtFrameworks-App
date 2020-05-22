@@ -29,6 +29,7 @@ module.exports = function(sequelize, DataTypes) {
           type: DataTypes.INTEGER,
           default: 0,
       },
+      
       order_subtotal: {
           type: DataTypes.INTEGER,
           default: 0,
