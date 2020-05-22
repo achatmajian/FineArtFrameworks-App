@@ -148,11 +148,11 @@
      <div class="field">
        <label class="label">Address*</label>
        <div class="control address">
-         <input style="width:150px;" class="input address-input" type="text" placeholder="10-47 48th Ave" required>
-         <input style="width:70px;" class="input address-input" type="text" placeholder="Apt #" required>
-         <input style="width:150px;" class="input address-input" type="text" placeholder="Long Island City" required>
+         <input style="width:150px;" id="client-address-one" class="input address-input" type="text" placeholder="10-47 48th Ave" required>
+         <input style="width:70px;" id="client-address-two" class="input address-input" type="text" placeholder="Apt #" required>
+         <input style="width:150px;" id="client-city" class="input address-input" type="text" placeholder="Long Island City" required>
          <div class="select" required>
-           <select name="state">
+           <select id="client-state" name="state">
              <option value="AL">AL</option>
              <option value="AK">AK</option>
              <option value="AZ">AZ</option>
@@ -206,7 +206,7 @@
              <option value="WY">WY</option>
            </select>
          </div>
-         <input style="width:70px;" class="input" type="text" placeholder="11101" id="address-input" required>
+         <input id="client-zip-code" style="width:70px;" class="input address-input" type="text" placeholder="11101" required>
        </div>
      </div>
    
@@ -232,9 +232,9 @@
    <div class="buttons">
       <!-- <button class="button is-link" id="new-client-button" href="/order/details">Submit New Client</button> -->
       <!-- <button class="button is-link" id="new-client-button" onclick="location.href='/order/details'" value="Go to Add Order Info">Submit New Client</button> -->
-      <button class="button is-link" id="new-client-button" onclick="javascript:location.href='/order/details'" value="Go to Add Order Info">Submit New Client</button>
+      <button class="button is-link" id="new-client-button" value="Go to Add Order Info">Submit New Client</button>
       <!-- <button class="button is-link is-light" id="existing-client-button" href="/order/client/new-client">Use Existing Client</button> -->
-      <button class="button is-link is-light" id="existing-client-button" onclick="javascript:location.href='/order/client/new-client'" value="Go to Use Existing Client">Use Existing Client</button>
+      <button class="button is-link is-light" id="existing-client-button" value="Go to Use Existing Client">Use Existing Client</button>
   </div>
    
     </div> <!-- Client Info Form Container Close -->

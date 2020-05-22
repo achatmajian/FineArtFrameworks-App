@@ -22,25 +22,6 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/html/log-in.html"));
   });
 
-  /*
-  app.post("/login", function(req, res, next) {
-    console.log("Inside the POST /login callback function");
-    passport.authenticate('local', (err, user, info) => {
-      console.log("Inside the passport.authenticate() callback");
-      console.log("req.session.passport: " + JSON.stringify(req.session.passport));
-      console.log("req.user: " + JSON.stringify(req.user));
-      req.login(user, (err) => {
-        console.log("Inside the req.login() callback");
-        console.log("req.session.passport: " + JSON.stringify(req.session.passport));
-        console.log("req.user: " + JSON.stringify(req.user));
-        return res.send("You were authenticated and logged in!");
-      })
-    })(req, res, next);
-    //console.log(req.body);
-    //res.send("You posted to the login page!\n");
-  });
-  */
-
   // order form (default to part 1)
   app.get("/order", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/html/01-client-info.html"))
@@ -52,7 +33,7 @@ module.exports = function(app) {
   })
 
   // order form - part 1: assign client (existing client)
-  app.get("/order/client/new-client", function(req, res) {
+  app.get("/order/client/existing-clients", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/html/01.1-client-info.html"));
   });
 
@@ -61,18 +42,38 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/html/02-order-info.html"));
   });
 
+  // WITH ID IN URL:: order form - part 2: order details
+  app.get("/order/:id/details", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/html/02-order-info.html"));
+  });
+
   // order form - part 3: frame build
   app.get("/order/build", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/html/03-build-frames.html"));
   });
+
+ // WITH ID IN URL:: order form - part 3: frame build
+ app.get("/order/:id/build", function(req, res) {
+  res.sendFile(path.join(__dirname, "../public/html/03-build-frames.html"));
+});
 
   // order form - part 4: review order
   app.get("/order/review", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/html/04-review-order.html"));
   });
 
+  // WITH ID IN URL:: order form - part 4: review order
+  app.get("/order/:id/review", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/html/04-review-order.html"));
+  });
+
   // order form - part 5: pricing estimate
   app.get("/order/estimate", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/html/05-pricing-estimate.html"))
+  });
+
+   // WITH ID IN URL:: order form - part 5: pricing estimate
+   app.get("/order/:id/estimate", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/html/05-pricing-estimate.html"))
   });
 
