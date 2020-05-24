@@ -57,6 +57,11 @@ h2 {
     justify-content: center;
 }
 
+#date-today{
+    font-size: 24px;
+    font-weight: bold;
+}
+
 /* Wrapper */
 
 .wrapper{
@@ -73,6 +78,23 @@ h2 {
     /* background-color: lavender; */
     padding: 30px;
     margin: 10px;
+}
+
+/* Trying to get the tax field to go to the right of the rush part */
+.custom-field{
+    width: 48%;
+}
+
+.custom-wrapper{
+    margin-bottom: 30px;
+}
+
+#order-tax-field{
+    float: left;
+}
+
+#order-discount-field{
+    float: right;
 }
 
 .buttons{

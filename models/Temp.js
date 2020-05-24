@@ -29,10 +29,17 @@ module.exports = function(sequelize, DataTypes) {
           type: DataTypes.INTEGER,
           default: 0,
       },
-      
+      discount_percent: {
+        type: DataTypes.INTEGER,
+        default: 1
+      },
       order_subtotal: {
           type: DataTypes.INTEGER,
           default: 0,
+      },
+      tax_exempt: {
+        type: DataTypes.ENUM,
+        values: ['no', 'yes']
       },
       order_tax_percent: {
           type: DataTypes.INTEGER,
@@ -74,7 +81,7 @@ module.exports = function(sequelize, DataTypes) {
       
       //Order.belongsTo(models.client);
 
-      //Order.hasMany(models.frame, {foreignKey: 'order_id'});
+      Temp.hasMany(models.frame, {foreignKey: 'temp_id'});
       
   
     };

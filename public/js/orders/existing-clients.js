@@ -11,7 +11,7 @@ $(document).ready(function () {
 
         for (i = 0; i < response.length; i++) {
             var tableRow = $("<tr class='client-row'>");
-            var selectClient = $("<input class='select-client' type='radio'>");
+            var selectClient = $("<input class='select-client' type='radio' required>");
             var clientFirstName = $("<td class='client-first-name'>");
             var clientLastName = $("<td class='client-last-name'>");
             var clientEmail = $("<td class='client-email'>");
@@ -46,14 +46,13 @@ $(document).ready(function () {
         // On Keyup event to filter results from existing clients db table using search bar 
         $("#existing-client-search").keyup(function () {
             var value = $(this).val().toLowerCase();
-            console.log(value)
             $("#client-body tr").filter(function () {
                 $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
             });
         });
 
         // On Click event to go back to the create new client page if the #new-client-button is selected
-        $("#new-client-button").click(function () {
+        $("#existing-client-form").submit(function () {
             window.history.back();
         });
 
@@ -61,14 +60,13 @@ $(document).ready(function () {
         $(".select-client").click(function () {
             var radioValue = $("input[name='client-id']:checked").val();
             if (radioValue) {
-                console.log("You selected client id: " + radioValue);
                 clientId = radioValue;
-            }
-
-            console.log("client variable is saved as: " + clientId);
+            };
 
             // On Click event to PUT new order in the DB and save the client_id as the selected clientId before going to the next page
-            $("#existing-client-button").click(function () {
+            $("#existing-client-button").click(function (event) {
+                event.preventDefault();
+
                 $.ajax({
                     url: "/api/temp/orders",
                     type: "POST",

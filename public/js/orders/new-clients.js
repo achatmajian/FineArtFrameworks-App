@@ -8,7 +8,8 @@ $(document).ready(function () {
         window.location.href = "/order/client/existing"
     });
 
-    $("#new-client-button").click(function () {
+    $("#new-client-form").submit(function (event) {
+        event.preventDefault();
 
         var email = $("#client-email").val().trim();
         var phone = $("#client-phone").val().trim();
@@ -43,7 +44,6 @@ $(document).ready(function () {
                 }
             }
         }).done(function (response) {
-            console.log(response);
             client_id = response.id;
 
             $.ajax({
@@ -60,7 +60,6 @@ $(document).ready(function () {
                     }
                 },
                 success: function (res) {
-                    console.log(res);
                     window.location.href = "/order/details/" + res.id;
                 }
             });

@@ -23,8 +23,20 @@ module.exports = function (app) {
         })
             .then(function (dbClient) {
                 res.json(dbClient);
-            })
+            });
     });
+
+    // Get Client by email (to check to see if email already exists)
+    app.get("/api/clients/:email", function (req, res) {
+        db.client.findOne({
+            where: {
+                email: req.params.email
+            }
+        })
+        .then(function(dbClient) {
+            res.json(dbClient);
+        });
+    })
 
     // Create a new client
     app.post("/api/clients", function (req, res) {

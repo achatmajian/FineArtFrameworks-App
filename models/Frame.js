@@ -6,6 +6,14 @@ module.exports = function (sequelize, DataTypes) {
             autoIncrement: true,
             allowNull: false
         },
+        order_id: {
+            type: DataTypes.INTEGER,
+            allowNull: true
+        },
+        temp_id: {
+            type: DataTypes.INTEGER,
+            allowNull: true
+        },
         paper_width: {
             type: DataTypes.INTEGER,
             allowNull: true
@@ -202,6 +210,8 @@ module.exports = function (sequelize, DataTypes) {
 
         // associations to go here :)
         Frame.belongsTo(models.order);
+
+        Frame.belongsTo(models.frame);
 
     };
 
