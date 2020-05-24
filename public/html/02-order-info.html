@@ -1,184 +1,226 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/x-icon" sizes="16x16" href="/resources/images/fafw_favicon/favicon.ico">
-    <title>Create Order - Order Info (2/5)</title>
-    <base href="/">
-    <!-- CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/02-order-info.css">
-    <!-- JS -->
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"></script>
-    <script src="/js/create-order.js"></script>
-    <script src="/js/orders/order-info.js"></script>
 
-  </head>
-  <body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" sizes="16x16" href="/resources/images/fafw_favicon/favicon.ico">
+  <title>Create Order - Order Info (2/5)</title>
+  <base href="/">
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/02-order-info.css">
+  <!-- JS -->
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-range/4.0.2/moment-range.js"></script>
+  <script src="/js/create-order.js"></script>
+  <script src="/js/orders/order-info.js"></script>
 
-    <!-- New Nav -->
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-      <div class="navbar-brand">
-        <a class="navbar-item" href="/order">
-          <h1>Fine Art Frameworks</h1>
-        </a>
-    
-        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
-      </div>
-    
-      <div id="navbarBasicExample" class="navbar-menu">
-        <div class="navbar-end">
-          <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link">
-              Orders
-            </a>
-    
-            <div class="navbar-dropdown">
-              <a class="navbar-item" href="/order">
-                Create Order
-              </a>
-              <a class="navbar-item" href="/view/orders">
-                View Orders
-              </a>
-            </div>
-          </div>
-    
-          <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link">
-              View
-            </a>
-    
-            <div class="navbar-dropdown">
-              <a class="navbar-item" href="/view/clients">
-                Clients
-              </a>
-              <a class="navbar-item" href="/view/users">
-                Users
-              </a>
-            </div>
-          </div>
+</head>
 
-          <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link">
-              Materials
+<body>
+
+  <!-- New Nav -->
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/order">
+        <h1>Fine Art Frameworks</h1>
+      </a>
+
+      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+        data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            Orders
+          </a>
+
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="/order">
+              Create Order
             </a>
-    
-            <div class="navbar-dropdown">
-              <a class="navbar-item" href="/view/materials/lumber">
-                Lumber
-              </a>
-              <a class="navbar-item" href="/view/materials/glazing">
-                Glazing
-              </a>
-              <a class="navbar-item" href="/view/materials/drymount">
-                Drymount
-              </a>
-              <a class="navbar-item" href="/view/materials/spacers">
-                Spacers
-              </a>
-              <a class="navbar-item" href="/view/materials/extras">
-                Extras
-              </a>
-            </div>
+            <a class="navbar-item" href="/view/orders">
+              View Orders
+            </a>
           </div>
         </div>
-    
-      </div>
-    </nav>
 
-    <!-- Header -->
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            View
+          </a>
+
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="/view/clients">
+              Clients
+            </a>
+            <a class="navbar-item" href="/view/users">
+              Users
+            </a>
+          </div>
+        </div>
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            Materials
+          </a>
+
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="/view/materials/lumber">
+              Lumber
+            </a>
+            <a class="navbar-item" href="/view/materials/glazing">
+              Glazing
+            </a>
+            <a class="navbar-item" href="/view/materials/drymount">
+              Drymount
+            </a>
+            <a class="navbar-item" href="/view/materials/spacers">
+              Spacers
+            </a>
+            <a class="navbar-item" href="/view/materials/extras">
+              Extras
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- Header -->
   <section class="section">
     <div class="title-container">
       <h1 class="title">Create Order</h1>
     </div>
     <br>
     <div class="title-container">
-        <h1>2. Order Information</h1>
+      <h1>2. Order Information</h1>
     </div>
     <br>
     <div class="progress-container">
-        <progress class="progress is-success box" value="2" max="5"></progress>
+      <progress class="progress is-success box" value="2" max="5"></progress>
     </div>
 
   </section>
 
 
-<!-- =============================================================== -->
+  <!-- =============================================================== -->
 
 
   <!-- Wrapper Container -->
   <div class="wrapper">
 
     <!-- Add Order Details Form -->
-   <div class="order-details-form form-container box">
-     <h1>Add Order Details</h1>
-     <h2>Starred Fields are Required</h2>
-     <br>
-   
-    <!--Frame Quantity -->
-    <div class="field">
+    <form id="order-info-form" class="order-details-form form-container box">
+      <span style="float: right" id="date-today"></span>
+      <h1>Add Order Details</h1>
+      <h2>Starred Fields are Required</h2>
+      <br>
+
+      <!--Frame Quantity -->
+      <div class="field">
         <label class="label">Frame Quantity*</label>
         <div class="control">
           <input id="frame-quantity" class="input" name="frame-quantity" type="number" placeholder="1" min="1" required>
         </div>
       </div>
 
-    <!-- Date Due -->
-    <div class="field">
+      <!-- Date Due -->
+      <div class="field">
         <label class="label">Date Due*</label>
         <div class="control">
           <input id="date-due" name="date-due" class="input" type="date" required>
         </div>
       </div>
-            
-    <!-- Rush Job? -->
-    <div class="field">
+
+      <!-- Rush Job? -->
+      <div class="field">
         <label class="label">Rush Job?*</label>
         <div class="control">
           <label class="radio">
-            <input type="radio" name="rush-answer" value="none" required>
+            <input id="rush-none" type="radio" name="rush-answer" value="none" required checked>
             No
           </label>
           <label class="radio">
-            <input type="radio" name="rush-answer" value="1 week">
+            <input id="rush-one" type="radio" name="rush-answer" value="1 week">
             1 Week
           </label>
           <label class="radio">
-            <input type="radio" name="rush-answer" value="2 weeks">
+            <input id="rush-two" type="radio" name="rush-answer" value="2 weeks">
             2 Weeks
           </label>
         </div>
       </div>
-   
-    <!-- Art Storage Location -->
-    <div class="field">
-    <label class="label">Art Storage Location*</label>
-    <div class="control">
-        <input id="storage-location" class="input" type="text" placeholder="A-1" required>
-    </div>
-    </div>
 
-    <!-- Divider -->
-    <hr>
+      <!-- Discount -->
+      <div class="custom-wrapper">
+        
+        <!-- Sales Tax Rates -->
+        <div id="order-tax-field"class="field custom-field">
+          <label class="label">Sales Tax*</label>
+          <div class="control">
+            <label class="radio">
+              <input id="order-taxed" type="radio" name="tax-answer" value="no" required checked>
+              State Sales Tax
+            </label>
+            <label class="radio">
+              <input id="tax-exempt" type="radio" name="tax-answer" value="yes">
+              Tax exempt
+            </label>
+          </div>
+        </div>
 
-    <!-- Buttons -->
-    <div class="buttons">
-      <!-- <button class="button is-link" id="submit-order-details-button" href="/order/build">Submit Order Details</button> -->
-      <button class="button is-link" id="submit-order-details-button" value="Go to Build Frame">Submit Order Details</button>
-      <!-- <button class="button is-link is-light" id="back-button" href="/order/client">Back</button> -->
-      <button class="button is-link is-light" id="back-button" value="Go back to Add Client Info">Back</button>
-    </div>
-   
-    </div> <!-- Add Order Details Form Close -->
-   
-   </div> <!-- Wrapper Close -->
+        <div id="order-discount-field" class="field custom-field">
+          <label class="label">Discount</label>
+          <div class="control">
+            <label class="radio">
+              <input id="discount-no" class="discount" type="radio" name="discount-answer" value="no" checked>
+              No
+            </label>
+            <label class="radio">
+              <input id="discount-yes" class="discount" type="radio" name="discount-answer" value="yes">
+              Yes<input id="discount-input" class="input" type="number" min="0" max="100" default="0" placeholder="%" disabled></input>
+            </label>
+            
+          </div>
+        </div>
+      </div>
 
-  </body>
+      <!-- Art Storage Location -->
+      <div class="field">
+        <label class="label">Art Storage Location</label>
+        <div class="control">
+          <input id="storage-location" class="input" type="text" placeholder="A-1">
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <hr>
+
+      <!-- Buttons -->
+      <div class="buttons">
+        <!-- <button class="button is-link" id="submit-order-details-button" href="/order/build">Submit Order Details</button> -->
+        <button class="button is-link" type="submit" id="submit-order-details-button" value="Go to Build Frame">Submit
+          Order
+          Details</button>
+        <!-- <button class="button is-link is-light" id="back-button" href="/order/client">Back</button> -->
+        <button class="button is-link is-light" id="back-button" value="Go back to Add Client Info">Back</button>
+      </div>
+
+    </form> <!-- Add Order Details Form Close -->
+
+  </div> <!-- Wrapper Close -->
+
+</body>
+
 </html>

@@ -1,245 +1,256 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/x-icon" sizes="16x16" href="/resources/images/fafw_favicon/favicon.ico">
-    <title>Create Order - Client Info (1/5)</title>
-    <base href="/">
-    <!-- CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/01-client-info.css">
-    <!-- JS -->
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="/js/create-order.js"></script>
-    <script src="/js/orders/new-clients.js"></script>
-  </head>
-  <body>
 
-    <!-- New Nav -->
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-      <div class="navbar-brand">
-        <a class="navbar-item" href="/order">
-          <h1>Fine Art Frameworks</h1>
-        </a>
-    
-        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
-      </div>
-    
-      <div id="navbarBasicExample" class="navbar-menu">
-        <div class="navbar-end">
-          <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link">
-              Orders
-            </a>
-    
-            <div class="navbar-dropdown">
-              <a class="navbar-item" href="/order">
-                Create Order
-              </a>
-              <a class="navbar-item" href="/view/orders">
-                View Orders
-              </a>
-            </div>
-          </div>
-    
-          <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link">
-              View
-            </a>
-    
-            <div class="navbar-dropdown">
-              <a class="navbar-item" href="/view/clients">
-                Clients
-              </a>
-              <a class="navbar-item" href="/view/users">
-                Users
-              </a>
-            </div>
-          </div>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" sizes="16x16" href="/resources/images/fafw_favicon/favicon.ico">
+  <title>Create Order - Client Info (1/5)</title>
+  <base href="/">
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/01-client-info.css">
+  <!-- JS -->
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="/js/create-order.js"></script>
+  <script src="/js/orders/new-clients.js"></script>
+</head>
 
-          <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link">
-              Materials
+<body>
+
+  <!-- New Nav -->
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/order">
+        <h1>Fine Art Frameworks</h1>
+      </a>
+
+      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+        data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            Orders
+          </a>
+
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="/order">
+              Create Order
             </a>
-    
-            <div class="navbar-dropdown">
-              <a class="navbar-item" href="/view/materials/lumber">
-                Lumber
-              </a>
-              <a class="navbar-item" href="/view/materials/glazing">
-                Glazing
-              </a>
-              <a class="navbar-item" href="/view/materials/drymount">
-                Drymount
-              </a>
-              <a class="navbar-item" href="/view/materials/spacers">
-                Spacers
-              </a>
-              <a class="navbar-item" href="/view/materials/extras">
-                Extras
-              </a>
-            </div>
+            <a class="navbar-item" href="/view/orders">
+              View Orders
+            </a>
           </div>
         </div>
-    
-      </div>
-    </nav>
 
-    <!-- Header -->
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            View
+          </a>
+
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="/view/clients">
+              Clients
+            </a>
+            <a class="navbar-item" href="/view/users">
+              Users
+            </a>
+          </div>
+        </div>
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            Materials
+          </a>
+
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="/view/materials/lumber">
+              Lumber
+            </a>
+            <a class="navbar-item" href="/view/materials/glazing">
+              Glazing
+            </a>
+            <a class="navbar-item" href="/view/materials/drymount">
+              Drymount
+            </a>
+            <a class="navbar-item" href="/view/materials/spacers">
+              Spacers
+            </a>
+            <a class="navbar-item" href="/view/materials/extras">
+              Extras
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- Header -->
   <section class="section">
     <div class="title-container">
       <h1 class="title">Create Order</h1>
     </div>
     <br>
     <div class="title-container">
-        <h1>1. Client Information</h1>
+      <h1>1. Client Information</h1>
     </div>
     <br>
     <div class="progress-container">
-        <progress class="progress is-success box" value="1" max="5"></progress>
+      <progress class="progress is-success box" value="1" max="5"></progress>
     </div>
   </section>
 
 
-<!-- =============================================================== -->
+  <!-- =============================================================== -->
 
 
   <!-- Wrapper Container -->
   <div class="wrapper">
 
     <!-- Add New Client Form -->
-   <div class="new-client-form form-container box">
-     <h1>Add New Client</h1>
-     <h2>Starred Fields are Required</h2>
-     <br>
-   
-    <!-- Client Name -->
-    <div class="field">
-    <label class="label">Client Name*</label>
-    <div class="control">
-        <input id="client-first-name" class="input client-name" type="text" placeholder="First Name" required>
-        <input id="client-last-name" class="input client-name" type="text" placeholder="Last Name" required>
-    </div>
-    </div>
+    <form id="new-client-form" class="new-client-form form-container box">
+      <h1>Add New Client</h1>
+      <h2>Starred Fields are Required</h2>
+      <br>
 
-    <!-- Email -->
-    <div class="field">
+      <!-- Client Name -->
+      <div class="field">
+        <label class="label">Client Name*</label>
+        <div class="control">
+          <input id="client-first-name" class="input client-name" type="text" placeholder="First Name" required>
+          <input id="client-last-name" class="input client-name" type="text" placeholder="Last Name" required>
+        </div>
+      </div>
+
+      <!-- Email -->
+      <div class="field">
         <label class="label">Email*</label>
         <div class="control">
-        <input id="client-email" class="input" type="email" placeholder="ed@fineartframeworks.com" id="email-phone-size" required>
+          <input id="client-email" class="input" type="email" placeholder="ed@fineartframeworks.com"
+            id="email-phone-size" required>
         </div>
-    </div>
-            
-    <!-- Phone Number -->
-    <div class="field">
+      </div>
+
+      <!-- Phone Number -->
+      <div class="field">
         <label class="label">Phone Number*</label>
-    <div class="control">
-        <input id="client-phone" class="input" type="text" placeholder="718-392-7766" id="email-phone-size" required>
-    </div>
-    </div>
-   
-     <!-- Address -->
-     <div class="field">
-       <label class="label">Address*</label>
-       <div class="control address">
-         <input style="width:150px;" id="client-address-one" class="input address-input" type="text" placeholder="10-47 48th Ave" required>
-         <input style="width:70px;" id="client-address-two" class="input address-input" type="text" placeholder="Apt #" required>
-         <input style="width:150px;" id="client-city" class="input address-input" type="text" placeholder="Long Island City" required>
-         <div class="select" required>
-           <select id="client-state" name="state">
-             <option value="AL">AL</option>
-             <option value="AK">AK</option>
-             <option value="AZ">AZ</option>
-             <option value="AR">AR</option>
-             <option value="CA">CA</option>
-             <option value="CO">CO</option>
-             <option value="CT">CT</option>
-             <option value="DE">DE</option>
-             <option value="DC">DC</option>
-             <option value="FL">FL</option>
-             <option value="GA">GA</option>
-             <option value="HI">HI</option>
-             <option value="ID">ID</option>
-             <option value="IL">IL</option>
-             <option value="IN">IN</option>
-             <option value="IA">IA</option>
-             <option value="KS">KS</option>
-             <option value="KY">KY</option>
-             <option value="LA">LA</option>
-             <option value="ME">ME</option>
-             <option value="MD">MD</option>
-             <option value="MA">MA</option>
-             <option value="MI">MI</option>
-             <option value="MN">MN</option>
-             <option value="MS">MS</option>
-             <option value="MO">MO</option>
-             <option value="MT">MT</option>
-             <option value="NE">NE</option>
-             <option value="NV">NV</option>
-             <option value="NH">NH</option>
-             <option value="NJ">NJ</option>
-             <option value="NM">NM</option>
-             <option value="NY" selected>NY</option>
-             <option value="NC">NC</option>
-             <option value="ND">ND</option>
-             <option value="OH">OH</option>
-             <option value="OK">OK</option>
-             <option value="OR">OR</option>
-             <option value="PA">PA</option>
-             <option value="RI">RI</option>
-             <option value="SC">SC</option>
-             <option value="SD">SD</option>
-             <option value="TN">TN</option>
-             <option value="TX">TX</option>
-             <option value="UT">UT</option>
-             <option value="VT">VT</option>
-             <option value="VA">VA</option>
-             <option value="WA">WA</option>
-             <option value="WV">WV</option>
-             <option value="WI">WI</option>
-             <option value="WY">WY</option>
-           </select>
-         </div>
-         <input id="client-zip-code" style="width:70px;" class="input address-input" type="text" placeholder="11101" required>
-       </div>
-     </div>
-   
-   <!-- Client Type -->
-   <div class="field">
-     <label class="label">Client Type*</label>
-     <div class="control">
-       <label class="radio">
-         <input class="client-type" type="radio" name="client-type-answer" value="wholesale" required>
-         Wholesale
-       </label>
-       <label class="radio">
-         <input class="client-type" type="radio" name="client-type-answer" value="commercial">
-         Commercial
-       </label>
-     </div>
-   </div>
+        <div class="control">
+          <input id="client-phone" class="input" type="text" placeholder="718-392-7766" id="email-phone-size" required>
+        </div>
+      </div>
 
-    <!-- Divider -->
-    <hr>
+      <!-- Address -->
+      <div class="field">
+        <label class="label">Address*</label>
+        <div class="control address">
+          <input style="width:150px;" id="client-address-one" class="input address-input" type="text"
+            placeholder="10-47 48th Ave" required>
+          <input style="width:70px;" id="client-address-two" class="input address-input" type="text" placeholder="Apt #"
+            required>
+          <input style="width:150px;" id="client-city" class="input address-input" type="text"
+            placeholder="Long Island City" required>
+          <div class="select" required>
+            <select id="client-state" name="state">
+              <option value="AL">AL</option>
+              <option value="AK">AK</option>
+              <option value="AZ">AZ</option>
+              <option value="AR">AR</option>
+              <option value="CA">CA</option>
+              <option value="CO">CO</option>
+              <option value="CT">CT</option>
+              <option value="DE">DE</option>
+              <option value="DC">DC</option>
+              <option value="FL">FL</option>
+              <option value="GA">GA</option>
+              <option value="HI">HI</option>
+              <option value="ID">ID</option>
+              <option value="IL">IL</option>
+              <option value="IN">IN</option>
+              <option value="IA">IA</option>
+              <option value="KS">KS</option>
+              <option value="KY">KY</option>
+              <option value="LA">LA</option>
+              <option value="ME">ME</option>
+              <option value="MD">MD</option>
+              <option value="MA">MA</option>
+              <option value="MI">MI</option>
+              <option value="MN">MN</option>
+              <option value="MS">MS</option>
+              <option value="MO">MO</option>
+              <option value="MT">MT</option>
+              <option value="NE">NE</option>
+              <option value="NV">NV</option>
+              <option value="NH">NH</option>
+              <option value="NJ">NJ</option>
+              <option value="NM">NM</option>
+              <option value="NY" selected>NY</option>
+              <option value="NC">NC</option>
+              <option value="ND">ND</option>
+              <option value="OH">OH</option>
+              <option value="OK">OK</option>
+              <option value="OR">OR</option>
+              <option value="PA">PA</option>
+              <option value="RI">RI</option>
+              <option value="SC">SC</option>
+              <option value="SD">SD</option>
+              <option value="TN">TN</option>
+              <option value="TX">TX</option>
+              <option value="UT">UT</option>
+              <option value="VT">VT</option>
+              <option value="VA">VA</option>
+              <option value="WA">WA</option>
+              <option value="WV">WV</option>
+              <option value="WI">WI</option>
+              <option value="WY">WY</option>
+            </select>
+          </div>
+          <input id="client-zip-code" style="width:70px;" class="input address-input" type="text" placeholder="11101"
+            required>
+        </div>
+      </div>
 
-   <!-- Buttons -->
-   <div class="buttons">
-      <!-- <button class="button is-link" id="new-client-button" href="/order/details">Submit New Client</button> -->
-      <!-- <button class="button is-link" id="new-client-button" onclick="location.href='/order/details'" value="Go to Add Order Info">Submit New Client</button> -->
-      <button class="button is-link" id="new-client-button" value="Go to Add Order Info">Submit New Client</button>
-      <!-- <button class="button is-link is-light" id="existing-client-button" href="/order/client/new-client">Use Existing Client</button> -->
-      <button class="button is-link is-light" id="existing-client-button" value="Go to Use Existing Client">Use Existing Client</button>
-  </div>
-   
-    </div> <!-- Client Info Form Container Close -->
-   
-   </div> <!-- Wrapper Close -->
+      <!-- Client Type -->
+      <div class="field">
+        <label class="label">Client Type*</label>
+        <div class="control">
+          <label class="radio">
+            <input class="client-type" type="radio" name="client-type-answer" value="wholesale" required>
+            Wholesale
+          </label>
+          <label class="radio">
+            <input class="client-type" type="radio" name="client-type-answer" value="retail">
+            Retail
+          </label>
+        </div>
+      </div>
 
-  </body>
+      <!-- Divider -->
+      <hr>
+
+      <!-- Buttons -->
+      <div class="buttons">
+        <!-- <button class="button is-link" id="new-client-button" href="/order/details">Submit New Client</button> -->
+        <!-- <button class="button is-link" id="new-client-button" onclick="location.href='/order/details'" value="Go to Add Order Info">Submit New Client</button> -->
+        <button class="button" type="submit" id="new-client-button" value="Go to Add Order Info">Submit New
+          Client</button>
+        <!-- <button class="button is-link is-light" id="existing-client-button" href="/order/client/new-client">Use Existing Client</button> -->
+        <button class="button is-light" id="existing-client-button" value="Go to Use Existing Client">Use Existing
+          Client</button>
+      </div>
+
+    </form> <!-- Client Info Form Container Close -->
+
+  </div> <!-- Wrapper Close -->
+
+</body>
+
 </html>

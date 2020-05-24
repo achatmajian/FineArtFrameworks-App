@@ -1,177 +1,182 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/x-icon" sizes="16x16" href="/resources/images/fafw_favicon/favicon.ico">
-    <title>Create Order - Client Info (1/5)</title>
-    <base href="/">
-    <!-- CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/01.1-client-info.css">
-    <!-- JS -->
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="/js/create-order.js"></script>
-    <script src="/js/orders/existing-clients.js"></script>
-  </head>
-  <body>
 
-    <!-- New Nav -->
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-      <div class="navbar-brand">
-        <a class="navbar-item" href="/order">
-          <h1>Fine Art Frameworks</h1>
-        </a>
-    
-        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
-      </div>
-    
-      <div id="navbarBasicExample" class="navbar-menu">
-        <div class="navbar-end">
-          <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link">
-              Orders
-            </a>
-    
-            <div class="navbar-dropdown">
-              <a class="navbar-item" href="/order">
-                Create Order
-              </a>
-              <a class="navbar-item" href="/view/orders">
-                View Orders
-              </a>
-            </div>
-          </div>
-    
-          <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link">
-              View
-            </a>
-    
-            <div class="navbar-dropdown">
-              <a class="navbar-item" href="/view/clients">
-                Clients
-              </a>
-              <a class="navbar-item" href="/view/users">
-                Users
-              </a>
-            </div>
-          </div>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" sizes="16x16" href="/resources/images/fafw_favicon/favicon.ico">
+  <title>Create Order - Client Info (1/5)</title>
+  <base href="/">
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/01.1-client-info.css">
+  <!-- JS -->
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="/js/create-order.js"></script>
+  <script src="/js/orders/existing-clients.js"></script>
+</head>
 
-          <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link">
-              Materials
+<body>
+
+  <!-- New Nav -->
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/order">
+        <h1>Fine Art Frameworks</h1>
+      </a>
+
+      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+        data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            Orders
+          </a>
+
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="/order">
+              Create Order
             </a>
-    
-            <div class="navbar-dropdown">
-              <a class="navbar-item" href="/view/materials/lumber">
-                Lumber
-              </a>
-              <a class="navbar-item" href="/view/materials/glazing">
-                Glazing
-              </a>
-              <a class="navbar-item" href="/view/materials/drymount">
-                Drymount
-              </a>
-              <a class="navbar-item" href="/view/materials/spacers">
-                Spacers
-              </a>
-              <a class="navbar-item" href="/view/materials/extras">
-                Extras
-              </a>
-            </div>
+            <a class="navbar-item" href="/view/orders">
+              View Orders
+            </a>
           </div>
         </div>
-    
-      </div>
-    </nav>
 
-    <!-- Header -->
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            View
+          </a>
+
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="/view/clients">
+              Clients
+            </a>
+            <a class="navbar-item" href="/view/users">
+              Users
+            </a>
+          </div>
+        </div>
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            Materials
+          </a>
+
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="/view/materials/lumber">
+              Lumber
+            </a>
+            <a class="navbar-item" href="/view/materials/glazing">
+              Glazing
+            </a>
+            <a class="navbar-item" href="/view/materials/drymount">
+              Drymount
+            </a>
+            <a class="navbar-item" href="/view/materials/spacers">
+              Spacers
+            </a>
+            <a class="navbar-item" href="/view/materials/extras">
+              Extras
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- Header -->
   <section class="section">
     <div class="title-container">
       <h1 class="title">Create Order</h1>
     </div>
     <br>
     <div class="title-container">
-        <h1>1. Client Information</h1>
+      <h1>1. Client Information</h1>
     </div>
     <br>
     <div class="progress-container">
-        <progress class="progress is-success box" value="1" max="5"></progress>
+      <progress class="progress is-success box" value="1" max="5"></progress>
     </div>
 
   </section>
 
 
-<!-- =============================================================== -->
+  <!-- =============================================================== -->
 
 
   <!-- Wrapper Container -->
   <div class="wrapper">
 
     <!-- Add New Client Form -->
-   <div class="new-client-form form-container box">
-     <h1>Look Up Existing Client</h1>
-     <!-- <h2>Starred Fields are Required</h2> -->
-     <br>
-   
-     <div class="order-search">
+    <form id="existing-client-form" class="existing-client-form form-container box">
+      <h1>Look Up Existing Client</h1>
+      <!-- <h2>Starred Fields are Required</h2> -->
+      <br>
+
+      <div class="order-search">
         <p class="control has-icons-left">
-            <input class="input testing-testing" type="text" id="existing-client-search" placeholder="Search for existing client" title="Type in a name">
-            <span class="icon is-left">
+          <input class="input testing-testing" type="text" id="existing-client-search"
+            placeholder="Search for existing client" title="Type in a name">
+          <span class="icon is-left">
             <i class="fas fa-search" aria-hidden="true"></i>
-            </span>
+          </span>
         </p>
-        </div>
+      </div>
 
-    <br>
-  <table class="table is-fullwidth is-striped is-hoverable">
-    <thead>
-      <tr>
-        <th>Select</th>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Email</th>
-        <th>Phone</th>
-      </tr>
-    </thead>
-    <tfoot>
-    <tr>
-        <th>Select</th>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Email</th>
-        <th>Phone</th>
-    </tr>
-    </tfoot>
-    <tbody class="client-body" id="client-body">
-      <tr class="client-row">
-        <td class="select-client"><input type="radio"></td>
-        <td class="client-first-name"></td>
-        <td class="client-last-name"></td>
-        <td class="client-email"></td>
-        <td class="client-phone"></td>
-      </tr>
-    </tbody>
-  </table>
+      <br>
+      <table class="table is-fullwidth is-striped is-hoverable">
+        <thead>
+          <tr>
+            <th>Select</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+          </tr>
+        </thead>
+        <tfoot>
+          <tr>
+            <th>Select</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+          </tr>
+        </tfoot>
+        <tbody class="client-body" id="client-body">
+          <tr class="client-row">
+            <td class="select-client"><input type="radio"></td>
+            <td class="client-first-name"></td>
+            <td class="client-last-name"></td>
+            <td class="client-email"></td>
+            <td class="client-phone"></td>
+          </tr>
+        </tbody>
+      </table>
 
-    <!-- Divider -->
-    <hr>
+      <!-- Divider -->
+      <hr>
 
-   <!-- Buttons -->
-   <div class="buttons">
-    <button class="button is-link" id="existing-client-button">Select Existing Client</button>  
-    <button class="button is-link is-light" id="new-client-button">Submit New Client</button>
-  </div>
-   
-    </div> <!-- Client Info Form Container Close -->
-   
-   </div> <!-- Wrapper Close -->
+      <!-- Buttons -->
+      <div class="buttons">
+        <button class="button" type="submit" id="existing-client-button">Select Existing Client</button>
+        <button class="button is-light" id="new-client-button">Submit New Client</button>
+      </div>
 
-  </body>
+    </form> <!-- Client Info Form Container Close -->
+
+  </div> <!-- Wrapper Close -->
+
+</body>
+
 </html>
