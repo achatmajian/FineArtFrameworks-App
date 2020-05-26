@@ -108,7 +108,7 @@ $(document).ready(function () {
     }).done(function (response) {
       console.log(response);
 
-      //window.location.href = "/order/test/" + temp_id
+      window.location.href = "/order/build/" + temp_id
     })
   });
 });
