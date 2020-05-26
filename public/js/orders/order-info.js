@@ -39,7 +39,6 @@ $(document).ready(function () {
     };
   });
 
-
   // Enabling discount input if discount is checked yes
 
   $(".discount").change(function () {
@@ -60,8 +59,6 @@ $(document).ready(function () {
 
 
   });
-
-
 
   // On Click event to go back to the create new client page if the #new-client-button is selected
   $("#back-button").click(function () {
@@ -91,13 +88,6 @@ $(document).ready(function () {
       discountAmt = 1
     }
 
-    console.log(frame_quantity);
-    console.log(date_due);
-    console.log(rush_status);
-    console.log(storage_location);
-    console.log(discountAmt);
-    console.log(sales_tax);
-
     $.ajax({
       url: "/api/temp/orders/",
       type: "PUT",
@@ -117,7 +107,8 @@ $(document).ready(function () {
       }
     }).done(function (response) {
       console.log(response);
-      window.location.href = "/order/build/" + temp_id
+
+      //window.location.href = "/order/test/" + temp_id
     })
   });
 });
