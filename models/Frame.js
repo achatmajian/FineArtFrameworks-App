@@ -4,7 +4,7 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true,
-            allowNull: false
+            allowNull: true
         },
         order_id: {
             type: DataTypes.INTEGER,
@@ -24,11 +24,11 @@ module.exports = function (sequelize, DataTypes) {
         },
         image_width: {
             type: DataTypes.INTEGER,
-            allowNull: false
+            allowNull: true
         },
         image_height: {
             type: DataTypes.INTEGER,
-            allowNull: false
+            allowNull: true
         },
         mat_size: {
             type: DataTypes.INTEGER,
@@ -40,31 +40,31 @@ module.exports = function (sequelize, DataTypes) {
         },
         window_width: {
             type: DataTypes.INTEGER,
-            allowNull: false
+            allowNull: true
         },
         window_height: {
             type: DataTypes.INTEGER,
-            allowNull: false
+            allowNull: true
         },
         face_width: {
             type: DataTypes.INTEGER,
-            allowNull: false
+            allowNull: true
         },
         frame_depth: {
             type: DataTypes.INTEGER,
-            allowNull: false
+            allowNull: true
         },
         frame_size: {
             type: DataTypes.INTEGER,
-            allowNull: false
+            allowNull: true
         },
         united_inch: {
             type: DataTypes.INTEGER,
-            allowNull: false
+            allowNull: true
         },
         mounting_type: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: true
         },
         drymount_name: {
             type: DataTypes.STRING,
@@ -76,6 +76,10 @@ module.exports = function (sequelize, DataTypes) {
         },
         drymount_cost: {
             type: DataTypes.INTEGER,
+            allowNull: true
+        },
+        drymount_cost_type: {
+            type: DataTypes.STRING,
             allowNull: true
         },
         extras_name: {
@@ -126,6 +130,10 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.INTEGER,
             allowNull: true
         },
+        glazing_cost_type: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
         mat_name: {
             type: DataTypes.STRING,
             allowNull: true
@@ -139,6 +147,10 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: true
         },
         material_name: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        material_finish: {
             type: DataTypes.STRING,
             allowNull: true
         },
@@ -191,13 +203,13 @@ module.exports = function (sequelize, DataTypes) {
         createdAt: {
             field: 'created_at',
             type: DataTypes.DATE,
-            allowNull: false,
+            allowNull: true,
             defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
         },
         updatedAt: {
             field: 'updated_at',
             type: DataTypes.DATE,
-            allowNull: false,
+            allowNull: true,
             defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
         }
     }, {

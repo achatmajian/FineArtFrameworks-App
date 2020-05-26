@@ -13,6 +13,31 @@ module.exports = function (app) {
         });
     });
 
+    // Get all frames with a specific order_id
+    app.get("/api/frames/order/:id", function (req, res) {
+        db.frame.findAll({
+            where: {
+                order_id: req.params.id
+            }
+        })
+        .then(function (dbFrames) {
+            res.json(dbFrames);
+        })
+    });
+
+
+    // Get all frames with a specific temp_id
+    app.get("/api/frames/temp/:id", function (req, res) {
+        db.frame.findAll({
+            where: {
+                temp_id: req.params.id
+            }
+        })
+        .then(function (dbFrames) {
+            res.json(dbFrames);
+        })
+    });
+
     // Get frame by frame-id
     app.get("/api/frames/:id", function (req, res) {
         db.frame.findOne({

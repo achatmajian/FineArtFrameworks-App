@@ -6,6 +6,36 @@ $(document).ready(function () {
     var temp_id = url_array[url_array.length - 1];
     var frameQuantity;
 
+    // converting fraction strings to floats for math calculations :D
+    function toDeci(fraction) {
+        fraction = fraction.toString();
+        var result, wholeNum = 0, frac, deci = 0;
+        if (fraction.search('/') >= 0) {
+            if (fraction.search(' ') >= 0) {
+                wholeNum = fraction.split('-');
+                frac = wholeNum[1];
+                wholeNum = parseInt(wholeNum, 10);
+            } else {
+                frac = fraction;
+            }
+            if (fraction.search('/') >= 0) {
+                frac = fraction.split('/');
+                deci = parseInt(frac[0], 10) / parseInt(frac[1], 10);
+            }
+            result = wholeNum + deci;
+        } else {
+            result = fraction
+        }
+        return result;
+    };
+
+    /* Testing values / examples */
+    console.log('1 ', toDeci("1 7/16"));
+    console.log('2 ', toDeci("5/8"));
+    console.log('3 ', toDeci("3 3/16"));
+    console.log('4 ', toDeci("12"));
+    console.log('5 ', toDeci("12.2"));
+
     $.ajax({
         url: "/api/temp/orders/" + temp_id,
         method: "GET"
@@ -16,9 +46,9 @@ $(document).ready(function () {
 
         for (i = 0; i < frameQuantity; i++) {
             $("#carousel-ol").empty();
-            
 
-            var carouselLi = $("<li data-target='carouselIndicators' data-slide-to='" + i +"'>");
+
+            var carouselLi = $("<li data-target='carouselIndicators' data-slide-to='" + i + "'>");
 
             $("#carousel-ol").append(carouselLi);
 

@@ -78,7 +78,7 @@ $(document).ready(function () {
     var discountAmt = $("#discount-input").val();
 
     // reformatting the date using momentJS
-    date_due = moment(date_due).format('l');
+    date_due = moment(date_due).format('YYYY-MM-DD');
 
     // converting temp_id from string to integer
     temp_id = parseInt(temp_id);
@@ -86,6 +86,8 @@ $(document).ready(function () {
     // check for if discount is no to keep discount percent set to 1%
     if (discount === "no") {
       discountAmt = 1
+    } else {
+      discountAmt = discountAmt * .01
     }
 
     $.ajax({
@@ -95,6 +97,7 @@ $(document).ready(function () {
         id: temp_id,
         order_quantity: frame_quantity,
         rush_status: rush_status,
+        date_due: date_due,
         storage_location: storage_location,
         tax_exempt: sales_tax,
         discount_percent: discountAmt,
