@@ -39,7 +39,6 @@ $(document).ready(function () {
     };
   });
 
-
   // Enabling discount input if discount is checked yes
 
   $(".discount").change(function () {
@@ -61,8 +60,6 @@ $(document).ready(function () {
 
   });
 
-
-
   // On Click event to go back to the create new client page if the #new-client-button is selected
   $("#back-button").click(function () {
     window.history.back();
@@ -81,7 +78,7 @@ $(document).ready(function () {
     var discountAmt = $("#discount-input").val();
 
     // reformatting the date using momentJS
-    date_due = moment(date_due).format('l');
+    date_due = moment(date_due).format('YYYY-MM-DD');
 
     // converting temp_id from string to integer
     temp_id = parseInt(temp_id);
@@ -89,14 +86,9 @@ $(document).ready(function () {
     // check for if discount is no to keep discount percent set to 1%
     if (discount === "no") {
       discountAmt = 1
+    } else {
+      discountAmt = discountAmt * .01
     }
-
-    console.log(frame_quantity);
-    console.log(date_due);
-    console.log(rush_status);
-    console.log(storage_location);
-    console.log(discountAmt);
-    console.log(sales_tax);
 
     $.ajax({
       url: "/api/temp/orders/",
@@ -105,6 +97,7 @@ $(document).ready(function () {
         id: temp_id,
         order_quantity: frame_quantity,
         rush_status: rush_status,
+        date_due: date_due,
         storage_location: storage_location,
         tax_exempt: sales_tax,
         discount_percent: discountAmt,
@@ -117,6 +110,7 @@ $(document).ready(function () {
       }
     }).done(function (response) {
       console.log(response);
+
       window.location.href = "/order/build/" + temp_id
     })
   });

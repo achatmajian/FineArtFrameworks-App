@@ -52,7 +52,7 @@ $(document).ready(function () {
         });
 
         // On Click event to go back to the create new client page if the #new-client-button is selected
-        $("#existing-client-form").submit(function () {
+        $("#new-client-button").click(function () {
             window.history.back();
         });
 
