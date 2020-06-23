@@ -44,23 +44,12 @@ module.exports = function (sequelize, DataTypes) {
       defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
     }
   }, {
-
-    //paranoid: true, 
-    //freezeTableName:true,
     underscored: true,
     timestamps: true
   });
 
-
-
   User.associate = function (models) {
-
-    // associations to go here :)
-
-    
     User.hasMany(models.client, {foreignKey: 'user_id'});
-    
-
   };
 
   return User;

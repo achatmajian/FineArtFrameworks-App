@@ -221,14 +221,9 @@ module.exports = function (sequelize, DataTypes) {
         timestamps: true
     });
 
-
     Frame.associate = function (models) {
-
-        // associations to go here :)
         Frame.belongsTo(models.order);
-
-        Frame.belongsTo(models.frame);
-
+        Frame.belongsTo(models.temp);
     };
 
     return Frame;

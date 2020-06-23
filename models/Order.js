@@ -58,24 +58,13 @@ module.exports = function(sequelize, DataTypes) {
         defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
       }
     },{
-  
-      //paranoid: true, 
-      //freezeTableName:true,
       underscored: true,
       timestamps: true
     });
   
-  
-  
     Order.associate = function(models) {
-  
-      // associations to go here :)
-      
       Order.belongsTo(models.client);
-
       Order.hasMany(models.frame, {foreignKey: 'order_id'});
-      
-  
     };
   
     return Order;

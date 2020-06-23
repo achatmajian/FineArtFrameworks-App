@@ -32,16 +32,5 @@ module.exports = function(sequelize, DataTypes) {
         timestamps: true
     });
   
-  
-    
-    Extras.associate = function(models) {
-      /*
-      // associations to go here :)
-      Extras.belongsTo(models.Frame, { as: 'Frame', foreignKey: 'extras_id' });
-      */
-  
-    };
-  
-  
     return Extras;
   };

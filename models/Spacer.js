@@ -31,17 +31,6 @@ module.exports = function(sequelize, DataTypes) {
       underscored: true,
       timestamps: true
   });
-  
-  
-  
-    Spacer.associate = function(models) {
-  
-      // associations to go here :)
-      /*
-      Spacer.belongsTo(models.Frame, { as: 'Frame', foreignKey: 'spacer_id' });
-      */
-  
-    };
-  
+ 
     return Spacer;
   };
