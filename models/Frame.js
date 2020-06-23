@@ -14,6 +14,10 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.INTEGER,
             allowNull: true
         },
+        frame_quantity: {
+            type: DataTypes.INTEGER,
+            defaultValue: 1
+        },
         paper_width: {
             type: DataTypes.INTEGER,
             allowNull: true
