@@ -1,10 +1,8 @@
 // Dependencies
 // ------------------------------------------------------------------------
 var db = require("../../models");
-
 // Routes for /api/glazings
 // ------------------------------------------------------------------------
-
 module.exports = function (app) {
     // Get all glazings
     app.get("/api/glazings", function (req, res) {
@@ -12,7 +10,6 @@ module.exports = function (app) {
             res.json(dbGlazing);
         });
     });
-
     // Get glazing by glazing-id
     app.get("/api/glazings/:id", function (req, res) {
         db.glazing.findOne({
@@ -24,14 +21,12 @@ module.exports = function (app) {
                 res.json(dbGlazing);
             })
     });
-
     // Create a new glazing
     app.post("/api/glazings", function (req, res) {
         db.glazing.create(req.body).then(function (dbGlazing) {
             res.json(dbGlazing);
         });
     });
-
     // Delete a glazing by id
     app.delete("/api/glazings/:id", function (req, res) {
         db.glazing.destroy({
@@ -43,7 +38,6 @@ module.exports = function (app) {
                 res.json(dbGlazing);
             });
     });
-
     // Update a glazing by id
     app.put("/api/glazings", function (req, res) {
         db.glazing.update(
@@ -56,5 +50,4 @@ module.exports = function (app) {
                 res.json(dbGlazing);
             });
     });
-
 };

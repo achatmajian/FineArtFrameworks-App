@@ -1,10 +1,8 @@
 // Dependencies
 // ------------------------------------------------------------------------
 var db = require("../../models");
-
 // Routes for /api/drymounts
 // ------------------------------------------------------------------------
-
 module.exports = function (app) {
     // Get all drymounts
     app.get("/api/drymounts", function (req, res) {
@@ -12,7 +10,6 @@ module.exports = function (app) {
             res.json(dbDrymount);
         });
     });
-
     // Get drymount by drymount-id
     app.get("/api/drymounts/:id", function (req, res) {
         db.drymount.findOne({
@@ -24,14 +21,12 @@ module.exports = function (app) {
                 res.json(dbDrymount);
             })
     });
-
     // Create a new drymount
     app.post("/api/drymounts", function (req, res) {
         db.drymount.create(req.body).then(function (dbDrymount) {
             res.json(dbDrymount);
         });
     });
-
     // Delete a drymount by id
     app.delete("/api/drymounts/:id", function (req, res) {
         db.drymount.destroy({
@@ -43,7 +38,6 @@ module.exports = function (app) {
                 res.json(dbDrymount);
             });
     });
-
     // Update a drymount by id
     app.put("/api/drymounts", function (req, res) {
         db.drymount.update(
@@ -56,5 +50,4 @@ module.exports = function (app) {
                 res.json(dbDrymount);
             });
     });
-
 };

@@ -1,10 +1,8 @@
 // Dependencies
 // ------------------------------------------------------------------------
 var db = require("../../models");
-
 // Routes for /api/extras
 // ------------------------------------------------------------------------
-
 module.exports = function (app) {
     // Get all extras
     app.get("/api/extras", function (req, res) {
@@ -12,7 +10,6 @@ module.exports = function (app) {
             res.json(dbExtras);
         });
     });
-
     // Get extra by extra-id
     app.get("/api/extras/:id", function (req, res) {
         db.extras.findOne({
@@ -24,14 +21,12 @@ module.exports = function (app) {
                 res.json(dbExtras);
             })
     });
-
     // Create a new extra
     app.post("/api/extras", function (req, res) {
         db.extras.create(req.body).then(function (dbExtras) {
             res.json(dbExtras);
         });
     });
-
     // Delete a extra by id
     app.delete("/api/extras/:id", function (req, res) {
         db.extras.destroy({
@@ -43,7 +38,6 @@ module.exports = function (app) {
                 res.json(dbExtras);
             });
     });
-
     // Update a extra by id
     app.put("/api/extras", function (req, res) {
         db.extras.update(
@@ -56,5 +50,4 @@ module.exports = function (app) {
                 res.json(dbExtras);
             });
     });
-
 };

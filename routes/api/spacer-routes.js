@@ -1,10 +1,8 @@
 // Dependencies
 // ------------------------------------------------------------------------
 var db = require("../../models");
-
 // Routes for /api/spacers
 // ------------------------------------------------------------------------
-
 module.exports = function (app) {
     // Get all spacers
     app.get("/api/spacers", function (req, res) {
@@ -12,7 +10,6 @@ module.exports = function (app) {
             res.json(dbSpacer);
         });
     });
-
     // Get spacer by spacer-id
     app.get("/api/spacers/:id", function (req, res) {
         db.spacer.findOne({
@@ -24,14 +21,12 @@ module.exports = function (app) {
                 res.json(dbSpacer);
             })
     });
-
     // Create a new spacer
     app.post("/api/spacers", function (req, res) {
         db.spacer.create(req.body).then(function (dbSpacer) {
             res.json(dbSpacer);
         });
     });
-
     // Delete a spacer by id
     app.delete("/api/spacers/:id", function (req, res) {
         db.spacer.destroy({
@@ -43,7 +38,6 @@ module.exports = function (app) {
                 res.json(dbSpacer);
             });
     });
-
     // Update a spacer by id
     app.put("/api/spacers", function (req, res) {
         db.spacer.update(
@@ -56,5 +50,4 @@ module.exports = function (app) {
                 res.json(dbSpacer);
             });
     });
-
 };
