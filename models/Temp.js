@@ -67,23 +67,12 @@ module.exports = function(sequelize, DataTypes) {
       }
     },{
   
-      //paranoid: true, 
-      //freezeTableName:true,
       underscored: true,
       timestamps: true
     });
-  
-  
-  
+    
     Temp.associate = function(models) {
-  
-      // associations to go here :)
-      
-      //Order.belongsTo(models.client);
-
       Temp.hasMany(models.frame, {foreignKey: 'temp_id'});
-      
-  
     };
   
     return Temp;

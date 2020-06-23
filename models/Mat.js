@@ -35,19 +35,6 @@ module.exports = function(sequelize, DataTypes) {
         underscored: true,
         timestamps: true
     });
-  
-  
-    
-    Mat.associate = function(models) {
-  
-      // associations to go here :)
 
-      /*
-      Mat.belongsTo(models.Frame, { as: 'Frame', foreignKey: 'mat_id' });
-     */ 
-  
-    };
-  
-  
     return Mat;
   };

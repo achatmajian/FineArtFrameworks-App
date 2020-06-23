@@ -71,27 +71,15 @@ module.exports = function(sequelize, DataTypes) {
         allowNull: false,
         defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
       }
-      // need to add timestamp logic for created_at and updated_at here!
     },{
-  
-      //paranoid: true, 
-      //freezeTableName:true,
       underscored: true,
       timestamps: true
     });
   
-  
-    
     Client.associate = function(models) {
-  
-      // associations to go here :)
-      
       Client.belongsTo(models.user);
-      
       Client.hasMany(models.order, {foreignKey: 'client_id'});
-      
     };
     
-  
     return Client;
   };

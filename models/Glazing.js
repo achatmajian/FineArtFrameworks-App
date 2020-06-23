@@ -36,17 +36,5 @@ module.exports = function(sequelize, DataTypes) {
         timestamps: true
     });
   
-  
-    
-    Glazing.associate = function(models) {
-  
-      // associations to go here :)
-      /*
-      Glazing.belongsTo(models.Frame, { as: 'Frame', foreignKey: 'glazing_id' });
-      */
-  
-    };
-
-  
     return Glazing;
   };

@@ -36,18 +36,5 @@ module.exports = function(sequelize, DataTypes) {
         timestamps: true
     });
   
-  
-    
-    Island.associate = function(models) {
-  
-      // associations to go here :)
-
-      /*
-      Island.belongsTo(models.Frame, { as: 'Frame', foreignKey: 'island_id' });
-     */ 
-  
-    };
-  
-  
     return Island;
   };

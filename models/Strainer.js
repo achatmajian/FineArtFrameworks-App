@@ -32,17 +32,5 @@ module.exports = function(sequelize, DataTypes) {
       timestamps: true
   });
   
-  
-  
-    Strainer.associate = function(models) {
-  
-      // associations to go here :)
-      /*
-      Strainer.belongsTo(models.Frame, { as: 'Frame', foreignKey: 'strainer_id' });
-      */
-      
-  
-    };
-  
     return Strainer;
   };
