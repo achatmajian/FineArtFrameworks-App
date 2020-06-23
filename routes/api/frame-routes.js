@@ -1,10 +1,8 @@
 // Dependencies
 // ------------------------------------------------------------------------
 var db = require("../../models");
-
 // Routes for /api/frames 
 // ------------------------------------------------------------------------
-
 module.exports = function (app) {
     // Get all frames
     app.get("/api/frames", function (req, res) {
@@ -12,7 +10,6 @@ module.exports = function (app) {
             res.json(dbFrames);
         });
     });
-
     // Get all frames with a specific order_id
     app.get("/api/frames/order/:id", function (req, res) {
         db.frame.findAll({
@@ -24,8 +21,6 @@ module.exports = function (app) {
             res.json(dbFrames);
         })
     });
-
-
     // Get all frames with a specific temp_id
     app.get("/api/frames/temp/:id", function (req, res) {
         db.frame.findAll({
@@ -37,7 +32,6 @@ module.exports = function (app) {
             res.json(dbFrames);
         })
     });
-
     // Get frame by frame-id
     app.get("/api/frames/:id", function (req, res) {
         db.frame.findOne({
@@ -49,14 +43,12 @@ module.exports = function (app) {
                 res.json(dbFrames);
             })
     });
-
     // Create a new frame
     app.post("/api/frames", function (req, res) {
         db.frame.create(req.body).then(function (dbFrames) {
             res.json(dbFrames);
         });
     });
-
     // Delete a frame by id
     app.delete("/api/frames/:id", function (req, res) {
         db.frame.destroy({
@@ -68,7 +60,6 @@ module.exports = function (app) {
                 res.json(dbFrames);
             });
     });
-
     // Update a frame by id
     app.put("/api/frames", function (req, res) {
         db.frame.update(
@@ -81,5 +72,4 @@ module.exports = function (app) {
                 res.json(dbFrames);
             });
     });
-
 };

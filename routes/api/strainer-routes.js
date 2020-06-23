@@ -4,7 +4,6 @@ var db = require("../../models");
 
 // Routes for /api/strainers
 // ------------------------------------------------------------------------
-
 module.exports = function (app) {
     // Get all strainers
     app.get("/api/strainers", function (req, res) {
@@ -12,7 +11,6 @@ module.exports = function (app) {
             res.json(dbStrainer);
         });
     });
-
     // Get strainer by strainer-id
     app.get("/api/strainers/:id", function (req, res) {
         db.strainer.findOne({
@@ -24,14 +22,12 @@ module.exports = function (app) {
                 res.json(dbStrainer);
             })
     });
-
     // Create a new strainer
     app.post("/api/strainers", function (req, res) {
         db.strainer.create(req.body).then(function (dbStrainer) {
             res.json(dbStrainer);
         });
     });
-
     // Delete a strainer by id
     app.delete("/api/strainers/:id", function (req, res) {
         db.strainer.destroy({
@@ -43,7 +39,6 @@ module.exports = function (app) {
                 res.json(dbStrainer);
             });
     });
-
     // Update a strainer by id
     app.put("/api/strainers", function (req, res) {
         db.strainer.update(
@@ -56,5 +51,4 @@ module.exports = function (app) {
                 res.json(dbStrainer);
             });
     });
-
 };

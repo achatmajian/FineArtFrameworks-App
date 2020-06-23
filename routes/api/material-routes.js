@@ -1,10 +1,8 @@
 // Dependencies
 // ------------------------------------------------------------------------
 var db = require("../../models");
-
 // Routes for /api/materials
 // ------------------------------------------------------------------------
-
 module.exports = function (app) {
     // Get all materials
     app.get("/api/materials", function (req, res) {
@@ -12,7 +10,6 @@ module.exports = function (app) {
             res.json(dbMaterial);
         });
     });
-
     // Get material by material-id
     app.get("/api/materials/:id", function (req, res) {
         db.material.findOne({
@@ -24,14 +21,12 @@ module.exports = function (app) {
                 res.json(dbMaterial);
             })
     });
-
     // Create a new material
     app.post("/api/materials", function (req, res) {
         db.material.create(req.body).then(function (dbMaterial) {
             res.json(dbMaterial);
         });
     });
-
     // Delete a material by id
     app.delete("/api/materials/:id", function (req, res) {
         db.material.destroy({
@@ -43,7 +38,6 @@ module.exports = function (app) {
                 res.json(dbMaterial);
             });
     });
-
     // Update a material by id
     app.put("/api/materials", function (req, res) {
         db.material.update(
@@ -56,5 +50,4 @@ module.exports = function (app) {
                 res.json(dbMaterial);
             });
     });
-
 };

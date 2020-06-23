@@ -1,10 +1,8 @@
 // Dependencies
 // ------------------------------------------------------------------------
 var db = require("../../models");
-
 // Routes for /api/floats
 // ------------------------------------------------------------------------
-
 module.exports = function (app) {
     // Get all floats
     app.get("/api/floats", function (req, res) {
@@ -12,7 +10,6 @@ module.exports = function (app) {
             res.json(dbFloat);
         });
     });
-
     // Get float by float-id
     app.get("/api/floats/:id", function (req, res) {
         db.float.findOne({
@@ -24,14 +21,12 @@ module.exports = function (app) {
                 res.json(dbFloat);
             })
     });
-
     // Create a new float
     app.post("/api/floats", function (req, res) {
         db.float.create(req.body).then(function (dbFloat) {
             res.json(dbFloat);
         });
     });
-
     // Delete a float by id
     app.delete("/api/floats/:id", function (req, res) {
         db.float.destroy({
@@ -43,7 +38,6 @@ module.exports = function (app) {
                 res.json(dbFloat);
             });
     });
-
     // Update a float by id
     app.put("/api/floats", function (req, res) {
         db.float.update(
@@ -56,5 +50,4 @@ module.exports = function (app) {
                 res.json(dbFloat);
             });
     });
-
 };
