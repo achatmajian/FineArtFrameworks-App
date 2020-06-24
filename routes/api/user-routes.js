@@ -148,7 +148,8 @@ module.exports = function (app) {
                 res.json(dbUsers);
             })
     });
-    // vvv Get user by email will go here vvv
+    // ------------------------------------------------------------------------
+    // !!!!!!! Get user by email will go here !!!!!!!!! - need to change from params to req.body
     // app.get("/api/users/:email", function (req, res) {
     //     db.user.findOne({
     //         where: {
@@ -159,6 +160,7 @@ module.exports = function (app) {
     //         res.json(dbUser);
     //     });
     // });
+    // ------------------------------------------------------------------------
     // Create a new user
     app.post("/api/users", function (req, res) {
         db.user.create(req.body).then(function (dbUsers) {
