@@ -4,6 +4,7 @@
 var express = require("express");
 var db = require("./models");
 var bodyParser = require("body-parser");
+var cors = require('cors');
 // Create the server app
 // ------------------------------------------------------------------------
 var app = express();
@@ -14,6 +15,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(bodyParser.json());
+app.use(cors());
 app.use(express.static(__dirname + "/public"));
 // Routes
 // ------------------------------------------------------------------------
@@ -44,7 +46,7 @@ if (process.env.NODE_ENV === "test") {
 db.sequelize.sync(syncOptions).then(function () {
   app.listen(PORT, function () {
     console.log(
-      "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser. ",
+      "==> 🌎  CORS-enabled web server listening on port %s. Visit http://18.222.181.253:%s/ in your browser. ",
       PORT,
       PORT
     );

@@ -24,8 +24,7 @@ module.exports = function (app) {
             ]
         }).then(users => {
             const resObj = users.map(user => {
-
-                //tidy up the user data
+                //tidy up the user data and show nesting for associations
                 return Object.assign(
                     {},
                     {
@@ -36,7 +35,6 @@ module.exports = function (app) {
                         last_name: user.last_name,
                         password_hash: user.password_hash,
                         clients: user.clients.map(client => {
-
                             //tidy up the post data
                             return Object.assign(
                                 {},
@@ -78,6 +76,8 @@ module.exports = function (app) {
                                                         {
                                                             frame_id: frame.id,
                                                             order_id: frame.order_id,
+                                                            temp_id: frame.temp_id,
+                                                            frame_quantity: frame.frame_quantity,
                                                             paper_width: frame.paper_width,
                                                             paper_height: frame.paper_height,
                                                             image_width: frame.image_width,
