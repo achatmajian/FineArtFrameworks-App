@@ -34,6 +34,10 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.INTEGER,
             allowNull: true
         },
+        floater_frame_bl: {
+            type: DataTypes.INTEGER,
+            defaultValue: 0
+        },
         mat_size: {
             type: DataTypes.INTEGER,
             defaultValue: 0
