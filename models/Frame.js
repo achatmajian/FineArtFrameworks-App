@@ -48,11 +48,13 @@ module.exports = function (sequelize, DataTypes) {
         },
         painted_strainer_bool: {
             type: DataTypes.ENUM,
-            values: [0,1]
+            values: ["0", "1"],
+            defaultValue: "0"
         },
         mat_bool: {
             type: DataTypes.ENUM,
-            values: [0,1]
+            values: ["0", "1"],
+            defaultValue: "0"
         },
         mat_name: {
             type: DataTypes.STRING,
@@ -68,7 +70,8 @@ module.exports = function (sequelize, DataTypes) {
         },
         island_float_bool: {
             type: DataTypes.ENUM,
-            values: [0,1]
+            values: ["0", "1"],
+            defaultValue: "0"
         },
         island_float_name: {
             type: DataTypes.STRING,
@@ -84,7 +87,8 @@ module.exports = function (sequelize, DataTypes) {
         },
         no_dm_float_bool: {
             type: DataTypes.ENUM,
-            values: [0,1]
+            values: ["0", "1"],
+            defaultValue: "0"
         },
         no_dm_float_name: {
             type: DataTypes.STRING,
@@ -100,11 +104,13 @@ module.exports = function (sequelize, DataTypes) {
         },
         flush_bool: {
             type: DataTypes.ENUM,
-            values: [0,1]
+            values: ["0", "1"],
+            defaultValue: "0"
         },
         spacers_bool: {
             type: DataTypes.ENUM,
-            values: [0,1]
+            values: ["0", "1"],
+            defaultValue: "0"
         },
         spacer_name: {
             type: DataTypes.STRING,
@@ -116,7 +122,8 @@ module.exports = function (sequelize, DataTypes) {
         },
         mounting_bool: {
             type: DataTypes.ENUM,
-            values: [0,1]
+            values: ["0", "1"],
+            defaultValue: "0"
         },
         mounting_in_press: {
             type: DataTypes.STRING,
@@ -132,7 +139,8 @@ module.exports = function (sequelize, DataTypes) {
         },
         glazing_bool: {
             type: DataTypes.ENUM, 
-            values: [0,1]
+            values: ["0", "1"],
+        defaultValue: "0"
         },
         glazing_plexi: {
             type: DataTypes.STRING,
@@ -144,23 +152,28 @@ module.exports = function (sequelize, DataTypes) {
         },
         extras_bool: {
             type: DataTypes.ENUM,
-            values: [0,1]
+            values: ["0", "1"],
+            defaultValue: "0"
         },
         stretch_canvas_bool: {
             type: DataTypes.ENUM,
-            values: [0,1]
+            values: ["0", "1"],
+            defaultValue: "0"
         },
         raise_mount_bool: {
             type: DataTypes.ENUM,
-            values: [0,1]
+            values: ["0", "1"],
+            defaultValue: "0"
         },
         defit_bool: {
             type: DataTypes.ENUM,
-            values: [0,1]
+            values: ["0", "1"],
+            defaultValue: "0"
         },
         refinish_bool: {
             type: DataTypes.ENUM,
-            values: [0,1]
+            values: ["0", "1"],
+            defaultValue: "0"
         },
         manufacturing_notes: {
             type: DataTypes.STRING,
