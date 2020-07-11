@@ -34,7 +34,7 @@ require("./routes/api/material-routes")(app);
 require("./routes/api/spacer-routes")(app);
 require("./routes/api/strainer-routes")(app);
 require("./routes/api/temp-routes.js")(app);
-//require("./routes/html-routes")(app);
+require("./routes/html-routes")(app);
 var syncOptions = { force: false };
 // If running a test, set syncOptions.force to true clearing the `testdb`
 // ------------------------------------------------------------------------
